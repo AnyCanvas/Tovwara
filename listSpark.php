@@ -4,7 +4,7 @@
 
 <script>
 $(document).ready(function(){
-    $('.button').click(function(){
+    $('#action-btn').click(function(){
         var clickBtnValue = $(this).val();
         var ajaxurl = 'resources/activateFnbt.php',
         data =  {'action': clickBtnValue};
@@ -113,7 +113,7 @@ $(document).ready(function(){
 										                                </a>
 									                                </td>
 								                                <td>
-																	<input type="submit" class="button" name="insert" value="insert" />
+																	<input type="submit" id="action-btn" name="insert" value="<?php echo $row['name']?>" />
 									                                </td>								
 								                            </tr>
 								
