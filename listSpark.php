@@ -98,7 +98,7 @@ function fnbtAction(name){
 																			$list = $fanbotList;
 																			$key = array_search($name, array_column($list, "id"));
 																			if( $fanbotList[$key]["connected"]){
-																				echo ' connected ';
+																				echo $row['deviceId']. ' connected ';
 																			} else {
 																				echo ' offline ';
 																			}
