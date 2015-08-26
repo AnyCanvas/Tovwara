@@ -5,7 +5,7 @@
 <script>
 function fnbtAction(name){
         var ajaxurl = 'resources/activateFnbt.php',
-        data =  {'action': name};
+        data =  {'name': name};
         $.post(ajaxurl, data, function (response) {
             // Response div goes here.
             alert("action performed successfully");
