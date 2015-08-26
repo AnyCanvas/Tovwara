@@ -1,3 +1,17 @@
+<script>
+$(document).ready(function(){
+    $('.button').click(function(){
+        var clickBtnValue = $(this).val();
+        var ajaxurl = 'resources/activateFnbt.php',
+        data =  {'action': clickBtnValue};
+        $.post(ajaxurl, data, function (response) {
+            // Response div goes here.
+            alert("action performed successfully");
+        });
+    });
+
+});
+</script>
         <div class="row">
             <div class="col-sm-12">
                 <section class="panel">
@@ -95,7 +109,9 @@
 										                                <span class="fa fa-cog" aria-hidden="true"></span> Configurar
 										                                </a>
 									                                </td>
-								
+								                                <td>
+																	<input type="submit" class="button" name="insert" value="insert" />
+									                                </td>								
 								                            </tr>
 								
 								
@@ -121,10 +137,3 @@
                 </section>
             </div>
         </div>
-        
- 
- <!-- Modal that configures a Fanbot facebook page -->
-
-    	<?php require_once("resources/listModal.php"); ?>
-
-<!-- End modal --> 
