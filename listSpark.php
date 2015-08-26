@@ -3,7 +3,7 @@
 </head>
 
 <script>
-function fnbtAction(var name){
+function fnbtAction(name){
         var clickBtnValue = $(this).val();
         var ajaxurl = 'resources/activateFnbt.php',
         data =  {'action': clickBtnValue};
