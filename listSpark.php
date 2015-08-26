@@ -95,7 +95,8 @@ function fnbtAction(name){
 																		
 																		<?php 
 																			$name = strtolower($row['name']);
-																			$key = array_search($name, array_column($fanbotList, "name"));
+																			$list = $fanbotList;
+																			$key = array_search($name, array_column($list, "name"));
 																			if( $fanbotList[$key]["connected"]){
 																				echo ' connected ';
 																			} else {
