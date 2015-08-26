@@ -111,7 +111,7 @@ function fnbtAction(name){
 										                                </a>
 									                                </td>
 								                                <td>
-																	<a id="action-btn" name="insert" onclick="fnbtAction('<?php echo $row['name']?>')"> Activar <a>
+																	<a id="action-btn" name="insert" onclick="fnbtAction('<?php echo $row['name']?>')"> Activar </a>
 									                                </td>								
 								                            </tr>
 								
