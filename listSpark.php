@@ -106,11 +106,6 @@ function fnbtAction(name){
 																		?>
 																	</td>
 								                                <td>
-									                                <a class="btn btn-primary btn-xs" onclick="callModal('<?php echo $row['name']?>')">
-										                                <span class="fa fa-cog" aria-hidden="true"></span> Configurar
-										                                </a>
-									                                </td>
-								                                <td>
 									                                <a class="btn btn-primary btn-xs" onclick="fnbtAction('<?php echo $row['name']?>')">
 										                                <span class="fa fa-cog" aria-hidden="true"></span> Configurar
 										                                </a>
