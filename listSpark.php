@@ -1,3 +1,7 @@
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</head>
+
 <script>
 $(document).ready(function(){
     $('.button').click(function(){
@@ -9,7 +13,6 @@ $(document).ready(function(){
             alert("action performed successfully");
         });
     });
-
 });
 </script>
         <div class="row">
