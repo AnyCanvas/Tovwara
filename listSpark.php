@@ -4,9 +4,8 @@
 
 <script>
 function fnbtAction(name){
-        var clickBtnValue = $(this).val();
         var ajaxurl = 'resources/activateFnbt.php',
-        data =  {'action': clickBtnValue};
+        data =  {'action': name};
         $.post(ajaxurl, data, function (response) {
             // Response div goes here.
             alert("action performed successfully");
