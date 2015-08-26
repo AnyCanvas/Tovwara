@@ -106,7 +106,7 @@ function fnbtAction(name){
 																	</td>
 								                                <td>
 									                                <a class="btn btn-primary btn-xs" onclick="fnbtAction('<?php echo $row['name']?>')">
-										                                <span class="fa fa-cog" aria-hidden="true"></span> Configurar
+										                                <span class="fa fa-cog" aria-hidden="true"></span> Activar
 										                                </a>
 									                                </td>								
 								                            </tr>

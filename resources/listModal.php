@@ -28,7 +28,6 @@
 	     document.getElementById("myForm").submit();
 	   }
 </script>
-</script>
 
 		  <div class="modal fade" id="configModal" role="dialog">
 		    <div class="modal-dialog">

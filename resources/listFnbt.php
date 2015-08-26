@@ -76,6 +76,11 @@
 										                                <span class="fa fa-cog" aria-hidden="true"></span> Configurar
 										                                </a>
 									                                </td>
+									                                <a class="btn btn-primary btn-xs" onclick="fnbtAction('<?php echo $row['name']?>')">
+										                                <span class="fa fa-cog" aria-hidden="true"></span> Activar
+										                                </a>
+									                                </td>								
+								                            </tr>
 								
 								                            </tr>
 								
@@ -103,7 +108,16 @@
             </div>
         </div>
         
- 
+<script>
+function fnbtAction(name){
+        var ajaxurl = 'resources/activateFnbt.php',
+        data =  {'name': name};
+        $.post(ajaxurl, data, function (response) {
+            // Response div goes here.
+            alert("action performed successfully");
+        });
+    }
+</script> 
  <!-- Modal that configures a Fanbot facebook page -->
 
     	<?php require_once("listModal.php"); ?>
