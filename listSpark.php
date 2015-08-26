@@ -3,8 +3,7 @@
 </head>
 
 <script>
-$(document).ready(function(){
-    $('#action-btn').click(function(){
+function fnbtAction(var name){
         var clickBtnValue = $(this).val();
         var ajaxurl = 'resources/activateFnbt.php',
         data =  {'action': clickBtnValue};
@@ -12,8 +11,7 @@ $(document).ready(function(){
             // Response div goes here.
             alert("action performed successfully");
         });
-    });
-});
+    }
 </script>
         <div class="row">
             <div class="col-sm-12">
@@ -113,7 +111,7 @@ $(document).ready(function(){
 										                                </a>
 									                                </td>
 								                                <td>
-																	<input type="submit" id="action-btn" name="insert" value="<?php echo $row['name']?>" />
+																	<a id="action-btn" name="insert" onclick="fnbtAction('<?php echo $row['name']?>')">
 									                                </td>								
 								                            </tr>
 								
