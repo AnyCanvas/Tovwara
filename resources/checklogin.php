@@ -29,10 +29,10 @@ $result = $conn->query($sql);
 		    			        
 			$_SESSION['userId'] = $row["clientId"];
 		    }
-			header("location:../index.php");
+			header("location:../dashboard.php");
 
 		} else {
-			header("location:../login.php");
+			header("location:../index.php");
 
 		}
 $conn->close();
