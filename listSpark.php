@@ -111,7 +111,9 @@ function fnbtAction(name){
 										                                </a>
 									                                </td>
 								                                <td>
-																	<a id="action-btn" name="insert" onclick="fnbtAction('<?php echo $row['name']?>')"> Activar </a>
+									                                <a class="btn btn-primary btn-xs" onclick="fnbtAction('<?php echo $row['name']?>')">
+										                                <span class="fa fa-cog" aria-hidden="true"></span> Configurar
+										                                </a>
 									                                </td>								
 								                            </tr>
 								
