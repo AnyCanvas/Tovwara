@@ -94,9 +94,8 @@ function fnbtAction(name){
 																	<td>
 																		
 																		<?php 
-																			$name = strtolower($row['deviceId']);
-																			$list = $fanbotList;
-																			$key = array_search($name, array_column($list, "id"));
+																			$id = $row['deviceId'];
+																			$key = array_search($id, array_column($fanbotList, "id"));
 																			if( $fanbotList[$key]["connected"]){
 																				echo $row['deviceId']. ' connected ';
 																			} else {
