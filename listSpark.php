@@ -46,7 +46,7 @@ function fnbtAction(name){
 									{
 									    $fanbotList = $spark->getResult();
 									}
-									print_r($fanbotList);
+									// print_r($fanbotList);
 											
 										$servername="localhost"; // Host name 
 										$username="Dev"; // Mysql username 
