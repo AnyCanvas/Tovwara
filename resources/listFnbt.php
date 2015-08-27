@@ -31,18 +31,17 @@ function fnbtAction(name){
                             <tbody>
 
 								<?php
-									if((@include 'phpSpark.class.php') === false)  die("Unable to load phpSpark class");
-									if((@include 'phpSpark.config.php') === false)  die("Unable to load phpSpark configuration file");
-									// Grab a new instance of our phpSpark object
-									$spark = new phpSpark();
-									// Set our access token (set in the phpConfig.config.php file)
-									$spark->setAccessToken($accessToken);
-									// List all the devices on your account
-									if($spark->listDevices() == true)
-									{
-									    $fanbotList = $spark->getResult();
-									}
-									// print_r($fanbotList);
+										$ch = curl_init("https://api.particle.io/v1/devices/?access_token=8f143ea31dd63ec40437558c3d352b560a2dfcd4");
+										curl_setopt($ch, CURLOPT_FRESH_CONNECT, 1);
+										curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+										$output = curl_exec($ch);
+										curl_close($ch);
+										
+									
+									
+										$fanbotList = json_decode($output, true);									
+
+										print_r($fanbotList);
 											
 										$servername="localhost"; // Host name 
 										$username="Dev"; // Mysql username 
