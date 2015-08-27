@@ -1,3 +1,12 @@
+<script>
+function fnbtAction(name){
+        var ajaxurl = 'resources/activateFnbt.php',
+        data =  {'name': name};
+        $.post(ajaxurl, data, function (response) {
+            // Response div goes here.
+            alert("action performed successfully");
+        });
+    }
 </script>
         <div class="row">
             <div class="col-sm-12">
