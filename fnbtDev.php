@@ -63,7 +63,7 @@
         <section class="wrapper">
         <!-- page start-->
 
-		<?php require_once("resources/listFnbt.php"); ?>
+		<?php require_once("resources/fnbt_editor.php"); ?>
 
         <!-- page end-->
         </section>
