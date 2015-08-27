@@ -1,3 +1,4 @@
+</script>
         <div class="row">
             <div class="col-sm-12">
                 <section class="panel">
@@ -21,6 +22,18 @@
                             <tbody>
 
 								<?php
+									if((@include 'resources/phpSpark.class.php') === false)  die("Unable to load phpSpark class");
+									if((@include 'resources/phpSpark.config.php') === false)  die("Unable to load phpSpark configuration file");
+									// Grab a new instance of our phpSpark object
+									$spark = new phpSpark();
+									// Set our access token (set in the phpConfig.config.php file)
+									$spark->setAccessToken($accessToken);
+									// List all the devices on your account
+									if($spark->listDevices() == true)
+									{
+									    $fanbotList = $spark->getResult();
+									}
+									// print_r($fanbotList);
 											
 										$servername="localhost"; // Host name 
 										$username="Dev"; // Mysql username 
@@ -36,11 +49,8 @@
 										    die("Connection failed: " . $conn->connect_error);
 										}
 										
-										if ( $_SESSION['userId'] == 00){
 											$sql = "SELECT * FROM fanbot";	
-											} else {
-											$sql = "SELECT * FROM fanbot WHERE clientId = '". $_SESSION['userId']. "'";											
-											}
+
 										$result = $conn->query($sql);
 										
 										if ($result->num_rows > 0) {		    
@@ -69,9 +79,18 @@
 									                                
 								                                ?> </td>
 																	<td>
-																		<?php isFanbotOnline($row['accesToken'], $row['deviceId']); ?>
+																		
+																		<?php 
+																			$id = $row['deviceId'];
+																			$key = array_search($id, array_column($fanbotList, "id"));
+																			if( $fanbotList[$key]["connected"]){
+																				echo $row['deviceId']. ' connected ';
+																			} else {
+																				echo ' offline ';
+																			}
+																			//isFanbotOnline($row['accesToken'], $row['deviceId']); 
+																		?>
 																	</td>
-								                                <td>
 									                                <a class="btn btn-primary btn-xs" onclick="callModal('<?php echo $row['name']?>')">
 										                                <span class="fa fa-cog" aria-hidden="true"></span> Configurar
 										                                </a>
