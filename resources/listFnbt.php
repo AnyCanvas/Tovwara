@@ -41,7 +41,6 @@ function fnbtAction(name){
 									
 										$fanbotList = json_decode($output, true);									
 
-										print_r($fanbotList);
 											
 										$servername="localhost"; // Host name 
 										$username="Dev"; // Mysql username 
