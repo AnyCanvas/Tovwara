@@ -31,8 +31,8 @@ function fnbtAction(name){
                             <tbody>
 
 								<?php
-									if((@include 'resources/phpSpark.class.php') === false)  die("Unable to load phpSpark class");
-									if((@include 'resources/phpSpark.config.php') === false)  die("Unable to load phpSpark configuration file");
+									if((@include 'phpSpark.class.php') === false)  die("Unable to load phpSpark class");
+									if((@include 'phpSpark.config.php') === false)  die("Unable to load phpSpark configuration file");
 									// Grab a new instance of our phpSpark object
 									$spark = new phpSpark();
 									// Set our access token (set in the phpConfig.config.php file)
