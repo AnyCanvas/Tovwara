@@ -131,17 +131,22 @@
 
 	function isFanbotOnline($token, $id){
 
-		$ip = 'api.particle.io';
-		$ch = curl_init("https://". $ip ."/v1/devices/". $deviceId.  "/?access_token=". $accesToken);
-		curl_setopt($ch, CURLOPT_FRESH_CONNECT, 1);
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-		$output = curl_exec($ch);
-		curl_close($ch);
+		$spark = new phpSpark();
 		
 	
-	
-		$curloutput = json_decode($output, true);
-		$connectedSpark = $curloutput["connected"];
+		$spark->setAccessToken($token);
+		
+		if($spark->getDeviceInfo($id) == true)
+		{
+		    $fanbot = $spark->getResult();
+		}
+		else
+		{
+		    $spark->debug("Error: " . $spark->getError());
+		    $spark->debug("Error Source" . $spark->getErrorSource());
+		}
+
+		$connectedSpark = $fanbot["connected"] ;
 	
 		echo '<span class="label label-mini ';
 		if ($connectedSpark){

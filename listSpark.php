@@ -101,7 +101,6 @@ function fnbtAction(name){
 																			} else {
 																				echo ' offline ';
 																			}
-																			//isFanbotOnline($row['accesToken'], $row['deviceId']); 
 																		?>
 																	</td>
 								                                <td>
