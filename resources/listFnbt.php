@@ -88,14 +88,22 @@ function fnbtAction(name){
 																	<td>
 																		
 																		<?php 
+																			echo '<span class="label label-mini ';
+
 																			$id = $row['deviceId'];
 																			$key = array_search($id, array_column($fanbotList, "id"));
 																			if( $fanbotList[$key]["connected"]){
-																				echo $row['deviceId']. ' connected ';
+																				echo 'label-success"><span class="fa fa-circle" aria-hidden="true">';
 																			} else {
-																				echo ' offline ';
+																				echo 'label-default"><span class="fa fa-circle-o" aria-hidden="true">';
 																			}
-																			//isFanbotOnline($row['accesToken'], $row['deviceId']); 
+																			if( $fanbotList[$key]["connected"]){
+																				echo ' Conectada';
+																			} else {
+																				echo ' Desconectada';
+																	
+																			}
+																			echo '</span>';
 																		?>
 																	</td>
 																	<td>
