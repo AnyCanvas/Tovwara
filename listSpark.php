@@ -16,6 +16,7 @@
 	$sql = "SELECT * FROM interactions WHERE EXTRACT(MONTH FROM date) = '". $month. "' AND EXTRACT(YEAR FROM date) = '". $year."'"; 
 
 	$result = $conn->query($sql);
+	print_r($result);
 	$daysInMonth = cal_days_in_month(CAL_GREGORIAN, date("m"), date("Y"));
 	$dayArray = array();
 	$i = 1;
