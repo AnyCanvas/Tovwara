@@ -47,7 +47,9 @@
 	for($i = 1; $i <= $daysInMonth; $i++){
 		$dayArray[$i] = 0;
 		}
-	while($row = $result->fetch_assoc()) {
+	if ($result->num_rows > 0) {		    
+
+		    while($row = $result->fetch_assoc()) {
 
 			// Create a new date var from date in db
 			$date =new DateTime($row['date']);
@@ -59,8 +61,9 @@
 				 if ($day == $i){
 				 	$dayArray[$i]++;
 
-		    }
-
+		    	}
+			}
+		}	
 	}
 
 	for($i = 1; $i <= $daysInMonth; $i++){
@@ -77,9 +80,6 @@
 		}
 		
 		}
-		
-
-    }
 
 	$conn->close();
 	
