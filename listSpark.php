@@ -13,10 +13,10 @@
 	    die("Connection failed: " . $conn->connect_error);
 	}
 
-	$sql = "SELECT * FROM interactions"; 
+	$sql = "SELECT * FROM interactions WHERE EXTRACT(MONTH FROM date) = '". date("m") . "' AND EXTRACT(YEAR FROM date) = '". date("Y") ."'"; 
 
 	$result = $conn->query($sql);
-	print_r($result);
+
 	$daysInMonth = cal_days_in_month(CAL_GREGORIAN, date("m"), date("Y"));
 	$dayArray = array();
 	$i = 1;

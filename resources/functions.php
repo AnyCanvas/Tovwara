@@ -130,45 +130,9 @@
 
 	$conn->close();
 	
-}
+}	
 
-	function isFanbotOnline($token, $id){
-
-		$spark = new phpSpark();
-		
-	
-		$spark->setAccessToken($token);
-		
-		if($spark->getDeviceInfo($id) == true)
-		{
-		    $fanbot = $spark->getResult();
-		}
-		else
-		{
-		    $spark->debug("Error: " . $spark->getError());
-		    $spark->debug("Error Source" . $spark->getErrorSource());
-		}
-
-		$connectedSpark = $fanbot["connected"] ;
-	
-		echo '<span class="label label-mini ';
-		if ($connectedSpark){
-			echo 'label-success"><span class="fa fa-circle" aria-hidden="true">';
-		} else {
-			echo 'label-default"><span class="fa fa-circle-o" aria-hidden="true">';
-		}
-		if ($connectedSpark){
-			echo ' Conectada';
-		} else {
-			echo ' Desconectada';
-
-		}
-
-		echo '</span>';
-		
-	}
-	
-	function listInteractions(){	
+function listInteractions(){	
 			
 		require(realpath(dirname(__FILE__) . "/./config.php"));
     	$servername = $config["db"]["fanbot"]["host"];
