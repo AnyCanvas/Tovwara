@@ -1,13 +1,12 @@
 <?php 
-	if((@include 'phpSpark.class.php') === false)  die("Unable to load phpSpark class");
-	if((@include 'phpSpark.config.php') === false)  die("Unable to load phpSpark configuration file");
-
 
 	// Check if user is logged in 
 	function isLogged(){
 		session_start();
-		if(!isset($_SESSION["userId"])){
-				header("location:./index.php");
+		if(isset($_SESSION["userId"])){
+				return 1;
+		} else {
+			return 0;
 		}
 	}
 	
