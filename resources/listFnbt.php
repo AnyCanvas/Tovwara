@@ -1,4 +1,7 @@
 <script>
+
+if((@include 'resources/config.php') === false)  die("Unable to load configuration file");
+
 function fnbtAction(name){
         var ajaxurl = 'resources/activateFnbt.php',
         data =  {'name': name};
@@ -41,12 +44,10 @@ function fnbtAction(name){
 									
 										$fanbotList = json_decode($output, true);									
 
-											
-										$servername="localhost"; // Host name 
-										$username="Dev"; // Mysql username 
-										$password="\"TRFBMIsCWh{19"; // Mysql password 
-										$dbname="fanbot_db"; // Database name 
-								
+										$servername = $config["db"]["fanbot"]["host"];
+										$username = $config["db"]["fanbot"]["username"];
+										$password = $config["db"]["fanbot"]["password"];
+										$dbname = $config["db"]["fanbot"]["dbname"];								
 										
 											
 										// Create connection
