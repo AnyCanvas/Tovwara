@@ -18,49 +18,6 @@
 	}
 
 	
-	function printLikesChar(){
-
-		require(realpath(dirname(__FILE__) . "/./config.php"));
-    	$servername = $config["db"]["fanbot"]["host"];
-		$username = $config["db"]["fanbot"]["username"];
-		$password = $config["db"]["fanbot"]["password"];
-		$dbname = $config["db"]["fanbot"]["dbname"];
-
-		
-			
-		// Create connection
-		$conn = new mysqli($servername, $username, $password, $dbname);
-		// Check connection
-		if ($conn->connect_error) {
-		    die("Connection failed: " . $conn->connect_error);
-		}
-		
-		if($_SESSION['userId'] == '00'){
-			$sql = "SELECT * FROM interactions";
-		}else {
-			$sql = "SELECT * FROM interactions WHERE clientId = '". $_SESSION['userId']. "'";
-		}
-
-		$result = $conn->query($sql);
-		
-		if ($result->num_rows > 1) {
-			$i = 1;
-
-			while($row = $result->fetch_assoc()) {		    
-
-			    $likesArray[$i]['fanbotId'] = $row["fanbotId"];
-			    $likesArray[$i]['clientId'] = $row["clientId"];
-			    $likesArray[$i]['date'] = $row["date"];
-			    $i++;
-			}
-				
-			} else {
-
-			}
-		$conn->close();
-
-	}
-	
 	function getLikesGraph($month,$year){
 
 	require(realpath(dirname(__FILE__) . "/./config.php"));
@@ -90,9 +47,7 @@
 	for($i = 1; $i <= $daysInMonth; $i++){
 		$dayArray[$i] = 0;
 		}
-	if ($result->num_rows > 0) {		    
-
-		    while($row = $result->fetch_assoc()) {
+	while($row = $result->fetch_assoc()) {
 
 			// Create a new date var from date in db
 			$date =new DateTime($row['date']);
@@ -106,7 +61,6 @@
 
 		    }
 
-		}
 	}
 
 	for($i = 1; $i <= $daysInMonth; $i++){
