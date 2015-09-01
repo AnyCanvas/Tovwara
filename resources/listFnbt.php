@@ -1,6 +1,6 @@
 <script>
 
-if((@include 'resources/config.php') === false)  die("Unable to load configuration file");
+if((@include './resources/config.php') === false)  die("Unable to load configuration file");
 
 function fnbtAction(name){
         var ajaxurl = 'resources/activateFnbt.php',
