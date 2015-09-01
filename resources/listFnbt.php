@@ -56,7 +56,11 @@ function fnbtAction(name){
 										    die("Connection failed: " . $conn->connect_error);
 										}
 										
-											$sql = "SELECT * FROM fanbot";	
+										if($_SESSION['userId'] == '00'){
+											$sql = "SELECT * FROM fanbot";
+										}else {
+											$sql = "SELECT * FROM fanbot WHERE clientId = '". $_SESSION['userId']. "'";
+										}
 
 										$result = $conn->query($sql);
 										

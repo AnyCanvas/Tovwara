@@ -5,7 +5,7 @@
 		<!-- sidebar menu start--> 
             <ul class="sidebar-menu" id="nav-accordion">
             <li>
-                <a href="index.php">
+                <a href="dashboard.php">
                     <i class="fa fa-dashboard"></i>
                     <span>Inicio</span>
                 </a>
