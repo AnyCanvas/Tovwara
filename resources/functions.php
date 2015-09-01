@@ -2,8 +2,8 @@
 	if((@include 'phpSpark.class.php') === false)  die("Unable to load phpSpark class");
 	if((@include 'phpSpark.config.php') === false)  die("Unable to load phpSpark configuration file");
 
-	if((include 'config.php') === false)  die("Unable to load configuration file");
-	
+	require("config.php");	
+
 	// Check if user is logged in 
 	function isLogged(){
 		session_start();
