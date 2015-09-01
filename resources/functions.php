@@ -2,13 +2,12 @@
 	if((@include 'phpSpark.class.php') === false)  die("Unable to load phpSpark class");
 	if((@include 'phpSpark.config.php') === false)  die("Unable to load phpSpark configuration file");
 
-	require(realpath(dirname(__FILE__) . "/./config.php"));
 
 	// Check if user is logged in 
 	function isLogged(){
 		session_start();
 		if(!isset($_SESSION["userId"])){
-				header("location:./login.php");
+				header("location:./index.php");
 		}
 	}
 	
@@ -64,10 +63,11 @@
 	
 	function getLikesGraph($month,$year){
 
-	$servername="localhost"; // Host name 
-	$username="Dev"; // Mysql username 
-	$password="\"TRFBMIsCWh{19"; // Mysql password 
-	$dbname="fanbot_db"; // Database name 
+	require(realpath(dirname(__FILE__) . "/./config.php"));
+    $servername = $config["db"]["fanbot"]["host"];
+	$username = $config["db"]["fanbot"]["username"];
+	$password = $config["db"]["fanbot"]["password"];
+	$dbname = $config["db"]["fanbot"]["dbname"];
 
 		
 	// Create connection
@@ -166,59 +166,10 @@
 		echo '</span>';
 		
 	}
-
-	function listFnbt(){	
-			
-		$servername="localhost"; // Host name 
-		$username="Dev"; // Mysql username 
-		$password="\"TRFBMIsCWh{19"; // Mysql password 
-		$dbname="fanbot_db"; // Database name 
-
-		
-			
-		// Create connection
-		$conn = new mysqli($servername, $username, $password, $dbname);
-		// Check connection
-		if ($conn->connect_error) {
-		    die("Connection failed: " . $conn->connect_error);
-		}
-		
-		$sql = "SELECT * FROM fanbot WHERE clientId = '". $_SESSION['userId']. "'";
-		$result = $conn->query($sql);
-		
-		if ($result->num_rows > 0) {		    
-		    while($row = $result->fetch_assoc()) { ?>
-			    			
-							<tr>
-                                <td><?php echo $row['name']?></td>
-                                <td class="hidden-phone"><?php echo $row['id']?></td>
-                                <td><?php echo $row['plan']?> </td>
-                                <td><span class="label label-primary label-mini"><?php isFanbotOnline($row['accesToken'], $row['deviceId']); ?></span></td>
-                                <td>
-                                    <div class="progress progress-striped progress-xs">
-                                        <div style="width: 40%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="40" role="progressbar" class="progress-bar progress-bar-success">
-                                            <span class="sr-only">40% Complete (success)</span>
-                                            
-                                        </div>
-                                    </div>
-                                </td>
-                                <td><a class="btn btn-default btn-xs" data-toggle="modal" data-target="#configModal">Configurar</a></td>
-
-                            </tr>
-
-
-<?php			    }
-			    return TRUE;	
-			} else {
-				return FALSE;
-
-			}
-		$conn->close();
-
-	}	
 	
-		function listInteractions(){	
+	function listInteractions(){	
 			
+		require(realpath(dirname(__FILE__) . "/./config.php"));
     	$servername = $config["db"]["fanbot"]["host"];
 		$username = $config["db"]["fanbot"]["username"];
 		$password = $config["db"]["fanbot"]["password"];
