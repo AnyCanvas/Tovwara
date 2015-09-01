@@ -219,7 +219,7 @@
 	
 		function listInteractions(){	
 			
-    	require_once("./config.php");	
+    	require_once("/./config.php");	
 
     	$servername = $config["db"]["fanbot"]["host"];
 		$username = $config["db"]["fanbot"]["username"];
