@@ -44,7 +44,8 @@ function fnbtAction(name){
 									
 										$fanbotList = json_decode($output, true);									
 
-										$servername = $config["db"]["fanbot"]["host"];
+										require(realpath(dirname(__FILE__) . "/./config.php"));
+								    	$servername = $config["db"]["fanbot"]["host"];
 										$username = $config["db"]["fanbot"]["username"];
 										$password = $config["db"]["fanbot"]["password"];
 										$dbname = $config["db"]["fanbot"]["dbname"];								
