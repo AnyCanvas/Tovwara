@@ -219,8 +219,7 @@
 	
 		function listInteractions(){	
 			
-    	require_once("config.php");	
-
+		require(realpath(dirname(__FILE__) . "/./config.php"));
     	$servername = $config["db"]["fanbot"]["host"];
 		$username = $config["db"]["fanbot"]["username"];
 		$password = $config["db"]["fanbot"]["password"];
