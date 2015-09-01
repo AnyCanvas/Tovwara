@@ -22,10 +22,10 @@
 	
 	function printLikesChar(){
 
-		$servername = $config["db"]["fanbot"]["host"];
-		$username = $config["db"]["fanbot"]["username"];
-		$password = $config["db"]["fanbot"]["password"];
-		$dbname = $config["db"]["fanbot"]["dbname"];								
+		$servername="localhost"; // Host name 
+		$username="Dev"; // Mysql username 
+		$password="\"TRFBMIsCWh{19"; // Mysql password 
+		$dbname="fanbot_db"; // Database name 
 
 		
 			
@@ -64,10 +64,10 @@
 	
 	function getLikesGraph($month,$year){
 
-	$servername = $config["db"]["fanbot"]["host"];
-	$username = $config["db"]["fanbot"]["username"];
-	$password = $config["db"]["fanbot"]["password"];
-	$dbname = $config["db"]["fanbot"]["dbname"];								
+	$servername="localhost"; // Host name 
+	$username="Dev"; // Mysql username 
+	$password="\"TRFBMIsCWh{19"; // Mysql password 
+	$dbname="fanbot_db"; // Database name 
 
 		
 	// Create connection
@@ -169,10 +169,10 @@
 
 	function listFnbt(){	
 			
-		$servername = $config["db"]["fanbot"]["host"];
-		$username = $config["db"]["fanbot"]["username"];
-		$password = $config["db"]["fanbot"]["password"];
-		$dbname = $config["db"]["fanbot"]["dbname"];								
+		$servername="localhost"; // Host name 
+		$username="Dev"; // Mysql username 
+		$password="\"TRFBMIsCWh{19"; // Mysql password 
+		$dbname="fanbot_db"; // Database name 
 
 		
 			
@@ -219,10 +219,10 @@
 	
 		function listInteractions(){	
 			
-		$servername = $config["db"]["fanbot"]["host"];
-		$username = $config["db"]["fanbot"]["username"];
-		$password = $config["db"]["fanbot"]["password"];
-		$dbname = $config["db"]["fanbot"]["dbname"];								
+		$servername="localhost"; // Host name 
+		$username="Dev"; // Mysql username 
+		$password="\"TRFBMIsCWh{19"; // Mysql password 
+		$dbname="fanbot_db"; // Database name 
 
 		
 			
