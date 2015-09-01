@@ -2,7 +2,7 @@
 	if((@include 'phpSpark.class.php') === false)  die("Unable to load phpSpark class");
 	if((@include 'phpSpark.config.php') === false)  die("Unable to load phpSpark configuration file");
 
-	require_once("config.php");	
+	require(realpath(dirname(__FILE__) . "/./config.php"));
 
 	// Check if user is logged in 
 	function isLogged(){
@@ -219,7 +219,6 @@
 	
 		function listInteractions(){	
 			
-		require(realpath(dirname(__FILE__) . "/./config.php"));
     	$servername = $config["db"]["fanbot"]["host"];
 		$username = $config["db"]["fanbot"]["username"];
 		$password = $config["db"]["fanbot"]["password"];
