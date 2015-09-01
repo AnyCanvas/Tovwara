@@ -219,7 +219,7 @@
 	
 		function listInteractions(){	
 			
-		$servername="localhost"; // Host name 
+		$servername="10.132.69.95"; // Host name 
 		$username="Dev"; // Mysql username 
 		$password="\"TRFBMIsCWh{19"; // Mysql password 
 		$dbname="fanbot_db"; // Database name 
