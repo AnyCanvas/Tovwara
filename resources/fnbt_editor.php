@@ -6,7 +6,7 @@
 	                        <h4 class="widget-h">Editor de Fanbot</h4>
 	                    </div>
 	                    <div class="btn-add-task col-xs-2">
-	                    <div class="btn-add-task col-xs-4">
+	                    <div class="btn-add-task col-xs-9">
 
                         	<button type="submit" class="btn btn-default btn-primary btn-xs"><i class="fa fa-plus"></i>Agregar Fanbot</button>
 							</div>
