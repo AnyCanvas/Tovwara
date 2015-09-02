@@ -204,16 +204,8 @@ function fnbtAction(name){
 <! Fanbot paid status ->
 					  <div class="form-group">
 							<label for="paidStatus" class="control-label">Estado de pago</label>
-                            <div class="has-switch" tabindex="0"><div class="switch-animate switch-on">
-	                            <span class="switch-left">
-	                            	<i class="fa fa-check"></i>
-	                            </span>
-	                            <label>&nbsp;</label>
-	                            <span class="switch-right">
-	                            	<i class="fa fa-times"></i>
-	                            </span><input type="checkbox" checked="" data-on-label="<i class='fa fa-check'></i>" data-off-label="<i class='fa fa-times'></i>">
-	                            </div>
-	                            </div>
+
+<div class="has-switch" tabindex="0"><div class="switch-animate switch-on"><span class="switch-left switch-large">ON</span><label class="switch-large">&nbsp;</label><span class="switch-right switch-large">OFF</span><input type="checkbox" checked="" class="switch-large"></div></div>
 
 					  </div>
 					  					  					  
