@@ -158,7 +158,7 @@ function fnbtAction(name){
 		          <h4 class="modal-title">Configura tu Fanbot</h4>
 		        </div>
 		        <div class="modal-body">
-					<form class="form-inline" action="change_page.php" method="get" id="formUrl">
+					<form class="form" action="change_page.php" method="get" id="formUrl">
 <! Fanbot Id label ->
 					  <div class="form-group">
 							<label for="fanbotId" class="control-label">ID</label>
