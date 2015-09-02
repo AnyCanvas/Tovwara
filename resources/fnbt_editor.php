@@ -5,7 +5,7 @@
 		                <div class="gauge-canvas">
 	                        <h4 class="widget-h">Editor de Fanbot</h4>
 	                    </div>
-	                    <div class="col-xs-4 btn-add-task">
+	                    <div class="col-xs-4 btn-add-task pull-right">
                         	<button type="submit" class="btn btn-default btn-primary"><i class="fa fa-plus"></i>Agregar Fanbot</button>
                     	</div>
                         <table class="table  table-hover general-table">
@@ -67,6 +67,7 @@
 								                                <td><?php echo $row['credit']?></td>
 								                                <td><?php echo $row['courtDate']?></td>
 								                                <td><?php echo $row['paid']?></td>
+																<td><?php echo 'TBA';?></td>
 																	<td>
 									                                <a class="btn btn-primary btn-xs" onclick="callModal('<?php echo $row['name']?>')">
 										                                <span class="fa fa-cog" aria-hidden="true"></span> Editar
