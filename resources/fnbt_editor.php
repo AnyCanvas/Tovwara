@@ -3,8 +3,11 @@
                 <section class="panel">
                     <div class="panel-body">
 		                <div class="gauge-canvas">
-	                        <h4 class="widget-h">Mis Fanbot</h4>
+	                        <h4 class="widget-h">Editor de Fanbot</h4>
 	                    </div>
+	                    <div class="col-xs-4 btn-add-task">
+                        	<button type="submit" class="btn btn-default btn-primary"><i class="fa fa-plus"></i>Agregar Fanbot</button>
+                    	</div>
                         <table class="table  table-hover general-table">
                             <thead>
                             <tr>
@@ -15,6 +18,7 @@
                                 <th>Plan</th>
                                 <th>Credito</th>
                                 <th>Fecha de corte</th>
+                                <th>Mes gratis</th>
                                 <th>Pagado</th>
 
                             </tr>
