@@ -190,16 +190,7 @@ function fnbtAction(name){
 		        </div>
 
 			    <div class="modal-footer">
-				    <div class="center-block">
-			            <p style="text-align: center;">Aquí aparecerá la imagen de tu pagina.</p>	            
-						<img id="fbImg" src="https://graph.facebook.com/fanbotme/picture" class="img-responsive img-thumbnail center-block" alt="Cinque Terre">
-					</div>
-					<div id="modalAlert" class="alert alert-danger fade-in text-center" style="display: none; margin: 5px;">
-					  <strong>La pagina de Facebook escrita no existe. </strong> 
-					</div>
-					<p>
 					<button type="submit" id="cambiarBtn" class="btn btn-primary btn-sm" >Cambiar</button>
-					</p>
 					</form>		
 		        </div>
 		      
