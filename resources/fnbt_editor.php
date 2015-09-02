@@ -162,27 +162,51 @@ function fnbtAction(name){
 <! Fanbot Id label ->
 					  <div class="form-group">
 							<label for="fanbotId" class="control-label">ID</label>
-							<input type="text" class="form-control input-sm" id="fanbotId" placeholder="xxx-xxxx-xxx" name="fanbotId">
+							<input type="text" class="form-control input-sm" id="fanbotId" placeholder="xx-xx-xxx-xxxxx" name="fanbotId">
 					  </div>
 
 <! Fanbot Name label ->
 					  <div class="form-group">
 							<label for="fanbotName" class="control-label">Nombre</label>
-							<input type="text" class="form-control input-sm" id="fanbotId" placeholder="XXXX" name="fanbotName">
+							<input type="text" class="form-control input-sm" id="fanbotName" placeholder="XXXX" name="fanbotName">
 					  </div>
 
 <! Fanbot client label ->
 					  <div class="form-group">
 							<label for="fanbotClient" class="control-label">Cliente</label>
-							<input type="text" class="form-control input-sm" id="fanbotId" placeholder="xxx-xxxx-xxx" name="fanbotClient">
+							<input type="text" class="form-control input-sm" id="fanbotClient" name="fanbotClient">
 					  </div>
 
 <! Fanbot particle ID label ->
 					  <div class="form-group">
 							<label for="particleId" class="control-label">Particle ID</label>
-							<input type="text" class="form-control input-sm" id="fanbotId" placeholder="ID de particle" name="particleId">
+							<input type="text" class="form-control input-sm" id="particleId" placeholder="ID de particle" name="particleId">
 					  </div>
 
+<! Fanbot plan label ->
+					  <div class="form-group">
+							<label for="fanbotPlan" class="control-label">Plan</label>
+							<input type="text" class="form-control input-sm" id="fanbotPlan" name="fanbotPlan">
+					  </div>
+
+<! Fanbot court date ->
+					  <div class="form-group">
+							<label for="courtDate" class="control-label">Fecha de corte</label>
+							<input type="text" class="form-control input-sm" id="courtDate" name="courtDate">
+					  </div>
+
+<! Fanbot free month ->
+					  <div class="form-group">
+							<label for="freeMonth" class="control-label">Mes gratis</label>
+							<input type="text" class="form-control input-sm" id="freeMonth" name="freeMonth">
+					  </div>
+
+<! Fanbot paid status ->
+					  <div class="form-group">
+							<label for="paidStatus" class="control-label">Estado de pago</label>
+							<input type="text" class="form-control input-sm" id="paidStatus" name="paidStatus">
+					  </div>
+					  					  					  
 					  <div class="form-group">
 						<input class="form-controlinput-sm" type='hidden' id= 'hiddenField' name='name' value='' />				  
 					  </div>
