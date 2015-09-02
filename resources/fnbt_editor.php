@@ -5,6 +5,7 @@
 		                <div class="gauge-canvas">
 	                        <h4 class="widget-h">Editor de Fanbot</h4>
 	                    </div>
+	                    <div class="has-switch" tabindex="0"><div class="switch-animate switch-on"><span class="switch-left">ON</span><label>&nbsp;</label><span class="switch-right">OFF</span><input type="checkbox" checked=""></div></div>
 	                    <div class="btn-add-task col-xs-2">
 	                    <div class="btn-add-task col-xs-9">
 
