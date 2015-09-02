@@ -22,7 +22,7 @@
     <link href="bs3/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-reset.css" rel="stylesheet">
     <link href="font-awesome/css/font-awesome.css" rel="stylesheet" />
-
+	<link href="bootstrap-switch.css" rel="stylesheet">
     
     <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet">
@@ -103,6 +103,7 @@
 
 <!--common script init for all pages-->
 <script src="js/scripts.js"></script>
+<script src="bootstrap-switch.js"></script>
 
 </body>
 </html>
