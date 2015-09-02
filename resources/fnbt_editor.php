@@ -8,7 +8,7 @@
 	                    <div class="btn-add-task col-xs-2">
 	                    <div class="btn-add-task col-xs-4">
 
-                        	<button type="submit" class="btn btn-default btn-primary btn-xs" style="padding: 0 30px"><i class="fa fa-plus"></i>Agregar Fanbot</button>
+                        	<button type="submit" class="btn btn-default btn-primary btn-xs"><i class="fa fa-plus"></i>Agregar Fanbot</button>
 							</div>
                     	</div>
                         <table class="table  table-hover general-table">
