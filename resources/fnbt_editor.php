@@ -118,6 +118,7 @@ function fnbtAction(name){
  <!-- Modal that configures a Fanbot facebook page -->
 
 <script>
+	$("[name='my-checkbox']").bootstrapSwitch();
     function callModal(fanbotName) {
 	    localStorage.setItem("fanbotName", fanbotName);
 		$('#configModal').modal('show');
@@ -205,7 +206,7 @@ function fnbtAction(name){
 					  <div class="form-group">
 							<label for="paidStatus" class="control-label">Estado de pago</label>
 
-<div class="has-switch" tabindex="0"><div class="switch-animate switch-on"><span class="switch-left switch-large">ON</span><label class="switch-large">&nbsp;</label><span class="switch-right switch-large">OFF</span><input type="checkbox" checked="" class="switch-large"></div></div>
+							<input type="checkbox" name="my-checkbox" checked>
 
 					  </div>
 					  					  					  
