@@ -205,7 +205,7 @@ function fnbtAction(name){
 					  <div class="form-group">
 							<label for="paidStatus" class="control-label">Estado de pago</label>
 
-<div class="has-switch" tabindex="0"><div class="switch-animate switch-on"><span class="switch-left switch-large">ON</span><label class="switch-large">&nbsp;</label><span class="switch-right switch-large">OFF</span><input type="checkbox" checked="" class="switch-large"></div></div>
+<div class="has-switch" tabindex="0"><div class="switch-animate switch-on"><span class="switch-left">ON</span><label>&nbsp;</label><span class="switch-right">OFF</span><input type="checkbox" checked=""></div></div>
 
 					  </div>
 					  					  					  
