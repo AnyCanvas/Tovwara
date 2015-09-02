@@ -118,7 +118,6 @@ function fnbtAction(name){
  <!-- Modal that configures a Fanbot facebook page -->
 
 <script>
-	$("my-checkbox").bootstrapSwitch();
     function callModal(fanbotName) {
 	    localStorage.setItem("fanbotName", fanbotName);
 		$('#configModal').modal('show');
