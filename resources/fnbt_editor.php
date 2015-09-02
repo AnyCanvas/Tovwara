@@ -5,7 +5,7 @@
 		                <div class="gauge-canvas">
 	                        <h4 class="widget-h">Editor de Fanbot</h4>
 	                    </div>
-	                    <div class="col-xs-4 btn-add-task col-sm-4 btn-xs">
+	                    <div class="col-xs-4 btn-add-task col-sm-2">
                         	<button type="submit" class="btn btn-default btn-primary"><i class="fa fa-plus"></i>Agregar Fanbot</button>
                     	</div>
                         <table class="table  table-hover general-table">
