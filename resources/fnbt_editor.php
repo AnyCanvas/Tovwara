@@ -101,11 +101,11 @@
 
 	function addFnbt(){
 
-	        var ajaxurl = 'resources/addFnbt.php',
+	        var ajaxurl = 'resources/addFnbt.php';
 	        var fanbotId = $("#fanbotId").val();
-//	        var fanbotName = $( "#fanbotName" ).val();
-//	        var fanbotClient = $( "#fanbotClient" ).val();
-//	        var particleId = $( "#particleId" ).val();
+	        var fanbotName = $( "#fanbotName" ).val();
+	        var fanbotClient = $( "#fanbotClient" ).val();
+	        var particleId = $( "#particleId" ).val();
 
 	        data =  {'fanbotId' : id, 'fanbotName': name, 'fanbotClient' : fanbotClient, 'particleId': particleId};
 	        alert(data);
