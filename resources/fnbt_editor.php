@@ -108,7 +108,7 @@
 	        var particleId = $( "#particleId" ).val();
 
 	        data =  {'fanbotId' : fanbotId, 'fanbotName': name, 'fanbotClient' : fanbotClient, 'particleId': particleId};
-	        alert(data);
+	        console.log(data);
 	        $.post(ajaxurl, data, function (response) {
 	            // Response div goes here.
 	            alert("action performed successfully");
