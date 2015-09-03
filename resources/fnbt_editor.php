@@ -161,31 +161,31 @@ function fnbtAction(name){
 
 				<form class="form" action="change_page.php" method="get" id="formUrl">
 
-<! Fanbot Id label ->
+<!-- Fanbot Id label -->
 					  <div class="form-group">
 							<label for="fanbotId" class="control-label">ID</label>
 							<input type="text" class="form-control input-sm" id="fanbotId" placeholder="xx-xx-xxx-xxxxx" name="fanbotId">
 					  </div>
 
-<! Fanbot Name label ->
+<!-- Fanbot Name label -->
 					  <div class="form-group">
 							<label for="fanbotName" class="control-label">Nombre</label>
 							<input type="text" class="form-control input-sm" id="fanbotName" placeholder="XXXX" name="fanbotName">
 					  </div>
 
-<! Fanbot client label ->
+<!-- Fanbot client label -->
 					  <div class="form-group">
 							<label for="fanbotClient" class="control-label">Cliente</label>
 							<input type="text" class="form-control input-sm" id="fanbotClient" name="fanbotClient">
 					  </div>
 
-<! Fanbot particle ID label ->
+<!-- Fanbot particle ID label -->
 					  <div class="form-group">
 							<label for="particleId" class="control-label">Particle ID</label>
 							<input type="text" class="form-control input-sm" id="particleId" placeholder="ID de particle" name="particleId">
 					  </div>
 
-<! Fanbot plan label ->
+<!-- Fanbot plan label -->
 					  <div class="form-group">
 							<label for="fanbotPlan" class="control-label">Plan</label>
 							<select class="form-control">
@@ -196,19 +196,19 @@ function fnbtAction(name){
 							</select>
 					  </div>
 
-<! Fanbot court date ->
+<!-- Fanbot court date -->
 					  <div class="form-group">
 							<label for="courtDate" class="control-label">Fecha de corte</label>
 							<input type="text" class="form-control input-sm" id="courtDate" name="courtDate">
 					  </div>
 
-<! Fanbot free month ->
+<!-- Fanbot free month -->
 					  <div class="form-group">
 							<label for="freeMonth" class="control-label">Mes gratis: </label>
 							<input type="checkbox" name="freeMonth" value="1"><br>
 					  </div>
 
-<! Fanbot paid status ->
+<!-- Fanbot paid status -->
 					  <div class="form-group">
 							<label for="paidStatus" class="control-label">Estado de pago: </label>
 
