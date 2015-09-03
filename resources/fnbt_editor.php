@@ -92,16 +92,6 @@
             </div>
         </div>
         
-<script>
-function fnbtAction(name){
-        var ajaxurl = 'resources/activateFnbt.php',
-        data =  {'name': name};
-        $.post(ajaxurl, data, function (response) {
-            // Response div goes here.
-            alert("action performed successfully");
-        });
-    }
-</script> 
  <!-- Modal that configures a Fanbot facebook page -->
 
 <script>
@@ -111,7 +101,7 @@ function fnbtAction(name){
 
 	function addFnbt(){
 	        var ajaxurl = 'resources/addFnbt.php',
-	  //      var id = $("#fanbotId" ).val();
+	        var id = $("#fanbotId" ).val();
 	        var fanbotName = $( "#fanbotName" ).val();
 	        var fanbotClient = $( "#fanbotClient" ).val();
 	        var particleId = $( "#particleId" ).val();
@@ -124,10 +114,6 @@ function fnbtAction(name){
 	        });
 	    }   
     
-
-	  function mySubmit() {
-	     document.getElementById("myForm").submit();
-	   }
 </script>
 
 		  <div class="modal fade" id="configModal" role="dialog">
