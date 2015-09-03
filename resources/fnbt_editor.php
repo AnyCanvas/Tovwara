@@ -171,7 +171,7 @@ function fnbtAction(name){
 		        </div>
 
 			    <div class="modal-footer">
-					<button type="submit" id="cambiarBtn" class="btn btn-primary btn-sm" onclick="addFnbt()">Terminar</button>
+					<button id="cambiarBtn" class="btn btn-primary btn-sm" onclick="addFnbt()">Terminar</button>
 
 		        </div>
 	      
