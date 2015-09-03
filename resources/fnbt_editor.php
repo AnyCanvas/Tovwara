@@ -105,29 +105,24 @@ function fnbtAction(name){
  <!-- Modal that configures a Fanbot facebook page -->
 
 <script>
-    function callModal(fanbotName) {
-	    localStorage.setItem("fanbotName", fanbotName);
+    function callModal() {
 		$('#configModal').modal('show');
-	     document.getElementById('hiddenField').value = fanbotName;
 	}
 
-    function changeImage() {
-        image_url = "https://graph.facebook.com/"+ document.getElementById('facebookUrl').value +"/picture";
-	    $.get(image_url)
-		.done(function() { 
-		// Do something now you know the image exists.
-            document.getElementById("fbImg").src = image_url;
-            $('#modalAlert').hide()
-			$('#cambiarBtn').prop('disabled', false);
+	function addFnbt(){
+	        var ajaxurl = 'resources/addFnbt.php',
+	        var id = $( "#fanbotId" ).val();
+	        var fanbotName = $( "#fanbotName" ).val();
+	        var fanbotClient = $( "#fanbotClient" ).val();
+	        var particleId = $( "#particleId" ).val();
 
-    	}).fail(function() { 
-            $('#modalAlert').show()
-			$('#cambiarBtn').prop('disabled', true);
-
-        // Image doesn't exist - do something else.
-    })
-
-    }
+	        data =  {'id' : id, 'fanbotName': name, 'fanbotClient' : fanbotClient, 'particleId': particleId};
+	        alert(data);
+	        $.post(ajaxurl, data, function (response) {
+	            // Response div goes here.
+	            alert("action performed successfully");
+	        });
+	    }   
     
 
 	  function mySubmit() {
@@ -172,15 +167,11 @@ function fnbtAction(name){
 							<input type="text" class="form-control input-sm" id="particleId" placeholder="ID de particle" name="particleId">
 					  </div>
 					  					  					  					  
-					  <div class="form-group">
-						<input class="form-controlinput-sm" type='hidden' id= 'hiddenField' name='name' value='' />				  
-					  </div>
-
 					  </form>					
 		        </div>
 
 			    <div class="modal-footer">
-					<button type="submit" id="cambiarBtn" class="btn btn-primary btn-sm" >Terminar</button>
+					<button type="submit" id="cambiarBtn" class="btn btn-primary btn-sm" onclick="addFnbt()">Terminar</button>
 
 		        </div>
 	      

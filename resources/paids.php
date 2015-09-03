@@ -120,25 +120,6 @@ function fnbtAction(name){
 	     document.getElementById('hiddenField').value = fanbotName;
 	}
 
-    function changeImage() {
-        image_url = "https://graph.facebook.com/"+ document.getElementById('facebookUrl').value +"/picture";
-	    $.get(image_url)
-		.done(function() { 
-		// Do something now you know the image exists.
-            document.getElementById("fbImg").src = image_url;
-            $('#modalAlert').hide()
-			$('#cambiarBtn').prop('disabled', false);
-
-    	}).fail(function() { 
-            $('#modalAlert').show()
-			$('#cambiarBtn').prop('disabled', true);
-
-        // Image doesn't exist - do something else.
-    })
-
-    }
-    
-
 	  function mySubmit() {
 	     document.getElementById("myForm").submit();
 	   }
