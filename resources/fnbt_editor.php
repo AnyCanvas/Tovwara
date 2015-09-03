@@ -107,7 +107,7 @@
 	        var fanbotClient = $( "#fanbotClient" ).val();
 	        var particleId = $( "#particleId" ).val();
 
-	        data =  {'fanbotId' : fanbotId, 'fanbotName': name, 'fanbotClient' : fanbotClient, 'particleId': particleId};
+	        data =  {'fanbotId' : fanbotId, 'fanbotName': fanbotName, 'fanbotClient' : fanbotClient, 'particleId': particleId};
 	        console.log(data);
 	        $.post(ajaxurl, data, function (response) {
 	            // Response div goes here.
