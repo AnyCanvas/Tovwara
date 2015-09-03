@@ -184,43 +184,7 @@ function fnbtAction(name){
 							<label for="particleId" class="control-label">Particle ID</label>
 							<input type="text" class="form-control input-sm" id="particleId" placeholder="ID de particle" name="particleId">
 					  </div>
-
-<!-- Fanbot plan label -->
-					  <div class="form-group">
-							<label class="control-label">Plan</label>
-							<select name="fanbotPlan" class="form-control">
-							  <option>Basic</option>
-							  <option>Pro</option>
-							  <option>Premium</option>
-							  <option>Asombrandom</option>
-							</select>
-					  </div>
-
-<!-- Fanbot court date -->
-					  <div class="form-group">
-							<label for="courtDate" class="control-label">Fecha de corte</label>
-							<input type="text" class="form-control input-sm" id="courtDate" name="courtDate">
-					  </div>
-
-<!-- Fanbot free month -->
-					  <div class="form-group">
-							<label class="control-label">Mes gratis: </label>
-							<input  type="checkbox" name="freeMonth" value="1"><br>
-					  </div>
-
-<!-- Fanbot paid status -->
-					  <div class="form-group">
-							<label class="control-label">Estado de pago: </label>
-
-							 <label class="radio-inline">
-								  <input type="radio" name="paidStatus" id="paidStatus1" value="1"> Pagado
-							</label>
-							<label class="radio-inline">
-								 <input type="radio" name="paidStatus" id="paidStatus2" value="0"> Vencido
-							</label>
-					  
-					  </div>
-					  					  					  
+					  					  					  					  
 					  <div class="form-group">
 						<input class="form-controlinput-sm" type='hidden' id= 'hiddenField' name='name' value='' />				  
 					  </div>
@@ -229,7 +193,7 @@ function fnbtAction(name){
 		        </div>
 
 			    <div class="modal-footer">
-					<button type="submit" id="cambiarBtn" class="btn btn-primary btn-sm" >Cambiar</button>
+					<button type="submit" id="cambiarBtn" class="btn btn-primary btn-sm" >Terminar</button>
 
 		        </div>
 		      
