@@ -159,7 +159,8 @@ function fnbtAction(name){
 		          <h4 class="modal-title">Configura tu Fanbot</h4>
 		        </div>
 		        <div class="modal-body">
-					<form class="form" action="change_page.php" method="get" id="formUrl">
+
+					<form class="form-horizontal" action="change_page.php" method="get" id="formUrl">
 <! Fanbot Id label ->
 					  <div class="form-group">
 							<label for="fanbotId" class="control-label">ID</label>
@@ -203,17 +204,17 @@ function fnbtAction(name){
 
 <! Fanbot free month ->
 					  <div class="form-group">
-							<label for="freeMonth" class="control-label">Mes gratis</label>
+							<label for="freeMonth" class="control-label">Mes gratis: </label>
 							<input type="checkbox" name="freeMonth" value="1"><br>
 					  </div>
 
 <! Fanbot paid status ->
 					  <div class="form-group">
-							<label for="paidStatus" class="control-label">Estado de pago</label>
+							<label for="paidStatus" class="control-label">Estado de pago: </label>
 
-							 <input type="radio" name="paidStatus" value="1" checked>Si
+							 <input type="radio" name="paidStatus" value="1" checked>Pagado
 							 <br>
-							 <input type="radio" name="paidStatus" value="0">No
+							 <input type="radio" name="paidStatus" value="0">Vencido
 
 					  </div>
 					  					  					  
