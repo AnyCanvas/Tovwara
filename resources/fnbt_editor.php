@@ -221,12 +221,13 @@ function fnbtAction(name){
 					  <div class="form-group">
 						<input class="form-controlinput-sm" type='hidden' id= 'hiddenField' name='name' value='' />				  
 					  </div>
-			
+
+					  </form>					
 		        </div>
 
 			    <div class="modal-footer">
 					<button type="submit" id="cambiarBtn" class="btn btn-primary btn-sm" >Cambiar</button>
-					</form>		
+
 		        </div>
 		      
 	      	  </div>
