@@ -20,11 +20,6 @@
                                 <th>Numero de cliente</th>
                                 <th>Particle id</th>
                                 <th>Plan</th>
-                                <th>Credito</th>
-                                <th>Fecha de corte</th>
-                                <th>Mes gratis</th>
-                                <th>Pagado</th>
-                                <th></th>
 
                             </tr>
                             </thead>
