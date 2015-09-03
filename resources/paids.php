@@ -17,7 +17,7 @@
                                 <th>Fecha de corte</th>
                                 <th>Mes gratis</th>
                                 <th>Pagado</th>
-                                <th></th>
+
 
                             </tr>
                             </thead>
@@ -63,8 +63,8 @@
 								                                <td><?php echo $row['plan']?></td>
 								                                <td><?php echo $row['credit']?></td>
 								                                <td><?php echo $row['courtDate']?></td>
-								                                <td><?php echo $row['paid']?></td>
-																<td><?php echo 'TBA';?></td>
+																<td><?php echo $row['freeMonth'];?></td>
+																<td><?php echo $row['estatus'];?></td>
 																	<td>
 									                                <a class="btn btn-primary btn-xs" onclick="callModal('<?php echo $row['name']?>')">
 										                                <span class="fa fa-cog" aria-hidden="true"></span> Editar
@@ -166,7 +166,7 @@ function fnbtAction(name){
 
 <!-- Fanbot court date -->
 					  <div class="form-group">
-							<label for="courtDate">Select list (select one):</label>
+							<label for="courtDate">Dia de corte:</label>
 							<select class="form-control" id="courtDate">
 					        <option>1</option>
 					        <option>2</option>
