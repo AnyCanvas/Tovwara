@@ -1,5 +1,3 @@
-<!-- Header start -->
-
 	<?php 
 		include "resources/functions.php"; 
 		isLogged();

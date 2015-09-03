@@ -163,8 +163,8 @@ function fnbtAction(name){
 
 <!-- Fanbot Id label -->
 					  <div class="form-group">
-							<label for="fanbotId" class="control-label">ID</label>
-							<input type="text" class="form-control input-sm" id="fanbotId" placeholder="xx-xx-xxx-xxxxx" name="fanbotId">
+							<label for="fanbotId" class="col-sm-2 control-label">ID</label>
+							<input type="text" class="col-sm-10 form-control input-sm" id="fanbotId" placeholder="xx-xx-xxx-xxxxx" name="fanbotId">
 					  </div>
 
 <!-- Fanbot Name label -->
