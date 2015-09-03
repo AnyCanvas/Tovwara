@@ -111,7 +111,7 @@ function fnbtAction(name){
 
 	function addFnbt(){
 	        var ajaxurl = 'resources/addFnbt.php',
-	        var id = $( "#fanbotId" ).val();
+	  //      var id = $("#fanbotId" ).val();
 	        var fanbotName = $( "#fanbotName" ).val();
 	        var fanbotClient = $( "#fanbotClient" ).val();
 	        var particleId = $( "#particleId" ).val();
