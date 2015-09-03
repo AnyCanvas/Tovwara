@@ -187,7 +187,7 @@ function fnbtAction(name){
 
 <!-- Fanbot plan label -->
 					  <div class="form-group">
-							<label for="fanbotPlan" class="control-label">Plan</label>
+							<label class="control-label">Plan</label>
 							<select name="fanbotPlan" class="form-control">
 							  <option>Basic</option>
 							  <option>Pro</option>
@@ -204,13 +204,13 @@ function fnbtAction(name){
 
 <!-- Fanbot free month -->
 					  <div class="form-group">
-							<label for="freeMonth" class="control-label">Mes gratis: </label>
+							<label class="control-label">Mes gratis: </label>
 							<input  type="checkbox" name="freeMonth" value="1"><br>
 					  </div>
 
 <!-- Fanbot paid status -->
 					  <div class="form-group">
-							<label for="paidStatus" class="control-label">Estado de pago: </label>
+							<label class="control-label">Estado de pago: </label>
 
 							 <label class="radio-inline">
 								  <input type="radio" name="paidStatus" id="paidStatus1" value="1"> Pagado
