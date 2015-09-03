@@ -35,10 +35,14 @@
 										$fanbotList = json_decode($output, true);									
 
 											
-										$servername="localhost"; // Host name 
-										$username="Dev"; // Mysql username 
-										$password="\"TRFBMIsCWh{19"; // Mysql password 
-										$dbname="fanbot_db"; // Database name 
+										$fanbotList = json_decode($output, true);									
+
+										require(realpath(dirname(__FILE__) . "/./config.php"));
+								    	$servername = $config["db"]["fanbot"]["host"];
+										$username = $config["db"]["fanbot"]["username"];
+										$password = $config["db"]["fanbot"]["password"];
+										$dbname = $config["db"]["fanbot"]["dbname"];								
+
 								
 										
 											
