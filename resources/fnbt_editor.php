@@ -9,7 +9,7 @@
 	                    <div class="btn-add-task col-xs-2">
 	                    <div class="btn-add-task col-xs-9">
 
-                        	<button type="submit" class="btn btn-default btn-primary btn-xs"><i class="fa fa-plus"></i></button>
+                        	<button type="submit" class="btn btn-default btn-primary btn-xs"  onclick="callModal()"><i class="fa fa-plus"></i> Agregar</button>
 							</div>
                     	</div>
                         <table class="table  table-hover general-table">
@@ -72,12 +72,7 @@
 								                                <td><?php echo $row['credit']?></td>
 								                                <td><?php echo $row['courtDate']?></td>
 								                                <td><?php echo $row['paid']?></td>
-																<td><?php echo 'TBA';?></td>
-																	<td>
-									                                <a class="btn btn-primary btn-xs" onclick="callModal('<?php echo $row['name']?>')">
-										                                <span class="fa fa-cog" aria-hidden="true"></span> Editar
-										                                </a>
-									                                </td>						
+																<td><?php echo 'TBA';?></td>				
 								                            </tr>
 								
 								
@@ -196,7 +191,7 @@ function fnbtAction(name){
 					<button type="submit" id="cambiarBtn" class="btn btn-primary btn-sm" >Terminar</button>
 
 		        </div>
-		      
+	      
 	      	  </div>
 		    </div>
 		  </div>
