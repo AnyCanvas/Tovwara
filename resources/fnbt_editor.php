@@ -169,26 +169,26 @@ function fnbtAction(name){
 
 <!-- Fanbot Name label -->
 					  <div class="form-group">
-							<label for="fanbotName" class="control-label">Nombre</label>
-							<input type="text" class="form-control input-sm" id="fanbotName" placeholder="XXXX" name="fanbotName">
+							<label for="fanbotName" class="col-sm-2 control-label">Nombre</label>
+							<input type="text" class="col-sm-10 form-control input-sm" id="fanbotName" placeholder="XXXX" name="fanbotName">
 					  </div>
 
 <!-- Fanbot client label -->
 					  <div class="form-group">
-							<label for="fanbotClient" class="control-label">Cliente</label>
-							<input type="text" class="form-control input-sm" id="fanbotClient" name="fanbotClient">
+							<label for="fanbotClient" class="col-sm-2 control-label">Cliente</label>
+							<input type="text" class="col-sm-10 form-control input-sm" id="fanbotClient" name="fanbotClient">
 					  </div>
 
 <!-- Fanbot particle ID label -->
 					  <div class="form-group">
-							<label for="particleId" class="control-label">Particle ID</label>
-							<input type="text" class="form-control input-sm" id="particleId" placeholder="ID de particle" name="particleId">
+							<label for="particleId" class="col-sm-2 control-label">Particle ID</label>
+							<input type="text" class="col-sm-10 form-control input-sm" id="particleId" placeholder="ID de particle" name="particleId">
 					  </div>
 
 <!-- Fanbot plan label -->
 					  <div class="form-group">
-							<label class="control-label">Plan</label>
-							<select name="fanbotPlan" class="form-control">
+							<label class="col-sm-2 control-label">Plan</label>
+							<select class="col-sm-10" name="fanbotPlan" class="form-control">
 							  <option>Basic</option>
 							  <option>Pro</option>
 							  <option>Premium</option>
@@ -198,31 +198,33 @@ function fnbtAction(name){
 
 <!-- Fanbot court date -->
 					  <div class="form-group">
-							<label for="courtDate" class="control-label">Fecha de corte</label>
-							<input type="text" class="form-control input-sm" id="courtDate" name="courtDate">
+							<label for="courtDate" class="col-sm-2 control-label">Fecha de corte</label>
+							<input type="text" class="col-sm-10 form-control input-sm" id="courtDate" name="courtDate">
 					  </div>
 
 <!-- Fanbot free month -->
 					  <div class="form-group">
-							<label class="control-label">Mes gratis: </label>
-							<input  type="checkbox" name="freeMonth" value="1"><br>
+							<label class="col-sm-2 control-label">Mes gratis: </label>
+							<input  class="col-sm-10" type="checkbox" name="freeMonth" value="1"><br>
 					  </div>
 
 <!-- Fanbot paid status -->
 					  <div class="form-group">
-							<label class="control-label">Estado de pago: </label>
-
-							 <label class="radio-inline">
+							<label class="col-sm-2 control-label">Estado de pago: </label>
+							
+							<div class="col-sm-10" >
+							<label class="radio-inline">
 								  <input type="radio" name="paidStatus" id="paidStatus1" value="1"> Pagado
 							</label>
 							<label class="radio-inline">
 								 <input type="radio" name="paidStatus" id="paidStatus2" value="0"> Vencido
 							</label>
+							</div>
 					  
 					  </div>
 					  					  					  
 					  <div class="form-group">
-						<input class="form-controlinput-sm" type='hidden' id= 'hiddenField' name='name' value='' />				  
+						<input class="col-sm-12 control-label input-sm" type='hidden' id= 'hiddenField' name='name' value='' />				  
 					  </div>
 
 					  </form>					
