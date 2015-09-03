@@ -167,7 +167,7 @@ function fnbtAction(name){
 <!-- Fanbot court date -->
 					  <div class="form-group">
 							<label for="courtDate">Select list (select one):</label>
-							<select class="form-control" id="sel1">
+							<select class="form-control" id="courtDate">
 					        <option>1</option>
 					        <option>2</option>
 					        <option>3</option>
