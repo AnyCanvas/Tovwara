@@ -76,8 +76,7 @@
 									                                <a class="btn btn-primary btn-xs" onclick="callModal('<?php echo $row['name']?>')">
 										                                <span class="fa fa-cog" aria-hidden="true"></span> Editar
 										                                </a>
-									                                </td>
-									                                <td>							
+									                                </td>						
 								                            </tr>
 								
 								
