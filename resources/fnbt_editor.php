@@ -72,10 +72,6 @@
 								                                <td><?php echo $row['clientId']?></td>
 								                                <td><?php echo $row['deviceId']?></td>
 								                                <td><?php echo $row['plan']?></td>
-								                                <td><?php echo $row['credit']?></td>
-								                                <td><?php echo $row['courtDate']?></td>
-								                                <td><?php echo $row['paid']?></td>
-																<td><?php echo 'TBA';?></td>				
 								                            </tr>
 								
 								
