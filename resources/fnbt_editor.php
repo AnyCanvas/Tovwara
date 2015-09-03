@@ -80,7 +80,6 @@
 									                                <td>							
 								                            </tr>
 								
-								                            </tr>
 								
 								
 								<?php			    }
@@ -160,7 +159,8 @@ function fnbtAction(name){
 		        </div>
 		        <div class="modal-body">
 
-					<form class="form-horizontal" action="change_page.php" method="get" id="formUrl">
+				<form class="form" action="change_page.php" method="get" id="formUrl">
+
 <! Fanbot Id label ->
 					  <div class="form-group">
 							<label for="fanbotId" class="control-label">ID</label>
