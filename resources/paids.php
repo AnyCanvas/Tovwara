@@ -123,8 +123,8 @@ function fnbtAction(){
         var ajaxurl = 'resources/activateFnbt.php';
 		var fanbotPlan = $("#fanbotPlan").val();
 	    var courtDate = $( "#courtDate" ).val();
-	    var freeMonth = $( "#freeMonth" ).prop('checked');
-	    var paidStatus = $( "#paidStatus1" ).val();
+	    var freeMonth = $( "#freeMonth" ).val();
+	    var paidStatus = $( "#paidStatus" ).val();
 	    var name = localStorage.getItem("fanbotName");
         data =  {'name': name, 'fanbotPlan' : fanbotPlan, 'courtDate': courtDate, 'freeMonth': freeMonth, 'paidStatus': paidStatus};
 		console.log (data);
@@ -207,19 +207,21 @@ function fnbtAction(){
 <!-- Fanbot free month -->
 					  <div class="form-group">
 							<label for="freeMonth" class="control-label">Mes gratis: </label>
-							<input  type="checkbox" id="freeMonth" name="freeMonth" value="1"><br>
+							<select class="form-control" id="freeMonth">
+					        	<option value="1">Si</option>
+								<option value="0">No</option>
+							</select>
+
 					  </div>
 
 <!-- Fanbot paid status -->
 					  <div class="form-group">
 							<label class="control-label">Estado de pago: </label>
 
-							 <label class="radio-inline">
-								  <input type="radio" name="paidStatus" id="paidStatus1" value="red"> Pagado
-							</label>
-							<label class="radio-inline">
-								 <input type="radio" name="paidStatus" id="paidStatus" value="blue"> Vencido
-							</label>
+							<select class="form-control" id="paidStatus">
+					        	<option value="1">Pagado</option>
+								<option value="0">Vencido</option>
+							</select>
 					  
 					  </div>
 					  					  					  
