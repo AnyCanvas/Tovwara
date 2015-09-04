@@ -3,7 +3,7 @@
                 <section class="panel">
                     <div class="panel-body">
 		                <div class="gauge-canvas">
-	                        <h4 class="widget-h">Editor de Fanbot</h4>
+	                        <h4 class="widget-h">Editor de Cliente</h4>
 	                    </div>
 	                    
 	                    <div class="btn-add-task col-xs-2">
@@ -122,7 +122,7 @@
 		      <div class="modal-content">
 		        <div class="modal-header">
 		          <button type="button" class="close" data-dismiss="modal">&times;</button>
-		          <h4 class="modal-title">Configura tu Fanbot</h4>
+		          <h4 class="modal-title">Agregar cliente</h4>
 		        </div>
 		        <div class="modal-body">
 
@@ -130,26 +130,33 @@
 
 <!-- Fanbot Id label -->
 					  <div class="form-group">
-							<label for="fanbotId" class="control-label">ID</label>
-							<input type="text" class="form-control input-sm" id="fanbotId" placeholder="xx-xx-xxx-xxxxx" name="fanbotId">
+							<label for="fanbotId" class="control-label">ID </label>
+							<input type="text" class="form-control input-sm" id="fanbotId"  name="fanbotId">
 					  </div>
 
 <!-- Fanbot Name label -->
 					  <div class="form-group">
 							<label for="fanbotName" class="control-label">Nombre</label>
-							<input type="text" class="form-control input-sm" id="fanbotName" placeholder="XXXX" name="fanbotName">
+							<input type="text" class="form-control input-sm" id="fanbotName" name="fanbotName">
 					  </div>
 
 <!-- Fanbot client label -->
 					  <div class="form-group">
-							<label for="fanbotClient" class="control-label">Cliente</label>
+							<label for="fanbotClient" class="control-label">Correo</label>
 							<input type="text" class="form-control input-sm" id="fanbotClient" name="fanbotClient">
 					  </div>
 
 <!-- Fanbot particle ID label -->
 					  <div class="form-group">
-							<label for="particleId" class="control-label">Particle ID</label>
-							<input type="text" class="form-control input-sm" id="particleId" placeholder="ID de particle" name="particleId">
+							<label for="particleId" class="control-label">Permisos</label>
+							<select class="form-control" id="particleId">
+					        <option>0</option>
+					        <option>1</option>
+					        <option>2</option>
+					        <option>3</option>
+					      </select>
+					  </div>
+
 					  </div>
 					  					  					  					  
 					  </form>					
