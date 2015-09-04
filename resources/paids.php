@@ -141,7 +141,7 @@ function fnbtAction(){
 	    $("select#freeMonth").val(freeMonth);
 	    $("select#paidStatus").val(paidStatus);
 
-		console.log(fanbotPlan + ' ' + courtDate + ' ' + freeMonth + ' ' + estatus);
+		console.log(fanbotPlan + ' ' + courtDate + ' ' + freeMonth + ' ' + paidStatus);
 		$('#configModal').modal('show');
 	     document.getElementById('hiddenField').value = fanbotName;
 	}
