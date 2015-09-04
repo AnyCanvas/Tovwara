@@ -49,7 +49,7 @@
 															<tr>
 								                                <td><?php echo $row['clientId']?></td>
 								                                <td><kbd class="text-uppercase"><?php echo $row['name']?></kbd></td>
-								                                <td><?php echo $row['correo']?></td>
+								                                <td><?php echo $row['username']?></td>
 								                            </tr>
 								
 								
