@@ -51,7 +51,18 @@
 								                                <td><?php echo $row['clientId']?></td>
 								                                <td><kbd class="text-uppercase"><?php echo $row['name']?></kbd></td>
 								                                <td><?php echo $row['username']?></td>
-								                                <td><?php echo $row['mode']?></td>
+								                                <td><?php 
+									                                switch($row['mode']){
+										                                case 0: echo "Admin";
+										                                		break;
+										                                case 1: echo"Ventas";
+										                                		break; 
+									                                	case 2: echo "Producción";
+									                                			break;
+									                                	case 3: echo "Client";
+									                                			break;
+									                                }
+									                                ?></td>
 								                            </tr>
 								
 								
