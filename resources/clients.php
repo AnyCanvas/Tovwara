@@ -159,7 +159,7 @@
 					        <option value="0">Admin</option>
 					        <option value="1">Ventas</option>
 					        <option value="2">Producción</option>
-					        <option value="3" checked >Cliente</option>
+					        <option value="3" selected>Cliente</option>
 					      </select>
 					  </div>
 
