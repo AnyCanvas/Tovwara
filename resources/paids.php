@@ -121,12 +121,12 @@
 <script>
 function fnbtAction(){
         var ajaxurl = 'resources/activateFnbt.php';
-		var fanbotId = $("#fanbotPlan").val();
-	    var fanbotName = $( "#courtDate" ).val();
-	    var fanbotClient = $( "#freeMonth" ).val();
-	    var particleId = $( "#paidStatus" ).val();
+		var fanbotPlan = $("#fanbotPlan").val();
+	    var courtDate = $( "#courtDate" ).val();
+	    var freeMonth = $( "#freeMonth" ).val();
+	    var paidStatus = $( "#paidStatus" ).val();
 	    var name = localStorage.getItem("fanbotName");
-        data =  {'name': name};
+        data =  {'name': name, 'fanbotPlan' : fanbotPlan, 'courtDate': courtDate, 'freeMonth': freeMonth, 'paidStatus': paidStatus};
 		console.log (data);
         $.post(ajaxurl, data, function (response) {
             // Response div goes here.
@@ -134,7 +134,7 @@ function fnbtAction(){
         });
     }
 
-    function callModal(fanbotName) {
+    function callModal(fanbotName,plan,courtDate,freeMonth,estatus) {
 	    localStorage.setItem("fanbotName", fanbotName);
 		$('#configModal').modal('show');
 	     document.getElementById('hiddenField').value = fanbotName;
