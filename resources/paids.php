@@ -136,7 +136,7 @@ function fnbtAction(){
 
     function callModal(fanbotName,plan,courtDate,freeMonth,estatus) {
 	    localStorage.setItem("fanbotName", fanbotName);
-	    var fanbotPlan = $("#fanbotPlan").val(plan);
+	    $("#fanbotPlan").val(plan);
 
 		$('#configModal').modal('show');
 	     document.getElementById('hiddenField').value = fanbotName;
