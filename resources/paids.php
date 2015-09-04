@@ -123,7 +123,7 @@ function fnbtAction(){
         var ajaxurl = 'resources/activateFnbt.php';
 		var fanbotPlan = $("#fanbotPlan").val();
 	    var courtDate = $( "#courtDate" ).val();
-	    var freeMonth = $( "#freeMonth" ).val();
+	    var freeMonth = $( "#freeMonth" ).checked;
 	    var paidStatus =  document.getElementById( "#paidStatus1" ).checked;
 	    var name = localStorage.getItem("fanbotName");
         data =  {'name': name, 'fanbotPlan' : fanbotPlan, 'courtDate': courtDate, 'freeMonth': freeMonth, 'paidStatus': paidStatus};
