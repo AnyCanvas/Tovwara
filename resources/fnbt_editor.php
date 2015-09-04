@@ -25,19 +25,6 @@
                             <tbody>
 
 								<?php
-										$ch = curl_init("https://api.particle.io/v1/devices/?access_token=8f143ea31dd63ec40437558c3d352b560a2dfcd4");
-										curl_setopt($ch, CURLOPT_FRESH_CONNECT, 1);
-										curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-										$output = curl_exec($ch);
-										curl_close($ch);
-										
-									
-									
-										$fanbotList = json_decode($output, true);									
-
-											
-										$fanbotList = json_decode($output, true);									
-
 										require(realpath(dirname(__FILE__) . "/./config.php"));
 								    	$servername = $config["db"]["fanbot"]["host"];
 										$username = $config["db"]["fanbot"]["username"];
@@ -64,7 +51,7 @@
 								                                <td><?php echo $row['id']?></td>
 								                                <td><kbd class="text-uppercase"><?php echo $row['name']?></kbd></td>
 								                                <td><?php echo $row['clientId']?></td>
-								                                <td><?php echo $row['deviceId']?></td>
+								                                <td><?php echo $row['username']?></td>
 								                            </tr>
 								
 								
