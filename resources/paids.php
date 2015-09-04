@@ -124,7 +124,7 @@ function fnbtAction(){
 		var fanbotPlan = $("#fanbotPlan").val();
 	    var courtDate = $( "#courtDate" ).val();
 	    var freeMonth = $( "#freeMonth" ).val();
-	    var paidStatus = $( "#paidStatus1" ).val();
+	    var paidStatus = $('input[name="paidStatus"]:checked').val();
 	    var name = localStorage.getItem("fanbotName");
         data =  {'name': name, 'fanbotPlan' : fanbotPlan, 'courtDate': courtDate, 'freeMonth': freeMonth, 'paidStatus': paidStatus};
 		console.log (data);
