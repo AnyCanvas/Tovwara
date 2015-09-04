@@ -146,6 +146,12 @@
 							<input type="text" class="form-control input-sm" id="fanbotClient" name="fanbotClient">
 					  </div>
 
+<!-- Password label -->
+					  <div class="form-group">
+							<label for="password" class="control-label">Contraseña</label>
+							<input type="text" class="form-control input-sm" id="password" name="password">
+					  </div>
+
 <!-- Fanbot particle ID label -->
 					  <div class="form-group">
 							<label for="particleId" class="control-label">Permisos</label>
