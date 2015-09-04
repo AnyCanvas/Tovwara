@@ -87,7 +87,7 @@
 																	}
 																	?></td>
 																	<td>
-									                                <a class="btn btn-primary btn-xs" onclick="callModal('<?php echo $row['name']. ",". $row['plan']. ",". $row['courtDate']. ",". $row['freeMonth']. ",". $row['estatus'];?>')">
+									                                <a class="btn btn-primary btn-xs" onclick="callModal('<?php echo $row['name']. "','". $row['plan']. "','". $row['courtDate']. "','". $row['freeMonth']. "','". $row['estatus'];?>')">
 										                                <span class="fa fa-cog" aria-hidden="true"></span> Editar
 										                                </a>
 									                                </td>						
