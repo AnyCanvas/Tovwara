@@ -119,12 +119,13 @@
         </div>
         
 <script>
-function fnbtAction(name){
+function fnbtAction(){
         var ajaxurl = 'resources/activateFnbt.php';
 		var fanbotId = $("#fanbotPlan").val();
 	    var fanbotName = $( "#courtDate" ).val();
 	    var fanbotClient = $( "#freeMonth" ).val();
 	    var particleId = $( "#paidStatus" ).val();
+	    var name = localStorage.getItem("fanbotName");
         data =  {'name': name};
 		console.log (data);
         $.post(ajaxurl, data, function (response) {
@@ -230,7 +231,7 @@ function fnbtAction(name){
 		        </div>
 
 			    <div class="modal-footer">
-					<button type="submit" id="cambiarBtn" class="btn btn-primary btn-sm" >Cambiar</button>
+					<button id="cambiarBtn" class="btn btn-primary btn-sm" onclick="fnbtAction()">Cambiar</button>
 
 		        </div>
 		      
