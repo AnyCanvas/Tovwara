@@ -134,12 +134,12 @@ function fnbtAction(){
         });
     }
 
-    function callModal(fanbotName, fanbotPlan,courtDate,freeMonth,estatus) {
+    function callModal(fanbotName, fanbotPlan,courtDate,freeMonth,paidStatus) {
 	    localStorage.setItem("fanbotName", fanbotName);
 	    $("select#fanbotPlan").val(fanbotPlan);
 	    $("select#courtDate").val(courtDate);
 	    $("select#freeMonth").val(freeMonth);
-	    $("select#estatus").val(estatus);
+	    $("select#paidStatus").val(paidStatus);
 
 		console.log(fanbotPlan + ' ' + courtDate + ' ' + freeMonth + ' ' + estatus);
 		$('#configModal').modal('show');
