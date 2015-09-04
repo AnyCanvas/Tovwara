@@ -215,10 +215,10 @@ function fnbtAction(){
 							<label class="control-label">Estado de pago: </label>
 
 							 <label class="radio-inline">
-								  <input type="radio" name="paidStatus" id="paidStatus" value="red"> Pagado
+								  <input type="radio" name="paidStatus1" id="paidStatus" value="red"> Pagado
 							</label>
 							<label class="radio-inline">
-								 <input type="radio" name="paidStatus" id="paidStatus" value="blue"> Vencido
+								 <input type="radio" name="paidStatus0" id="paidStatus" value="blue"> Vencido
 							</label>
 					  
 					  </div>
