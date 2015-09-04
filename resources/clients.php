@@ -18,6 +18,7 @@
                                 <th class="hidden-phone">Id de cliente</th>
                                 <th>Nombre</th>
                                 <th>Correo</th>
+                                <th>Permisos</th>
 
                             </tr>
                             </thead>
@@ -50,6 +51,7 @@
 								                                <td><?php echo $row['clientId']?></td>
 								                                <td><kbd class="text-uppercase"><?php echo $row['name']?></kbd></td>
 								                                <td><?php echo $row['username']?></td>
+								                                <td><?php echo $row['mode']?></td>
 								                            </tr>
 								
 								
