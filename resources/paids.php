@@ -52,11 +52,40 @@
 								                                <td><?php echo $row['id']?></td>
 								                                <td><kbd class="text-uppercase"><?php echo $row['name']?></kbd></td>
 								                                <td><?php echo $row['clientId']?></td>
-								                                <td><?php echo $row['plan']?></td>
-								                                <td><?php echo $row['credit']?></td>
-								                                <td><?php echo $row['courtDate']?></td>
-																<td><?php echo $row['freeMonth'];?></td>
-																<td><?php echo $row['estatus'];?></td>
+								                                <td><?php
+																	switch ($row['plan']) {
+																	    case '00':
+																	        echo "AWESOMERANDOM";
+																	        break;
+																	    case '01':
+																	        echo "BASIC";
+																	        break;
+																	    case '02':
+																	        echo "PRO";
+																	        break;
+																	    case '03':
+																	        echo "PREMIUM";
+																	        break;
+																	}												                                
+									                                ?></td>
+								                                <td><?php echo $row['credit']?> Acciones</td>
+								                                <td><?php echo $row['courtDate']?> de cada mes</td>
+																<td><?php 
+																	switch($row['freeMonth']){ 
+																		case 0: echo "Si";
+																	 		break;	
+																		case 1: echo "No";
+																	 		break;	
+																	}																	
+																	?></td>
+																<td><?php 
+																	switch($row['estatus']){ 
+																		case 0: echo "Vencido";
+																	 		break;	
+																		case 1: echo "Pagado";
+																	 		break;	
+																	}
+																	?></td>
 																	<td>
 									                                <a class="btn btn-primary btn-xs" onclick="callModal('<?php echo $row['name']?>')">
 										                                <span class="fa fa-cog" aria-hidden="true"></span> Editar

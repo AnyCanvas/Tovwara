@@ -131,25 +131,25 @@
 <!-- Fanbot Id label -->
 					  <div class="form-group">
 							<label for="fanbotId" class="control-label">ID </label>
-							<input type="number" class="form-control input-sm" id="fanbotId"  name="fanbotId" min="1">
+							<input type="number" class="form-control input-sm" id="fanbotId"  name="fanbotId" min="1" placeholder="00">
 					  </div>
 
 <!-- Fanbot Name label -->
 					  <div class="form-group">
 							<label for="fanbotName" class="control-label">Nombre</label>
-							<input type="text" class="form-control input-sm" id="fanbotName" name="fanbotName">
+							<input type="text" class="form-control input-sm" id="fanbotName" name="fanbotName" placeholder="Nombre del cliente">
 					  </div>
 
 <!-- Fanbot client label -->
 					  <div class="form-group">
 							<label for="fanbotClient" class="control-label">Correo</label>
-							<input type="email" class="form-control input-sm" id="fanbotClient" name="fanbotClient">
+							<input type="email" class="form-control input-sm" id="fanbotClient" name="fanbotClient" placeholder="Correo del cliente">
 					  </div>
 
 <!-- Password label -->
 					  <div class="form-group">
 							<label for="password" class="control-label">Contraseña</label>
-							<input  type="password" class="form-control input-sm" id="password" name="password">
+							<input  type="password" class="form-control input-sm" id="password" name="password" placeholder="Contraseña de la cuenta">
 					  </div>
 
 <!-- Fanbot particle ID label -->
