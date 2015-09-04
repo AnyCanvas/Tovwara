@@ -156,10 +156,10 @@
 					  <div class="form-group">
 							<label for="particleId" class="control-label">Permisos</label>
 							<select class="form-control" id="particleId">
-					        <option>0</option>
-					        <option>1</option>
-					        <option>2</option>
-					        <option>3</option>
+					        <option>Admin</option>
+					        <option>Ventas</option>
+					        <option>Produccíon</option>
+					        <option>Cliente</option>
 					      </select>
 					  </div>
 
