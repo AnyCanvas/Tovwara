@@ -124,7 +124,7 @@ function fnbtAction(){
 		var fanbotPlan = $("#fanbotPlan").val();
 	    var courtDate = $( "#courtDate" ).val();
 	    var freeMonth = $( "#freeMonth" ).val();
-	    var paidStatus = $( 'input[name="#paidStatus1"]' ).val();
+	    var paidStatus = $( "#paidStatus1" ).checked;
 	    var name = localStorage.getItem("fanbotName");
         data =  {'name': name, 'fanbotPlan' : fanbotPlan, 'courtDate': courtDate, 'freeMonth': freeMonth, 'paidStatus': paidStatus};
 		console.log (data);
@@ -215,10 +215,10 @@ function fnbtAction(){
 							<label class="control-label">Estado de pago: </label>
 
 							 <label class="radio-inline">
-								  <input type="radio" name="paidStatus1" id="paidStatus" value="red"> Pagado
+								  <input type="radio" name="paidStatus" id="paidStatus1" value="red"> Pagado
 							</label>
 							<label class="radio-inline">
-								 <input type="radio" name="paidStatus0" id="paidStatus" value="blue"> Vencido
+								 <input type="radio" name="paidStatus" id="paidStatus2" value="blue"> Vencido
 							</label>
 					  
 					  </div>
