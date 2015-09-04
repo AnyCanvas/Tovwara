@@ -134,10 +134,10 @@ function fnbtAction(){
         });
     }
 
-    function callModal(fanbotName, char fanbotPlan,courtDate,freeMonth,estatus) {
+    function callModal(fanbotName, fanbotPlan,courtDate,freeMonth,estatus) {
 	    localStorage.setItem("fanbotName", fanbotName);
 	    $("select#fanbotPlan").val(fanbotPlan);
-
+		console.log(fanbotPlan);
 		$('#configModal').modal('show');
 	     document.getElementById('hiddenField').value = fanbotName;
 	}
