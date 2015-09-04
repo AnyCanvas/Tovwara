@@ -120,26 +120,25 @@
         
 <script>
 function fnbtAction(name){
-        var ajaxurl = 'resources/activateFnbt.php',
+        var ajaxurl = 'resources/activateFnbt.php';
+		var fanbotId = $("#fanbotPlan").val();
+	    var fanbotName = $( "#courtDate" ).val();
+	    var fanbotClient = $( "#freeMonth" ).val();
+	    var particleId = $( "#paidStatus" ).val();
         data =  {'name': name};
+		console.log (data);
         $.post(ajaxurl, data, function (response) {
             // Response div goes here.
             alert("action performed successfully");
         });
     }
-</script> 
- <!-- Modal that configures a Fanbot facebook page -->
 
-<script>
     function callModal(fanbotName) {
 	    localStorage.setItem("fanbotName", fanbotName);
 		$('#configModal').modal('show');
 	     document.getElementById('hiddenField').value = fanbotName;
 	}
 
-	  function mySubmit() {
-	     document.getElementById("myForm").submit();
-	   }
 </script>
 
 		  <div class="modal fade" id="configModal" role="dialog">
@@ -206,8 +205,8 @@ function fnbtAction(name){
 
 <!-- Fanbot free month -->
 					  <div class="form-group">
-							<label class="control-label">Mes gratis: </label>
-							<input  type="checkbox" name="freeMonth" value="1"><br>
+							<label for="freeMonth" class="control-label">Mes gratis: </label>
+							<input  type="checkbox" id="freeMonth" name="freeMonth" value="1"><br>
 					  </div>
 
 <!-- Fanbot paid status -->
