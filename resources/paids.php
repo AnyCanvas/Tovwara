@@ -124,7 +124,7 @@ function fnbtAction(){
 		var fanbotPlan = $("#fanbotPlan").val();
 	    var courtDate = $( "#courtDate" ).val();
 	    var freeMonth = $( "#freeMonth" ).val();
-	    var paidStatus = $( "#paidStatus" ).val();
+	    var paidStatus = $( "#paidStatus1" ).val();
 	    var name = localStorage.getItem("fanbotName");
         data =  {'name': name, 'fanbotPlan' : fanbotPlan, 'courtDate': courtDate, 'freeMonth': freeMonth, 'paidStatus': paidStatus};
 		console.log (data);
@@ -158,7 +158,7 @@ function fnbtAction(){
 <!-- Fanbot plan label -->
 					  <div class="form-group">
 							<label class="control-label">Plan</label>
-							<select name="fanbotPlan" class="form-control">
+							<select name="fanbotPlan" id="fanbotPlan" class="form-control">
 							  <option>Basic</option>
 							  <option>Pro</option>
 							  <option>Premium</option>
