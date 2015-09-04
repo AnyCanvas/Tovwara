@@ -72,9 +72,9 @@
 								                                <td><?php echo $row['courtDate']?> de cada mes</td>
 																<td><?php 
 																	switch($row['freeMonth']){ 
-																		case 0: echo "Si";
+																		case 0: echo "No";
 																	 		break;	
-																		case 1: echo "No";
+																		case 1: echo "Si";
 																	 		break;	
 																	}																	
 																	?></td>
