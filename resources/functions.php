@@ -190,7 +190,7 @@ function addClient(){
 	$clientId = $_POST['clientId'];
 	$clientName = $_POST['clientName'];
 	$clientMail = $_POST['clientMail'];
-	$password = $_POST['password'];
+	$clientPassword = $_POST['password'];
 	$mode = $_POST['mode'];
 
 	require(realpath(dirname(__FILE__) . "/./config.php"));		
@@ -206,7 +206,7 @@ function addClient(){
 			    die("Connection failed: " . $conn->connect_error);
 			} 
 
-			$sql = "INSERT INTO accounts  (clientId, name, username, password, mode) VALUES ( '". $clientId. "','".  $clientName. "','". $clientMail. "','". md5($password).  "','". $mode. "')";
+			$sql = "INSERT INTO accounts  (clientId, name, username, password, mode) VALUES ( '". $clientId. "','".  $clientName. "','". $clientMail. "','". md5($clientPassword).  "','". $mode. "')";
 			
 			if ($conn->query($sql) === TRUE) {
 			} else {
