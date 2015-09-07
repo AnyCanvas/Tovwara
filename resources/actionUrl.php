@@ -12,16 +12,16 @@ function functionNode(){
 		} else 0;
 }
 
-
-$numero = functionNode();
-switch($numero){
-	case 1: addFanbot();
-		break;
-	case 2: editPaid();
-		break;
-	case 3: addClient();
-		break;
+if (isLogged()){
+	$numero = functionNode();
+	switch($numero){
+		case 1: addFanbot();
+			break;
+		case 2: editPaid();
+			break;
+		case 3: addClient();
+			break;
+	}
 }
-
 
 ?>
