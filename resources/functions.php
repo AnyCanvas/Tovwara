@@ -249,8 +249,8 @@ function editPaid(){
 
 function changeFacebookPage(){
 
-	$fnbtName  = htmlspecialchars($_POST["fanbotName"]);
-	$fbPage  = htmlspecialchars($_POST["facebookPage"]);
+	$fnbtName  = $_POST["fanbotName"];
+	$facebookPage  = $_POST["facebookPage"];
 
 				
 	require(realpath(dirname(__FILE__) . "/./config.php"));		
@@ -266,7 +266,7 @@ function changeFacebookPage(){
 		    die("Connection failed: " . $conn->connect_error);
 		} 
 	
-		$sql = "UPDATE fanbot SET fbPage ='". $fbPage ."' WHERE name = '". $fnbtName."'";
+		$sql = "UPDATE fanbot SET fbPage ='". $facebookPage ."' WHERE name = '". $fnbtName."'";
 		
 		if ($conn->query($sql) === TRUE) {
 		} else {
@@ -274,6 +274,7 @@ function changeFacebookPage(){
 		}
 		
 		$conn->close();
-
+		
+		echo("done");
 }
 ?>
