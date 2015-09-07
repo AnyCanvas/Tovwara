@@ -97,16 +97,17 @@
 		$('#configModal').modal('show');
 	}
 
-	function addFnbt(){
+	function action(){
 
-	        var ajaxurl = 'resources/addFnbt.php';
-	        var fanbotId = $("#fanbotId").val();
-	        var fanbotName = $( "#fanbotName" ).val();
-	        var fanbotClient = $( "#fanbotClient" ).val();
-	        var particleId = $( "#particleId" ).val();
-
-	        data =  {'fanbotId' : fanbotId, 'fanbotName': fanbotName, 'fanbotClient' : fanbotClient, 'particleId': particleId};
+	        var ajaxurl = 'resources/actionUrl.php';
+	        var clientId = $("#clientId").val();
+	        var clientName = $( "#clientName" ).val();
+	        var clientMail = $( "#clientMail" ).val();
+	        var password = $( "#password" ).val();
+			var password = $( "#mod" ).val();
+	        data =  {'clientId' : clientId, 'clientName': clientName, 'clientMail' : clientMail, 'password': password, 'mod': mod};
 	        console.log(data);
+	        if()
 	        $.post(ajaxurl, data, function (response) {
 	            // Response div goes here.
 	            alert("action performed successfully");
@@ -128,34 +129,34 @@
 
 				<form class="form" action="change_page.php" method="get" id="formUrl">
 
-<!-- Fanbot Id label -->
+<!-- Client Id label -->
 					  <div class="form-group">
-							<label for="fanbotId" class="control-label">ID </label>
-							<input type="number" class="form-control input-sm" id="fanbotId"  name="fanbotId" min="1" placeholder="00">
+							<label for="clientId" class="control-label">ID </label>
+							<input type="number" class="form-control input-sm" id="clientId"  name="clientId" min="1" placeholder="00">
 					  </div>
 
-<!-- Fanbot Name label -->
+<!-- Client Name label -->
 					  <div class="form-group">
-							<label for="fanbotName" class="control-label">Nombre</label>
-							<input type="text" class="form-control input-sm" id="fanbotName" name="fanbotName" placeholder="Nombre del cliente">
+							<label for="clientName" class="control-label">Nombre</label>
+							<input type="text" class="form-control input-sm" id="clientName" name="clientName" placeholder="Nombre del cliente">
 					  </div>
 
-<!-- Fanbot client label -->
+<!-- Client Mail label -->
 					  <div class="form-group">
-							<label for="fanbotClient" class="control-label">Correo</label>
-							<input type="email" class="form-control input-sm" id="fanbotClient" name="fanbotClient" placeholder="Correo del cliente">
+							<label for="clientMail" class="control-label">Correo</label>
+							<input type="email" class="form-control input-sm" id="clientMail" name="clientMail" placeholder="Correo del cliente">
 					  </div>
 
-<!-- Password label -->
+<!-- Client Password label -->
 					  <div class="form-group">
 							<label for="password" class="control-label">Contraseña</label>
 							<input  type="password" class="form-control input-sm" id="password" name="password" placeholder="Contraseña de la cuenta">
 					  </div>
 
-<!-- Fanbot particle ID label -->
+<!-- Client permisions label -->
 					  <div class="form-group">
-							<label for="particleId" class="control-label">Permisos</label>
-							<select class="form-control" id="particleId">
+							<label for="mod" class="control-label">Permisos</label>
+							<select class="form-control" id="mod">
 					        <option value="0">Admin</option>
 					        <option value="1">Ventas</option>
 					        <option value="2">Producción</option>
@@ -168,7 +169,7 @@
 		        </div>
 
 			    <div class="modal-footer">
-					<button id="cambiarBtn" class="btn btn-primary btn-sm" onclick="addFnbt()">Terminar</button>
+					<button id="cambiarBtn" class="btn btn-primary btn-sm" onclick="action()">Terminar</button>
 
 		        </div>
 	      
