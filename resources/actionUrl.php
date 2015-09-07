@@ -2,7 +2,8 @@
 
 if (isset($_SESSION["userId"])){
 
-			echo functionNode();
+			$numero = functionNode();
+			echo $numero;
 			
 		}
 
