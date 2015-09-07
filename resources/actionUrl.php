@@ -108,7 +108,7 @@ $numero = functionNode();
 switch($numero){
 	case 1: addFanbot();
 		break;
-	case 2:
+	case 2: editPaid();
 		break;
 	case 3: addClient();
 		break;
