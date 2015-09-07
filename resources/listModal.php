@@ -6,7 +6,7 @@
 	}
 
     function changeImage() {
-        image_url = "https://graph.facebook.com/"+ document.getElementById('facebookUrl').value +"/picture";
+        image_url = "https://graph.facebook.com/"+ document.getElementById('facebookPage').value +"/picture";
 	    $.get(image_url)
 		.done(function() { 
 		// Do something now you know the image exists.
