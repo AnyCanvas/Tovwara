@@ -27,6 +27,22 @@
 	  function mySubmit() {
 	     document.getElementById("myForm").submit();
 	   }
+	   
+	function action(){
+
+	        var ajaxurl = 'change_page.php';
+	        var facebookUrl = $("#facebookUrl").val();
+	        var fanbotName = $( "#fanbotName" ).val();
+
+	        data =  {'facebookUrl' : facebookUrl, 'fanbotName': fanbotName};
+	        console.log(data);
+	        $.post(ajaxurl, data, function (response) {
+	            // Response div goes here.
+	            console.log(response);
+	        });
+			$('#configModal').modal('hide');
+
+	    }   
 </script>
 
 		  <div class="modal fade" id="configModal" role="dialog">
@@ -39,7 +55,7 @@
 		          <h4 class="modal-title">Configura tu Fanbot</h4>
 		        </div>
 		        <div class="modal-body">
-					<form class="form-inline" action="change_page.php" method="get" id="formUrl">
+					<form class="form-inline" id="formUrl">
 					  <div class="form-group">
 						<div class="input-group">									  
 							<div for="facebookUrl" class="input-group-addon">http://facebook.com/</div>
@@ -50,7 +66,7 @@
 						<input class="form-controlinput-sm" type='hidden' id= 'hiddenField' name='name' value='' />				  
 					  </div>
 					  <a onclick="changeImage()" class="btn btn-default btn-xs">Verificar</a>						
-			
+					</form>					
 		        </div>
 
 			    <div class="modal-footer">
@@ -62,9 +78,8 @@
 					  <strong>La pagina de Facebook escrita no existe. </strong> 
 					</div>
 					<p>
-					<button type="submit" id="cambiarBtn" class="btn btn-primary btn-sm" disabled="disabled">Cambiar</button>
+					<button onclick="action()" id="cambiarBtn" class="btn btn-primary btn-sm" disabled="disabled">Cambiar</button>
 					</p>
-					</form>		
 		        </div>
 		      
 	      	  </div>

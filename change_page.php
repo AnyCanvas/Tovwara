@@ -1,9 +1,8 @@
 <?php
-		include "resources/functions.php"; 
-		isLogged();
+	include "resources/functions.php"; 
 		
-	$fnbtName  = htmlspecialchars($_GET["name"]);
-	$fbPage  = htmlspecialchars($_GET["fb_page"]);
+	$fnbtName  = htmlspecialchars($_POST["fanbotName"]);
+	$fbPage  = htmlspecialchars($_POST["facebookPage"]);
 
 				
 										$servername="localhost"; // Host name 
