@@ -3,7 +3,7 @@
 function functionNode(){
 
 		if (isset($_POST['particleId'])){ 
-			return 1;
+			return addFanbot();
 		} else if (isset($_POST['paidStatus'])) { 
 			return 2;
 		} else if (isset($_POST['mode'])){
