@@ -31,7 +31,7 @@ function addFanbot(){
 			    die("Connection failed: " . $conn->connect_error);
 			} 
 
-			$sql = "INSERT INTO fanbot  (id, userId, deviceId, fbPage) VALUES ( '". $fanbotId. "','".  $fanbotName. "','". $fanbotClient. "','". $particleId. "')";
+			$sql = "INSERT INTO fanbot  (id, name, clientId, deviceId) VALUES ( '". $fanbotId. "','".  $fanbotName. "','". $fanbotClient. "','". $particleId. "')";
 			
 			if ($conn->query($sql) === TRUE) {
 			} else {
