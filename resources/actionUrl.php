@@ -12,12 +12,9 @@ function functionNode(){
 }
 
 
-if (isset($_SESSION["userId"])){
 
 			$numero = functionNode();
 			echo $numero;
-			
-		}
 
 
 
