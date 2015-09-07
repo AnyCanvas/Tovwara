@@ -8,17 +8,20 @@ function functionNode(){
 			return 2;
 		} else if (isset($_POST['console'])){
 			return 3;
-		}
+		} else 0;
 }
 
 
 
-			$numero = functionNode();
-			echo $numero;
-
-
-
-echo "enter";
+$numero = functionNode();
+switch($numero){
+	case 1: echo 1;
+		break;
+	case 2: echo 2;
+		break;
+	case 3: echo 3;
+		break;
+}
 
 
 ?>

@@ -88,7 +88,7 @@
 
 	function addFnbt(){
 
-	        var ajaxurl = 'resources/addFnbt.php';
+	        var ajaxurl = 'resources/actionUrl.php';
 	        var fanbotId = $("#fanbotId").val();
 	        var fanbotName = $( "#fanbotName" ).val();
 	        var fanbotClient = $( "#fanbotClient" ).val();
@@ -98,7 +98,7 @@
 	        console.log(data);
 	        $.post(ajaxurl, data, function (response) {
 	            // Response div goes here.
-	            alert("action performed successfully");
+	            alert(response);
 	        });
 	    }   
     
