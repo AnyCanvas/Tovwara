@@ -98,8 +98,9 @@
 	        console.log(data);
 	        $.post(ajaxurl, data, function (response) {
 	            // Response div goes here.
-	            alert(response);
+	            console.log(response);
 	        });
+			$('#configModal').modal('hide');
 	    }   
     
 </script>
