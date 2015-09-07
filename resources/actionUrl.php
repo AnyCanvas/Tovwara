@@ -6,7 +6,7 @@ function functionNode(){
 			return 1;
 		} else if (isset($_POST['paidStatus'])) { 
 			return 2;
-		} else if (isset($_POST['console'])){
+		} else if (isset($_POST['mod'])){
 			return 3;
 		} else 0;
 }
