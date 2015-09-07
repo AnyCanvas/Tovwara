@@ -48,9 +48,6 @@ if (isset($_POST['nbmnbm'])) {
 				curl_close($ch);
 	
 	}
-?>
-
-<script>
-	var response = 'Hola';
 	
-</script>
+	echo 'hola';
+?>
