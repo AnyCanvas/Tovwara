@@ -159,7 +159,7 @@ function addFanbot(){
 
 	$fanbotId = $_POST['fanbotId'];
 	$fanbotName = $_POST['fanbotName'];
-	$fanbotClient = $_POST['fanbotId'];
+	$fanbotClient = $_POST['fanbotClient'];
 	$particleId = $_POST['particleId'];
 
 	require(realpath(dirname(__FILE__) . "/./config.php"));		
