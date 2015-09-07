@@ -120,7 +120,7 @@
         
 <script>
 function fnbtAction(){
-        var ajaxurl = 'resources/activateFnbt.php';
+        var ajaxurl = 'resources/actionUrl.php';
 		var fanbotPlan = $("#fanbotPlan").val();
 	    var courtDate = $( "#courtDate" ).val();
 	    var freeMonth = $( "#freeMonth" ).val();
