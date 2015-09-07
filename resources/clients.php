@@ -109,7 +109,7 @@
 	        console.log(data);
 	        $.post(ajaxurl, data, function (response) {
 	            // Response div goes here.
-	            alert("action performed successfully");
+	            alert(response);
 	        });
 	    }   
     
