@@ -105,7 +105,7 @@
 	        var clientMail = $( "#clientMail" ).val();
 	        var password = $( "#password" ).val();
 			var mode = $( "#mode" ).val();
-	        data =  {'clientId' : clientId, 'clientName': clientName, 'clientMail' : clientMail, 'password': password, 'mode': mode};
+	        data =  {'clientId' : clientId, 'clientName': clientName, 'clientMail' : clientMail, 'password': $.md5(password), 'mode': mode};
 	        console.log(data);
 	        $.post(ajaxurl, data, function (response) {
 	            // Response div goes here.
