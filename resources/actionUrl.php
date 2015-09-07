@@ -41,20 +41,45 @@ function addFanbot(){
 			$conn->close();
 }	
 
+function addClient(){
+
+	$clientId = $_POST['clientId'];
+	$clientName = $_POST['clientName'];
+	$clientMail = $_POST['clientMail'];
+	$password = $_POST['password'];
+	$mode = $_POST['mode'];
+
+	require(realpath(dirname(__FILE__) . "/./config.php"));		
+		$servername = $config["db"]["fanbot"]["host"];
+		$username = $config["db"]["fanbot"]["username"];
+		$password = $config["db"]["fanbot"]["password"];
+		$dbname = $config["db"]["fanbot"]["dbname"];
+
+			// Create connection
+			$conn = new mysqli($servername, $username, $password, $dbname);
+			// Check connection
+			if ($conn->connect_error) {
+			    die("Connection failed: " . $conn->connect_error);
+			} 
+
+			$sql = "INSERT INTO accounts  (id, name, ,username, password, mode) VALUES ( '". $clientId. "','".  $clientName. "','". $clientMail. "','". $password. "','". $mode. "')";
+			
+			if ($conn->query($sql) === TRUE) {
+			} else {
+			    echo "Error: " . $sql . "<br>" . $conn->error;
+			}
+			
+			$conn->close();
+}	
 
 $numero = functionNode();
 switch($numero){
-	case 1: echo 1;
+	case 1: addFanbot();
 		break;
-	case 2: echo 2;
+	case 2: echo addClient();
 		break;
 	case 3: echo 3;
 		break;
-}
-
-
-function addClient(){
-
 }
 
 function editPaid(){
