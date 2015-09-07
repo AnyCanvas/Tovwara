@@ -27,8 +27,3 @@
 				$conn->close();
 
 ?>
-<script>
-
-    window.history.back();
-
-</script>

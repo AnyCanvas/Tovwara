@@ -63,7 +63,7 @@
 	    				</div>		
 					  </div>
 					  <div class="form-group">
-						<input class="form-controlinput-sm" type='hidden' id= 'hiddenField' name='name' value='' />				  
+						<input class="form-controlinput-sm" type='hidden' id= 'hiddenField' name='fanbotName' value='' />				  
 					  </div>
 					  <a onclick="changeImage()" class="btn btn-default btn-xs">Verificar</a>						
 					</form>					
