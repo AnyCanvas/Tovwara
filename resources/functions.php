@@ -246,4 +246,34 @@ function editPaid(){
 			
 			$conn->close();
 }	
+
+function changeFacebookPage(){
+
+	$fnbtName  = htmlspecialchars($_POST["fanbotName"]);
+	$fbPage  = htmlspecialchars($_POST["facebookPage"]);
+
+				
+	require(realpath(dirname(__FILE__) . "/./config.php"));		
+		$servername = $config["db"]["fanbot"]["host"];
+		$username = $config["db"]["fanbot"]["username"];
+		$password = $config["db"]["fanbot"]["password"];
+		$dbname = $config["db"]["fanbot"]["dbname"];
+
+		// Create connection
+		$conn = new mysqli($servername, $username, $password, $dbname);
+		// Check connection
+		if ($conn->connect_error) {
+		    die("Connection failed: " . $conn->connect_error);
+		} 
+	
+		$sql = "UPDATE fanbot SET fbPage ='". $fbPage ."' WHERE name = '". $fnbtName."'";
+		
+		if ($conn->query($sql) === TRUE) {
+		} else {
+		    echo "Error: " . $sql . "<br>" . $conn->error;
+		}
+		
+		$conn->close();
+
+}
 ?>
