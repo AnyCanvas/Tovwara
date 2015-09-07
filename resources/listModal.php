@@ -22,19 +22,15 @@
     })
 
     }
-    
 
-	  function mySubmit() {
-	     document.getElementById("myForm").submit();
-	   }
 	   
 	function action(){
 
 	        var ajaxurl = 'resources/actionUrl.php';
-	        var facebookUrl = $("#facebookUrl").val();
+	        var facebookPage = $("#facebookUrl").val();
 	        var fanbotName = $( "#fanbotName" ).val();
 
-	        data =  {'facebookUrl' : facebookUrl, 'fanbotName': fanbotName};
+	        data =  {'facebookPage' : facebookUrl, 'fanbotName': fanbotName};
 	        console.log(data);
 	        $.post(ajaxurl, data, function (response) {
 	            // Response div goes here.
