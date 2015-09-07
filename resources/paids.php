@@ -87,7 +87,7 @@
 																	}
 																	?></td>
 																	<td>
-									                                <a class="btn btn-primary btn-xs" onclick="callModal('<?php echo $row['name']. "','". $row['plan']. "','". $row['courtDate']. "','". $row['freeMonth']. "','". $row['estatus'];?>')">
+									                                <a class="btn btn-primary btn-xs" onclick="callModal('<?php echo $row['id']. "','". $row['plan']. "','". $row['courtDate']. "','". $row['freeMonth']. "','". $row['estatus'];?>')">
 										                                <span class="fa fa-cog" aria-hidden="true"></span> Editar
 										                                </a>
 									                                </td>						
@@ -125,8 +125,8 @@ function fnbtAction(){
 	    var courtDate = $( "#courtDate" ).val();
 	    var freeMonth = $( "#freeMonth" ).val();
 	    var paidStatus = $( "#paidStatus" ).val();
-	    var name = localStorage.getItem("fanbotName");
-        data =  {'name': name, 'fanbotPlan' : fanbotPlan, 'courtDate': courtDate, 'freeMonth': freeMonth, 'paidStatus': paidStatus};
+	    var id = localStorage.getItem("fanbotId");
+        data =  {'id': id, 'fanbotPlan' : fanbotPlan, 'courtDate': courtDate, 'freeMonth': freeMonth, 'paidStatus': paidStatus};
 		console.log (data);
         $.post(ajaxurl, data, function (response) {
             // Response div goes here.
@@ -134,8 +134,8 @@ function fnbtAction(){
         });
     }
 
-    function callModal(fanbotName, fanbotPlan,courtDate,freeMonth,paidStatus) {
-	    localStorage.setItem("fanbotName", fanbotName);
+    function callModal(fanbotId, fanbotPlan,courtDate,freeMonth,paidStatus) {
+	    localStorage.setItem("fanbotId", fanbotId);
 	    $("select#fanbotPlan").val(fanbotPlan);
 	    $("select#courtDate").val(courtDate);
 	    $("select#freeMonth").val(freeMonth);
