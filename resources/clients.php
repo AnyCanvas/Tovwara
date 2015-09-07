@@ -104,8 +104,8 @@
 	        var clientName = $( "#clientName" ).val();
 	        var clientMail = $( "#clientMail" ).val();
 	        var password = $( "#password" ).val();
-			var password = $( "#mod" ).val();
-	        data =  {'clientId' : clientId, 'clientName': clientName, 'clientMail' : clientMail, 'password': password, 'mod': mod};
+			var mode = $( "#mode" ).val();
+	        data =  {'clientId' : clientId, 'clientName': clientName, 'clientMail' : clientMail, 'password': password, 'mode': mode};
 	        console.log(data);
 	        $.post(ajaxurl, data, function (response) {
 	            // Response div goes here.
@@ -122,7 +122,7 @@
 		      <div class="modal-content">
 		        <div class="modal-header">
 		          <button type="button" class="close" data-dismiss="modal">&times;</button>
-		          <h4 class="modal-title">Agregar cliente</h4>
+		          <h4 class="modal-title">Agregar usuario</h4>
 		        </div>
 		        <div class="modal-body">
 
@@ -155,7 +155,7 @@
 <!-- Client permisions label -->
 					  <div class="form-group">
 							<label for="mod" class="control-label">Permisos</label>
-							<select class="form-control" id="mod">
+							<select class="form-control" id="mode">
 					        <option value="0">Admin</option>
 					        <option value="1">Ventas</option>
 					        <option value="2">Producción</option>
