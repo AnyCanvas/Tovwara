@@ -76,9 +76,9 @@ $numero = functionNode();
 switch($numero){
 	case 1: addFanbot();
 		break;
-	case 2: echo addClient();
+	case 2: 
 		break;
-	case 3: echo 3;
+	case 3: addClient();
 		break;
 }
 
