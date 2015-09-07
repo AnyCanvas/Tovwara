@@ -62,7 +62,7 @@ function addClient(){
 			    die("Connection failed: " . $conn->connect_error);
 			} 
 
-			$sql = "INSERT INTO accounts  (id, name, ,username, password, mode) VALUES ( '". $clientId. "','".  $clientName. "','". $clientMail. "','". $password. "','". $mode. "')";
+			$sql = "INSERT INTO accounts  (id, name, username, password, mode) VALUES ( '". $clientId. "','".  $clientName. "','". $clientMail. "','". $password. "')";
 			
 			if ($conn->query($sql) === TRUE) {
 			} else {
@@ -76,7 +76,7 @@ $numero = functionNode();
 switch($numero){
 	case 1: addFanbot();
 		break;
-	case 2: 
+	case 2:
 		break;
 	case 3: addClient();
 		break;
