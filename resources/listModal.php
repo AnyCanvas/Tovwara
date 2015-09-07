@@ -30,7 +30,7 @@
 	   
 	function action(){
 
-	        var ajaxurl = 'change_page.php';
+	        var ajaxurl = 'actionUrl.php';
 	        var facebookUrl = $("#facebookUrl").val();
 	        var fanbotName = $( "#fanbotName" ).val();
 
@@ -38,7 +38,7 @@
 	        console.log(data);
 	        $.post(ajaxurl, data, function (response) {
 	            // Response div goes here.
-	            console.log(response);
+	            alert(response);
 	        });
 			$('#configModal').modal('hide');
 
