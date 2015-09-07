@@ -143,7 +143,6 @@ function fnbtAction(){
 
 		console.log(fanbotPlan + ' ' + courtDate + ' ' + freeMonth + ' ' + paidStatus);
 		$('#configModal').modal('show');
-	     document.getElementById('hiddenField').value = fanbotName;
 	}
 
 </script>
