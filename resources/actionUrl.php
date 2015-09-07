@@ -74,7 +74,7 @@ function addClient(){
 
 function editPaid(){
 
-	$fanbotId = $_POST['fanbotId'];
+	$fanbotId = $_POST['id'];
 	$fanbotPlan = $_POST['fanbotPlan'];
 	$courtDate = $_POST['courtDate'];
 	$freeMonth = $_POST['freeMonth'];
@@ -93,7 +93,7 @@ function editPaid(){
 			    die("Connection failed: " . $conn->connect_error);
 			} 
 
-			$sql = "UPDATE fanbot SET coutDate = ". $courtDate ." , plan = ". $fanbotPlan .", freeMonth = ". $freeMonth .", estatus = ". $paidStatus ." WHERE id = '". $fanbotId ."'";
+			$sql = "UPDATE fanbot SET courtDate = ". $courtDate ." , plan = ". $fanbotPlan .", freeMonth = ". $freeMonth .", estatus = ". $paidStatus ." WHERE id = '". $fanbotId ."'";
 			
 			if ($conn->query($sql) === TRUE) {
 			} else {
