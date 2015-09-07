@@ -107,7 +107,6 @@
 			var password = $( "#mod" ).val();
 	        data =  {'clientId' : clientId, 'clientName': clientName, 'clientMail' : clientMail, 'password': password, 'mod': mod};
 	        console.log(data);
-	        if()
 	        $.post(ajaxurl, data, function (response) {
 	            // Response div goes here.
 	            alert("action performed successfully");
