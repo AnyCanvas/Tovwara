@@ -30,7 +30,7 @@
 	   
 	function action(){
 
-	        var ajaxurl = 'actionUrl.php';
+	        var ajaxurl = 'resources/actionUrl.php';
 	        var facebookUrl = $("#facebookUrl").val();
 	        var fanbotName = $( "#fanbotName" ).val();
 
