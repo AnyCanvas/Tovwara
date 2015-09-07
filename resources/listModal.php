@@ -27,10 +27,10 @@
 	function action(){
 
 	        var ajaxurl = 'resources/actionUrl.php';
-	        var facebookPage = $("#facebookUrl").val();
+	        var facebookPage = $("#facebookPage").val();
 	        var fanbotName = $( "#fanbotName" ).val();
 
-	        data =  {'facebookPage' : facebookUrl, 'fanbotName': fanbotName};
+	        data =  {'facebookPage' : facebookPage, 'fanbotName': fanbotName};
 	        console.log(data);
 	        $.post(ajaxurl, data, function (response) {
 	            // Response div goes here.
@@ -55,7 +55,7 @@
 					  <div class="form-group">
 						<div class="input-group">									  
 							<div for="facebookUrl" class="input-group-addon">http://facebook.com/</div>
-							<input type="text" class="form-control input-sm" id="facebookUrl" placeholder="Link de tu pagina" name="fb_page">
+							<input type="text" class="form-control input-sm" id="facebookPage" placeholder="Link de tu pagina" name="facebookPage">
 	    				</div>		
 					  </div>
 					  <div class="form-group">
