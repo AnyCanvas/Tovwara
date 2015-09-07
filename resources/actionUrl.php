@@ -11,6 +11,35 @@ function functionNode(){
 		} else 0;
 }
 
+function addFanbot(){
+
+	$fanbotId = $_POST['fanbotId'];
+	$fanbotName = $_POST['fanbotName'];
+	$fanbotClient = $_POST['fanbotId'];
+	$particleId = $_POST['particleId'];
+
+	require(realpath(dirname(__FILE__) . "/./config.php"));		
+		$servername = $config["db"]["fanbot"]["host"];
+		$username = $config["db"]["fanbot"]["username"];
+		$password = $config["db"]["fanbot"]["password"];
+		$dbname = $config["db"]["fanbot"]["dbname"];
+
+			// Create connection
+			$conn = new mysqli($servername, $username, $password, $dbname);
+			// Check connection
+			if ($conn->connect_error) {
+			    die("Connection failed: " . $conn->connect_error);
+			} 
+
+			$sql = "INSERT INTO fanbot  (fanbotId, userId, deviceId, fbPage) VALUES ( '". $fanbotId. "','".  $fanbotName. "','". $fanbotClient. "','". $particleId. "')";
+			
+			if ($conn->query($sql) === TRUE) {
+			} else {
+			    echo "Error: " . $sql . "<br>" . $conn->error;
+			}
+			
+			$conn->close();
+}	
 
 
 $numero = functionNode();
@@ -24,4 +53,11 @@ switch($numero){
 }
 
 
+function addClient(){
+
+}
+
+function editPaid(){
+	
+}
 ?>
