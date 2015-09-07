@@ -17,13 +17,12 @@ function functionNode(){
 			return 2;
 		}
 		
-		if (isset($_POST['paidStatus'])){
-			
+		if (isset($_POST['console'])){
+			return 3;
 		}
 }
 
-
-
+echo "enter";
 
 
 ?>
