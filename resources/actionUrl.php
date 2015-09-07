@@ -1,5 +1,5 @@
 <?php
-include "resources/functions.php"; 
+include "functions.php"; 
 
 function functionNode(){
 
@@ -12,16 +12,15 @@ function functionNode(){
 		} else 0;
 }
 
-if (isLogged()){
-	$numero = functionNode();
-	switch($numero){
-		case 1: addFanbot();
-			break;
-		case 2: editPaid();
-			break;
-		case 3: addClient();
-			break;
-	}
+
+$numero = functionNode();
+switch($numero){
+	case 1: addFanbot();
+		break;
+	case 2: editPaid();
+		break;
+	case 3: addClient();
+		break;
 }
 
 ?>
