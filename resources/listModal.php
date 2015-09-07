@@ -2,7 +2,7 @@
     function callModal(fanbotName) {
 	    localStorage.setItem("fanbotName", fanbotName);
 		$('#configModal').modal('show');
-	     document.getElementById('hiddenField').value = fanbotName;
+	     document.getElementById('fanbotName').value = fanbotName;
 	}
 
     function changeImage() {
