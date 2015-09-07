@@ -62,7 +62,7 @@ function addClient(){
 			    die("Connection failed: " . $conn->connect_error);
 			} 
 
-			$sql = "INSERT INTO accounts  (clientId, name, username, password, mode) VALUES ( '". $clientId. "','".  $clientName. "','". $clientMail. "','". $mode.  "','". $password. "')";
+			$sql = "INSERT INTO accounts  (clientId, name, username, password, mode) VALUES ( '". $clientId. "','".  $clientName. "','". $clientMail. "','". $password.  "','". $mode. "')";
 			
 			if ($conn->query($sql) === TRUE) {
 			} else {
