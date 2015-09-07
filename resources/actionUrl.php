@@ -1,5 +1,5 @@
 <?php
-if (isset($_POST['name'])) {
+if (isset($_POST['nbmnbm'])) {
 
 		require(realpath(dirname(__FILE__) . "/./config.php"));
     	$servername = $config["db"]["fanbot"]["host"];
@@ -36,7 +36,6 @@ if (isset($_POST['name'])) {
 			}
 	}		
 
-
 	function fanbotAction($deviceId, $accesToken){
 		
 		$ip = 'api.particle.io';	
@@ -50,3 +49,8 @@ if (isset($_POST['name'])) {
 	
 	}
 ?>
+
+<script>
+	var response = 'Hola';
+	
+</script>
