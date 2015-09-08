@@ -5,11 +5,10 @@ session_start();
 		if(!(isset( $_SESSION['actionInterval'] ))){
 			$_SESSION['actionInterval'] = time();
 		} else {
-			echo "Entro al if\n";
 			if ( time() - $_SESSION['actionInterval'] > 60 * 5){
-				echo "Pasaron 5 minutos";
+				echo "Pasaron 5 minutos \n";
 			} else {
-				echo "pasaron mas de 5 minutos";
+				echo "pasaron menos de 5 minutos \n";
 			}
 		}
 		
