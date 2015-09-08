@@ -133,8 +133,6 @@
 					  <div class="form-group">
 							<label for="fanbotClient" class="control-label">Cliente</label>
 							<select class="form-control" id="fanbotClient" name="fanbotClient">
-					        	<option value="1">Pagado</option>
-								<option value="0">Vencido</option>
 <?php 		
 										require(realpath(dirname(__FILE__) . "/./config.php"));
 								    	$servername = $config["db"]["fanbot"]["host"];
