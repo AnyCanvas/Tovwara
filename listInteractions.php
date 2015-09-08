@@ -1,7 +1,7 @@
 <?php 
 		include "resources/functions.php"; 
 		if (!isLogged()){
-			header('Location: login/login.php');
+			header('Location: ./login.php');
 			exit;
 		}			
 		
