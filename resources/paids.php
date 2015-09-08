@@ -163,12 +163,12 @@ function fnbtAction(){
 
 <!-- Fanbot plan label -->
 					  <div class="form-group">
-							<label class="control-label">Plan</label>
-							<select name="fanbotPlan" id="fanbotPlan" class="form-control" value="01">
+							<label for="form-control">Plan</label>
+							<select id="fanbotPlan" class="form-control" >
 							  <option value="01">Basic</option>
 							  <option value="02">Pro</option>
 							  <option value="03">Premium</option>
-							  <option value="00">Asombrandom</option>
+							  <option value="00" selected="selected">Asombrandom</option>
 							</select>
 					  </div>
 
