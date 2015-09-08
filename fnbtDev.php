@@ -22,7 +22,6 @@
     <link href="bs3/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-reset.css" rel="stylesheet">
     <link href="font-awesome/css/font-awesome.css" rel="stylesheet" />
-
     
     <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet">
@@ -63,7 +62,7 @@
         <section class="wrapper">
         <!-- page start-->
 
-		<?php require_once("resources/listFnbt.php"); ?>
+		<?php require_once("resources/fnbt_editor.php"); ?>
 
         <!-- page end-->
         </section>

@@ -5,7 +5,7 @@
 		<!-- sidebar menu start--> 
             <ul class="sidebar-menu" id="nav-accordion">
             <li>
-                <a href="index.php">
+                <a href="dashboard.php">
                     <i class="fa fa-dashboard"></i>
                     <span>Inicio</span>
                 </a>
@@ -37,7 +37,7 @@
                 </a>
                 <ul class="sub">
                     <li><a href="fnbtDev.php">Editar Fanbot</a></li>
-                    <li><a href="clientssDev.php">Editar Clientes </a></li>
+                    <li><a href="clientsDev.php">Editar Clientes </a></li>
                     <li><a href="paidsDev.php">Editar pagos </a></li>
                 </ul>
             </li>

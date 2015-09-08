@@ -2,11 +2,11 @@
     function callModal(fanbotName) {
 	    localStorage.setItem("fanbotName", fanbotName);
 		$('#configModal').modal('show');
-	     document.getElementById('hiddenField').value = fanbotName;
+	     document.getElementById('fanbotName').value = fanbotName;
 	}
 
     function changeImage() {
-        image_url = "https://graph.facebook.com/"+ document.getElementById('facebookUrl').value +"/picture";
+        image_url = "https://graph.facebook.com/"+ document.getElementById('facebookPage').value +"/picture";
 	    $.get(image_url)
 		.done(function() { 
 		// Do something now you know the image exists.
@@ -22,12 +22,23 @@
     })
 
     }
-    
 
-	  function mySubmit() {
-	     document.getElementById("myForm").submit();
-	   }
-</script>
+	   
+	function action(){
+
+	        var ajaxurl = 'resources/actionUrl.php';
+	        var facebookPage = $("#facebookPage").val();
+	        var fanbotName = $( "#fanbotName" ).val();
+
+	        data =  {'facebookPage' : facebookPage, 'fanbotName': fanbotName};
+	        console.log(data);
+	        $.post(ajaxurl, data, function (response) {
+	            // Response div goes here.
+	            alert(response);
+	        });
+			$('#configModal').modal('hide');
+
+	    }   
 </script>
 
 		  <div class="modal fade" id="configModal" role="dialog">
@@ -40,18 +51,18 @@
 		          <h4 class="modal-title">Configura tu Fanbot</h4>
 		        </div>
 		        <div class="modal-body">
-					<form class="form-inline" action="change_page.php" method="get" id="formUrl">
+					<form class="form-inline" id="formUrl">
 					  <div class="form-group">
 						<div class="input-group">									  
 							<div for="facebookUrl" class="input-group-addon">http://facebook.com/</div>
-							<input type="text" class="form-control input-sm" id="facebookUrl" placeholder="Link de tu pagina" name="fb_page">
+							<input type="text" class="form-control input-sm" id="facebookPage" placeholder="Link de tu pagina" name="facebookPage">
 	    				</div>		
 					  </div>
 					  <div class="form-group">
-						<input class="form-controlinput-sm" type='hidden' id= 'hiddenField' name='name' value='' />				  
+						<input class="form-controlinput-sm" type='hidden' id= 'fanbotName' name='fanbotName' value='' />				  
 					  </div>
 					  <a onclick="changeImage()" class="btn btn-default btn-xs">Verificar</a>						
-			
+					</form>					
 		        </div>
 
 			    <div class="modal-footer">
@@ -63,9 +74,8 @@
 					  <strong>La pagina de Facebook escrita no existe. </strong> 
 					</div>
 					<p>
-					<button type="submit" id="cambiarBtn" class="btn btn-primary btn-sm" disabled="disabled">Cambiar</button>
+					<button onclick="action()" id="cambiarBtn" class="btn btn-primary btn-sm" disabled="disabled">Cambiar</button>
 					</p>
-					</form>		
 		        </div>
 		      
 	      	  </div>

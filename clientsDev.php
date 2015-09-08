@@ -62,7 +62,7 @@
         <section class="wrapper">
         <!-- page start-->
 
-		<?php require_once("resources/paids.php"); ?>
+		<?php require_once("resources/clients.php"); ?>
 
         <!-- page end-->
         </section>

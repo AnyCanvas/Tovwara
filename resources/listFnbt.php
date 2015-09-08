@@ -21,12 +21,21 @@
                             <tbody>
 
 								<?php
-											
-										$servername="localhost"; // Host name 
-										$username="Dev"; // Mysql username 
-										$password="\"TRFBMIsCWh{19"; // Mysql password 
-										$dbname="fanbot_db"; // Database name 
-								
+										$ch = curl_init("https://api.particle.io/v1/devices/?access_token=8f143ea31dd63ec40437558c3d352b560a2dfcd4");
+										curl_setopt($ch, CURLOPT_FRESH_CONNECT, 1);
+										curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+										$output = curl_exec($ch);
+										curl_close($ch);
+										
+									
+									
+										$fanbotList = json_decode($output, true);									
+
+										require(realpath(dirname(__FILE__) . "/./config.php"));
+								    	$servername = $config["db"]["fanbot"]["host"];
+										$username = $config["db"]["fanbot"]["username"];
+										$password = $config["db"]["fanbot"]["password"];
+										$dbname = $config["db"]["fanbot"]["dbname"];								
 										
 											
 										// Create connection
@@ -36,11 +45,12 @@
 										    die("Connection failed: " . $conn->connect_error);
 										}
 										
-										if ( $_SESSION['userId'] == 00){
-											$sql = "SELECT * FROM fanbot";	
-											} else {
-											$sql = "SELECT * FROM fanbot WHERE clientId = '". $_SESSION['userId']. "'";											
-											}
+										if($_SESSION['userId'] == '00'){
+											$sql = "SELECT * FROM fanbot";
+										}else {
+											$sql = "SELECT * FROM fanbot WHERE clientId = '". $_SESSION['userId']. "'";
+										}
+
 										$result = $conn->query($sql);
 										
 										if ($result->num_rows > 0) {		    
@@ -69,13 +79,37 @@
 									                                
 								                                ?> </td>
 																	<td>
-																		<?php isFanbotOnline($row['accesToken'], $row['deviceId']); ?>
+																		
+																		<?php 
+																			echo '<span class="label label-mini ';
+
+																			$id = $row['deviceId'];
+																			$key = array_search($id, array_column($fanbotList, "id"));
+																			if( $fanbotList[$key]["connected"]){
+																				echo 'label-success"><span class="fa fa-circle" aria-hidden="true">';
+																			} else {
+																				echo 'label-default"><span class="fa fa-circle-o" aria-hidden="true">';
+																			}
+																			if( $fanbotList[$key]["connected"]){
+																				echo ' Conectada';
+																			} else {
+																				echo ' Desconectada';
+																	
+																			}
+																			echo '</span>';
+																		?>
 																	</td>
-								                                <td>
+																	<td>
 									                                <a class="btn btn-primary btn-xs" onclick="callModal('<?php echo $row['name']?>')">
 										                                <span class="fa fa-cog" aria-hidden="true"></span> Configurar
 										                                </a>
 									                                </td>
+									                                <td>
+									                                <a class="btn btn-primary btn-xs" onclick="fnbtAction('<?php echo $row['name']?>')">
+										                                <span class="fa fa-cog" aria-hidden="true"></span> Activar
+										                                </a>
+									                                </td>								
+								                            </tr>
 								
 								                            </tr>
 								
@@ -103,7 +137,16 @@
             </div>
         </div>
         
- 
+<script>
+function fnbtAction(name){
+        var ajaxurl = 'resources/activateFnbt.php',
+        data =  {'name': name};
+        $.post(ajaxurl, data, function (response) {
+            // Response div goes here.
+            alert(response);
+        });
+    }
+</script> 
  <!-- Modal that configures a Fanbot facebook page -->
 
     	<?php require_once("listModal.php"); ?>

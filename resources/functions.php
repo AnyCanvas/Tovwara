@@ -1,12 +1,12 @@
 <?php 
-	if((@include 'phpSpark.class.php') === false)  die("Unable to load phpSpark class");
-	if((@include 'phpSpark.config.php') === false)  die("Unable to load phpSpark configuration file");
-	
+
 	// Check if user is logged in 
 	function isLogged(){
 		session_start();
-		if(!isset($_SESSION["userId"])){
-				header("location:./login.php");
+		if(isset($_SESSION["userId"])){
+				return 1;
+		} else {
+			return 0;
 		}
 	}
 	
@@ -18,54 +18,13 @@
 	}
 
 	
-	function printLikesChar(){
-
-		$servername="localhost"; // Host name 
-		$username="Dev"; // Mysql username 
-		$password="\"TRFBMIsCWh{19"; // Mysql password 
-		$dbname="fanbot_db"; // Database name 
-
-		
-			
-		// Create connection
-		$conn = new mysqli($servername, $username, $password, $dbname);
-		// Check connection
-		if ($conn->connect_error) {
-		    die("Connection failed: " . $conn->connect_error);
-		}
-		
-		if($_SESSION['userId'] == '00'){
-			$sql = "SELECT * FROM interactions";
-		}else {
-			$sql = "SELECT * FROM interactions WHERE clientId = '". $_SESSION['userId']. "'";
-		}
-
-		$result = $conn->query($sql);
-		
-		if ($result->num_rows > 1) {
-			$i = 1;
-
-			while($row = $result->fetch_assoc()) {		    
-
-			    $likesArray[$i]['fanbotId'] = $row["fanbotId"];
-			    $likesArray[$i]['clientId'] = $row["clientId"];
-			    $likesArray[$i]['date'] = $row["date"];
-			    $i++;
-			}
-				
-			} else {
-
-			}
-		$conn->close();
-
-	}
-	
 	function getLikesGraph($month,$year){
 
-	$servername="localhost"; // Host name 
-	$username="Dev"; // Mysql username 
-	$password="\"TRFBMIsCWh{19"; // Mysql password 
-	$dbname="fanbot_db"; // Database name 
+	require(realpath(dirname(__FILE__) . "/./config.php"));
+    $servername = $config["db"]["fanbot"]["host"];
+	$username = $config["db"]["fanbot"]["username"];
+	$password = $config["db"]["fanbot"]["password"];
+	$dbname = $config["db"]["fanbot"]["dbname"];
 
 		
 	// Create connection
@@ -102,9 +61,9 @@
 				 if ($day == $i){
 				 	$dayArray[$i]++;
 
-		    }
-
-		}
+		    	}
+			}
+		}	
 	}
 
 	for($i = 1; $i <= $daysInMonth; $i++){
@@ -121,106 +80,18 @@
 		}
 		
 		}
-		
-
-    }
 
 	$conn->close();
 	
-}
+}	
 
-	function isFanbotOnline($token, $id){
-
-	$spark = new phpSpark();
-	
-
-	$spark->setAccessToken($token);
-	
-	if($spark->getDeviceInfo($id) == true)
-	{
-	    $fanbot = $spark->getResult();
-	}
-	else
-	{
-	    $spark->debug("Error: " . $spark->getError());
-	    $spark->debug("Error Source" . $spark->getErrorSource());
-	}
-
-		$connectedSpark = $fanbot["connected"] ;
-	
-		echo '<span class="label label-mini ';
-		if ($connectedSpark){
-			echo 'label-success"><span class="fa fa-circle" aria-hidden="true">';
-		} else {
-			echo 'label-default"><span class="fa fa-circle-o" aria-hidden="true">';
-		}
-		if ($connectedSpark){
-			echo ' Conectada';
-		} else {
-			echo ' Desconectada';
-
-		}
-
-		echo '</span>';
-		
-	}
-
-	function listFnbt(){	
+function listInteractions(){	
 			
-		$servername="localhost"; // Host name 
-		$username="Dev"; // Mysql username 
-		$password="\"TRFBMIsCWh{19"; // Mysql password 
-		$dbname="fanbot_db"; // Database name 
-
-		
-			
-		// Create connection
-		$conn = new mysqli($servername, $username, $password, $dbname);
-		// Check connection
-		if ($conn->connect_error) {
-		    die("Connection failed: " . $conn->connect_error);
-		}
-		
-		$sql = "SELECT * FROM fanbot WHERE clientId = '". $_SESSION['userId']. "'";
-		$result = $conn->query($sql);
-		
-		if ($result->num_rows > 0) {		    
-		    while($row = $result->fetch_assoc()) { ?>
-			    			
-							<tr>
-                                <td><?php echo $row['name']?></td>
-                                <td class="hidden-phone"><?php echo $row['id']?></td>
-                                <td><?php echo $row['plan']?> </td>
-                                <td><span class="label label-primary label-mini"><?php isFanbotOnline($row['accesToken'], $row['deviceId']); ?></span></td>
-                                <td>
-                                    <div class="progress progress-striped progress-xs">
-                                        <div style="width: 40%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="40" role="progressbar" class="progress-bar progress-bar-success">
-                                            <span class="sr-only">40% Complete (success)</span>
-                                            
-                                        </div>
-                                    </div>
-                                </td>
-                                <td><a class="btn btn-default btn-xs" data-toggle="modal" data-target="#configModal">Configurar</a></td>
-
-                            </tr>
-
-
-<?php			    }
-			    return TRUE;	
-			} else {
-				return FALSE;
-
-			}
-		$conn->close();
-
-	}	
-	
-		function listInteractions(){	
-			
-		$servername="localhost"; // Host name 
-		$username="Dev"; // Mysql username 
-		$password="\"TRFBMIsCWh{19"; // Mysql password 
-		$dbname="fanbot_db"; // Database name 
+		require(realpath(dirname(__FILE__) . "/./config.php"));
+    	$servername = $config["db"]["fanbot"]["host"];
+		$username = $config["db"]["fanbot"]["username"];
+		$password = $config["db"]["fanbot"]["password"];
+		$dbname = $config["db"]["fanbot"]["dbname"];
 
 		
 			
@@ -284,4 +155,126 @@
 
 	}	
 
+function addFanbot(){
+
+	$fanbotId = $_POST['fanbotId'];
+	$fanbotName = $_POST['fanbotName'];
+	$fanbotClient = $_POST['fanbotClient'];
+	$particleId = $_POST['particleId'];
+
+	require(realpath(dirname(__FILE__) . "/./config.php"));		
+		$servername = $config["db"]["fanbot"]["host"];
+		$username = $config["db"]["fanbot"]["username"];
+		$password = $config["db"]["fanbot"]["password"];
+		$dbname = $config["db"]["fanbot"]["dbname"];
+
+			// Create connection
+			$conn = new mysqli($servername, $username, $password, $dbname);
+			// Check connection
+			if ($conn->connect_error) {
+			    die("Connection failed: " . $conn->connect_error);
+			} 
+
+			$sql = "INSERT INTO fanbot  (id, name, clientId, deviceId) VALUES ( '". $fanbotId. "','".  $fanbotName. "','". $fanbotClient. "','". $particleId. "')";
+			
+			if ($conn->query($sql) === TRUE) {
+			} else {
+			    echo "Error: " . $sql . "<br>" . $conn->error;
+			}
+			
+			$conn->close();
+}	
+
+function addClient(){
+
+	$clientId = $_POST['clientId'];
+	$clientName = $_POST['clientName'];
+	$clientMail = $_POST['clientMail'];
+	$clientPassword = $_POST['password'];
+	$mode = $_POST['mode'];
+
+	require(realpath(dirname(__FILE__) . "/./config.php"));		
+		$servername = $config["db"]["fanbot"]["host"];
+		$username = $config["db"]["fanbot"]["username"];
+		$password = $config["db"]["fanbot"]["password"];
+		$dbname = $config["db"]["fanbot"]["dbname"];
+
+			// Create connection
+			$conn = new mysqli($servername, $username, $password, $dbname);
+			// Check connection
+			if ($conn->connect_error) {
+			    die("Connection failed: " . $conn->connect_error);
+			} 
+
+			$sql = "INSERT INTO accounts  (clientId, name, username, password, mode) VALUES ( '". $clientId. "','".  $clientName. "','". $clientMail. "','". md5($clientPassword).  "','". $mode. "')";
+			
+			if ($conn->query($sql) === TRUE) {
+			} else {
+			    echo "Error: " . $sql . "<br>" . $conn->error;
+			}
+			
+			$conn->close();
+}	
+
+function editPaid(){
+
+	$fanbotId = $_POST['id'];
+	$fanbotPlan = $_POST['fanbotPlan'];
+	$courtDate = $_POST['courtDate'];
+	$freeMonth = $_POST['freeMonth'];
+	$paidStatus = $_POST['paidStatus'];
+
+	require(realpath(dirname(__FILE__) . "/./config.php"));		
+		$servername = $config["db"]["fanbot"]["host"];
+		$username = $config["db"]["fanbot"]["username"];
+		$password = $config["db"]["fanbot"]["password"];
+		$dbname = $config["db"]["fanbot"]["dbname"];
+
+			// Create connection
+			$conn = new mysqli($servername, $username, $password, $dbname);
+			// Check connection
+			if ($conn->connect_error) {
+			    die("Connection failed: " . $conn->connect_error);
+			} 
+
+			$sql = "UPDATE fanbot SET courtDate = ". $courtDate ." , plan = ". $fanbotPlan .", freeMonth = ". $freeMonth .", estatus = ". $paidStatus ." WHERE id = '". $fanbotId ."'";
+			
+			if ($conn->query($sql) === TRUE) {
+			} else {
+			    echo "Error: " . $sql . "<br>" . $conn->error;
+			}
+			
+			$conn->close();
+}	
+
+function changeFacebookPage(){
+
+	$fnbtName  = $_POST["fanbotName"];
+	$facebookPage  = $_POST["facebookPage"];
+
+				
+	require(realpath(dirname(__FILE__) . "/./config.php"));		
+		$servername = $config["db"]["fanbot"]["host"];
+		$username = $config["db"]["fanbot"]["username"];
+		$password = $config["db"]["fanbot"]["password"];
+		$dbname = $config["db"]["fanbot"]["dbname"];
+
+		// Create connection
+		$conn = new mysqli($servername, $username, $password, $dbname);
+		// Check connection
+		if ($conn->connect_error) {
+		    die("Connection failed: " . $conn->connect_error);
+		} 
+	
+		$sql = "UPDATE fanbot SET fbPage ='". $facebookPage ."' WHERE name = '". $fnbtName."'";
+		
+		if ($conn->query($sql) === TRUE) {
+		} else {
+		    echo "Error: " . $sql . "<br>" . $conn->error;
+		}
+		
+		$conn->close();
+		
+		echo("done");
+}
 ?>
