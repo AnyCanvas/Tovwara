@@ -67,9 +67,8 @@
 								                            <?php
 																										
 											}
-										$conn->close();
-								
-									?>									
+
+										?>									
 
 							
                             </tbody>
@@ -133,7 +132,38 @@
 <!-- Fanbot client label -->
 					  <div class="form-group">
 							<label for="fanbotClient" class="control-label">Cliente</label>
-							<input type="text" class="form-control input-sm" id="fanbotClient" name="fanbotClient">
+							<select class="form-control" id="fanbotClient" name="fanbotClient">
+					        	<option value="1">Pagado</option>
+								<option value="0">Vencido</option>
+<?php 		
+										require(realpath(dirname(__FILE__) . "/./config.php"));
+								    	$servername = $config["db"]["fanbot"]["host"];
+										$username = $config["db"]["fanbot"]["username"];
+										$password = $config["db"]["fanbot"]["password"];
+										$dbname = $config["db"]["fanbot"]["dbname"];								
+								
+										
+											
+										// Create connection
+										$conn = new mysqli($servername, $username, $password, $dbname);
+										// Check connection
+										if ($conn->connect_error) {
+										    die("Connection failed: " . $conn->connect_error);
+										}
+										
+											$sql = "SELECT * FROM accounts";	
+
+										$result = $conn->query($sql);
+										
+										if ($result->num_rows > 0) {		    
+										    while($row = $result->fetch_assoc()) {	
+												echo '<option value="'. $row['clientId'] . ' ">'.  $row['name'] . '</option>';
+											}
+										}
+										$conn->close(); 
+?>
+
+							</select>
 					  </div>
 
 <!-- Fanbot particle ID label -->
