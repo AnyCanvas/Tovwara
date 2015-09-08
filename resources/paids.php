@@ -55,7 +55,7 @@
 								                                <td><?php
 																	switch ($row['plan']) {
 																	    case '00':
-																	        echo "AWESOMERANDOM";
+																	        echo "ASOMBRANDOM";
 																	        break;
 																	    case '01':
 																	        echo "BASIC";
