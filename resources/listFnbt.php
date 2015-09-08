@@ -143,7 +143,7 @@ function fnbtAction(name){
         data =  {'name': name};
         $.post(ajaxurl, data, function (response) {
             // Response div goes here.
-            alert("response");
+            alert(response);
         });
     }
 </script> 
