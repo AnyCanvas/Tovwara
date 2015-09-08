@@ -2,6 +2,7 @@
 if (isset($_POST['name'])) {
 	
 		if(!(isset( $_SESSION['actionInterval'] ))){
+			session_start();
 			$_SESSION['actionInterval'] = time();
 		} else {
 			echo "Entro al if\n";
@@ -47,7 +48,7 @@ if (isset($_POST['name'])) {
 			}
 	}		
 	
-	echo "Se realizo la accion". time();
+	echo "Se realizo la accion ". time() . ' '. $_SESSION['actionInterval'];
 
 
 	function fanbotAction($deviceId, $accesToken){
