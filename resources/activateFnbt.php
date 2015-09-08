@@ -1,8 +1,8 @@
 <?php
 if (isset($_POST['name'])) {
+session_start();
 	
 		if(!(isset( $_SESSION['actionInterval'] ))){
-			session_start();
 			$_SESSION['actionInterval'] = time();
 		} else {
 			echo "Entro al if\n";
