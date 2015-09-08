@@ -1,3 +1,12 @@
+<?php 
+		include "resources/functions.php"; 
+		if (!isLogged()){
+			header('Location: /login.php');
+			exit;
+		}			
+		
+?> 
+
 <html lang="en">
 <head>
     <meta charset="utf-8">

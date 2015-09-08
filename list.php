@@ -1,5 +1,11 @@
-<!-- Header start -->
-
+	<?php 
+		include "resources/functions.php"; 
+		if (!isLogged()){
+			header('Location: /login.php');
+			exit;
+		}			
+		
+	?> 
 	<?php 
 		include "resources/functions.php"; 
 		isLogged();

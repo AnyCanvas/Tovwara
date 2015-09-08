@@ -1,10 +1,11 @@
-<!-- Header start -->
-
 	<?php 
 		include "resources/functions.php"; 
-		isLogged();
+		if (!isLogged()){
+			header('Location: /login.php');
+			exit;
+		}			
 		
-	?>
+	?> 
 
 <!DOCTYPE html>
 <html lang="en">
