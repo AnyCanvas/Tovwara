@@ -7,6 +7,7 @@ session_start();
 		} else {
 			if ( time() - $_SESSION['actionInterval'] > 60 * 5){
 				echo "Pasaron 5 minutos \n";
+				$_SESSION['actionInterval'] = time();
 			} else {
 				exit("pasaron menos de 5 minutos \n");
 			}
