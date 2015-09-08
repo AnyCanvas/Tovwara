@@ -45,6 +45,8 @@ if (isset($_POST['name'])) {
 
 			}
 	}		
+	
+	echo "Se realizo la accion";
 
 
 	function fanbotAction($deviceId, $accesToken){
