@@ -2,7 +2,10 @@
 
 	<?php 
 		include "resources/functions.php"; 
-		isLogged();			
+		if (!isLogged()){
+			header('Location: http://www.google.com/');
+			exit;
+		}			
 		
 	?> 
 
