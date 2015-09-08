@@ -6,10 +6,9 @@ session_start();
 			$_SESSION['actionInterval'] = time();
 		} else {
 			if ( time() - $_SESSION['actionInterval'] > 60 * 5){
-				echo "Pasaron 5 minutos \n";
 				$_SESSION['actionInterval'] = time();
 			} else {
-				exit("pasaron menos de 5 minutos \n");
+				exit("Tienes que esperar 5 minutos para activar de nuevo la maquina \n");
 			}
 		}
 		
@@ -41,6 +40,7 @@ session_start();
 
 			    }
 			 fanbotAction($deviceId, $accesToken);
+			 echo ("Se activo un la fanbot");
 			 			    
 			} else {
 
