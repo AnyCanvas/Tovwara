@@ -3,7 +3,7 @@
 	<?php 
 		include "resources/functions.php"; 
 		if (!isLogged()){
-			header('Location: http://www.google.com/');
+			header('Location: /login.php');
 			exit;
 		}			
 		
