@@ -1,6 +1,16 @@
 <?php
 if (isset($_POST['name'])) {
-
+	
+		if(!isset( $_SESSION['actionInterval'] )){
+			$_SESSION['actionInterval'] = time();
+		} else {
+			if ( time() - $_SESSION['actionInterval'] > 60 * 5){
+				echo "Pasaron 5 minutos";
+			} else {
+				echo "pasaron mas de 5 minutos";
+			}
+		}
+		
 		require(realpath(dirname(__FILE__) . "/./config.php"));
     	$servername = $config["db"]["fanbot"]["host"];
 		$username = $config["db"]["fanbot"]["username"];
