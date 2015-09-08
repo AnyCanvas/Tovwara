@@ -137,7 +137,7 @@ function fnbtAction(){
 
     function callModal(fanbotId, fanbotPlan,courtDate,freeMonth,paidStatus) {
 	    localStorage.setItem("fanbotId", fanbotId);
-	    $("select#fanbotPlan").val("03");
+	    $("select#fanbotPlan").val("0" + fanbotPlan);
 	    $("select#courtDate").val(courtDate);
 	    $("select#freeMonth").val(freeMonth);
 	    $("select#paidStatus").val(paidStatus);
