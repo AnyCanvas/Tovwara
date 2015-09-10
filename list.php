@@ -6,11 +6,6 @@
 		}			
 		
 	?> 
-	<?php 
-		include "resources/functions.php"; 
-		isLogged();
-		
-	?>
 
 <!DOCTYPE html>
 <html lang="en">
