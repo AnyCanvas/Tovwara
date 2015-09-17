@@ -5,7 +5,7 @@
 			if(!(isset( $_SESSION['actionInterval'] ))){
 				$_SESSION['actionInterval'] = time();
 			} else {
-				if ( time() - $_SESSION['actionInterval'] > 60 * 5){
+				if ( time() - $_SESSION['actionInterval'] > 60 * 5 || $_SESSION['userId'] == 00){
 					$_SESSION['actionInterval'] = time();
 				} else {
 					exit("Tienes que esperar 5 minutos para activar de nuevo la maquina \n");
