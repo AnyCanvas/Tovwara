@@ -118,14 +118,11 @@
 	    },
 	"pageLength": 50,
     buttons: [
-	    text: 'Export',
-        buttons: [
             'copy',
             'excel',
             'csv',
             'pdf',
             'print'
-            ]
     ]
     });
     
