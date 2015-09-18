@@ -25,7 +25,6 @@
     <link href="font-awesome/css/font-awesome.css" rel="stylesheet" />
     <link href="css/datatables/css/jquery.dataTables.css" rel="stylesheet" />
 	<link href="css/datatables/css/jquery.dataTables.css" rel="stylesheet" />
-	<link href="css/datatables/js/jquery.dataTables.js" rel="stylesheet" />
 	
     
     <!-- Custom styles for this template -->
@@ -107,6 +106,7 @@
 
 <!--common script init for all pages-->
 <script src="js/scripts.js"></script>
+<script src="css/datatables/js/jquery.dataTables.js"></script>
 
 <script>
 	$(document).ready( function () {
