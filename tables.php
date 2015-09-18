@@ -113,6 +113,7 @@
 <script>
 	$(document).ready( function () {
     $('#usersTable').DataTable({
+        dom: 'Bfrtip',
 		language: {
 		        url: 'https://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json'
 		    },
