@@ -104,12 +104,14 @@
 
 <!--common script init for all pages-->
 <script src="js/scripts.js"></script>
+
+<!-- Data tables-->
 <script src="css/datatables/js/jquery.dataTables.js"></script>
 <script src="css/datatables/js/dataTables.bootstrap.js"></script>
 
 <script>
 	$(document).ready( function () {
-    $('#table_id').DataTable({
+    $('#fanbotTable').DataTable({
 	language: {
 	        url: 'https://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json'
 	    }	    

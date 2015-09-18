@@ -157,6 +157,19 @@
 		});
     </script>
 
+<!-- Data tables-->
+<script src="css/datatables/js/jquery.dataTables.js"></script>
+<script src="css/datatables/js/dataTables.bootstrap.js"></script>
+
+<script>
+	$(document).ready( function () {
+    $('#fanbotTable').DataTable({
+	language: {
+	        url: 'https://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json'
+	    }	    
+    });
+} );
+</script>
 
 </body>
 </html>
