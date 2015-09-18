@@ -145,7 +145,7 @@ function listInteractions(){
 				$formatedDate = $date->format('d/m/y');
 				$orderDate = $date->format('ymd');
 				
-				echo "\t\t\t". '<td><span style="display: none;">'. $orderDate .'</span>'. $formatedDate. '</td>'. "\r\n";
+				echo "\t\t\t". '<td data-order='. $orderDate .'">'. $formatedDate. '</td>'. "\r\n";
 				
 				
 			    $sql2 = "SELECT * FROM users WHERE fbID = '". $row['userId'] . "'";
