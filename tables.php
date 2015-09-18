@@ -67,7 +67,7 @@
     <section id="main-content">
         <section class="wrapper">
         <!-- page start-->
-			<?php listInteractions() ?>			
+			<?php require_once("listInteractions.php"); ?>			
         <!-- page end-->
         </section>
     </section>
