@@ -143,8 +143,9 @@ function listInteractions(){
 				$date =new DateTime($row['date']);
 				// Get de number of day from the date variable
 				$formatedDate = $date->format('d/m/y');
+				$orderDate = $date->format('ymd');
 				
-				echo "\t\t\t". '<td>'. $formatedDate. '</td>'. "\r\n";
+				echo "\t\t\t". '<td><span style="display: none;">'. $orderDate .'</span>'. $formatedDate. '</td>'. "\r\n";
 				
 				
 			    $sql2 = "SELECT * FROM users WHERE fbID = '". $row['userId'] . "'";
