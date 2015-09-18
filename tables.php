@@ -25,7 +25,7 @@
 
 	<!-- Data table-->
 	<link href="css/datatables/css/dataTables.bootstrap.css" rel="stylesheet" />	
-	<link href="css/datatables/css/datatables.buttons.min.css" rel="stylesheet" />	
+	<link href="css/datatables/css/buttons.bootstrap.min.css" rel="stylesheet" />	
 
     <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet">
@@ -101,13 +101,15 @@
 <!-- Data tables-->
 <script src="css/datatables/js/jquery.dataTables.js"></script>
 <script src="css/datatables/js/dataTables.bootstrap.js"></script>
+<script src="css/datatables/js/buttons.bootstrap.min.js"></script>
 <script src="css/datatables/js/datatables.buttons.min.js"></script>
+<script src="css/datatables/js/buttons.html5.min.js"></script>
 
 <script>
 	$(document).ready( function () {
     $('#usersTable').DataTable({
 	buttons: [
-        'copy', 'excel', 'pdf'
+        'excel'
     ],   
 	language: {
 	        url: 'https://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json'
