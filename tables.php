@@ -112,18 +112,21 @@
 
 <script>
 	$(document).ready( function () {
-    $('#usersTable').DataTable({
-        dom: 'Bfrtip',
+	    
+	var table = $('#usersTable').DataTable();
+ 
+	new $.fn.dataTable.Buttons( table, {
 		language: {
 		        url: 'https://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json'
 		    },
 		"pageLength": 50,
 	    buttons: [
-	            'copy',
-	            'excel',
-	            'csv'
+	        'copy', 'excel', 'pdf'
 	    ]
-	    });
+	} );
+	 
+	table.buttons().container()
+	    .appendTo( $('.col-sm-6:eq(0)', table.table().container() ) );
 
 	} );
 </script>
