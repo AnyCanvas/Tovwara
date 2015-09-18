@@ -24,7 +24,7 @@
     <link href="css/bootstrap-reset.css" rel="stylesheet">
     <link href="font-awesome/css/font-awesome.css" rel="stylesheet" />
     <link href="css/datatables/css/jquery.dataTables.css" rel="stylesheet" />
-	<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.9/css/jquery.dataTables.css">
+	<link href="css/datatables/css/jquery.dataTables.css" rel="stylesheet" />
 	
     
     <!-- Custom styles for this template -->
@@ -103,10 +103,10 @@
 <script src="js/flot-chart/jquery.flot.tooltip.min.js"></script>
 <script src="js/flot-chart/jquery.flot.resize.js"></script>
 <script src="js/flot-chart/jquery.flot.pie.resize.js"></script>
-<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.9/js/jquery.dataTables.js"></script>
 
 <!--common script init for all pages-->
 <script src="js/scripts.js"></script>
+<script src="css/datatables/js/jquery.dataTables.js"></script>
 
 <script>
 	$(document).ready( function () {
