@@ -75,20 +75,13 @@
                         <h4 class="widget-h">Acciones de todos los usuarios</h4>
                     </div>
 
-                            <div class="clearfix">
-                                <div class="btn-group">
-                                </div>
-                                <div class="btn-group pull-right">
-                                    <button id="editable-sample_new" class="btn btn-primary" onclick="window.exportExcel()">
-                                        Descargar
-                                    </button>
-                                </div>
-                			</div>
-                <div class="space15"></div>
-                    <div class="adv-table">
-		    <?php listInteractions() ?>
-
-                    </div>
+	                    <div class="clearfix">
+	
+			            <div class="space15"></div>
+			            <div class="adv-table">
+					    	<?php listInteractions() ?>
+			
+			            </div>
                     </div>
                 </section>
             </div>
@@ -107,34 +100,6 @@
 <!-- Right sidebar end-->
 
 </section>
-
-                    <table  class="table table-striped table-hover table-bordered" id="fullTable" style= "display: none;">
-                    <thead>
-                    <tr>
-                        <th>Fecha</th>
-                        <th>Nombre</th>
-                        <th>Email</th>
-                        <th>Genero</th>
-                        <th>Pagina de Facebook</th>
-                        <th>Nombre de la Fanbot</th>
-                    </tr>
-                    </thead>
-
-                    <tbody>
-		    <?php listInteractions() ?>
-                    </tbody>
-
-                    <tfoot>
-                    <tr>
-                        <th>Fecha</th>
-                        <th>Nombre</th>
-                        <th>Email</th>
-                        <th>Genero</th>
-                        <th>Pagina de Facebook</th>
-                        <th>Nombre de la Fanbot</th>
-                    </tr>
-                    </tfoot>
-                    </table>
 <!-- Placed js at the end of the document so the pages load faster -->
 
 <!--Core js-->
