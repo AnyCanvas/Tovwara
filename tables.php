@@ -123,6 +123,7 @@
 	});
  
 	new $.fn.dataTable.Buttons( table, {
+		dom: 'Bfrtip',
 	    buttons: [
 	        'copy', 'excel', 'pdf'
 	    ]
