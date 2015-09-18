@@ -106,13 +106,13 @@
 <script>
 	$(document).ready( function () {
     $('#usersTable').DataTable({
+	buttons: [
+        'copy', 'excel', 'pdf'
+    ],   
 	language: {
 	        url: 'https://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json'
 	    },
-	"pageLength": 50,
-	buttons: [
-        'copy', 'excel', 'pdf'
-    ],    
+	"pageLength": 50 
     });
 } );
 </script>
