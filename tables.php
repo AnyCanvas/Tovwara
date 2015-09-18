@@ -107,15 +107,18 @@
 
 <script>
 	$(document).ready( function () {
-    $('#usersTable').DataTable({
-	buttons: [
-        'excel'
-    ],   
+    var table = $('#usersTable').DataTable({
 	language: {
 	        url: 'https://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json'
 	    },
 	"pageLength": 50 
     });
+    
+    new $.fn.dataTable.Buttons( table, {
+    buttons: [
+        'copy', 'excel', 'pdf'
+    ]
+} );
 } );
 </script>
 
