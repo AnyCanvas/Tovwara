@@ -106,7 +106,6 @@
 
 <!--common script init for all pages-->
 <script src="js/scripts.js"></script>
-<script src="css/datatables/js/jquery.dataTables.js"></script>
 <script src="css/datatables/js/dataTables.bootstrap.js"></script>
 
 <script>
