@@ -119,20 +119,12 @@
 		language: {
 		        url: 'https://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json'
 		    },
-		"pageLength": 50		
-	});
- 
-	new $.fn.dataTable.Buttons( table, {
+		"pageLength": 50,		
 		dom: 'Bfrtip',
 	    buttons: [
 	        'copy', 'excel', 'pdf'
 	    ]
-	} );
-	 
-	table.buttons().container()
-	    .appendTo( $('.col-sm-6:eq(0)', table.table().container() ) );
-
-	} );
+	});
 </script>
 
 </body>
