@@ -102,7 +102,9 @@
 <script src="css/datatables/js/jquery.dataTables.js"></script>
 <script src="css/datatables/js/dataTables.bootstrap.js"></script>
 <script src="css/datatables/js/datatables.buttons.min.js"></script>
+<script src="css/datatables/js/buttons.bootstrap.min.js"></script>
 <script src="css/datatables/js/buttons.html5.min.js"></script>
+
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
 <script src="http://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
 <script src="http://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
