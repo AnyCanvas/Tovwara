@@ -103,33 +103,28 @@
 <script src="css/datatables/js/dataTables.bootstrap.js"></script>
 <script src="css/datatables/js/datatables.buttons.min.js"></script>
 <script src="css/datatables/js/buttons.html5.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
-<script src="//cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
-<script src="//cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
-<script src="//cdn.datatables.net/buttons/1.0.3/js/buttons.html5.min.js"></script>
-<script src="//cdn.datatables.net/buttons/1.0.3/js/buttons.print.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+<script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+<script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.0.3/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.0.3/js/buttons.print.min.js"></script>
 
 
 <script>
 	$(document).ready( function () {
-    var table = $('#usersTable').DataTable({
-	language: {
-	        url: 'https://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json'
-	    },
-	"pageLength": 50,
-    buttons: [
-            'copy',
-            'excel',
-            'csv'
-    ]
-    });
-    
-    new $.fn.dataTable.Buttons( table, {
-    buttons: [
-        'copy', 'excel', 'pdf'
-    ]
-} );
-} );
+    $('#usersTable').DataTable({
+		language: {
+		        url: 'https://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json'
+		    },
+		"pageLength": 50,
+	    buttons: [
+	            'copy',
+	            'excel',
+	            'csv'
+	    ]
+	    });
+
+	} );
 </script>
 
 </body>
