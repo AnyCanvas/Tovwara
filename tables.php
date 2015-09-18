@@ -102,7 +102,6 @@
 <script src="css/datatables/js/jquery.dataTables.js"></script>
 <script src="css/datatables/js/dataTables.bootstrap.js"></script>
 <script src="css/datatables/js/buttons.bootstrap.min.js"></script>
-<script src="css/datatables/js/datatables.buttons.min.js"></script>
 <script src="css/datatables/js/buttons.html5.min.js"></script>
 
 <script>
