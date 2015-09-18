@@ -5,7 +5,7 @@
 		                <div class="gauge-canvas">
 	                        <h4 class="widget-h">Mis Fanbot</h4>
 	                    </div>
-                        <table class="table  table-hover general-table">
+                        <table id "table_id">
                             <thead>
                             <tr>
                                 <th class="hidden-phone">Numero de serie</th>

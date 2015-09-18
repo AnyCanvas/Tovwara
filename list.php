@@ -14,7 +14,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
-    <meta name="author" content="ThemeBucket">
+    <meta name="author" content="Fanbot">
     <link rel="shortcut icon" href="images/favicon.png">
 
     <title>Fanbot dashboard</title>
@@ -23,6 +23,7 @@
     <link href="bs3/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-reset.css" rel="stylesheet">
     <link href="font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="css/datatables/css/jquery.dataTables.css" rel="stylesheet" />
 
     
     <!-- Custom styles for this template -->
@@ -104,6 +105,12 @@
 
 <!--common script init for all pages-->
 <script src="js/scripts.js"></script>
+
+<script>
+	$(document).ready( function () {
+    $('#table_id').DataTable();
+} );
+</script>
 
 </body>
 </html>
