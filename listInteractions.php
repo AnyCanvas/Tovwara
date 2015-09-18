@@ -56,8 +56,8 @@
 				$date =new DateTime($row['date']);
 				// Get de number of day from the date variable
 				$formatedDate = $date->format('d/m/y');
-				
-				echo '<td>'. $formatedDate. '</td>';
+				$orderDate = $date->format('ymd');
+				echo '<td><span style="display: none;">'. $orderDate .'</span>'. $formatedDate. '</td>';
 				
 				
 			    $sql2 = "SELECT * FROM users WHERE fbID = '". $row['userId'] . "'";
