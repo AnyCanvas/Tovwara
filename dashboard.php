@@ -28,6 +28,8 @@
     <link href="bs3/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-reset.css" rel="stylesheet">
     <link href="font-awesome/css/font-awesome.css" rel="stylesheet" />
+
+	<!-- Data table-->
 	<link href="css/datatables/css/dataTables.bootstrap.css" rel="stylesheet" />	
 
     

@@ -7,12 +7,20 @@
 		
 ?> 
 
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-</head>
+                    <table  class="table" id="usersTable">
+                    <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Nombre</th>
+                        <th>Email</th>
+                        <th>Genero</th>
+                        <th>Pagina de Facebook</th>
+                        <th>Nombre de la Fanbot</th>
+                    </tr>
+                    </thead>
 
-<body>
+                    <tbody>
+
 <?php
 
 	function listInteractions(){	
@@ -77,4 +85,17 @@
 	
 	listInteractions();
 ?>
-</body>
+
+                    </tbody>
+
+                    <tfoot>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Nombre</th>
+                        <th>Email</th>
+                        <th>Genero</th>
+                        <th>Pagina de Facebook</th>
+                        <th>Nombre de la Fanbot</th>
+                    </tr>
+                    </tfoot>
+                    </table>

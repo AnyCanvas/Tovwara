@@ -23,6 +23,9 @@
     <link href="css/bootstrap-reset.css" rel="stylesheet">
     <link href="font-awesome/css/font-awesome.css" rel="stylesheet" />
 
+	<!-- Data table-->
+	<link href="css/datatables/css/dataTables.bootstrap.css" rel="stylesheet" />	
+
     <!--dynamic table-->
     <link href="js/advanced-datatable/css/demo_page.css" rel="stylesheet" />
     <link href="js/advanced-datatable/css/demo_table.css" rel="stylesheet" />
@@ -83,33 +86,8 @@
                 			</div>
                 <div class="space15"></div>
                     <div class="adv-table">
-                    <table  class="table table-striped table-hover table-bordered" id="dynamic-table">
-                    <thead>
-                    <tr>
-                        <th>Fecha</th>
-                        <th>Nombre</th>
-                        <th>Email</th>
-                        <th>Genero</th>
-                        <th>Pagina de Facebook</th>
-                        <th>Nombre de la Fanbot</th>
-                    </tr>
-                    </thead>
-
-                    <tbody>
 		    <?php listInteractions() ?>
-                    </tbody>
 
-                    <tfoot>
-                    <tr>
-                        <th>Fecha</th>
-                        <th>Nombre</th>
-                        <th>Email</th>
-                        <th>Genero</th>
-                        <th>Pagina de Facebook</th>
-                        <th>Nombre de la Fanbot</th>
-                    </tr>
-                    </tfoot>
-                    </table>
                     </div>
                     </div>
                 </section>
@@ -189,11 +167,18 @@
 <script src="http://alasql.org/console/alasql.min.js"></script>
 <script src="http://alasql.org/console/xlsx.core.min.js"></script>
 
+<!-- Data tables-->
+<script src="css/datatables/js/jquery.dataTables.js"></script>
+<script src="css/datatables/js/dataTables.bootstrap.js"></script>
+
 <script>
-	window.exportExcel =     function exportExcel() {
-        alasql('SELECT * INTO XLSX("usuarios.xlsx",{headers:true}) \
-                    FROM HTML("#fullTable",{headers:true})');
-    }
+	$(document).ready( function () {
+    $('#usersTable').DataTable({
+	language: {
+	        url: 'https://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json'
+	    }	    
+    });
+} );
 </script>
 
 </body>
