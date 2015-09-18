@@ -124,6 +124,7 @@
 	    buttons: [
 	        'copy', 'excel', 'pdf'
 	    ]
+		});
 	});
 </script>
 
