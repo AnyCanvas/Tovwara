@@ -6,7 +6,13 @@
 		}			
 		
 ?> 
-
+         <div class="row">
+            <div class="col-sm-12">
+                <section class="panel">
+                    <div class="panel-body">
+		                <div class="gauge-canvas">
+	                        <h4 class="widget-h">Mis Fanbot</h4>
+	                    </div>
                     <table  class="table" id="usersTable">
                     <thead>
                     <tr>
@@ -20,7 +26,6 @@
                     </thead>
 
                     <tbody>
-
 <?php
 
 	function listInteractions(){	
@@ -82,9 +87,10 @@
 		$conn->close();
 
 	}	
-	
+
 	listInteractions();
 ?>
+
 
                     </tbody>
 
@@ -99,3 +105,7 @@
                     </tr>
                     </tfoot>
                     </table>
+                    </div>
+                </section>
+            </div>
+        </div>

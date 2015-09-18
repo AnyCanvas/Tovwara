@@ -67,27 +67,7 @@
     <section id="main-content">
         <section class="wrapper">
         <!-- page start-->
-        <div class="row">
-            <div class="col-sm-12">
-                <section class="panel">
-                    <div class="panel-body">
-	                <div class="gauge-canvas">
-                        <h4 class="widget-h">Acciones de todos los usuarios</h4>
-                    </div>
-
-	                    <div class="clearfix">
-	
-			            <div class="space15"></div>
-			            <div class="adv-table">
-					    	<?php listInteractions() ?>
-			
-			            </div>
-                    </div>
-                </section>
-            </div>
-        </div>
-
-         
+			<?php listInteractions() ?>			
         <!-- page end-->
         </section>
     </section>
