@@ -122,7 +122,7 @@
 		"pageLength": 50,		
 		dom: 'Bfrtip',
 	    buttons: [
-	        'csv', 'excel', 'pdf'
+	        'csv', 'pdf'
 	    ]
 		});
 	});
