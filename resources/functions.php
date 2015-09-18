@@ -85,7 +85,32 @@
 	
 }	
 
-function listInteractions(){	
+function listInteractions(){
+	
+	
+		?> 
+		<div class="row">
+            <div class="col-sm-12">
+                <section class="panel">
+                    <div class="panel-body">
+		                <div class="gauge-canvas">
+	                        <h4 class="widget-h">Mis Fanbot</h4>
+	                    </div>
+                    <table  class="table" id="usersTable">
+                    <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Nombre</th>
+                        <th>Email</th>
+                        <th>Genero</th>
+                        <th>Pagina de Facebook</th>
+                        <th>Nombre de la Fanbot</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+		
+		<?php	
 			
 		require(realpath(dirname(__FILE__) . "/./config.php"));
     	$servername = $config["db"]["fanbot"]["host"];
@@ -152,6 +177,26 @@ function listInteractions(){
 
 			}
 		$conn->close();
+		
+		?>
+		                    </tbody>
+
+                    <tfoot>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Nombre</th>
+                        <th>Email</th>
+                        <th>Genero</th>
+                        <th>Pagina de Facebook</th>
+                        <th>Nombre de la Fanbot</th>
+                    </tr>
+                    </tfoot>
+                    </table>
+                    </div>
+                </section>
+            </div>
+        </div>
+		<?php
 
 	}	
 
