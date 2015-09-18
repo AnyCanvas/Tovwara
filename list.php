@@ -109,7 +109,11 @@
 
 <script>
 	$(document).ready( function () {
-    $('#table_id').DataTable();
+    $('#table_id').DataTable({
+	language: {
+	        url: 'https://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json'
+	    }	    
+    });
 } );
 </script>
 
