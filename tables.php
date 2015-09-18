@@ -120,9 +120,7 @@
     buttons: [
             'copy',
             'excel',
-            'csv',
-            'pdf',
-            'print'
+            'csv'
     ]
     });
     
