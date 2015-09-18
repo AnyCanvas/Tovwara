@@ -26,11 +26,6 @@
 	<!-- Data table-->
 	<link href="css/datatables/css/dataTables.bootstrap.css" rel="stylesheet" />	
 
-    <!--dynamic table-->
-    <link href="js/advanced-datatable/css/demo_page.css" rel="stylesheet" />
-    <link href="js/advanced-datatable/css/demo_table.css" rel="stylesheet" />
-    <link rel="stylesheet" href="js/data-tables/DT_bootstrap.css" />
-
     <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet">
     <link href="css/style-responsive.css" rel="stylesheet" />
@@ -99,18 +94,8 @@
 <script src="js/flot-chart/jquery.flot.resize.js"></script>
 <script src="js/flot-chart/jquery.flot.pie.resize.js"></script>
 
-<!--dynamic table-->
-<script type="text/javascript" language="javascript" src="js/advanced-datatable/js/jquery.dataTables.js"></script>
-<script type="text/javascript" src="js/data-tables/DT_bootstrap.js"></script>
 <!--common script init for all pages-->
 <script src="js/scripts.js"></script>
-
-<!--dynamic table initialization -->
-<script src="js/dynamic_table_init.js"></script>
-
-<!-- Export table JS -->
-<script src="http://alasql.org/console/alasql.min.js"></script>
-<script src="http://alasql.org/console/xlsx.core.min.js"></script>
 
 <!-- Data tables-->
 <script src="css/datatables/js/jquery.dataTables.js"></script>
