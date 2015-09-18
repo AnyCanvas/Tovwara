@@ -103,6 +103,12 @@
 <script src="css/datatables/js/dataTables.bootstrap.js"></script>
 <script src="css/datatables/js/datatables.buttons.min.js"></script>
 <script src="css/datatables/js/buttons.html5.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+<script src="//cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+<script src="//cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+<script src="//cdn.datatables.net/buttons/1.0.3/js/buttons.html5.min.js"></script>
+<script src="//cdn.datatables.net/buttons/1.0.3/js/buttons.print.min.js"></script>
+
 
 <script>
 	$(document).ready( function () {
@@ -110,7 +116,17 @@
 	language: {
 	        url: 'https://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json'
 	    },
-	"pageLength": 50 
+	"pageLength": 50,
+    buttons: [
+	    text: 'Export',
+        buttons: [
+            'copy',
+            'excel',
+            'csv',
+            'pdf',
+            'print'
+            ]
+    ]
     });
     
     new $.fn.dataTable.Buttons( table, {
