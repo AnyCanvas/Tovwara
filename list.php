@@ -24,7 +24,9 @@
     <link href="css/bootstrap-reset.css" rel="stylesheet">
     <link href="font-awesome/css/font-awesome.css" rel="stylesheet" />
     <link href="css/datatables/css/jquery.dataTables.css" rel="stylesheet" />
-
+	<link href="css/datatables/css/jquery.dataTables.css" rel="stylesheet" />
+	<link href="css/datatables/js/jquery.dataTables.js" rel="stylesheet" />
+	
     
     <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet">
