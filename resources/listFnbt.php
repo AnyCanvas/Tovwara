@@ -61,7 +61,7 @@
 															<tr>
 								                                <td><?php echo $row['id']?></td>
 								                                <td><kbd class="text-uppercase"><?php echo $row['name']?></kbd></td>
-								                                <td><a class="text-primary" target="_blank" href="http://facebook.com/<?php echo $config['link']?>"><?php echo $row['fbPage']?></a></td>
+								                                <td><a class="text-primary" target="_blank" href="http://facebook.com/<?php echo $config['link']?>"><?php echo $config['link']?></a></td>
 
 								                                <td><?php 
 																	switch ($row['plan']) {
