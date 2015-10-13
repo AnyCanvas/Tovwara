@@ -311,8 +311,27 @@ function changeFacebookPage(){
 		if ($conn->connect_error) {
 		    die("Connection failed: " . $conn->connect_error);
 		} 
-	
-		$sql = "UPDATE fanbot SET fbPage ='". $facebookPage ."' WHERE name = '". $fnbtName."'";
+
+
+		$sql = "SELECT * FROM fanbot WHERE name = '". $fnbtName ."' ";
+		$result = $conn->query($sql);
+
+		$conn->close();
+		
+		if ($result->num_rows > 0) {		    
+		    while($row = $result->fetch_assoc()) {
+			    			        
+		        $config = json_decode($row["config"], true);
+
+			    }
+
+			} else {
+
+			}
+		
+		$config['link'] = $facebookPage;
+	    
+		$sql = "UPDATE fanbot SET config ='". json_encode($config) ."' WHERE name = '". $fnbtName."'";
 		
 		if ($conn->query($sql) === TRUE) {
 		} else {
