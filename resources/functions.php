@@ -330,8 +330,9 @@ function changeFacebookPage(){
 			}
 		
 		$config['link'] = $facebookPage;
+		$configJson = json_encode($config);
 	    
-		$sql = "UPDATE fanbot SET config ='". json_encode($config) ."' WHERE name = '". $fnbtName."'";
+		$sql = "UPDATE fanbot SET config ='". $configJson ."' WHERE name = '". $fnbtName."'";
 		
 		if ($conn->query($sql) === TRUE) {
 		} else {
