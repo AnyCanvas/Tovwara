@@ -53,6 +53,16 @@
 		        <div class="modal-body">
 					<form class="form-inline" id="formUrl">
 					  <div class="form-group">
+							<label for="fanbotPlan" class="control-label">Mes gratis: </label>
+							<select class="form-control" id="fanbotPlan">
+					        	<option value="01">Basic</option>
+								<option value="02">Pro</option>
+					        	<option value="03">Premium</option>
+								<option value="00">Asombrandom</option>
+							</select>
+
+					  </div>
+					  <div class="form-group">
 						<div class="input-group">									  
 							<div for="facebookUrl" class="input-group-addon">http://facebook.com/</div>
 							<input type="text" class="form-control input-sm" id="facebookPage" placeholder="Link de tu pagina" name="facebookPage">
