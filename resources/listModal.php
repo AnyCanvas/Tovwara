@@ -29,8 +29,9 @@
 	        var ajaxurl = 'resources/actionUrl.php';
 	        var facebookPage = $("#facebookPage").val();
 	        var fanbotName = $( "#fanbotName" ).val();
+	        var actionType = $( "#actionType" ).val();
 
-	        data =  {'facebookPage' : facebookPage, 'fanbotName': fanbotName};
+	        data =  {'facebookPage' : facebookPage, 'actionType': actionType,'fanbotName': fanbotName, };
 	        console.log(data);
 	        $.post(ajaxurl, data, function (response) {
 	            // Response div goes here.
@@ -62,9 +63,9 @@
 						<input class="form-controlinput-sm" type='hidden' id= 'fanbotName' name='fanbotName' value='' />				  
 					  </div>
 					  <div class="form-group">
-							<select class="form-control" id="fanbotPlan">
-					        	<option value="01">Like</option>
-								<option value="02">Post</option>
+							<select class="form-control" id="actionType">
+					        	<option value="like">Like</option>
+								<option value="post">Post</option>
 							</select>
 
 					  </div>

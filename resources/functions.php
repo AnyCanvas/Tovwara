@@ -296,6 +296,8 @@ function editPaid(){
 function changeFacebookPage(){
 
 	$fnbtName  = $_POST["fanbotName"];
+	$actionType  = $_POST["actionType"];
+
 	$facebookPage  = $_POST["facebookPage"];
 
 				
@@ -328,6 +330,7 @@ function changeFacebookPage(){
 			}
 		
 		$config['link'] = $facebookPage;
+		$config['type'] = $actionType;
 		$configJson = json_encode($config);
 	    
 		$sql = "UPDATE fanbot SET config ='". $configJson ."' WHERE name = '". $fnbtName ."'";
