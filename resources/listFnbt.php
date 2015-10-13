@@ -55,7 +55,7 @@
 										
 										if ($result->num_rows > 0) {		    
 										    while($row = $result->fetch_assoc()) { 
-											    $config = json_decode($row['config']);
+											    $config = json_decode($row["config"], true);
 										    ?>
 											    			
 															<tr>
