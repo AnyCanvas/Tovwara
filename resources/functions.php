@@ -296,6 +296,8 @@ function editPaid(){
 function changeFacebookPage(){
 
 	$fnbtName  = $_POST["fanbotName"];
+	$actionType  = $_POST["actionType"];
+
 	$facebookPage  = $_POST["facebookPage"];
 
 				
@@ -311,8 +313,27 @@ function changeFacebookPage(){
 		if ($conn->connect_error) {
 		    die("Connection failed: " . $conn->connect_error);
 		} 
-	
-		$sql = "UPDATE fanbot SET fbPage ='". $facebookPage ."' WHERE name = '". $fnbtName."'";
+
+
+		$sql = "SELECT * FROM fanbot WHERE name = '". $fnbtName ."' ";
+		$result = $conn->query($sql);
+		
+		if ($result->num_rows > 0) {		    
+		    while($row = $result->fetch_assoc()) {
+			    			        
+		        $config = json_decode($row["config"], true);
+
+			    }
+
+			} else {
+
+			}
+		
+		$config['link'] = $facebookPage;
+		$config['type'] = $actionType;
+		$configJson = json_encode($config);
+	    
+		$sql = "UPDATE fanbot SET config ='". $configJson ."' WHERE name = '". $fnbtName ."'";
 		
 		if ($conn->query($sql) === TRUE) {
 		} else {
