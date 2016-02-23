@@ -101,6 +101,7 @@ function listInteractions(){
                     <tr>
                         <th>Fecha</th>
                         <th>Nombre</th>
+                        <th>Apellido</th>
                         <th>Email</th>
                         <th>Genero</th>
                         <th>Pagina de Facebook</th>
@@ -142,7 +143,7 @@ function listInteractions(){
 				// Create a new date var from date in db
 				$date =new DateTime($row['date']);
 				// Get de number of day from the date variable
-				$formatedDate = $date->format('d/m/y');
+				$formatedDate = $date->format('d/m/y, g:i a');
 				$orderDate = $date->format('ymd');
 				
 				echo "\t\t\t". '<td data-order='. $orderDate .'">'. $formatedDate. '</td>'. "\r\n";
@@ -153,15 +154,17 @@ function listInteractions(){
 				if ($result2->num_rows > 0) {	
 						    
 				    while($row2 = $result2->fetch_assoc()) { 
+						$firstName = $row2['firstName'];
+						$lasttName = $row2['lasttName'];
 						$email = $row2['email'];
 						$gender =  $row2['gender'];
-						$fbName = $row2['fbName'];
 
 
 			    }
 			    
 			    }
-						echo "\t\t\t". '<td>'.$fbName.'</td>'. "\r\n";
+						echo "\t\t\t". '<td><a href="https://www.facebook.com/'. $row['userId'] . '">'. $firstName .'</td>'. "\r\n";
+						echo "\t\t\t". '<td>'. $lasttName .'</td>'. "\r\n";
 						echo "\t\t\t". '<td>'. $email.' </td>'. "\r\n";
 						echo "\t\t\t". '<td>'.$gender.'</td>'. "\r\n";
 

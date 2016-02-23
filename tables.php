@@ -63,7 +63,7 @@
     <section id="main-content">
         <section class="wrapper">
         <!-- page start-->
-		<?php listInteractions() ?>			
+		<?php listInteractions(); ?>			
         <!-- page end-->
         </section>
     </section>
