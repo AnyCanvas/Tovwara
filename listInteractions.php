@@ -18,6 +18,7 @@
                     <tr>
                         <th>Fecha</th>
                         <th>Nombre</th>
+                        <th>Apellido</th>
                         <th>Email</th>
                         <th>Genero</th>
                         <th>Pagina de Facebook</th>
@@ -55,7 +56,7 @@
 				// Create a new date var from date in db
 				$date =new DateTime($row['date']);
 				// Get de number of day from the date variable
-				$formatedDate = $date->format('d/m/y');
+				$formatedDate = $date->format('d/m/y, g:i a');
 				$orderDate = $date->format('ymd');
 				echo '<td><span style="display: none;">'. $orderDate .'</span>'. $formatedDate. '</td>';
 				
@@ -65,7 +66,8 @@
 				if ($result2->num_rows > 0) {	
 						    
 				    while($row2 = $result2->fetch_assoc()) { 
-						echo '<td>'.$row2['fbName'].'</td>';
+						echo '<td><a href="https://www.facebook.com/'. $row['userId'] . '">'.$row2['firstName'].'</td>';
+						echo '<td>'.$row2['lasttName'].'</td>';
 						echo '<td>'.$row2['email'].'<td>';
 						echo '<td>'.$row2['gender'].'</td>';
 			    }
