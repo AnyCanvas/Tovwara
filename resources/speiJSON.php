@@ -50,5 +50,7 @@
 		));
 		echo '{';
 		echo'"CLABE":"'. $charge->payment_method->clabe . '"';
+		echo ',';
+		echo'"Nombre":"'. $charge->details->name . '"';
 		echo '}';
 ?>
