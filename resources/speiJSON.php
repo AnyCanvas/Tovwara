@@ -14,7 +14,7 @@
 		  'details'=> array(
 		    'name'=> 'Juan Pedro Casillas',
 		    'phone'=> '3311703904',
-		    'email'=> 'pedrocch@gmail.com',
+		    'email'=> 'pedrocch@fanbot.me',
 		    'customer'=> array(
 //		      'logged_in'=> true,
 //		      'successful_purchases'=> 14,
@@ -25,26 +25,26 @@
 		    ),
 		    'line_items'=> array(
 		      array(
-		        'name'=> 'Box of Cohiba S1s',
-		        'description'=> 'Imported From Mex.',
-		        'unit_price'=> 20000,
+		        'name'=> 'Fanbot plan mensual',
+		        'description'=> 'Plan por 750 interacciones',
+		        'unit_price'=> 75000,
 		        'quantity'=> 1,
-		        'sku'=> 'cohb_s1',
-		        'category'=> 'food'
+		        'sku'=> '750',
+		        'category'=> 'Interacción'
 		      )
 		    ),
 		    'billing_address'=> array(
-		      'street1'=>'77 Mystery Lane',
-		      'street2'=> 'Suite 124',
+		      'street1'=>'Agricultores 5433',
+		      'street2'=> 'Arcos de Guadalupe',
 		      'street3'=> null,
-		      'city'=> 'Darlington',
-		      'state'=>'NJ',
-		      'zip'=> '10192',
+		      'city'=> 'Zapopan',
+		      'state'=>'Jalisco',
+		      'zip'=> '45030',
 		      'country'=> 'Mexico',
 		      'tax_id'=> 'xmn671212drx',
-		      'company_name'=>'X-Men Inc.',
-		      'phone'=> '77-777-7777',
-		      'email'=> 'purshasing@x-men.org'
+		      'company_name'=>'AnyCanvas Inc.',
+		      'phone'=> '3311703004',
+		      'email'=> 'pedrocch@fanbot.me'
 		    )
 		  )
 		));
