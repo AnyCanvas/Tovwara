@@ -56,5 +56,5 @@
 		echo'"Cantidad":"'. $charge->amount. '"';
 		echo '}';
 		
-		echo json_encode($charge);
+		print $charge;
 ?>
