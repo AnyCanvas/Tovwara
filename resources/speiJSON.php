@@ -49,12 +49,14 @@
 		  )
 		));
 		echo '{';
-		echo'"CLABE":"'. $charge->payment_method->clabe . '"';
-		echo ',';
 		echo'"Nombre":"'. $charge->details["name"] . '"';
 		echo ',';
+		echo'"Email":"'. $charge->details["email"] . '"';
+		echo ',';
+		echo'"Concepto":"'. $charge->details["line_items"]["description"] . '"';
+		echo ',';
 		echo'"Cantidad":"'. $charge->amount. '"';
+		echo ',';
+		echo'"CLABE":"'. $charge->payment_method->clabe . '"';
 		echo '}';
-		
-		print $charge;
 ?>
