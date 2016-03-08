@@ -48,6 +48,7 @@
 		    )
 		  )
 		));
-		
-		print($charge->payment_method->clabe);
+		echo '{';
+		echo($charge->payment_method->clabe);
+		echo '}';
 ?>
