@@ -51,8 +51,10 @@
 		echo '{';
 		echo'"CLABE":"'. $charge->payment_method->clabe . '"';
 		echo ',';
-		echo'"Nombre":"'. $charge->phone . '"';
+		echo'"Nombre":"'. $charge->details->email . '"';
 		echo ',';
 		echo'"Cantidad":"'. $charge->amount. '"';
 		echo '}';
+		
+		echo json_encode($charge);
 ?>
