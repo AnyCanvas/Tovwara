@@ -50,5 +50,4 @@
 		));
 		
 		print($charge->payment_method->clabe);
-		print($charge->payment_method->bank);
 ?>
