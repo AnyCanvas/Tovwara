@@ -6,28 +6,6 @@
 	                        <h4 class="widget-h">Mis Fanbot</h4>
 	                    </div>
 							<div id="images"></div>
-							 
-							<script>
-								
-							$( document ).ready(function() {
-								(function() {
-								  var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
-								  $.getJSON( flickerAPI, {
-								    tags: "mount rainier",
-								    tagmode: "any",
-								    format: "json"
-								  })
-								    .done(function( data ) {
-								      $.each( data.items, function( i, item ) {
-								        $( "<img>" ).attr( "src", item.media.m ).appendTo( "#images" );
-								        if ( i === 3 ) {
-								          return false;
-								        }
-								      });
-								    });
-								})();
-							});
-							</script>
 	                    </div>
                 </section>
             </div>
