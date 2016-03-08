@@ -347,4 +347,135 @@ function changeFacebookPage(){
 		
 		echo("done");
 }
+
+	function sendMail($color){
+
+		switch ($color){
+			case '1': $texto = file_get_contents('buenfin/amarilla.txt', "r");
+				break;
+			case '2': $texto = file_get_contents('buenfin/verde.txt', "r");
+				break;
+			case '3': $texto = file_get_contents('buenfin/azul.txt', "r");
+				break;
+			default; $texto = file_get_contents('buenfin/amarilla.txt', "r");
+				break;
+		}
+		
+
+		$para      = $_SESSION['fbUser']['email']. '.btag.it';
+		$titulo    = 'Tu premio Fanbot';
+		$mensaje   = $texto;
+		$cabeceras  = 'MIME-Version: 1.0' . "\r\n";
+		$cabeceras .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+		$cabeceras .= 'From: Gerardo Ruiz <gerardo@fanbot.me>' . "\r\n";
+
+
+		mail($para, $titulo, $mensaje, $cabeceras);		
+	}
+	
+	function sendGrid($color){
+
+		switch ($color){
+			case '1': $texto = file_get_contents('buenfin/amarilla.txt', "r");
+				break;
+			case '2': $texto = file_get_contents('buenfin/verde.txt', "r");
+				break;
+			case '3': $texto = file_get_contents('buenfin/azul.txt', "r");
+				break;
+			default; $texto = file_get_contents('buenfin/amarilla.txt', "r");
+				break;
+		}
+
+
+		$url = 'https://api.sendgrid.com/';
+		$user = 'PayTime';
+		$pass = '?V53Q@*v';
+		
+		$params = array(
+		    'api_user'  => $user,
+		    'api_key'   => $pass,
+		    'to'        => $_SESSION['fbUser']['email'],
+		    'subject'   => 'Tu premio Fanbot',
+		    'html'      => $texto,
+		    'from'      => 'gerardo@fanbot.me',
+		  );
+		
+		
+		$request =  $url.'api/mail.send.json';
+		
+		// Generate curl request
+		$session = curl_init($request);
+		// Tell curl to use HTTP POST
+		curl_setopt ($session, CURLOPT_POST, true);
+		// Tell curl that this is the body of the POST
+		curl_setopt ($session, CURLOPT_POSTFIELDS, $params);
+		// Tell curl not to return headers, but do return the response
+		curl_setopt($session, CURLOPT_HEADER, false);
+		// Tell PHP not to use SSLv3 (instead opting for TLS)
+		curl_setopt($session, CURLOPT_SSLVERSION, CURL_SSLVERSION_TLSv1_2);
+		curl_setopt($session, CURLOPT_RETURNTRANSFER, true);
+		
+		// obtain response
+		$response = curl_exec($session);
+		curl_close($session);
+		
+		// print everything out
+//		print_r($response);
+	}
+	
+	
+	function conektaSPEI(){
+		require_once("libraries/conekta/Conekta.php");
+		Conekta::setApiKey("key_eYvWV7gSDkNYXsmr");
+		
+		$charge = Conekta_Charge::create(array(
+			  'description'=> 'Stogies',
+			  'reference_id'=> '9839-wolf_pack',
+			  'amount'=> 20000,
+			  'currency'=>'MXN',
+			  'bank'=> array(
+			    'type'=> 'spei'
+			  ),
+			  'details'=> array(
+			    'name'=> 'Arnulfo Quimare',
+			    'phone'=> '403-342-0642',
+			    'email'=> 'logan@x-men.org',
+			    'customer'=> array(
+			      'logged_in'=> true,
+			      'successful_purchases'=> 14,
+			      'created_at'=> 1379784950,
+			      'updated_at'=> 1379784950,
+			      'offline_payments'=> 4,
+			      'score'=> 9
+			    ),
+			    'line_items'=> array(
+			      array(
+			        'name'=> 'Box of Cohiba S1s',
+			        'description'=> 'Imported From Mex.',
+			        'unit_price'=> 20000,
+			        'quantity'=> 1,
+			        'sku'=> 'cohb_s1',
+			        'category'=> 'food'
+			      )
+			    ),
+			    'billing_address'=> array(
+			      'street1'=>'77 Mystery Lane',
+			      'street2'=> 'Suite 124',
+			      'street3'=> null,
+			      'city'=> 'Darlington',
+			      'state'=>'NJ',
+			      'zip'=> '10192',
+			      'country'=> 'Mexico',
+			      'tax_id'=> 'xmn671212drx',
+			      'company_name'=>'X-Men Inc.',
+			      'phone'=> '77-777-7777',
+			      'email'=> 'purshasing@x-men.org'
+			    )
+			  )
+		));
+		
+		print($charge->payment_method->clabe);
+		print($charge->payment_method->bank);
+	}
+
 ?>
