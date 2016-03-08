@@ -53,7 +53,7 @@
 		echo ',';
 		echo'"Email":"'. $charge->details["email"] . '"';
 		echo ',';
-		echo'"Concepto":"'. $charge->details->line_items . '"';
+		echo'"Concepto":"'. $charge->details . '"';
 		echo ',';
 		echo'"Cantidad":"'. $charge->amount. '"';
 		echo ',';
