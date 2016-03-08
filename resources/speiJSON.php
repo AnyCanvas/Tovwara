@@ -49,6 +49,6 @@
 		  )
 		));
 		echo '{';
-		echo($charge->payment_method->clabe);
+		echo'"CLABE":"'. $charge->payment_method->clabe . '"';
 		echo '}';
 ?>
