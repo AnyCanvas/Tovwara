@@ -8,7 +8,19 @@
                             <div class="position-center">
                                 <form role="form">
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Email address</label>
+                                    <label for="exampleInputEmail1">Nombre</label>
+                                    <input type="text" class="form-control" id="name" placeholder="Nombre del cliente">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Email</label>
+                                    <input type="email" class="form-control" id="email" placeholder="Email del cliente">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Concepto</label>
+                                    <input type="text" class="form-control" id="concept" placeholder="Concepto de la compra">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Email</label>
                                     <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
                                 </div>
                                 <div class="form-group">
