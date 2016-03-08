@@ -51,6 +51,6 @@
 		echo '{';
 		echo'"CLABE":"'. $charge->payment_method->clabe . '"';
 		echo ',';
-		echo'"Nombre":"'. $charge->payment_method->clabe . '"';
+		echo'"Nombre":"'. $charge->details->name . '"';
 		echo '}';
 ?>
