@@ -34,17 +34,17 @@
 		      )
 		    ),
 		    'billing_address'=> array(
-		      'street1'=>'Agricultores 5433',
-		      'street2'=> 'Arcos de Guadalupe',
-		      'street3'=> null,
-		      'city'=> 'Zapopan',
-		      'state'=>'Jalisco',
-		      'zip'=> '45030',
-		      'country'=> 'Mexico',
-		      'tax_id'=> 'xmn671212drx',
-		      'company_name'=>'AnyCanvas Inc.',
-		      'phone'=> '3311703004',
-		      'email'=> 'pedrocch@fanbot.me'
+//		      'street1'=>'Agricultores 5433',
+//		      'street2'=> 'Arcos de Guadalupe',
+//		      'street3'=> null,
+//		      'city'=> 'Zapopan',
+//		      'state'=>'Jalisco',
+//		      'zip'=> '45030',
+//		      'country'=> 'Mexico',
+//		      'tax_id'=> 'xmn671212drx',
+//		      'company_name'=>'AnyCanvas Inc.',
+//		      'phone'=> '3311703004',
+//		      'email'=> 'pedrocch@fanbot.me'
 		    )
 		  )
 		));
