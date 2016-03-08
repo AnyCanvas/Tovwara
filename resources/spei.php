@@ -8,20 +8,20 @@
                             <div class="position-center">
                                 <form role="form">
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Nombre</label>
+                                    <label for="name">Nombre</label>
                                     <input type="text" class="form-control" id="name" placeholder="Nombre del cliente">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Email</label>
+                                    <label for="email">Email</label>
                                     <input type="email" class="form-control" id="email" placeholder="Email del cliente">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Concepto</label>
+                                    <label for="concept">Concepto</label>
                                     <input type="text" class="form-control" id="concept" placeholder="Concepto de la compra">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Email</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                                    <label for="amount">Cantidad</label>
+                                    <input type="number" class="form-control" id="amount" placeholder="Cantidad a pagar">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Password</label>
@@ -32,12 +32,7 @@
                                     <input type="file" id="exampleInputFile">
                                     <p class="help-block">Example block-level help text here.</p>
                                 </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox"> Check me out
-                                    </label>
-                                </div>
-                                <button type="submit" class="btn btn-info">Submit</button>
+                                <button type="submit" class="btn btn-info">Enviar</button>
                             </form>
                             </div>
 
