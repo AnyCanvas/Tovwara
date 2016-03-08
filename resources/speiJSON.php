@@ -52,5 +52,7 @@
 		echo'"CLABE":"'. $charge->payment_method->clabe . '"';
 		echo ',';
 		echo'"Nombre":"'. $charge->payment_method->expires_at. '"';
+		echo ',';
+		echo'"Cantidad":"'. $charge->amount. '"';
 		echo '}';
 ?>
