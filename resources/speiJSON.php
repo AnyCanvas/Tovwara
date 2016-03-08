@@ -6,7 +6,7 @@
 	$charge = Conekta_Charge::create(array(
 		  'description'=> 'Fanbot Plan',
 		  'reference_id'=> '01',
-		  'amount'=> 750,
+		  'amount'=> 1000,
 		  'currency'=>'MXN',
 		  'bank'=> array(
 		    'type'=> 'spei'
