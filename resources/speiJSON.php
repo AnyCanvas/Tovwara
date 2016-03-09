@@ -7,8 +7,10 @@
 	$conept = $_POST["concept"];
 	$amount = $_POST["amount"];
 
+	$dir_subida = '/var/www/html/';
+	$fichero_subido = $dir_subida . basename($_FILES['xmlFile']);
 	
-	if (move_uploaded_file($_FILES['xmlFile'], "./xml.xml")) {
+	if (move_uploaded_file($_FILES['xmlFile'], $fichero_subido)) {
 	    echo "El fichero es válido y se subió con éxito.\n";
 	} else {
 	    echo "¡Posible ataque de subida de ficheros!\n";
