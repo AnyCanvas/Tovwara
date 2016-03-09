@@ -32,7 +32,7 @@
                                     <input type="file" id="pdfFile">
                                 </div>
 
-                                <button type="submit" onclick="sendInfo()" class="btn btn-info">Enviar</button>
+                                <button type="submit" class="btn btn-info">Enviar</button>
                             </form>
                             </div>
 
