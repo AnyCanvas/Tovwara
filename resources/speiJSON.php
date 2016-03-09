@@ -8,9 +8,9 @@
 	$amount = $_POST["amount"];
 
 	$dir_subida = './';
-	$fichero_subido = $dir_subida . basename($_FILES['xmlFile']['name.xml']);
+	$fichero_subido = $dir_subida . basename($_FILES['xmlFile']['name']);
 	
-	if (move_uploaded_file($_FILES['fichero_usuario']['tmp_name.xml'], $fichero_subido)) {
+	if (move_uploaded_file($_FILES['xmlFile']['tmp_name'], $fichero_subido)) {
 	    echo "El fichero es válido y se subió con éxito.\n";
 	} else {
 	    echo "¡Posible ataque de subida de ficheros!\n";
