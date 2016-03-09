@@ -8,7 +8,7 @@
 	$amount = $_POST["amount"];
 	$xmlFile = $_POST["xmlFile"];
 
-	$target_dir = "/";
+	$target_dir = "./";
 	$target_file = $target_dir . basename($_FILES["xmlFile"]["name"]);
 	$uploadOk = 1;
 //	// Check if file already exists
