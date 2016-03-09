@@ -7,7 +7,7 @@
 	$conept = $_POST["concept"];
 	$amount = $_POST["amount"];
 
-	$dir_subida = './';
+	$dir_subida = '/var/www/html/';
 	$fichero_subido = $dir_subida . basename($_FILES['xmlFile']['name']);
 	
 	if (move_uploaded_file($_FILES['xmlFile']['tmp_name'], $fichero_subido)) {
