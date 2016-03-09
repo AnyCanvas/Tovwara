@@ -23,11 +23,18 @@
                                     <label for="amount">Cantidad</label>
                                     <input type="number" class="form-control" id="amount" placeholder="Cantidad a pagar">
                                 </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="xmlFile">File input</label>
+                                    <input type="file" id="xmlFile">
+                                    <p class="help-block">Factura en XML.</p>
+                                </div>
+                                <button type="submit" onclick="sendInfo()" class="btn btn-info">Enviar</button>
                             </form>
 
-                                <button onclick="sendInfo()" class="btn btn-info">Enviar</button>
 							<script>
 							function sendInfo(){
+									event.preventDefault();
 							        var ajaxurl = 'resources/speiJSON.php',
 							        data =  {'name': 'nombre'};
 							        $.post(ajaxurl, data, function (response) {
