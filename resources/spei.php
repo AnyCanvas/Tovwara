@@ -6,7 +6,7 @@
                         </header>
                         <div class="panel-body">
                             <div class="position-center">
-                                <form role="form">
+                                <form role="form" action="resources/speiJSON.php" method="post">
                                 <div class="form-group">
                                     <label for="name">Nombre</label>
                                     <input type="text" class="form-control" id="name" placeholder="Nombre del cliente">
@@ -24,24 +24,16 @@
                                     <input type="number" class="form-control" id="amount" placeholder="Cantidad a pagar">
                                 </div>
                                 <div class="form-group">
-                                    <label for="xmlFile">File input</label>
+                                    <label for="xmlFile">XML de factura</label>
                                     <input type="file" id="xmlFile">
-                                    <p class="help-block">Factura en XML.</p>
                                 </div>
+                                <div class="form-group">
+                                    <label for="pdfFile">PDF de factura</label>
+                                    <input type="file" id="pdfFile">
+                                </div>
+
                                 <button type="submit" onclick="sendInfo()" class="btn btn-info">Enviar</button>
                             </form>
-
-							<script>
-							function sendInfo(){
-									event.preventDefault();
-							        var ajaxurl = 'resources/speiJSON.php',
-							        data =  {'name': 'nombre'};
-							        $.post(ajaxurl, data, function (response) {
-							            // Response div goes here.
-							            alert(response);
-							        });
-							    }
-							</script>
                             </div>
 
                         </div>
