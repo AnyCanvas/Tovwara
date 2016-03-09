@@ -9,19 +9,19 @@
                                 <form role="form" action="resources/speiJSON.php" method="post">
                                 <div class="form-group">
                                     <label for="name">Nombre</label>
-                                    <input type="text" class="form-control" id="name" placeholder="Nombre del cliente">
+                                    <input type="text" class="form-control" id="name" placeholder="Nombre del cliente" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="email">Email</label>
-                                    <input type="email" class="form-control" id="email" placeholder="Email del cliente">
+                                    <input type="email" class="form-control" id="email" placeholder="Email del cliente" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="concept">Concepto</label>
-                                    <input type="text" class="form-control" id="concept" placeholder="Concepto de la compra">
+                                    <input type="text" class="form-control" id="concept" placeholder="Concepto de la compra" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="amount">Cantidad</label>
-                                    <input type="number" class="form-control" id="amount" placeholder="Cantidad a pagar">
+                                    <input type="number" class="form-control" id="amount" placeholder="Cantidad a pagar" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="xmlFile">XML de factura</label>
