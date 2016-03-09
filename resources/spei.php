@@ -23,7 +23,6 @@
                                     <label for="amount">Cantidad</label>
                                     <input type="number" class="form-control" id="amount" placeholder="Cantidad a pagar">
                                 </div>
-                                </div>
                                 <div class="form-group">
                                     <label for="xmlFile">File input</label>
                                     <input type="file" id="xmlFile">
