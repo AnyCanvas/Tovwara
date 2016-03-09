@@ -25,11 +25,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="xmlFile">XML de factura</label>
-                                    <input type="file" name="xmlFile" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="pdfFile">PDF de factura</label>
-                                    <input type="file" name="pdfFile" required>
+                                    <input type="file" name="xmlfile" required>
                                 </div>
 
                                 <button type="submit" class="btn btn-info">Enviar</button>
