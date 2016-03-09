@@ -6,7 +6,7 @@
                         </header>
                         <div class="panel-body">
                             <div class="position-center">
-                                <form role="form" action="resources/speiJSON.php" method="post">
+                                <form role="form" action="resources/speiJSON.php" method="post" target="_blank">
                                 <div class="form-group">
                                     <label for="name">Nombre</label>
                                     <input type="text" class="form-control" id="name" placeholder="Nombre del cliente" required>
