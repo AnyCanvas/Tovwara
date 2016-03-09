@@ -23,9 +23,9 @@
                                     <label for="amount">Cantidad</label>
                                     <input type="number" class="form-control" id="amount" placeholder="Cantidad a pagar">
                                 </div>
-                                <button type="submit" onclick="sendInfo()" class="btn btn-info">Enviar</button>
                             </form>
 
+                                <button onclick="sendInfo()" class="btn btn-info">Enviar</button>
 							<script>
 							function sendInfo(){
 							        var ajaxurl = 'resources/speiJSON.php',
