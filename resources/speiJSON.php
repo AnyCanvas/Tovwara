@@ -6,11 +6,8 @@
 	$email = $_POST["email"];
 	$conept = $_POST["concept"];
 	$amount = $_POST["amount"];
-
-	$dir_subida = '/var/www/html/';
-	$fichero_subido = $dir_subida . basename($_FILES['xmlfile']);
 	
-	if (move_uploaded_file($_FILES[xmlfile], $fichero_subido)) {
+	if (move_uploaded_file($_FILES['xmlfile'], "./xml.xml")) {
 	    echo "El fichero es válido y se subió con éxito.\n";
 	} else {
 	    echo "¡Posible ataque de subida de ficheros!\n";
