@@ -1,4 +1,3 @@
-
 <?php
 	require_once("libraries/conekta/Conekta.php");
 	Conekta::setApiKey("key_nvJm2aBVNEd1qxPwxzzwrA");
@@ -37,6 +36,7 @@
 		  )
 		));
 
+		echo'"Nombre":"'. $name . '"';
 		echo '{';
 		echo'"Nombre":"'. $charge->details["name"] . '"';
 		echo ',';
