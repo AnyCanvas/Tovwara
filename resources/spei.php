@@ -23,12 +23,19 @@
                                     <label for="amount">Cantidad</label>
                                     <input type="number" class="form-control" id="amount" placeholder="Cantidad a pagar">
                                 </div>
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">Password</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                                </div>
-                                <button type="submit" class="btn btn-info">Enviar</button>
+                                <button type="submit" onclick="sendInfo()" class="btn btn-info">Enviar</button>
                             </form>
+
+							<script>
+							function sendInfo(){
+							        var ajaxurl = 'resources/speiJSON.php',
+							        data =  {'name': 'nombre'};
+							        $.post(ajaxurl, data, function (response) {
+							            // Response div goes here.
+							            alert(response);
+							        });
+							    }
+							</script>
                             </div>
 
                         </div>
