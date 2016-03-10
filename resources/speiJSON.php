@@ -71,12 +71,25 @@
 
 	$url = 'https://api.mailgun.net/v3/sandboxc6096d8d59f642b5bc1a911563713e7a.mailgun.org/messages';
 	$apiKey = 'key-32a9dbf6ba9b0f7f77e8eed25137ea70'; 
+	$text = '<p>Hola '. $charge->details["name"] .', soy Alvaro.</p><p>A nombre de todo el equipo Fanbot te agradezco por utilizar nuestro sistema Fanbot.</p>
+<p>Tu CLABE SPEI para hacer el pago con (CONCEPTO) por la cantidad de  '. $charge->amount .' es la siguiente: '. $charge->payment_method->clabe .'. </p>
+
+El archivo anexo contiene tu Factura Electrónica Fanbot.
+
+Muchas gracias de nuevo por seguir formando parte de Fanbot.
+
+Nota: El servicio será interrumpido en caso de no liquidar el pago después de 5 días hábiles posteriores a la recepción del presente correo. 
+
+Para mayor información comunícate al tel: (33) 1816-6873 o envíanos un correo a pagos@fanbot.me 
+
+Consulta el Aviso de Privacidad en: http://fanbot.me/aviso-de-privacidad/';
 	$params = array(
 	    'to'        => $email,
-	    'subject'   => 'Test of file sends',
-	    'html'      => '<p> the HTML </p>',
-	    'text'      => 'the plain text',
-	    'from'      => 'Ventas Fanbot <pedrocch@fanbot.me>',
+//	    'bcc'       => 'alvaro@fanbot.me',
+	    'subject'   => 'CLABE y Factura Fanbot',
+	    'html'      => $text,
+//	    'text'      => 'the plain text',
+	    'from'      => 'Ventas Fanbot <ventas@fanbot.me>',
 	    'attachment' => '@'. $dir. $email . '-' . $charge->payment_method->clabe . '-factura.xml'
 	  );
 	
@@ -107,6 +120,5 @@
 	
 	// print everything out
 	print_r($response);
-	echo '<br>';
 
 ?>
