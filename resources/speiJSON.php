@@ -7,14 +7,14 @@
 	$concept = $_POST["concept"];
 	$amount = $_POST["amount"];
 	
-	if (move_uploaded_file($_FILES['xmlfile']['tmp_name'], '/var/www/html/factura.xml')) {
-	    echo "El fichero es válido y se subió con éxito.\n";
-	} else {
-	    echo "¡Posible ataque de subida de ficheros!\n";
-	}
-	
-	echo 'Más información de depuración:';
-	print_r($_FILES);
+//	if (move_uploaded_file($_FILES['xmlfile']['tmp_name'], '/var/www/html/factura.xml')) {
+//	    echo "El fichero es válido y se subió con éxito.\n";
+//	} else {
+//	    echo "¡Posible ataque de subida de ficheros!\n";
+//	}
+//	
+//	echo 'Más información de depuración:';
+//	print_r($_FILES);
 
 	
 	$charge = Conekta_Charge::create(array(
@@ -73,7 +73,7 @@
 //	    'subject'   => 'test of file sends',
 //	    'html'      => '<p> the HTML </p>',
 //	    'text'      => 'the plain text',
-//	    'from'      => 'example@sendgrid.com',
+//	    'from'      => 'pagos@fanbot.me',
 //	    'files['.$fileName.']' => '@'.$_FILES['xmlfile']['tmp_name']
 //	  );
 //	
