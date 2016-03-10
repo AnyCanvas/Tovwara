@@ -6,17 +6,8 @@
 	$email = $_POST["email"];
 	$concept = $_POST["concept"];
 	$amount = $_POST["amount"];
-	
-//	if (move_uploaded_file($_FILES['xmlfile']['tmp_name'], '/var/www/html/factura.xml')) {
-//	    echo "El fichero es válido y se subió con éxito.\n";
-//	} else {
-//	    echo "¡Posible ataque de subida de ficheros!\n";
-//	}
-//	
-//	echo 'Más información de depuración:';
-//	print_r($_FILES);
+	$dir = '/var/www/html/facturas';
 
-	
 	$charge = Conekta_Charge::create(array(
 		  'description'=> 'Fanbot Plan',
 		  'reference_id'=> '01',
@@ -59,6 +50,23 @@
 		echo'"CLABE":"'. $charge->payment_method->clabe . '"';
 		echo '}';
 
+
+	if (!file_exists($dir) && !is_dir($dir)) {
+		    mkdir($dir);         
+	} 	
+
+	if (move_uploaded_file($_FILES['xmlfile']['tmp_name'], $dir. $email . '-' . $charge->payment_method->clabe . '-factura.xml')) {
+	    echo "El fichero es válido y se subió con éxito.\n";
+	} else {
+	    echo "¡Posible ataque de subida de ficheros!\n";
+	}
+	
+	echo 'Más información de depuración:';
+	print_r($_FILES);
+
+
+
+
 	$url = 'https://api.mailgun.net/v3/sandboxc6096d8d59f642b5bc1a911563713e7a.mailgun.org/messages';
 	$apiKey = 'key-32a9dbf6ba9b0f7f77e8eed25137ea70'; 
 	$params = array(
@@ -67,7 +75,7 @@
 	    'html'      => '<p> the HTML </p>',
 	    'text'      => 'the plain text',
 	    'from'      => 'Ventas Fanbot <pedrocch@fanbot.me>',
-	    'attachment' => '@'.$_FILES['xmlfile']['name']
+	    'attachment' => '@'.$_FILES['xmlfile']['tmp_name']
 	  );
 	
 	print_r($params);
