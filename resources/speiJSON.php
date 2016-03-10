@@ -60,15 +60,14 @@
 		echo '}';
 
 	$url = 'https://api.mailgun.net/v3/sandboxc6096d8d59f642b5bc1a911563713e7a.mailgun.org/messages';
-	$apiKey = 'key-32a9dbf6ba9b0f7f77e8eed25137ea70';
-
+	$apiKey = 'key-32a9dbf6ba9b0f7f77e8eed25137ea70'; 
 	$params = array(
 	    'to'        => $email,
-	    'subject'   => 'test of file sends',
+	    'subject'   => 'Test of file sends',
 	    'html'      => '<p> the HTML </p>',
 	    'text'      => 'the plain text',
 	    'from'      => 'Ventas Fanbot <pedrocch@fanbot.me>',
-	    'files[factura.xml]' => '@'.$_FILES['xmlfile']['tmp_name']
+	    'attachment' => '@'.$_FILES['xmlfile']['tmp_name']
 	  );
 	
 	print_r($params);
