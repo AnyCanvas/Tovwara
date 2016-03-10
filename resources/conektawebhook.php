@@ -1,10 +1,10 @@
 <?php
 // Analizar la información del evento en forma de json
 $body = @file_get_contents('php://input');
-$event_json = json_decode($body);
+$charge = json_decode($body);
 
 
-if ($charge->type == 'charge.paid' && $charge->payment_method->type == 'spei'){
+if ($charge->type == 'charge.paid'){
  
 	$url = 'https://api.mailgun.net/v3/sandboxc6096d8d59f642b5bc1a911563713e7a.mailgun.org/messages';
 	$apiKey = 'key-32a9dbf6ba9b0f7f77e8eed25137ea70'; 
