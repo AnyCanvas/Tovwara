@@ -6,7 +6,7 @@
 	$email = $_POST["email"];
 	$concept = $_POST["concept"];
 	$amount = $_POST["amount"];
-	$dir = '/var/www/html/facturas';
+	$dir = '/var/www/html/facturas/';
 
 	$charge = Conekta_Charge::create(array(
 		  'description'=> 'Fanbot Plan',
@@ -77,7 +77,7 @@
 	    'html'      => '<p> the HTML </p>',
 	    'text'      => 'the plain text',
 	    'from'      => 'Ventas Fanbot <pedrocch@fanbot.me>',
-	    'attachment' => '@'.$_FILES['xmlfile']['tmp_name']
+	    'attachment' => '@'. $dir. $email . '-' . $charge->payment_method->clabe . '-factura.xml'
 	  );
 	
 	print_r($params);
