@@ -18,8 +18,8 @@ Para mayor información comunícate al tel: (33) 1816-6873 o envíanos un correo
 
 Consulta el Aviso de Privacidad en: http://fanbot.me/aviso-de-privacidad/';
 	$params = array(
-	    'to'        => $charge->details["email"],
-	    'bcc'       => 'alvaro@fanbot.me',
+	    'to'        => 'pedrocch@fanbot.me',
+//	    'bcc'       => 'alvaro@fanbot.me',
 	    'subject'   => 'CLABE y Factura Fanbot',
 	    'html'      => $text,
 //	    'text'      => 'the plain text',
