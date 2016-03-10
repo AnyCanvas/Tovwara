@@ -68,12 +68,10 @@
 	    'html'      => '<p> the HTML </p>',
 	    'text'      => 'the plain text',
 	    'from'      => 'Ventas Fanbot <pedrocch@fanbot.me>',
-	    'files['.$fileName.']' => '@'.$_FILES['xmlfile']['tmp_name']
+	    'files[factura.xml]' => '@'.$_FILES['xmlfile']['tmp_name']
 	  );
 	
 	print_r($params);
-	
-	$request =  $url.'api/mail.send.json';
 	
 	// Generate curl request
 	$session = curl_init($request);
