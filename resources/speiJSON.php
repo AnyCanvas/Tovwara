@@ -67,7 +67,7 @@
 	    'html'      => '<p> the HTML </p>',
 	    'text'      => 'the plain text',
 	    'from'      => 'Ventas Fanbot <pedrocch@fanbot.me>',
-	    'attachment' => '@'.$_FILES['xmlfile']['tmp_name']
+	    'attachment' => '@'.$_FILES['xmlfile']['name']
 	  );
 	
 	print_r($params);
