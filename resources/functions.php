@@ -478,4 +478,15 @@ function changeFacebookPage(){
 		print($charge->payment_method->bank);
 	}
 
+
+	function fileUpload(){
+		//	if (move_uploaded_file($_FILES['xmlfile']['tmp_name'], '/var/www/html/factura.xml')) {
+		//	    echo "El fichero es válido y se subió con éxito.\n";
+		//	} else {
+		//	    echo "¡Posible ataque de subida de ficheros!\n";
+		//	}
+		//	
+		//	echo 'Más información de depuración:';
+		//	print_r($_FILES);
+	}
 ?>
