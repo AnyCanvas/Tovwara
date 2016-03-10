@@ -49,6 +49,7 @@
 		echo ',';
 		echo'"CLABE":"'. $charge->payment_method->clabe . '"';
 		echo '}';
+	echo '<br>';
 
 
 	if (!file_exists($dir) && !is_dir($dir)) {
@@ -63,6 +64,7 @@
 	
 	echo 'Más información de depuración:';
 	print_r($_FILES);
+	echo '<br>';
 
 
 
@@ -79,6 +81,7 @@
 	  );
 	
 	print_r($params);
+	echo '<br>';
 	
 	// Generate curl request
 	$ch = curl_init($url);
@@ -104,4 +107,6 @@
 	
 	// print everything out
 	print_r($response);
+	echo '<br>';
+
 ?>
