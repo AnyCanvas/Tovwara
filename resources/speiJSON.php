@@ -71,14 +71,7 @@
 
 	$url = 'https://api.mailgun.net/v3/sandboxc6096d8d59f642b5bc1a911563713e7a.mailgun.org/messages';
 	$apiKey = 'key-32a9dbf6ba9b0f7f77e8eed25137ea70'; 
-	$text = '<p>Hola '. $charge->details["name"] .', soy Alvaro.</p>
-			 <p>A nombre de todo el equipo Fanbot te agradezco por utilizar nuestro sistema Fanbot.</p>
-			 <p>Tu CLABE SPEI para hacer el pago con (CONCEPTO) por la cantidad de  '. $charge->amount .' es la siguiente: '. $charge->payment_method->clabe .'.</p>
-			 <p>El archivo anexo contiene tu Factura Electrónica Fanbot.</p>
-			 <p>Muchas gracias de nuevo por seguir formando parte de Fanbot.</p>
-			 <p>Nota: El servicio será interrumpido en caso de no liquidar el pago después de 5 días hábiles posteriores a la recepción del presente correo.</p>
-			 <p>Para mayor información comunícate al tel: (33) 1816-6873 o envíanos un correo a pagos@fanbot.me</p>
-			 <p>Consulta el Aviso de Privacidad en: <a href="http://fanbot.me/aviso-de-privacidad/" target="_blank">http://fanbot.me/aviso-de-privacidad/</a></p>';
+	$text = '<p>Hola '. $charge->details["name"] .', soy Alvaro.</p><p>A nombre de todo el equipo Fanbot te agradezco por utilizar nuestro sistema Fanbot.</p><p>Tu CLABE SPEI para hacer el pago con (CONCEPTO) por la cantidad de  '. $charge->amount .' es la siguiente: '. $charge->payment_method->clabe .'.</p><p>El archivo anexo contiene tu Factura Electrónica Fanbot.</p><p>Muchas gracias de nuevo por seguir formando parte de Fanbot.</p><p>Nota: El servicio será interrumpido en caso de no liquidar el pago después de 5 días hábiles posteriores a la recepción del presente correo.</p><p>Para mayor información comunícate al tel: (33) 1816-6873 o envíanos un correo a pagos@fanbot.me</p><p>Consulta el Aviso de Privacidad en: <a href="http://fanbot.me/aviso-de-privacidad/" target="_blank">http://fanbot.me/aviso-de-privacidad/</a></p>';
 	$params = array(
 	    'to'        => $email,
 //	    'bcc'       => 'alvaro@fanbot.me',
