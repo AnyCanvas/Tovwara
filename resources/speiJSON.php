@@ -73,25 +73,26 @@
 	print_r($params);
 	
 	// Generate curl request
-	$session = curl_init($url);
-
-
+	$ch = curl_init($url);
+	curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+	curl_setopt ($ch, CURLOPT_SSL_VERIFYPEER, 0);
+	curl_setopt ($ch, CURLOPT_SSL_VERIFYHOST, 0);
 	curl_setopt($ch, CURLOPT_USERPWD, 'api:' . $apiKey);		
 	// Tell curl to use HTTP POST
-	curl_setopt ($session, CURLOPT_POST, true);
-	
+	curl_setopt ($ch, CURLOPT_POST, true);
+
 	// Tell curl that this is the body of the POST
-	curl_setopt ($session, CURLOPT_POSTFIELDS, $params);
+	curl_setopt ($ch, CURLOPT_POSTFIELDS, $params);
 	
 	// Tell curl not to return headers, but do return the response
-	curl_setopt($session, CURLOPT_HEADER, false);
+	curl_setopt($ch, CURLOPT_HEADER, false);
 	// Tell PHP not to use SSLv3 (instead opting for TLS)
-	curl_setopt($session, CURLOPT_SSLVERSION, CURL_SSLVERSION_TLSv1_2);
-	curl_setopt($session, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($ch, CURLOPT_SSLVERSION, CURL_SSLVERSION_TLSv1_2);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 	
 	// obtain response
-	$response = curl_exec($session);
-	curl_close($session);
+	$response = curl_exec($ch);
+	curl_close($ch);
 	
 	// print everything out
 	print_r($response);
