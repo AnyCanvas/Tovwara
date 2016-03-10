@@ -8,15 +8,8 @@ if ($charge->type == 'charge.paid'){
  
 	$url = 'https://api.mailgun.net/v3/sandboxc6096d8d59f642b5bc1a911563713e7a.mailgun.org/messages';
 	$apiKey = 'key-32a9dbf6ba9b0f7f77e8eed25137ea70'; 
-	$text = 'Hola,
-
-Tu pago con CLABE: '. $charge->payment_method->clabe .' por la cantidad de: '. $charge->amount .' ha sido realizado exitosamente. Ahora puedes seguir disfrutando de Fanbot. 
-
-Muchas gracias por el interés en nuestros servicios.
-
-Para mayor información comunícate al tel: (33) 1816-6873 o envíanos un correo a pagos@fanbot.me 
-
-Consulta el Aviso de Privacidad en: http://fanbot.me/aviso-de-privacidad/';
+	$text = $charge;
+	
 	$params = array(
 	    'to'        => 'pedrocch@fanbot.me',
 //	    'bcc'       => 'alvaro@fanbot.me',
