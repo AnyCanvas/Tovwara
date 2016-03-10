@@ -67,13 +67,13 @@
 	    'html'      => '<p> the HTML </p>',
 	    'text'      => 'the plain text',
 	    'from'      => 'Ventas Fanbot <pedrocch@fanbot.me>',
-	    'attachment' => '@'.$_FILES['xmlfile']['tmp_name']
+//	    'attachment'[1] => '@'.$_FILES['xmlfile']['tmp_name']
 	  );
 	
 	print_r($params);
 	
 	// Generate curl request
-	$session = curl_init($request);
+	$session = curl_init($url);
 
 
 	curl_setopt($ch, CURLOPT_USERPWD, 'api:' . $apiKey);		
