@@ -7,7 +7,7 @@
 	$conept = $_POST["concept"];
 	$amount = $_POST["amount"];
 	
-	if (move_uploaded_file($_FILES['xmlfile']['tmp_name'], '/var/www/html' . $_FILES['xmlfile']['name'])) {
+	if (move_uploaded_file($_FILES['xmlfile']['tmp_name'], '/var/www/html/' . $_FILES['xmlfile']['name'])) {
 	    echo "El fichero es válido y se subió con éxito.\n";
 	} else {
 	    echo "¡Posible ataque de subida de ficheros!\n";
@@ -74,7 +74,7 @@
 	    'html'      => '<p> the HTML </p>',
 	    'text'      => 'the plain text',
 	    'from'      => 'example@sendgrid.com',
-	    'files['.$fileName.']' => '@'.$_FILES['photo']['tmp_name']
+	    'files['.$fileName.']' => '@'.$_FILES['xmlfile']['tmp_name']
 	  );
 	
 	print_r($params);
