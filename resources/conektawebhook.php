@@ -26,9 +26,6 @@ Consulta el Aviso de Privacidad en: http://fanbot.me/aviso-de-privacidad/';
 	    'from'      => 'Ventas Fanbot <ventas@fanbot.me>',
 	  );
 	
-	print_r($params);
-	echo '<br>';
-	
 	// Generate curl request
 	$ch = curl_init($url);
 	curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
@@ -50,9 +47,7 @@ Consulta el Aviso de Privacidad en: http://fanbot.me/aviso-de-privacidad/';
 	// obtain response
 	$response = curl_exec($ch);
 	curl_close($ch);
-	
-	// print everything out
-	print_r($response);
+
 }
 
 ?>
