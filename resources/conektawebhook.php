@@ -8,7 +8,7 @@ $charge = json_decode($body,true);
  
 	if ( $charge['data']['object']['payment_method']['type'] == 'spei' && $charge['data']['object']['status'] == 'paid'){
 
-		$url = 'https://api.mailgun.net/v3/mg.fanbot.me';
+		$url = 'https://api.mailgun.net/v3/mg.fanbot.me/messages';
 		$apiKey = 'key-32a9dbf6ba9b0f7f77e8eed25137ea70'; 
 		$text = '<p>Hola,</p>
 
