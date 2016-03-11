@@ -4,7 +4,7 @@ $body = @file_get_contents('php://input');
 $charge = json_decode($body);
 
 
-//if ($charge->type == 'charge.paid'){
+if ($charge->type == 'charge.paid'){
  
 //	if ( $charge->object->payment_method->type == 'spei' ){
 
@@ -44,6 +44,6 @@ $charge = json_decode($body);
 		curl_close($ch);
 		
 //	}
-//}
+}
 
 ?>
