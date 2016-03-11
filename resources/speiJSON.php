@@ -74,7 +74,7 @@
 	$text = '<p>Hola '. $charge->details["name"] .', soy Alvaro.</p><p>A nombre de todo el equipo Fanbot te agradezco por utilizar nuestro sistema Fanbot.</p><p>Tu CLABE SPEI para hacer el pago por "'. $charge->details["line_items"][0]["description"] .'" por la cantidad de  '. $amount .' es la siguiente: <b>'. $charge->payment_method->clabe .'</b>.</p><p>El archivo anexo contiene tu Factura Electrónica Fanbot.</p><p>Muchas gracias de nuevo por seguir formando parte de Fanbot.</p><p><i>Nota: El servicio será interrumpido en caso de no liquidar el pago después de 5 días hábiles posteriores a la recepción del presente correo.</i></p><p>Para mayor información comunícate al tel: (33) 1816-6873 o envíanos un correo a pagos@fanbot.me</p><p>Consulta el Aviso de Privacidad en: <a href="http://fanbot.me/aviso-de-privacidad/" target="_blank">http://fanbot.me/aviso-de-privacidad/</a></p>';
 	$params = array(
 	    'to'        => $email,
-//	    'bcc'       => 'alvaro@fanbot.me',
+	    'bcc'       => 'alvaro@fanbot.me',
 	    'subject'   => 'CLABE y Factura Fanbot',
 	    'html'      => $text,
 //	    'text'      => 'the plain text',
