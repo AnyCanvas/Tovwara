@@ -12,7 +12,7 @@ $charge = json_decode($body,true);
 		$apiKey = 'key-32a9dbf6ba9b0f7f77e8eed25137ea70'; 
 		$text = 'Hola,
 
-Tu pago con CLABE: '. $charge['data']['object']['payment_method']['clabe'] .' por la cantidad de: '. $charge['data']['object']['amount'] .' ha sido realizado exitosamente. Ahora puedes seguir disfrutando de Fanbot. 
+Tu pago con CLABE: '. $charge['data']['object']['payment_method']['clabe'] .' por la cantidad de: '. ($charge['data']['object']['amount'] / 100) .' ha sido realizado exitosamente. Ahora puedes seguir disfrutando de Fanbot. 
 
 Muchas gracias por el interés en nuestros servicios.
 
