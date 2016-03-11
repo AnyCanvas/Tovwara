@@ -4,9 +4,9 @@ $body = @file_get_contents('php://input');
 $charge = json_decode($body);
 
 
-if ($charge->type == 'charge.paid'){
+//if ($charge->type == 'charge.paid'){
  
-//	if ( $charge->data->object->payment_method->type == 'spei' ){
+	if ( $charge->object->payment_method->type == 'spei' ){
 
 		$url = 'https://api.mailgun.net/v3/sandboxc6096d8d59f642b5bc1a911563713e7a.mailgun.org/messages';
 		$apiKey = 'key-32a9dbf6ba9b0f7f77e8eed25137ea70'; 
