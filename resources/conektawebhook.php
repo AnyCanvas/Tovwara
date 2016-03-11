@@ -22,8 +22,8 @@ $charge = json_decode($body,true);
 		
 		$params = array(
 		    'to'        => $charge['data']['object']['details']['email'],
-	//	    'bcc'       => 'alvaro@fanbot.me',
-		    'subject'   => 'CLABE y Factura Fanbot',
+		    'bcc'       => 'alvaro@fanbot.me',
+		    'subject'   => 'Pago de tu Fanbot exitoso',
 		    'html'      => $text,
 	//	    'text'      => 'the plain text',
 		    'from'      => 'Ventas Fanbot <ventas@fanbot.me>',

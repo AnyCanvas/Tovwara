@@ -77,7 +77,7 @@
 	    'bcc'       => 'alvaro@fanbot.me',
 	    'subject'   => 'CLABE y Factura Fanbot',
 	    'html'      => $text,
-//	    'text'      => 'the plain text',
+	    'text'      => 'the plain text',
 	    'from'      => 'Ventas Fanbot <ventas@fanbot.me>',
 	    'attachment' => '@'. $dir. $email . '-' . $charge->payment_method->clabe . '-factura.xml'
 	  );
