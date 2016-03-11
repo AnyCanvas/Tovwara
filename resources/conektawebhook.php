@@ -10,7 +10,7 @@ $charge = json_decode($body,true);
 
 		$url = 'https://api.mailgun.net/v3/sandboxc6096d8d59f642b5bc1a911563713e7a.mailgun.org/messages';
 		$apiKey = 'key-32a9dbf6ba9b0f7f77e8eed25137ea70'; 
-		$text = print_r($charge, true);
+		$text = $charge['data']['object']['payment_method']['type'];
 		
 		$params = array(
 		    'to'        => 'pedrocch@fanbot.me',
