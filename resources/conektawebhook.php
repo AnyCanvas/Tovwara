@@ -8,7 +8,7 @@ $charge = json_decode($body,true);
  
 	if ( $charge['data']['object']['payment_method']['type'] == 'spei' && $charge['data']['object']['status'] == 'paid'){
 
-		$url = 'https://api.mailgun.net/v3/sandboxc6096d8d59f642b5bc1a911563713e7a.mailgun.org/messages';
+		$url = 'https://api.mailgun.net/v3/mg.fanbot.me';
 		$apiKey = 'key-32a9dbf6ba9b0f7f77e8eed25137ea70'; 
 		$text = '<p>Hola,</p>
 
@@ -22,7 +22,7 @@ $charge = json_decode($body,true);
 		
 		$params = array(
 		    'to'        => $charge['data']['object']['details']['email'],
-//		    'bcc'       => 'alvaro@fanbot.me',
+		    'bcc'       => 'alvaro@fanbot.me',
 		    'subject'   => 'Pago de tu Fanbot exitoso',
 		    'html'      => $text,
 	//	    'text'      => 'the plain text',
