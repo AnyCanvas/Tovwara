@@ -36,8 +36,3 @@
                     </section>
             </div>
         </div>
- <!-- Modal that configures a Fanbot facebook page -->
-
-    	<?php require_once("listModal.php"); ?>
-
-<!-- End modal --> 
