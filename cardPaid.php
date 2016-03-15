@@ -64,7 +64,7 @@
         <section class="wrapper">
         <!-- page start-->
 
-		<?php require_once("resources/cardPaid.php.php"); ?>
+		<?php require_once("resources/cardPaid.php"); ?>
 
         <!-- page end-->
         </section>
