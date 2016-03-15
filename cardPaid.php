@@ -148,7 +148,7 @@
 	  alert(token.id);
 	 
 	  /* and submit */
-	  $form.get(0).submit();
+//	  $form.get(0).submit();
 	};
 	
 	var conektaErrorResponseHandler = function(response) {
