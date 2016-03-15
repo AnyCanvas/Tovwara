@@ -1,6 +1,6 @@
 <?php 
-	require_once("/path/to/lib/Conekta.php");
-	Conekta::setApiKey("key_eYvWV7gSDkNYXsmr");
+	require_once("libraries/conekta/Conekta.php");
+	Conekta::setApiKey("key_nvJm2aBVNEd1qxPwxzzwrA");
 
 	$charge = Conekta_Charge::create(array(
 	  'description'=> 'Stogies',

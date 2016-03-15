@@ -7,7 +7,7 @@
                         <div class="panel-body">
                             <div class="position-center">
 
-								<form action="" method="POST" id="card-form">
+								<form action="resources/cardCharge.php" method="POST" id="card-form">
 								  <span class="card-errors"></span>
 								  <div class="form-row">
 								    <label>
