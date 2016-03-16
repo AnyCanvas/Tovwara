@@ -7,7 +7,7 @@
                         <div class="panel-body">
                             <div class="position-center">
 								<form action="resources/cardCharge.php" method="POST" id="card-form">
-								  <input type='hidden' name='paid' value="<?php echo $_GET["paid"]?>"/>
+								  <input type='hidden' name='amount' value="<?php echo $_GET["amount"]?>"/>
 								  <span class="card-errors"></span>
 								  <div class="form-row">
 								    <label>

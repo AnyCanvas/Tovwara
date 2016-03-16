@@ -2,7 +2,7 @@
 	require_once("libraries/conekta/Conekta.php");
 	Conekta::setApiKey("key_nvJm2aBVNEd1qxPwxzzwrA");
 
-	$paid = $_POST["paid"];
+	$amount = $_POST["amount"];
 	$conektaTokenId = $_POST["conektaTokenId"];
 	$name = $_POST["name"];
 	$street1 = $_POST["street1"];
@@ -18,9 +18,9 @@
 	$charge = Conekta_Charge::create(array(
 	  'description'=> 'Fanbot Plan',
 	  'reference_id'=> '01',
-	  'amount'=> 20000,
+	  'amount'=> $amount . '00',
 	  'currency'=>'MXN',
-	  'card'=> $conektaTokenId,
+	  'card'=> 'tok_test_visa_4242',
 	  'details'=> array(
 	    'name'=> $name,
 	    'phone'=> $phone,
@@ -35,12 +35,12 @@
 	    ),
 	    'line_items'=> array(
 	      array(
-	        'name'=> 'Box of Cohiba S1s',
-	        'description'=> 'Imported From Mex.',
-	        'unit_price'=> 20000,
-	        'quantity'=> 1,
-	        'sku'=> 'cohb_s1',
-	        'category'=> 'food'
+		    'name'=> 'Fanbot plan mensual',
+		    'description'=> $concept,
+		    'unit_price'=> $amount . '00',
+		    'quantity'=> 1,
+		    'sku'=> '750',
+		    'category'=> 'Interacción'
 	      )
 	    ),
 	    'billing_address'=> array(
