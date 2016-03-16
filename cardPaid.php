@@ -147,9 +147,7 @@
 	  var $form = $("#card-form");
 	
 	  /* Inserta el token_id en la forma para que se envíe al servidor */
-	  $form.append($("<input type='hidden' name='conektaTokenId'>").val(token.id));
-	  alert(token.id);
-	 
+	  $form.append($("<input type='hidden' name='conektaTokenId'>").val(token.id));	 
 	  /* and submit */
 	  $form.get(0).submit();
 	};
