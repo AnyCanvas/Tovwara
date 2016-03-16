@@ -5,6 +5,9 @@
 //			exit;
 //		}			
 		
+		if( !(isset($_GET["paid"])) ){
+			exit();
+		}
 	?> 
 
 <!DOCTYPE html>

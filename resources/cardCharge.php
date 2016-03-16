@@ -2,16 +2,29 @@
 	require_once("libraries/conekta/Conekta.php");
 	Conekta::setApiKey("key_nvJm2aBVNEd1qxPwxzzwrA");
 
+	$paid = $_POST["paid"];
+	$conektaTokenId = $_POST["conektaTokenId"];
+	$name = $_POST["name"];
+	$street1 = $_POST["street1"];
+	$street2 = $_POST["street2"];
+	$city = $_POST["city"];
+	$state = $_POST["state"];
+	$zip = $_POST["zip"];
+	$rfc = $_POST["rfc"];
+	$companyName = $_POST["company_name"];
+	$phone = $_POST["phone"];
+	$email = $_POST["email"];
+	
 	$charge = Conekta_Charge::create(array(
-	  'description'=> 'Stogies',
-	  'reference_id'=> '9839-wolf_pack',
+	  'description'=> 'Fanbot Plan',
+	  'reference_id'=> '01',
 	  'amount'=> 20000,
 	  'currency'=>'MXN',
-	  'card'=> 'tok_test_visa_4242',
+	  'card'=> $conektaTokenId,
 	  'details'=> array(
-	    'name'=> 'Arnulfo Quimare',
-	    'phone'=> '403-342-0642',
-	    'email'=> 'logan@x-men.org',
+	    'name'=> $name,
+	    'phone'=> $phone,
+	    'email'=> $email,
 	    'customer'=> array(
 	      'logged_in'=> true,
 	      'successful_purchases'=> 14,
@@ -31,17 +44,17 @@
 	      )
 	    ),
 	    'billing_address'=> array(
-	      'street1'=>'77 Mystery Lane',
-	      'street2'=> 'Suite 124',
+	      'street1'=> $street1,
+	      'street2'=> $street2,
 	      'street3'=> null,
-	      'city'=> 'Darlington',
-	      'state'=>'NJ',
-	      'zip'=> '10192',
+	      'city'=> $city,
+	      'state'=>$state,
+	      'zip'=> $zip,
 	      'country'=> 'Mexico',
-	      'tax_id'=> 'xmn671212drx',
-	      'company_name'=>'X-Men Inc.',
-	      'phone'=> '77-777-7777',
-	      'email'=> 'purshasing@x-men.org'
+	      'tax_id'=> $rfc,
+	      'company_name'=>$companyName,
+	      'phone'=> $phone,
+	      'email'=> $email
 	    )
 	  )
 	));

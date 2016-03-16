@@ -6,13 +6,13 @@
                         </header>
                         <div class="panel-body">
                             <div class="position-center">
-
 								<form action="resources/cardCharge.php" method="POST" id="card-form">
+								  <input type='hidden' name='paid' value="<?php echo $_GET["paid"]?>"/>
 								  <span class="card-errors"></span>
 								  <div class="form-row">
 								    <label>
 								      <span>Nombre del tarjetahabiente</span>
-								      <input type="text" size="20" data-conekta="card[name]" required />
+								      <input type="text" size="20" data-conekta="card[name]" name="name" required />
 								    </label>
 								  </div>
 								  <div class="form-row">
@@ -70,8 +70,8 @@
 								  </div> 
 								  <div class="form-row">
 								    <label>
-								      <span>Pais</span>
-								      <input type="text" name="zip" required />
+								      <span>RFC</span>
+								      <input type="text" name="rfc" required />
 								    </label>
 								  </div> 
 								  <div class="form-row">
