@@ -36,7 +36,7 @@
 	    'line_items'=> array(
 	      array(
 		    'name'=> 'Fanbot plan mensual',
-		    'description'=> $concept,
+		    'description'=> 'Pago mensual Fanbot',
 		    'unit_price'=> $amount . '00',
 		    'quantity'=> 1,
 		    'sku'=> '750',
