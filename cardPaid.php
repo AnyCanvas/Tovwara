@@ -5,7 +5,7 @@
 //			exit;
 //		}			
 		
-		if( !(isset($_GET["paid"])) ){
+		if( !(isset($_GET["amount"])) ){
 			exit();
 		}
 	?> 
