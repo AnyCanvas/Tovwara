@@ -20,7 +20,7 @@
 	  'reference_id'=> '01',
 	  'amount'=> $amount . '00',
 	  'currency'=>'MXN',
-	  'card'=> 'tok_test_visa_4242',
+	  'card'=> $conektaTokenId,
 	  'details'=> array(
 	    'name'=> $name,
 	    'phone'=> $phone,
