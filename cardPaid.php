@@ -128,7 +128,7 @@
 <script type="text/javascript">
  
  // Conekta Public Key
-  Conekta.setPublishableKey('key_KJysdbf6PotS2ut2');
+  Conekta.setPublishableKey('key_O6okWWKZD46kPFr1xyNTkyg');
 
 	$(function () {
 	  $("#card-form").submit(function(event) {
