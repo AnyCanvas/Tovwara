@@ -30,6 +30,7 @@
 	        var facebookPage = $("#facebookPage").val();
 	        var fanbotName = $( "#fanbotName" ).val();
 	        var actionType = $("#action").is(':checked') ? "like" : "post";
+	        alert();
 
 
 	        data =  {'facebookPage' : facebookPage, 'actionType': actionType,'fanbotName': fanbotName, };
