@@ -29,7 +29,7 @@
 	        var ajaxurl = 'resources/actionUrl.php';
 	        var facebookPage = $("#facebookPage").val();
 	        var fanbotName = $( "#fanbotName" ).val();
-	        var actionType = $("#action").is(':checked') ? "like" : "post";
+	        var actionType = $("#action").is(':checked') ? "post" : "like";
 	        alert(actionType);
 
 
@@ -66,7 +66,7 @@
 					  </div>
 					  <div class="form-group">
 							<label class="checkbox-inline">
-                                <input type="checkbox" id="action" value="1"> Check-in 
+                                <input type="checkbox" id="action" value="1"> Activa check-in&nbsp;
                             </label>
 					  </div>
 					  <a onclick="changeImage()" class="btn btn-default btn-xs">Verificar</a>						
