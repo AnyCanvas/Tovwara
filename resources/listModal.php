@@ -65,7 +65,7 @@
 					  </div>
 					  <div class="form-group">
 							<label class="checkbox-inline">
-                                <input type="checkbox" id="action" value="1"> Check-in
+                                Check-in <input type="checkbox" id="action" value="1">
                             </label>
 					  </div>
 					  <a onclick="changeImage()" class="btn btn-default btn-xs">Verificar</a>						
