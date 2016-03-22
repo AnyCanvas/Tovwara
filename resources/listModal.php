@@ -29,7 +29,7 @@
 	        var ajaxurl = 'resources/actionUrl.php';
 	        var facebookPage = $("#facebookPage").val();
 	        var fanbotName = $( "#fanbotName" ).val();
-	        var actionType = $("#ans").is(':checked') ? "like" : "post";
+	        var actionType = $("#action").is(':checked') ? "like" : "post";
 
 
 	        data =  {'facebookPage' : facebookPage, 'actionType': actionType,'fanbotName': fanbotName, };
