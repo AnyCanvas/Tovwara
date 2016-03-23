@@ -169,7 +169,7 @@ function listInteractions(){
 						echo "\t\t\t". '<td><a href="https://www.facebook.com/'. $row['userId'] . '" target="_blank">'. $firstName .'</td>'. "\r\n";
 						echo "\t\t\t". '<td>'. $lastName .'</td>'. "\r\n";
 						echo "\t\t\t". '<td>'. $email.' </td>'. "\r\n";
-						echo "\t\t\t". '<td>'. ($gender == 'male' ? 'M' : '') + ($gender == 'female' ? 'F' : '').'</td>'. "\r\n";
+						echo "\t\t\t". '<td>'. ($gender == 'male' ? 'M' : ''). ($gender == 'female' ? 'F' : '').'</td>'. "\r\n";
 
 			    echo "\t\t\t". '<td>'.$row['fbPage']. '</td>'. "\r\n";
 			    echo "\t\t\t". '<td>'.$row['fanbotId']. '</td>'. "\r\n";
