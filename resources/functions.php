@@ -148,7 +148,7 @@ function listInteractions(){
 				$formatedHour = $date->format('g:i a');		
 				$orderDate = $date->format('U');
 				
-				echo "\t\t\t". '<td data-order='. $orderDate .'">'. $formatedDate. '</td>'. "\r\n";
+				echo "\t\t\t". '<td data-order='. (1/$orderDate) .'">'. $formatedDate. '</td>'. "\r\n";
 				echo "\t\t\t". '<td>'. $formatedHour. '</td>'. "\r\n";
 				
 				
