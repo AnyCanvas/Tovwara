@@ -100,6 +100,7 @@ function listInteractions(){
                     <thead>
                     <tr>
                         <th>Fecha</th>
+                        <th>Hora</th>
                         <th>Nombre</th>
                         <th>Apellido</th>
                         <th>Email</th>
@@ -143,10 +144,12 @@ function listInteractions(){
 				// Create a new date var from date in db
 				$date =new DateTime($row['date']);
 				// Get de number of day from the date variable
-				$formatedDate = $date->format('d/m/y, g:i a');
-				$orderDate = $date->format('ymd');
+				$formatedDate = $date->format('d/m/y');
+				$formatedHour = $date->format('g:i a');		
+				$orderDate = $date->format('U');
 				
 				echo "\t\t\t". '<td data-order='. $orderDate .'">'. $formatedDate. '</td>'. "\r\n";
+				echo "\t\t\t". '<td>'. $formatedHour. '</td>'. "\r\n";
 				
 				
 			    $sql2 = "SELECT * FROM users WHERE fbID = '". $row['userId'] . "'";
@@ -188,6 +191,7 @@ function listInteractions(){
                     <tfoot>
                     <tr>
                         <th>Fecha</th>
+                        <th>Hora</th>
                         <th>Nombre</th>
                         <th>Email</th>
                         <th>Genero</th>
