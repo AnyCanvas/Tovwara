@@ -16,7 +16,7 @@
                                 <th>Credito</th>
                                 <th>Fecha de corte</th>
                                 <th>Mes gratis</th>
-                                <th>Pagado</th>
+                                <th>Estatus</th>
                             </tr>
                             </thead>
                             <tbody>
