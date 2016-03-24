@@ -17,8 +17,6 @@
                                 <th>Fecha de corte</th>
                                 <th>Mes gratis</th>
                                 <th>Pagado</th>
-
-
                             </tr>
                             </thead>
                             <tbody>
@@ -69,7 +67,7 @@
 																	}												                                
 									                                ?></td>
 								                                <td><?php echo $row['credit']?> Acciones</td>
-								                                <td><?php echo $row['courtDate']?> de cada mes</td>
+								                                <td><?php echo $row['courtDate']?></td>
 																<td><?php 
 																	switch($row['freeMonth']){ 
 																		case 0: echo "No";
