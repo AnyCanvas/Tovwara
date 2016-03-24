@@ -13,7 +13,7 @@
                                 <th>Nombre</th>
                                 <th>Numero de cliente</th>
                                 <th>Plan</th>
-                                <th>Credito</th>
+                                <th>Acciones</th>
                                 <th>Fecha de corte</th>
                                 <th>Mes gratis</th>
                                 <th>Estatus</th>
@@ -66,7 +66,7 @@
 																	        break;
 																	}												                                
 									                                ?></td>
-								                                <td><?php echo $row['credit']?> Acciones</td>
+								                                <td><?php echo $row['credit']?></td>
 								                                <td><?php echo $row['courtDate']?></td>
 																<td><?php 
 																	switch($row['freeMonth']){ 
