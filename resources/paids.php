@@ -91,7 +91,7 @@
 									                                </td>	
 									                                <td>					
 									                                <a class="btn btn-primary btn-xs" onclick="callModal('<?php echo $row['id']. "','". $row['plan']. "','". $row['courtDate']. "','". $row['freeMonth']. "','". $row['estatus'];?>')">
-										                                <span class="fa fa-credit-card" aria-hidden="true"></span> Mandar cobro
+										                                <span class="fa fa-credit-card" aria-hidden="true"></span> Cobrar
 										                                </a>
 									                                </td>			
 								                            </tr>
