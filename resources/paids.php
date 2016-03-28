@@ -151,7 +151,7 @@ function fnbtAction(){
 
     function callPaid(fanbotId, fanbotPlan,courtDate,freeMonth,paidStatus) {
 		console.log(fanbotPlan + ' ' + courtDate + ' ' + freeMonth + ' ' + paidStatus);
-		$('#speigModal').modal('show');
+		$('#speiModal').modal('show');
 	}
 </script>
 
