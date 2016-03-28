@@ -255,7 +255,7 @@ function fnbtAction(){
 		    </div>
 		  </div>
 
-<div class="modal fade" id="speiModal" role="dialog">
+		  <div class="modal fade" id="speiModal" role="dialog">
 		    <div class="modal-dialog">
 		    
 		      <!-- Modal content-->
