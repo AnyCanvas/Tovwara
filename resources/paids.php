@@ -149,6 +149,10 @@ function fnbtAction(){
 		$('#configModal').modal('show');
 	}
 
+    function callPaid(fanbotId, fanbotPlan,courtDate,freeMonth,paidStatus) {
+		console.log(fanbotPlan + ' ' + courtDate + ' ' + freeMonth + ' ' + paidStatus);
+		$('#speigModal').modal('show');
+	}
 </script>
 
 		  <div class="modal fade" id="configModal" role="dialog">
