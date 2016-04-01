@@ -11,11 +11,11 @@
 		.done(function() { 
 		// Do something now you know the image exists.
             document.getElementById("fbImg").src = image_url;
-            $('#modalAlert').hide()
+            $('#modalAlert').hide();
 			$('#cambiarBtn').prop('disabled', false);
 
     	}).fail(function() { 
-            $('#modalAlert').show()
+            $('#modalAlert').show();
 			$('#cambiarBtn').prop('disabled', true);
 
         // Image doesn't exist - do something else.
@@ -29,7 +29,9 @@
 	        var ajaxurl = 'resources/actionUrl.php';
 	        var facebookPage = $("#facebookPage").val();
 	        var fanbotName = $( "#fanbotName" ).val();
-	        var actionType = $( "#actionType" ).val();
+	        var actionType = $("#action").is(':checked') ? "post" : "like";
+	        alert(actionType);
+
 
 	        data =  {'facebookPage' : facebookPage, 'actionType': actionType,'fanbotName': fanbotName, };
 	        console.log(data);
@@ -63,11 +65,9 @@
 						<input class="form-controlinput-sm" type='hidden' id= 'fanbotName' name='fanbotName' value='' />				  
 					  </div>
 					  <div class="form-group">
-							<select class="form-control" id="actionType">
-					        	<option value="like">Like</option>
-								<option value="post">Post</option>
-							</select>
-
+							<label class="checkbox-inline">
+                                <input type="checkbox" id="action" value="1"> Activar check-in&nbsp;
+                            </label>
 					  </div>
 					  <a onclick="changeImage()" class="btn btn-default btn-xs">Verificar</a>						
 					</form>					

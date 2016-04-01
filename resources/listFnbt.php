@@ -148,7 +148,7 @@ function fnbtAction(name){
             alert(response);
         });
     }
-</script> 
+</script>
  <!-- Modal that configures a Fanbot facebook page -->
 
     	<?php require_once("listModal.php"); ?>

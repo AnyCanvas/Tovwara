@@ -13,12 +13,10 @@
                                 <th>Nombre</th>
                                 <th>Numero de cliente</th>
                                 <th>Plan</th>
-                                <th>Credito</th>
+                                <th>Acciones</th>
                                 <th>Fecha de corte</th>
                                 <th>Mes gratis</th>
-                                <th>Pagado</th>
-
-
+                                <th>Estatus</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -68,8 +66,8 @@
 																	        break;
 																	}												                                
 									                                ?></td>
-								                                <td><?php echo $row['credit']?> Acciones</td>
-								                                <td><?php echo $row['courtDate']?> de cada mes</td>
+								                                <td><?php echo $row['credit']?></td>
+								                                <td><?php echo $row['courtDate']?></td>
 																<td><?php 
 																	switch($row['freeMonth']){ 
 																		case 0: echo "No";
@@ -90,7 +88,12 @@
 									                                <a class="btn btn-primary btn-xs" onclick="callModal('<?php echo $row['id']. "','". $row['plan']. "','". $row['courtDate']. "','". $row['freeMonth']. "','". $row['estatus'];?>')">
 										                                <span class="fa fa-cog" aria-hidden="true"></span> Editar
 										                                </a>
-									                                </td>						
+									                                </td>	
+									                                <td>					
+									                                <a class="btn btn-primary btn-xs" onclick="callPaid('<?php echo $row['id']. "','". $row['plan']. "','". $row['courtDate']. "','". $row['freeMonth']. "','". $row['estatus'];?>')">
+										                                <span class="fa fa-credit-card" aria-hidden="true"></span> Cobrar
+										                                </a>
+									                                </td>			
 								                            </tr>
 								
 								
@@ -146,6 +149,10 @@ function fnbtAction(){
 		$('#configModal').modal('show');
 	}
 
+    function callPaid(fanbotId, fanbotPlan,courtDate,freeMonth,paidStatus) {
+		console.log(fanbotPlan + ' ' + courtDate + ' ' + freeMonth + ' ' + paidStatus);
+		$('#speiModal').modal('show');
+	}
 </script>
 
 		  <div class="modal fade" id="configModal" role="dialog">
@@ -237,6 +244,52 @@ function fnbtAction(){
 					  </div>
 
 					  </form>					
+		        </div>
+
+			    <div class="modal-footer">
+					<button id="cambiarBtn" class="btn btn-primary btn-sm" onclick="fnbtAction()">Cambiar</button>
+
+		        </div>
+		      
+	      	  </div>
+		    </div>
+		  </div>
+
+		  <div class="modal fade" id="speiModal" role="dialog">
+		    <div class="modal-dialog">
+		    
+		      <!-- Modal content-->
+		      <div class="modal-content">
+		        <div class="modal-header">
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		          <h4 class="modal-title">Configura tu Fanbot</h4>
+		        </div>
+		        <div class="modal-body">
+
+                    <form role="form" action="resources/speiJSON.php" method="post">
+                        <div class="form-group">
+                            <label for="name">Nombre</label>
+                            <input type="text" class="form-control" name="name" placeholder="Nombre del cliente" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" name="email" placeholder="Email del cliente" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="concept">Concepto</label>
+                            <input type="text" class="form-control" name="concept" placeholder="Concepto de la compra" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="amount">Cantidad</label>
+                            <input type="number" class="form-control" name="amount" placeholder="Cantidad a pagar" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="xmlFile">XML de factura</label>
+                            <input type="file" name="xmlfile" required>
+                        </div>
+
+                        <button type="submit" class="btn btn-info">Enviar</button>
+                    </form>
 		        </div>
 
 			    <div class="modal-footer">
