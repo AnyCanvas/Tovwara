@@ -104,7 +104,7 @@
 																	</td>
 																	<td>
 																		<?php $datetime = new DateTime('17 Oct 2008');
-																			  echo $datetime->format('jS \of F Y h:i:s A'); 
+																			  echo $datetime->format('d-m-Y H:i:s'); 
 																	    ?>
 
 																	</td>
