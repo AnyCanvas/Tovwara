@@ -103,7 +103,7 @@
 																		?>
 																	</td>
 																	<td>
-																		<?php $datetime = new DateTime('17 Oct 2008');
+																		<?php $datetime = new DateTime($fanbotList[$key]["last_heard"]);
 																			  echo $datetime->format('d-m-Y H:i:s'); 
 																	    ?>
 
