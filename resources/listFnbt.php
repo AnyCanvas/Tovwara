@@ -103,7 +103,9 @@
 																		?>
 																	</td>
 																	<td>
-																		<?php echo $fanbotList[$key]["last_heard"]; ?>
+																		<?php $datetime = new DateTime('17 Oct 2008');
+																			  echo $datetime->format('jS \of F Y h:i:s A'); 
+																	    ?>
 
 																	</td>
 
