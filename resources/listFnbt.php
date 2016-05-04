@@ -13,6 +13,7 @@
                                 <th>Pagina de Facebook</th>
                                 <th>Plan</th>
                                 <th>Status</th>
+                                <th>Ultima conexión</th>
                                 <th></th>
                                 <th></th>
 
@@ -101,6 +102,11 @@
 																			echo '</span>';
 																		?>
 																	</td>
+																	<td>
+																		<?php echo $fanbotList[$key]["last_heard"]; ?>
+
+																	</td>
+
 																	<td>
 									                                <a class="btn btn-primary btn-xs" onclick="callModal('<?php echo $row['name']?>')">
 										                                <span class="fa fa-cog" aria-hidden="true"></span> Configurar
