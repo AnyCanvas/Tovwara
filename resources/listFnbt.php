@@ -104,7 +104,8 @@
 																	</td>
 																	<td>
 																		<?php $datetime = new DateTime($fanbotList[$key]["last_heard"]);
-																			  echo $datetime->format('d-m-Y H:i'); 
+																			  $orderDate = $datetime->format('ymd');
+																			  echo '<span style="display: none;">'. $orderDate .'</span>'. $datetime->format('d-m-Y H:i'); 
 																	    ?>
 
 																	</td>
