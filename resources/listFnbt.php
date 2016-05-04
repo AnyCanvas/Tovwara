@@ -13,6 +13,7 @@
                                 <th>Pagina de Facebook</th>
                                 <th>Plan</th>
                                 <th>Status</th>
+                                <th>Ultima conexión</th>
                                 <th></th>
                                 <th></th>
 
@@ -102,6 +103,11 @@
 																		?>
 																	</td>
 																	<td>
+																		<?php echo (new DateTime($fanbotList[$key]["last_heard"]))->format('c'); ?>
+
+																	</td>
+
+																	<td>
 									                                <a class="btn btn-primary btn-xs" onclick="callModal('<?php echo $row['name']?>')">
 										                                <span class="fa fa-cog" aria-hidden="true"></span> Configurar
 										                                </a>
@@ -148,7 +154,7 @@ function fnbtAction(name){
             alert(response);
         });
     }
-</script> 
+</script>
  <!-- Modal that configures a Fanbot facebook page -->
 
     	<?php require_once("listModal.php"); ?>
