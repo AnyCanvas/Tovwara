@@ -103,7 +103,7 @@
 																		?>
 																	</td>
 																	<td>
-																		<?php echo (new DateTime($fanbotList[$key]["last_heard"]))->format('c'); ?>
+																		<?php echo (new DateTime($fanbotList[$key]["last_heard"]))->format('jS \of F Y h:i:s A'); ?>
 
 																	</td>
 
