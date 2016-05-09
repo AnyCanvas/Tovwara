@@ -103,8 +103,9 @@ function listInteractions(){
                         <th>Hora</th>
                         <th>Nombre</th>
                         <th>Apellido</th>
+                        <th>Acción</th>
                         <th>Pagina de Facebook</th>
-                        <th>Nombre de la Fanbot</th>
+                        <th>Fanbot</th>
                     </tr>
                     </thead>
 
@@ -150,8 +151,8 @@ function listInteractions(){
 				echo "\t\t\t". '<td>'. $formatedHour. '</td>'. "\r\n";
 				
 				echo "\t\t\t". '<td>'. $row['firstName'] .'</td>'. "\r\n";
-				echo "\t\t\t". '<td>'. $row['lastName'] .'</td>'. "\r\n";
-			    echo "\t\t\t". '<td>'.$row['fbPage']. '</td>'. "\r\n";
+				echo "\t\t\t". '<td>'. $row['lastName'] .'</td>'. "\r\n";				
+			    echo "\t\t\t". '<td>'.$row['action']. '</td>'. "\r\n";
 			    echo "\t\t\t". '<td>'.$row['fanbotId']. '</td>'. "\r\n";
 			    
 
