@@ -211,7 +211,6 @@ function listUsers(){
                         <th>Apellido</th>
                         <th>Acción</th>
                         <th>Pagina de Facebook</th>
-                        <th>Fanbot</th>
                     </tr>
                     </thead>
 
@@ -256,7 +255,6 @@ function listUsers(){
 				
 				echo "\t\t\t". '<td data-order='. (1/$orderDate) .'">'. $formatedDate. '</td>'. "\r\n";
 				echo "\t\t\t". '<td>'. $formatedHour. '</td>'. "\r\n";
-				
 				echo "\t\t\t". '<td>'. $row['fbName'] .'</td>'. "\r\n";
 				echo "\t\t\t". '<td>'. $row['fbId'] .'</td>'. "\r\n";
 			    echo "\t\t\t". '<td>'.$row['email']. '</td>'. "\r\n";
@@ -283,7 +281,6 @@ function listUsers(){
                         <th>Apellido</th>
                         <th>Acción</th>
                         <th>Pagina de Facebook</th>
-                        <th>Fanbot</th>
                     </tr>
                     </tfoot>
                     </table>
