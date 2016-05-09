@@ -205,7 +205,6 @@ function listUsers(){
                     <table  class="table" id="actionsTable">
                     <thead>
                     <tr>
-                        <th>Fecha</th>
                         <th>Hora</th>
                         <th>Nombre</th>
                         <th>Apellido</th>
@@ -245,15 +244,7 @@ function listUsers(){
 		    while($row = $result->fetch_assoc()) { 
 				
 				echo  "\t\t\t". '<tr class="gradeX">'. "\r\n";
-				
-				// Create a new date var from date in db
-				$date =new DateTime($row['date']);
-				// Get de number of day from the date variable
-				$formatedDate = $date->format('d/m/y');
-				$formatedHour = $date->format('g:i a');		
-				$orderDate = $date->format('U');
-				
-				echo "\t\t\t". '<td data-order='. (1/$orderDate) .'">'. $formatedDate. '</td>'. "\r\n";
+
 				echo "\t\t\t". '<td>'. $row['COUNT(t2.fbId)'] . '</td>'. "\r\n";
 				echo "\t\t\t". '<td>'. $row['fbName'] .'</td>'. "\r\n";
 				echo "\t\t\t". '<td>'. $row['fbId'] .'</td>'. "\r\n";
@@ -275,7 +266,6 @@ function listUsers(){
 
                     <tfoot>
                     <tr>
-                        <th>Fecha</th>
                         <th>Hora</th>
                         <th>Nombre</th>
                         <th>Apellido</th>
