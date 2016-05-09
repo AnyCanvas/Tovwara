@@ -257,12 +257,10 @@ function listUsers(){
 				echo "\t\t\t". '<td data-order='. (1/$orderDate) .'">'. $formatedDate. '</td>'. "\r\n";
 				echo "\t\t\t". '<td>'. $formatedHour. '</td>'. "\r\n";
 				
-				echo "\t\t\t". '<td>'. $row['firstName'] .'</td>'. "\r\n";
-				echo "\t\t\t". '<td>'. $row['lastName'] .'</td>'. "\r\n";
-			    echo "\t\t\t". '<td>'.$row['action']. '</td>'. "\r\n";
-			    echo "\t\t\t". '<td>'.$row['fbPage']. '</td>'. "\r\n";
-			    echo "\t\t\t". '<td>'.$row['fanbotId']. '</td>'. "\r\n";
-			    
+				echo "\t\t\t". '<td>'. $row['fbName'] .'</td>'. "\r\n";
+				echo "\t\t\t". '<td>'. $row['fbId'] .'</td>'. "\r\n";
+			    echo "\t\t\t". '<td>'.$row['email']. '</td>'. "\r\n";
+			    echo "\t\t\t". '<td>'.$row['gender']. '</td>'. "\r\n";
 
 			    echo "\t\t    ".'</tr>'. "\r\n";
 			}
