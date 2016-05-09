@@ -234,7 +234,7 @@ function listUsers(){
 		}
 		
 		if ( $_SESSION['userId'] == 00){
-			$sql = "SELECT t2.fbName, t2.fbId, t2.email, t2.gender FROM interactions t1, users t2 WHERE t1.userId = t2.fbID GROUP BY t2.fbId;";
+			$sql = "SELECT COUNT(t2.fbId), t2.fbName, t2.fbId, t2.email, t2.gender FROM interactions t1, users t2 WHERE t1.userId = t2.fbID GROUP BY t2.fbId;";
 			}else{
 			$sql = "SELECT t2.fbName, t2.fbId, t2.email, t2.gender FROM interactions t1, users t2 WHERE t1.userId = t2.fbID AND t1.clientId=13  GROUP BY t2.fbId;";
 
@@ -254,7 +254,7 @@ function listUsers(){
 				$orderDate = $date->format('U');
 				
 				echo "\t\t\t". '<td data-order='. (1/$orderDate) .'">'. $formatedDate. '</td>'. "\r\n";
-				echo "\t\t\t". '<td>'. $formatedHour. '</td>'. "\r\n";
+				echo "\t\t\t". '<td>'. $row['COUNT(t2.fbId)'] . '</td>'. "\r\n";
 				echo "\t\t\t". '<td>'. $row['fbName'] .'</td>'. "\r\n";
 				echo "\t\t\t". '<td>'. $row['fbId'] .'</td>'. "\r\n";
 			    echo "\t\t\t". '<td>'.$row['email']. '</td>'. "\r\n";
