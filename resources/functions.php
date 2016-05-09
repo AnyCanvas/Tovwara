@@ -205,11 +205,11 @@ function listUsers(){
                     <table  class="table" id="actionsTable">
                     <thead>
                     <tr>
-                        <th>Hora</th>
                         <th>Nombre</th>
-                        <th>Apellido</th>
-                        <th>Acción</th>
-                        <th>Pagina de Facebook</th>
+                        <th>Facebook</th>
+                        <th>Email</th>
+                        <th>Acciones</th>
+                        <th>Sexo</th>
                     </tr>
                     </thead>
 
@@ -245,10 +245,10 @@ function listUsers(){
 				
 				echo  "\t\t\t". '<tr class="gradeX">'. "\r\n";
 
-				echo "\t\t\t". '<td>'. $row['COUNT(t2.fbId)'] . '</td>'. "\r\n";
 				echo "\t\t\t". '<td>'. $row['fbName'] .'</td>'. "\r\n";
 				echo "\t\t\t". '<td>'. $row['fbId'] .'</td>'. "\r\n";
 			    echo "\t\t\t". '<td>'.$row['email']. '</td>'. "\r\n";
+				echo "\t\t\t". '<td>'. $row['COUNT(t2.fbId)'] . '</td>'. "\r\n";
 			    echo "\t\t\t". '<td>'.$row['gender']. '</td>'. "\r\n";
 
 			    echo "\t\t    ".'</tr>'. "\r\n";
