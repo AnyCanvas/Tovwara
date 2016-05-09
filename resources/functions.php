@@ -233,7 +233,7 @@ function listUsers(){
 		}
 		
 		if ( $_SESSION['userId'] == 00){
-			$sql = "SELECT COUNT(t2.fbId), t2.fbName, t2.fbId, t2.email, t2.gender FROM interactions t1, users t2 WHERE t1.userId = t2.fbID GROUP BY t2.fbId ORDER by COUNT(t2.fbId) DESC;";
+			$sql = "SELECT COUNT(t2.fbId), t2.fbName, t2.fbId, t2.email, t2.gender FROM interactions t1, users t2 WHERE t1.userId = t2.fbID GROUP BY t2.fbId;";
 			}else{
 			$sql = "SELECT t2.fbName, t2.fbId, t2.email, t2.gender FROM interactions t1, users t2 WHERE t1.userId = t2.fbID AND t1.clientId=13  GROUP BY t2.fbId;";
 
@@ -266,11 +266,11 @@ function listUsers(){
 
                     <tfoot>
                     <tr>
-                        <th>Hora</th>
                         <th>Nombre</th>
-                        <th>Apellido</th>
-                        <th>Acción</th>
-                        <th>Pagina de Facebook</th>
+                        <th>Facebook</th>
+                        <th>Email</th>
+                        <th>Acciones</th>
+                        <th>Sexo</th>
                     </tr>
                     </tfoot>
                     </table>
