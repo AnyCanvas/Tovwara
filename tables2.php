@@ -61,7 +61,7 @@
     <section id="main-content">
         <section class="wrapper">
         <!-- page start-->
-		<?php listInteractions(); ?>			
+		<?php listUsers(); ?>			
         <!-- page end-->
         </section>
     </section>

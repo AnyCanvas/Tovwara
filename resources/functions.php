@@ -176,10 +176,116 @@ function listInteractions(){
                         <th>Fecha</th>
                         <th>Hora</th>
                         <th>Nombre</th>
-                        <th>Email</th>
-                        <th>Genero</th>
+                        <th>Apellido</th>
+                        <th>Acción</th>
                         <th>Pagina de Facebook</th>
-                        <th>Nombre de la Fanbot</th>
+                        <th>Fanbot</th>
+                    </tr>
+                    </tfoot>
+                    </table>
+                    </div>
+                </section>
+            </div>
+        </div>
+		<?php
+
+	}	
+	
+function listUsers(){
+	
+	
+		?> 
+		<div class="row">
+            <div class="col-sm-12">
+                <section class="panel">
+                    <div class="panel-body">
+		                <div class="gauge-canvas">
+	                        <h4 class="widget-h">Mis Fanbot</h4>
+	                    </div>
+                    <table  class="table" id="actionsTable">
+                    <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Hora</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Acción</th>
+                        <th>Pagina de Facebook</th>
+                        <th>Fanbot</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+		
+		<?php	
+			
+		require(realpath(dirname(__FILE__) . "/./config.php"));
+    	$servername = $config["db"]["fanbot"]["host"];
+		$username = $config["db"]["fanbot"]["username"];
+		$password = $config["db"]["fanbot"]["password"];
+		$dbname = $config["db"]["fanbot"]["dbname"];
+
+		
+			
+		// Create connection
+		$conn = new mysqli($servername, $username, $password, $dbname);
+		// Check connection
+		if ($conn->connect_error) {
+		    die("Connection failed: " . $conn->connect_error);
+		}
+		
+		if ( $_SESSION['userId'] == 00){
+			$sql = "SELECT t2.fbName, t2.fbId, t2.email, t2.gender FROM interactions t1, users t2 WHERE t1.userId = t2.fbID GROUP BY t2.fbId;";
+			}else{
+			$sql = "SELECT t2.fbName, t2.fbId, t2.email, t2.gender FROM interactions t1, users t2 WHERE t1.userId = t2.fbID AND t1.clientId=13  GROUP BY t2.fbId;";
+
+		}
+		$result = $conn->query($sql);
+		
+		if ($result->num_rows > 0) {		    
+		    while($row = $result->fetch_assoc()) { 
+				
+				echo  "\t\t\t". '<tr class="gradeX">'. "\r\n";
+				
+				// Create a new date var from date in db
+				$date =new DateTime($row['date']);
+				// Get de number of day from the date variable
+				$formatedDate = $date->format('d/m/y');
+				$formatedHour = $date->format('g:i a');		
+				$orderDate = $date->format('U');
+				
+				echo "\t\t\t". '<td data-order='. (1/$orderDate) .'">'. $formatedDate. '</td>'. "\r\n";
+				echo "\t\t\t". '<td>'. $formatedHour. '</td>'. "\r\n";
+				
+				echo "\t\t\t". '<td>'. $row['firstName'] .'</td>'. "\r\n";
+				echo "\t\t\t". '<td>'. $row['lastName'] .'</td>'. "\r\n";
+			    echo "\t\t\t". '<td>'.$row['action']. '</td>'. "\r\n";
+			    echo "\t\t\t". '<td>'.$row['fbPage']. '</td>'. "\r\n";
+			    echo "\t\t\t". '<td>'.$row['fanbotId']. '</td>'. "\r\n";
+			    
+
+			    echo "\t\t    ".'</tr>'. "\r\n";
+			}
+			    return TRUE;	
+			} else {
+				echo "Empty query";
+				return FALSE;
+
+			}
+		$conn->close();
+		
+		?>
+		                    </tbody>
+
+                    <tfoot>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Hora</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Acción</th>
+                        <th>Pagina de Facebook</th>
+                        <th>Fanbot</th>
                     </tr>
                     </tfoot>
                     </table>
