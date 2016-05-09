@@ -128,7 +128,7 @@ function listInteractions(){
 		}
 		
 		if ( $_SESSION['userId'] == 00){
-			$sql = "SELECT t2.`firstName`,t2.`lastName`, t1.`fbPage` , t1.`action`, t1.`date`, t1.fanbotId` FROM interactions t1, users t2 WHERE t1.`userId` = t2.`fbID` ORDER by t1.`date` DESC;";
+			$sql = "SELECT t2.`firstName`,t2.`lastName`, t1.`fbPage` , t1.`action`, t1.`date`, t1.fanbotId` FROM interactions t1, users t2 WHERE t1.`userId` = t2.`fbID`;";
 			}else{
 			$sql = "SELECT t2.`firstName`,t2.`lastName`, t1.`fbPage` , t1.`action`, t1.`date`, t1.fanbotId` FROM interactions t1, users t2 WHERE t1.`userId` = t2.`fbID` AND t1.`clientId`=". $_SESSION['userId']. " ORDER by t1.`date` DESC;";
 		}
