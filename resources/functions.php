@@ -151,8 +151,9 @@ function listInteractions(){
 				echo "\t\t\t". '<td>'. $formatedHour. '</td>'. "\r\n";
 				
 				echo "\t\t\t". '<td>'. $row['firstName'] .'</td>'. "\r\n";
-				echo "\t\t\t". '<td>'. $row['lastName'] .'</td>'. "\r\n";				
+				echo "\t\t\t". '<td>'. $row['lastName'] .'</td>'. "\r\n";
 			    echo "\t\t\t". '<td>'.$row['action']. '</td>'. "\r\n";
+			    echo "\t\t\t". '<td>'.$row['fbPage']. '</td>'. "\r\n";
 			    echo "\t\t\t". '<td>'.$row['fanbotId']. '</td>'. "\r\n";
 			    
 
