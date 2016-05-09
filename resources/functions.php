@@ -103,8 +103,6 @@ function listInteractions(){
                         <th>Hora</th>
                         <th>Nombre</th>
                         <th>Apellido</th>
-                        <th>Email</th>
-                        <th>Genero</th>
                         <th>Pagina de Facebook</th>
                         <th>Nombre de la Fanbot</th>
                     </tr>
@@ -130,9 +128,9 @@ function listInteractions(){
 		}
 		
 		if ( $_SESSION['userId'] == 00){
-			$sql = "SELECT * FROM interactions";
+			$sql = "SELECT t2.`firstName`,t2.`lastName`, t1.`fbPage` , t1.`action`, t1.`date`, t1.fanbotId` FROM interactions t1, users t2 WHERE t1.`userId` = t2.`fbID` ORDER by t1.`date` DESC;";
 			}else{
-			$sql = "SELECT * FROM interactions WHERE clientId = '". $_SESSION['userId']. "'";
+			$sql = "SELECT t2.`firstName`,t2.`lastName`, t1.`fbPage` , t1.`action`, t1.`date`, t1.fanbotId` FROM interactions t1, users t2 WHERE t1.`userId` = t2.`fbID` AND t1.`clientId`=". $_SESSION['userId']. " ORDER by t1.`date` DESC;";
 		}
 		$result = $conn->query($sql);
 		
@@ -151,26 +149,8 @@ function listInteractions(){
 				echo "\t\t\t". '<td data-order='. (1/$orderDate) .'">'. $formatedDate. '</td>'. "\r\n";
 				echo "\t\t\t". '<td>'. $formatedHour. '</td>'. "\r\n";
 				
-				
-			    $sql2 = "SELECT * FROM users WHERE fbID = '". $row['userId'] . "'";
-				$result2 = $conn->query($sql2);
-				if ($result2->num_rows > 0) {	
-						    
-				    while($row2 = $result2->fetch_assoc()) { 
-						$firstName = $row2['firstName'];
-						$lastName = $row2['lastName'];
-						$email = $row2['email'];
-						$gender =  $row2['gender'];
-
-
-			    }
-			    
-			    }
-						echo "\t\t\t". '<td><a href="https://www.facebook.com/'. $row['userId'] . '" target="_blank">'. $firstName .'</td>'. "\r\n";
-						echo "\t\t\t". '<td>'. $lastName .'</td>'. "\r\n";
-						echo "\t\t\t". '<td>'. $email.' </td>'. "\r\n";
-						echo "\t\t\t". '<td>'.($gender == 'male' ? 'M' : '').($gender == 'female' ? 'F' : '').'</td>'. "\r\n";
-
+				echo "\t\t\t". '<td>'. $row['firstName'] .'</td>'. "\r\n";
+				echo "\t\t\t". '<td>'. $row['lastName'] .'</td>'. "\r\n";
 			    echo "\t\t\t". '<td>'.$row['fbPage']. '</td>'. "\r\n";
 			    echo "\t\t\t". '<td>'.$row['fanbotId']. '</td>'. "\r\n";
 			    
