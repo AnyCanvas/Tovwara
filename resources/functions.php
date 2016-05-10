@@ -253,10 +253,10 @@ function listUsers(){
 				echo "\t\t\t". '<td>'. $row['lastName'] .'</td>'. "\r\n";
 				echo "\t\t\t". '<td>'. $row['fbId'] .'</td>'. "\r\n";
 			    echo "\t\t\t". '<td>'.$row['email']. '</td>'. "\r\n";
+			    echo "\t\t\t". '<td>'.$row['gender']. '</td>'. "\r\n";
 				echo "\t\t\t". '<td>'. $row['COUNT(CASE WHEN t1.action = \'like\' THEN +1 END)'] . '</td>'. "\r\n";
 				echo "\t\t\t". '<td>'. $row['COUNT(CASE WHEN t1.action = \'post\' THEN +1 END)'] . '</td>'. "\r\n";
 				echo "\t\t\t". '<td>'. $row['COUNT(t2.fbId)'] . '</td>'. "\r\n";
-			    echo "\t\t\t". '<td>'.$row['gender']. '</td>'. "\r\n";
 
 			    echo "\t\t    ".'</tr>'. "\r\n";
 			}
