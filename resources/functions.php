@@ -248,7 +248,7 @@ function listUsers(){
 				echo  "\t\t\t". '<tr class="gradeX">'. "\r\n";
 
 				echo "\t\t\t". '<td>'. $row['id'] .'</td>'. "\r\n";
-				echo "\t\t\t". '<td><a href="facebook.com/'. $row['fbId'] .'">'. $row['firstName'] .'</a></td>'. "\r\n";
+				echo "\t\t\t". '<td><a href="http://facebook.com/'. $row['fbId'] .'" target="_blank">'. $row['firstName'] .'</a></td>'. "\r\n";
 				echo "\t\t\t". '<td>'. $row['lastName'] .'</td>'. "\r\n";
 			    echo "\t\t\t". '<td>'.$row['email']. '</td>'. "\r\n";
 			    echo "\t\t\t". '<td>'.$row['gender']. '</td>'. "\r\n";
