@@ -207,7 +207,6 @@ function listUsers(){
                         <th>ID</th>
                         <th>Nombre</th>
                         <th>Apellido</th>
-                        <th>Facebook</th>
                         <th>Email</th>
                         <th>Sexo</th>
                         <th>Likes</th>
@@ -249,9 +248,8 @@ function listUsers(){
 				echo  "\t\t\t". '<tr class="gradeX">'. "\r\n";
 
 				echo "\t\t\t". '<td>'. $row['id'] .'</td>'. "\r\n";
-				echo "\t\t\t". '<td>'. $row['firstName'] .'</td>'. "\r\n";
+				echo "\t\t\t". '<td><a href="facebook.com/'. $row['fbId'] .'">'. $row['firstName'] .'</a></td>'. "\r\n";
 				echo "\t\t\t". '<td>'. $row['lastName'] .'</td>'. "\r\n";
-				echo "\t\t\t". '<td>'. $row['fbId'] .'</td>'. "\r\n";
 			    echo "\t\t\t". '<td>'.$row['email']. '</td>'. "\r\n";
 			    echo "\t\t\t". '<td>'.$row['gender']. '</td>'. "\r\n";
 				echo "\t\t\t". '<td>'. $row['COUNT(CASE WHEN t1.action = \'like\' THEN +1 END)'] . '</td>'. "\r\n";
@@ -276,7 +274,6 @@ function listUsers(){
                         <th>ID</th>
                         <th>Nombre</th>
                         <th>Apellido</th>
-                        <th>Facebook</th>
                         <th>Email</th>
                         <th>Sexo</th>
                         <th>Likes</th>
