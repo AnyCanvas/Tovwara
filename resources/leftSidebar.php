@@ -17,7 +17,8 @@
                 </a>
                 <ul class="sub">  
                     <li><a href="stats.php">Estadísticas</a></li>
-                    <li><a href="tables.php">Usuarios</a></li>
+                    <li><a href="accions.php">Usuarios</a></li>
+                    <li><a href="users.php">Usuarios</a></li>
                 </ul>
             </li>
 
