@@ -141,11 +141,12 @@
 		  ],
 		  // The name of the data record attribute that contains x-values.
 		  xkey: 'd',
+		  labels: ['Dia'],
 		  // A list of names of data record attributes that contain y-values.
 		  ykeys: ['l'],
 		  // Labels for the ykeys -- will be displayed when you hover over the
 		  // chart.
-		  labels: ['Likes'],
+		  labels: ['Acciónes'],
 		  smooth: true,
 		  parseTime: false,
 
