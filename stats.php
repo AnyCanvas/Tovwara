@@ -146,7 +146,7 @@
 		  ykeys: ['l'],
 		  // Labels for the ykeys -- will be displayed when you hover over the
 		  // chart.
-		  labels: ['Acciónes'],
+		  labels: ['Acciones'],
 		  smooth: true,
 		  parseTime: false,
 
