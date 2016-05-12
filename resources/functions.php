@@ -141,7 +141,7 @@ function likesJson($month,$year){
 			echo 0;
 		}
 
-		if (isset($dayArray[$i+1])){
+		if ( !( isset($dayArray[$i+1]) )){
 	      echo ',';    
 		}	
 		if ($daysInMonth > $i) {
