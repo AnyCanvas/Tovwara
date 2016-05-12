@@ -129,7 +129,7 @@ function likesJson($month,$year){
 		}	
 	}
 
-	echo('[{');
+	echo('{"Total":[');
 	for($i = 1; $i <= $daysInMonth; $i++){
 		if (isset($dayArray[$i])) {
 			echo $dayArray[$i];
@@ -142,7 +142,7 @@ function likesJson($month,$year){
 		
 		}
 
-	echo('}]');
+	echo(']}');
 
 	$conn->close();
 	
