@@ -1,4 +1,4 @@
 	<?php 
 		include "resources/functions.php"; 		
-		likesJson(5,2015);
+		likesJson(date("m"),date("Y"));
 	?> 
