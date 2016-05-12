@@ -135,13 +135,11 @@ function likesJson($month,$year){
 
 	echo('[{');
 	for($i = 1; $i <= $daysInMonth; $i++){
-
-
 		if (isset($dayArray[$i])) {
-			echo ($dayArray[$i]);
+			echo $dayArray[$i];
 		} else {
-			echo "0";
-			}
+			echo 0;
+		}
 
 		if (isset($dayArray[$i+1])){
 	      echo ',';    
