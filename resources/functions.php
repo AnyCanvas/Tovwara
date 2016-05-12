@@ -101,11 +101,8 @@ function likesJson($month,$year){
 	    die("Connection failed: " . $conn->connect_error);
 	}
 
-		if($_SESSION['userId'] == '00'){
-			$sql = "SELECT * FROM interactions WHERE EXTRACT(MONTH FROM date) = '". $month. "' AND EXTRACT(YEAR FROM date) = '". $year."'"; 
-			} else {
-			$sql = "SELECT * FROM interactions WHERE EXTRACT(MONTH FROM date) = '". $month. "' AND EXTRACT(YEAR FROM date) = '". $year."' AND clientId = '". $_SESSION['userId']."'"; 
-			}
+	$sql = "SELECT * FROM interactions WHERE EXTRACT(MONTH FROM date) = '". $month. "' AND EXTRACT(YEAR FROM date) = '". $year."'"; 
+
 
 	$result = $conn->query($sql);
 	$daysInMonth = cal_days_in_month(CAL_GREGORIAN, date("m"), date("Y"));
