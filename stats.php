@@ -95,8 +95,11 @@
                    <div class="panel-body">
 
 
-                       <div class="chart">
+                       <div class="chartJS">
+
+
                         <div id="chart"></div>
+
                        </div>
 
                    </div>
