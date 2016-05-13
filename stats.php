@@ -192,9 +192,9 @@
         data: {
           url: 'json/interactionsJson.php',
           mimeType: 'json',
-          type: 'area',
+          type : 'pie',
         },
-        type : 'pie',
+
       });
     });
 </script>
