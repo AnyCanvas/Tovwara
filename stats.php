@@ -108,10 +108,10 @@
                    <div class="panel-body">
 
 
-                       <div class="chartJS">
+                       <div class="chart">
 
 
-                           <canvas id="donut-chart-js" height="250" width="800" ></canvas>
+                         <div id="chart3"></div>
 
                        </div>
 
@@ -191,6 +191,20 @@
 	  	bindto: '#chart2',
         data: {
           url: 'json/interactionsJson.php',
+          mimeType: 'json',
+          type : 'pie',
+          hide: ['Total'],
+        },
+        legend: {
+	       hide: ['Total'],
+	    },
+      });
+    });
+    $(function () {
+      var chart = c3.generate({
+	  	bindto: '#chart3',
+        data: {
+          url: 'monthTotalJson.php',
           mimeType: 'json',
           type : 'pie',
           hide: ['Total'],
