@@ -95,11 +95,8 @@
                    <div class="panel-body">
 
 
-                       <div class="chartJS">
-
-
-                           <canvas id="pie-chart-js" height="250" width="800" ></canvas>
-
+                       <div class="chart">
+                        <div id="chart"></div>
                        </div>
 
                    </div>
