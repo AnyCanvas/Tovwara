@@ -93,15 +93,7 @@
                     </span>
                    </header>
                    <div class="panel-body">
-
-
-                       <div class="chartJS">
-
-
                         <div id="chart2"></div>
-
-                       </div>
-
                    </div>
                </section>
            </div>
