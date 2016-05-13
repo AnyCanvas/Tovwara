@@ -204,7 +204,7 @@
       var chart = c3.generate({
 	  	bindto: '#chart3',
         data: {
-          url: 'monthTotalJson.php',
+          url: 'json/monthTotalJson.php',
           mimeType: 'json',
           type : 'pie',
           hide: ['Total'],
