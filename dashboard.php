@@ -136,30 +136,6 @@
 <!--common script init for all pages-->
 <script src="js/scripts.js"></script>
 
-    <script type="text/javascript">
-		new Morris.Area({
-		  // ID of the element in which to draw the chart.
-		  element: 'likes',
-		  // Chart data records -- each entry in this array corresponds to a point on
-		  // the chart.
-		  data: [
-		  
-		  <?php getLikesGraph(date("m"),date("Y")); ?>
-
-		  ],
-		  // The name of the data record attribute that contains x-values.
-		  xkey: 'd',
-		  // A list of names of data record attributes that contain y-values.
-		  ykeys: ['l'],
-		  // Labels for the ykeys -- will be displayed when you hover over the
-		  // chart.
-		  labels: ['Likes'],
-		  smooth: true,
-		  parseTime: false,
-
-		});
-    </script>
-
 <!-- Data tables-->
 <script src="css/datatables/js/jquery.dataTables.js"></script>
 <script src="css/datatables/js/dataTables.bootstrap.js"></script>
