@@ -85,9 +85,9 @@
                     </header>
                     <div class="panel-body">
 
-                        <div class="chart">
-						<div id="likes" style="height: 250px;"></div></div>
-
+                       <div class="chart">
+                         <div id="chart"></div>
+                       </div>
                     </div>
                 </section>
             </div>
@@ -165,6 +165,31 @@
 <script src="css/datatables/js/dataTables.bootstrap.js"></script>
 
 <script>
+	
+
+    $(function () {
+      var chart = c3.generate({
+	  	bindto: '#chart',
+        data: {
+          url: 'json/interactionsJson.php',
+          mimeType: 'json',
+          type: 'area',
+        },
+        axis: {
+            x: {
+                min: 1,
+                label: {
+                   text: 'Interacciones mensuales',
+                   position: 'outter-center',
+                }
+            }
+        },
+        legend: {
+          position: 'right',
+        },
+      });
+    });
+
 	$(document).ready( function () {
     $('#fanbotTable').DataTable({
 	language: {
