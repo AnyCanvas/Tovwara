@@ -85,6 +85,59 @@ function getLikesGraph($month,$year){
 	
 }	
 
+function totalJson($month,$year){
+
+	require(realpath(dirname(__FILE__) . "/./config.php"));
+    $servername = $config["db"]["fanbot"]["host"];
+	$username = $config["db"]["fanbot"]["username"];
+	$password = $config["db"]["fanbot"]["password"];
+	$dbname = $config["db"]["fanbot"]["dbname"];
+
+		
+	// Create connection
+	$conn = new mysqli($servername, $username, $password, $dbname);
+	// Check connection
+	if ($conn->connect_error) {
+	    die("Connection failed: " . $conn->connect_error);
+	}
+
+	$sql = "SELECT * FROM interactions WHERE EXTRACT(MONTH FROM date) = '". $month. "' AND EXTRACT(YEAR FROM date) = '". $year."'"; 
+
+	$result = $conn->query($sql);
+	$total = 0;
+	$like = 0;
+	$checkin = 0;
+	$i = 1;
+	if ($result->num_rows > 0) {		    
+
+		while($row = $result->fetch_assoc()) {
+			$total++;			
+			if($row['action'] == 'like'){
+			   $like++;						 	
+			} else if($row['action'] == 'post') {
+			   $checkin++; 	
+			}
+		}	
+	}
+	
+	echo("{");
+
+	echo('"Total":[');
+	echo $total;
+	echo('],');
+
+	echo('"Likes":[');
+	echo $like;
+	echo('],');	
+	echo('"Check in":[');
+	echo $checkin;
+	echo(']');	
+	echo('}');
+
+	$conn->close();
+	
+}
+
 function likesJson($month,$year){
 
 	require(realpath(dirname(__FILE__) . "/./config.php"));
@@ -186,6 +239,7 @@ function likesJson($month,$year){
 	$conn->close();
 	
 }	
+
 function listInteractions(){
 	
 	
