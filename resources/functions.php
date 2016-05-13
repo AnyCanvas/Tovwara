@@ -106,9 +106,13 @@ function likesJson($month,$year){
 	$result = $conn->query($sql);
 	$daysInMonth = cal_days_in_month(CAL_GREGORIAN, date("m"), date("Y"));
 	$dayArray = array();
+	$likeArray = array();
+	$postArray = array();
 	$i = 1;
 	for($i = 1; $i <= $daysInMonth; $i++){
 		$dayArray[$i] = 0;
+    	$likeArray[$i] = 0;
+	    $postArray[$i] = 0;
 		}
 	if ($result->num_rows > 0) {		    
 
@@ -123,13 +127,21 @@ function likesJson($month,$year){
 			for($i = 1; $i <= $daysInMonth; $i++){
 				 if ($day == $i){
 				 	$dayArray[$i]++;
+				 	
+				 	if($row['action'] == 'like'){
+						$likeArray[$i]++;						 	
+				 	} else if($row['action'] == 'post') {
+						$postArray[$i]++; 	
+				 	}
 
 		    	}
 			}
 		}	
 	}
+	
+	echo("{");
 
-	echo('{"Total":[');
+	echo('"Total":[');
 	for($i = 1; $i <= $daysInMonth; $i++){
 		if (isset($dayArray[$i])) {
 			echo $dayArray[$i];
@@ -141,8 +153,9 @@ function likesJson($month,$year){
 		}
 		
 		}
-
-	echo(']}');
+	echo(']');
+	
+	echo('}');
 
 	$conn->close();
 	
