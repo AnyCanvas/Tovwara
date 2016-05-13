@@ -193,7 +193,7 @@
           url: 'json/interactionsJson.php',
           mimeType: 'json',
           type : 'pie',
-          hide: ['"Likes"']
+          hide: ['Total'],
         },
       });
     });
