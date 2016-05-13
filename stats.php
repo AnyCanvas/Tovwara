@@ -76,7 +76,7 @@
                          </span>
                     </header>
                     <div class="panel-body">
-                        <div id="chart1"></div>
+                        <div id="chart"></div>
                     </div>
                 </section>
             </div>
@@ -129,7 +129,7 @@
 <script src="/js/c3/c3.js"></script>
 <script>
 
-      var chart1 = c3.generate({
+      var chart = c3.generate({
         data: {
           url: 'json/interactionsJson.php',
           mimeType: 'json',
