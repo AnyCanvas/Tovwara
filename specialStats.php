@@ -188,7 +188,7 @@
       var chart = c3.generate({
 	  	bindto: '#chart2',
         data: {
-          url: 'json/interactionsJson.php',
+          url: 'json/interactionsJson.php<?php echo $htmlVar ?>',
           mimeType: 'json',
           type : 'pie',
           hide: ['Total'],
@@ -202,7 +202,7 @@
       var chart = c3.generate({
 	  	bindto: '#chart3',
         data: {
-          url: 'json/monthTotalJson.php',
+          url: 'json/monthTotalJson.php<?php echo $htmlVar ?>',
           mimeType: 'json',
           type : 'bar',
         },
