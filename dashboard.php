@@ -73,7 +73,7 @@
         <!-- page start-->
 
 
-		<!-- Likes chart html -->        
+		<!-- Likes for each month chart html -->        
         <div class="row">
             <div class="col-sm-12">
                 <section class="panel">
@@ -84,7 +84,6 @@
                          </span>
                     </header>
                     <div class="panel-body">
-
                        <div class="chart">
                          <div id="chart"></div>
                        </div>
