@@ -194,10 +194,10 @@
           mimeType: 'json',
           type : 'pie',
           hide: ['Total'],
-          legend: {
-			  hide: ['Total'],
-			}
         },
+        legend: {
+	       hide: ['Total'],
+	    },
       });
     });
 </script>
