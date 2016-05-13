@@ -168,7 +168,7 @@ function likesJson($month,$year){
 		
 		}
 	echo('],');	
-	echo('"Post":[0,');
+	echo('"Check in":[0,');
 	for($i = 1; $i <= $daysInMonth; $i++){
 		if (isset($postArray[$i])) {
 			echo $postArray[$i];
