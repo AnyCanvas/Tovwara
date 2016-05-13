@@ -154,7 +154,20 @@ function likesJson($month,$year){
 		
 		}
 	echo(']');
-	
+
+	echo('"Likes":[');
+	for($i = 1; $i <= $daysInMonth; $i++){
+		if (isset($likeArray[$i])) {
+			echo $likeArray[$i];
+		} else {
+			echo 0;
+		}
+		if ($daysInMonth > $i) {
+			echo ', ';
+		}
+		
+		}
+	echo(']');	
 	echo('}');
 
 	$conn->close();
