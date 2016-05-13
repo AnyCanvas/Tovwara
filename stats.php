@@ -195,7 +195,7 @@
           type : 'pie',
           hide: ['Total'],
           legend: {
-			  hide: ['Total']
+			  hide: ['Total'],
 			}
         },
       });
