@@ -194,18 +194,7 @@
           mimeType: 'json',
           type: 'area',
         },
-        axis: {
-            x: {
-                min: 1,
-                label: {
-                   text: 'Interacciones mensuales',
-                   position: 'outter-center',
-                }
-            }
-        },
-        legend: {
-          position: 'right',
-        },
+        type : 'pie',
       });
     });
 </script>
