@@ -166,6 +166,7 @@
 
     $(function () {
       var chart = c3.generate({
+	  	bindto: '#chart',
         data: {
           url: 'json/interactionsJson.php',
           mimeType: 'json',
@@ -186,7 +187,8 @@
       });
     });
     $(function () {
-      var chart2 = c3.generate({
+      var chart = c3.generate({
+	  	bindto: '#chart2',
         data: {
           url: 'json/interactionsJson.php',
           mimeType: 'json',
