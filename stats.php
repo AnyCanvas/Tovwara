@@ -131,7 +131,7 @@
 
       var chart1 = c3.generate({
         data: {
-          url: 'json.php',
+          url: 'json/interactionsJson.php',
           mimeType: 'json',
           type: 'area',
         },
