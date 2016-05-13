@@ -76,7 +76,9 @@
                          </span>
                     </header>
                     <div class="panel-body">
-                        <div id="chart"></div>
+                       <div class="chart">
+                         <div id="chart"></div>
+                       </div>
                     </div>
                 </section>
             </div>
@@ -93,7 +95,9 @@
                     </span>
                    </header>
                    <div class="panel-body">
-                        <div id="chart2"></div>
+                       <div class="chart">
+                         <div id="chart2"></div>
+                       </div>
                    </div>
                </section>
            </div>
@@ -109,10 +113,7 @@
 
 
                        <div class="chart">
-
-
                          <div id="chart3"></div>
-
                        </div>
 
                    </div>
