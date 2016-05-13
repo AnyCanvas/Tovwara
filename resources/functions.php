@@ -180,7 +180,7 @@ function likesJson($month,$year){
 		}
 		
 		}
-	echo('],');	
+	echo(']');	
 	echo('}');
 
 	$conn->close();
