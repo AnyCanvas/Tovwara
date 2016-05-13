@@ -193,12 +193,11 @@
           url: 'json/interactionsJson.php',
           mimeType: 'json',
           type : 'pie',
+        },
 		  keys: {
 		    // x: 'name', // it's possible to specify 'x' when category axis
 		    value: ['"Likes"'],
-		  },
-        },
-
+		  }
       });
     });
 </script>
