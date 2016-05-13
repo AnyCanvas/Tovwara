@@ -153,7 +153,7 @@ function likesJson($month,$year){
 		}
 		
 		}
-	echo(']');
+	echo('],');
 
 	echo('"Likes":[');
 	for($i = 1; $i <= $daysInMonth; $i++){
@@ -167,7 +167,20 @@ function likesJson($month,$year){
 		}
 		
 		}
-	echo(']');	
+	echo('],');	
+	echo('"Post":[');
+	for($i = 1; $i <= $daysInMonth; $i++){
+		if (isset($postArray[$i])) {
+			echo $postArray[$i];
+		} else {
+			echo 0;
+		}
+		if ($daysInMonth > $i) {
+			echo ', ';
+		}
+		
+		}
+	echo('],');	
 	echo('}');
 
 	$conn->close();
