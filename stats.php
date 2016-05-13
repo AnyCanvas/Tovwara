@@ -194,6 +194,9 @@
           mimeType: 'json',
           type : 'pie',
           hide: ['Total'],
+          legend: {
+			  hide: ['Total']
+			}
         },
       });
     });
