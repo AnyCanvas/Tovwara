@@ -141,7 +141,7 @@ function likesJson($month,$year){
 	
 	echo("{");
 
-	echo('"Total":[0,');
+	echo('Total:[0,');
 	for($i = 1; $i <= $daysInMonth; $i++){
 		if (isset($dayArray[$i])) {
 			echo $dayArray[$i];
@@ -155,7 +155,7 @@ function likesJson($month,$year){
 		}
 	echo('],');
 
-	echo('"Likes":[0,');
+	echo('Likes:[0,');
 	for($i = 1; $i <= $daysInMonth; $i++){
 		if (isset($likeArray[$i])) {
 			echo $likeArray[$i];
@@ -168,7 +168,7 @@ function likesJson($month,$year){
 		
 		}
 	echo('],');	
-	echo('"Check in":[0,');
+	echo('Checkin:[0,');
 	for($i = 1; $i <= $daysInMonth; $i++){
 		if (isset($postArray[$i])) {
 			echo $postArray[$i];
