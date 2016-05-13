@@ -23,6 +23,7 @@
     <link href="bs3/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-reset.css" rel="stylesheet">
     <link href="font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="css/c3/c3.css" rel="stylesheet" type="text/css">
 
     
     <!-- Custom styles for this template -->
@@ -76,7 +77,7 @@
                     </header>
                     <div class="panel-body">
 
-                        <div class="chart">
+                        <div id="chart"></div>
 						<div id="singleLikes" style="height: 250px;"></div></div>
 
                     </div>
@@ -127,32 +128,31 @@
 <!--common script init for all pages-->
 <script src="js/scripts.js"></script>
 
-    <script type="text/javascript">
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script src="/js/c3/c3.js"></script>
+<script>
 
-		new Morris.Line({
-		  // ID of the element in which to draw the chart.
-		  element: 'singleLikes',
-		  // Chart data records -- each entry in this array corresponds to a point on
-		  // the chart.
-		  data: [
-			  
-		  <?php getLikesGraph(date("m"),date("Y")); ?>
+      var chart = c3.generate({
+        data: {
+          url: 'test/json.php',
+          mimeType: 'json',
+          type: 'area',
+        },
+        axis: {
+            x: {
+                min: 1,
+                label: {
+                   text: 'Interacciones mensuales',
+                   position: 'outter-center',
+                }
+            }
+        },
+        legend: {
+          position: 'right',
+        },
+      });
 
-		  ],
-		  // The name of the data record attribute that contains x-values.
-		  xkey: 'd',
-		  labels: ['Dia'],
-		  // A list of names of data record attributes that contain y-values.
-		  ykeys: ['l'],
-		  // Labels for the ykeys -- will be displayed when you hover over the
-		  // chart.
-		  labels: ['Acciones'],
-		  smooth: true,
-		  parseTime: false,
-
-		});
-
-    </script>
+</script>
 
 
 </body>
