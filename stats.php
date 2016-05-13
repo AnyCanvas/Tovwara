@@ -98,7 +98,7 @@
                        <div class="chartJS">
 
 
-                        <div id="chart"></div>
+                        <div id="chart2"></div>
 
                        </div>
 
@@ -192,6 +192,25 @@
         },
       });
 
+      var chart2 = c3.generate({
+        data: {
+          url: 'json/interactionsJson.php',
+          mimeType: 'json',
+          type: 'area',
+        },
+        axis: {
+            x: {
+                min: 1,
+                label: {
+                   text: 'Interacciones mensuales',
+                   position: 'outter-center',
+                }
+            }
+        },
+        legend: {
+          position: 'right',
+        },
+      });
 </script>
 
 
