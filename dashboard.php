@@ -85,7 +85,7 @@
                     </header>
                     <div class="panel-body">
                        <div class="chart">
-                         <div id="chart"></div>
+                         <div id="likes"></div>
                        </div>
                     </div>
                 </section>
@@ -134,7 +134,7 @@
 
     $(function () {
       var chart = c3.generate({
-	  	bindto: '#chart',
+	  	bindto: '#likes',
         data: {
           url: 'json/interactionsJson.php',
           mimeType: 'json',
