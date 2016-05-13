@@ -164,6 +164,7 @@
 <script src="/js/c3/c3.js"></script>
 <script>
 
+    $(function () {
       var chart = c3.generate({
         data: {
           url: 'json/interactionsJson.php',
@@ -183,7 +184,8 @@
           position: 'right',
         },
       });
-
+    });
+    $(function () {
       var chart2 = c3.generate({
         data: {
           url: 'json/interactionsJson.php',
@@ -203,6 +205,7 @@
           position: 'right',
         },
       });
+    });
 </script>
 
 
