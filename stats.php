@@ -83,11 +83,58 @@
         </div>
         
         <!-- Likes for each machine likes chart end-->
+        <div class="row">
+           <div class="col-sm-6">
+               <section class="panel">
+                   <header class="panel-heading">
+                       Pie Chart
+                   <span class="tools pull-right">
+                       <a href="javascript:;" class="fa fa-chevron-down"></a>
+                       <a href="javascript:;" class="fa fa-cog"></a>
+                       <a href="javascript:;" class="fa fa-times"></a>
+                    </span>
+                   </header>
+                   <div class="panel-body">
 
-        
- 
+
+                       <div class="chartJS">
+
+
+                           <canvas id="pie-chart-js" height="250" width="800" ></canvas>
+
+                       </div>
+
+                   </div>
+               </section>
+           </div>
+           <div class="col-sm-6">
+               <section class="panel">
+                   <header class="panel-heading">
+                       Donut Chart
+                   <span class="tools pull-right">
+                       <a href="javascript:;" class="fa fa-chevron-down"></a>
+                       <a href="javascript:;" class="fa fa-cog"></a>
+                       <a href="javascript:;" class="fa fa-times"></a>
+                    </span>
+                   </header>
+                   <div class="panel-body">
+
+
+                       <div class="chartJS">
+
+
+                           <canvas id="donut-chart-js" height="250" width="800" ></canvas>
+
+                       </div>
+
+                   </div>
+               </section>
+           </div>
+        /div>
+
         <!-- page end-->
         </section>
+ 
     </section>
     <!--main content end-->
     
