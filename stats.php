@@ -206,12 +206,8 @@
         data: {
           url: 'json/monthTotalJson.php',
           mimeType: 'json',
-          type : 'pie',
-          hide: ['Total'],
+          type : 'bar',
         },
-        legend: {
-	       hide: ['Total'],
-	    },
       });
     });
 </script>
