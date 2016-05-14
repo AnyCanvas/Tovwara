@@ -48,7 +48,7 @@
 										    while($row = $result->fetch_assoc()) { ?>
 											    			
 															<tr>
-								                                <td><?php echo $row['id']?></td>
+								                                <td><a href="specialStats.php?fnbtId=<?php echo $row['id']?>"><?php echo $row['id']?></a></td>
 								                                <td><kbd class="text-uppercase"><?php echo $row['name']?></kbd></td>
 								                                <td><?php echo $row['clientId']?></td>
 								                                <td><?php echo $row['deviceId']?></td>
