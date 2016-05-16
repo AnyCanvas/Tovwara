@@ -121,12 +121,11 @@
 	        console.log(data);
 	        $.post(ajaxurl, data, function (response) {
 	            // Response div goes here.
-	            $.getJSON( response)
-				  .done(function( json ) {
-				    console.log( json["Total"] );
-				  })
-	            console.log();
-	        });
+	            $.getJSON(response, function(result){
+		            $.each(result, function(i, field){
+		                console.log(field + " ");
+		            });
+		        });
 			$('#configModal').modal('hide');
 	    }       
 </script>
