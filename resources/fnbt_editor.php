@@ -223,8 +223,7 @@
 
 				<form class="form" action="change_page.php" method="get" id="formUrl">
 
-					  <div class="form-group">
-							<div class="form-group">
+                            <div class="form-group">
                                 <label class="control-label col-md-3">Date Range</label>
                                 <div class="col-md-4">
                                     <div class="input-group input-large" data-date="13/07/2013" data-date-format="mm/dd/yyyy">
@@ -234,9 +233,8 @@
                                     </div>
                                     <span class="help-block">Select date range</span>
                                 </div>
-                            </div>	
-					  </div>	  					  					  
-					  </form>					
+                            </div> 					  					  
+				</form>					
 		        </div>
 
 			    <div class="modal-footer">
