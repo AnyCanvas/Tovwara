@@ -111,10 +111,10 @@
 			$('#configModal').modal('hide');
 	    }   
 
-	function actionsNumber(){
+	function actionsNumber(id){
 
 	        var ajaxurl = 'resources/actionUrl.php';
-	        var fanbotId = $("#fanbotId").val();
+	        var fanbotId = id;
 	        var startDate = $( "#startDate" ).val();
 	        var endDate = $( "#endDate" ).val();
 
