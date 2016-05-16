@@ -224,9 +224,9 @@
 
 				<form class="form" action="change_page.php" method="get" id="formUrl">
 					 Del:
-					  <input type="date" name="bday">			  					  					  					  
+					  <input type="date" name="startDate">			  					  					  					  
 					 Al:
-					  <input type="date" name="bday">			  					  					  					  
+					  <input type="date" name="startDate">			  					  					  					  
 
 			    </form>					
 		        </div>
