@@ -117,7 +117,7 @@
 	        var fanbotId = id;
 	        var startDate = $( "#startDate" ).val();
 
-	        data =  {'fanbotId' : fanbotId, 'startDate': startDate, 'endDate' : endDate};
+	        data =  {'fanbotId' : fanbotId, 'startDate': startDate};
 	        console.log(data);
 	        $.get(ajaxurl, data, function (response) {
 	            // Response div goes here.
