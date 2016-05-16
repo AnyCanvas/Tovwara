@@ -3,7 +3,7 @@
 		if( isset($_POST["startDate"]) ){
 			$string = $_POST["startDate"];
 			$time = strtotime($string);
-			$m = date("d", $time);
+			$d = date("d", $time);
 			$m = date("m", $time);
 			$y = date("Y", $time);
 			echo $_POST["fanbotId"];
