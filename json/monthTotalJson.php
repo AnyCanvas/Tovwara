@@ -1,7 +1,6 @@
 	<?php 
 		include "../resources/functions.php"; 		
 		if( isset($_GET["startDate"]) ){
-			echo "date";
 			totalJson(date("1"),date("2015"),0,0);
 		} else if( isset($_GET["fnbtId"]) && isset($_GET["clientId"])){
 			totalJson(date("m"),date("Y"),$_GET["fnbtId"],$_GET["clientId"]);				

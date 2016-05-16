@@ -121,7 +121,7 @@
 	        console.log(data);
 	        $.get(ajaxurl, function (data) {
 	            // Response div goes here.
-			console.log(  $( ".result" ).html( data ) );
+				alert( "Data Loaded: " + data );
 	        });
 			$('#configModal').modal('hide');
 	    }       
