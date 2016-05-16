@@ -104,7 +104,7 @@ function totalJson($day,$month,$year,$fnbtId,$clientId){
 	if ($day !== 0){
 		$string = $year.'-'.$month.'-'.$day;
 		echo $string;
-		$sql= 'SELECT * FROM interactions WHERE date >= (STR_TO_DATE("'.$string.'", "%Y-%m-%d") + INTERVAL 1 MONTH);';
+		$sql= "SELECT * FROM interactions WHERE date >= (STR_TO_DATE('".$string."', '%Y-%m-%d')) AND date <= (STR_TO_DATE('".$string."', '%Y-%m-%d') + INTERVAL 1 MONTH) AND fanbotId='".$fnbtId."'";
 	} else if( ($fnbtId !== 0) && ($clientId !== 0) ){
 		$sql = "SELECT * FROM interactions WHERE EXTRACT(MONTH FROM date) = '". $month. "' AND EXTRACT(YEAR FROM date) = '". $year."' AND fanbotId='".$fnbtId."' AND clientId='".$clientId."'";
 	} else if( $fnbtId !== 0 ){
