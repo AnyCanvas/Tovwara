@@ -116,7 +116,6 @@
 	        var ajaxurl = 'json/monthTotalJson.php';
 	        var fanbotId = id;
 	        var startDate = $( "#startDate" ).val();
-	        var endDate = $( "#endDate" ).val();
 
 	        data =  {'fanbotId' : fanbotId, 'startDate': startDate, 'endDate' : endDate};
 	        console.log(data);
