@@ -85,7 +85,7 @@ function getLikesGraph($month,$year){
 	
 }	
 
-function totalJson($month,$year,$fnbtId,$clientId){
+function totalJson($day,$month,$year,$fnbtId,$clientId){
 
 	require(realpath(dirname(__FILE__) . "/./config.php"));
     $servername = $config["db"]["fanbot"]["host"];
@@ -101,7 +101,10 @@ function totalJson($month,$year,$fnbtId,$clientId){
 	    die("Connection failed: " . $conn->connect_error);
 	}
 
-	if( ($fnbtId !== 0) && ($clientId !== 0) ){
+	if ($day !== 0){
+		$string = $year.'-'.$month.'-'.$day;
+		$sql= 'SELECT * FROM interactions WHERE date >= (STR_TO_DATE("'.$string.'", "%Y-%m-%d") + INTERVAL 1 MONTH);';
+	} else if( ($fnbtId !== 0) && ($clientId !== 0) ){
 		$sql = "SELECT * FROM interactions WHERE EXTRACT(MONTH FROM date) = '". $month. "' AND EXTRACT(YEAR FROM date) = '". $year."' AND fanbotId='".$fnbtId."' AND clientId='".$clientId."'";
 	} else if( $fnbtId !== 0 ){
 		$sql = "SELECT * FROM interactions WHERE EXTRACT(MONTH FROM date) = '". $month. "' AND EXTRACT(YEAR FROM date) = '". $year."' AND fanbotId='".$fnbtId."'";
