@@ -121,7 +121,7 @@
 	        console.log(data);
 	        $.get(ajaxurl, function (data) {
 	            // Response div goes here.
-//	            console.log(response);
+			console.log(  $( ".result" ).html( data ) );
 	        });
 			$('#configModal').modal('hide');
 	    }       
