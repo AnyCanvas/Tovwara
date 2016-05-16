@@ -119,9 +119,9 @@
 
 	        data =  {'fanbotId' : fanbotId, 'startDate': 1};
 	        console.log(data);
-	        $.get(ajaxurl, function (data) {
+	        $.post(ajaxurl, function (reponse) {
 	            // Response div goes here.
-				alert( "Data Loaded: " + data );
+	            console.log(response);
 	        });
 			$('#configModal').modal('hide');
 	    }       
