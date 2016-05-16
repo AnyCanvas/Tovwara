@@ -120,7 +120,7 @@
 
 	        data =  {'fanbotId' : fanbotId, 'startDate': startDate, 'endDate' : endDate};
 	        console.log(data);
-	        $.post(ajaxurl, data, function (response) {
+	        $.get(ajaxurl, data, function (response) {
 	            // Response div goes here.
 	            console.log(response);
 	        });
