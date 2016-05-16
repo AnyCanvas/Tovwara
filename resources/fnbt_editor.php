@@ -226,7 +226,7 @@
 					 Del:
 					  <input type="date" name="startDate">			  					  					  					  
 					 Al:
-					  <input type="date" name="startDate">			  					  					  					  
+					  <input type="date" name="endDate">			  					  					  					  
 
 			    </form>					
 		        </div>
