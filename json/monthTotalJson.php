@@ -7,7 +7,7 @@
 			$y = date("y", $timestamp);
 			echo ($m.$y);
 			echo $_POST["fanbotId"];
-			totalJson(date(5),date($y),$_POST["fanbotId"],0);
+			totalJson($m,$y,$_POST["fanbotId"],0);
 		} else if( isset($_GET["fnbtId"]) && isset($_GET["clientId"])){
 			totalJson(date("m"),date("Y"),$_GET["fnbtId"],$_GET["clientId"]);				
 		} else if( isset($_GET["fnbtId"]) ){
