@@ -123,7 +123,7 @@
 	            // Response div goes here.
 	            $.getJSON( response)
 				  .done(function( json ) {
-				    console.log( json.Total );
+				    console.log( json["Total"] );
 				  })
 	            console.log();
 	        });
