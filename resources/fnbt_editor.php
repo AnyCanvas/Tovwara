@@ -121,10 +121,10 @@
 	        console.log(data);
 	            $.getJSON(ajaxurl, data, function(result){
 		            $.each(result, function(i, field){
-		                result[i] = field;
+		                console.log(field + " ");
 		            });
-		            console.log(result[0]);
 		        });
+//		        });
 			$('#configModal').modal('hide');
 	    }       
 </script>
