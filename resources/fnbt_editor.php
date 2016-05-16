@@ -91,6 +91,7 @@
 	}
 
     function callInteractionModal(id) {
+	    alert(id);
 	    fnbtId = id;
 		$('#actionModal').modal('show');
 	}
