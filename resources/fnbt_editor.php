@@ -92,8 +92,8 @@
 
     function callInteractionModal(id) {
 	    alert(id);
-	    fnbtId = id;
-	    alert(fnbtId);
+	    globalFnbtId = id;
+	    alert(globalFnbtId);
 		$('#actionModal').modal('show');
 	}
 
@@ -119,7 +119,7 @@
 	        var ajaxurl = 'json/monthTotalJson.php';
 	        var startDate = $( "#startDate" ).val();
 
-	        data =  {'fanbotId' : fanbotId, 'startDate': 1};
+	        data =  {'fanbotId' : globalFnbtId, 'startDate': 1};
 	        console.log(data);
 	        $.post(ajaxurl, data, function (response) {
 	            // Response div goes here.
