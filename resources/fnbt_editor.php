@@ -223,19 +223,6 @@
 
 				<form class="form" action="change_page.php" method="get" id="formUrl">
 
-<!-- Fanbot Id label -->
-					  <div class="form-group">
-							<label for="fanbotId" class="control-label">ID</label>
-							<input type="text" class="form-control input-sm" id="fanbotId" placeholder="xx-xx-xxx-xxxxx" name="fanbotId">
-					  </div>
-
-<!-- Fanbot Name label -->
-					  <div class="form-group">
-							<label for="fanbotName" class="control-label">Nombre</label>
-							<input type="text" class="form-control input-sm" id="fanbotName" placeholder="XXXX" name="fanbotName">
-					  </div>
-
-<!-- Fanbot client label -->
 					  <div class="form-group">
 							<div class="form-group">
                                 <label class="control-label col-md-3">Date Range</label>
