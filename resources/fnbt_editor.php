@@ -122,8 +122,9 @@
 	        $.post(ajaxurl, data, function (response) {
 	            // Response div goes here.
 	            console.log(response);
+	            alert(response);
 	        });
-			$('#configModal').modal('hide');
+			$('#actionModal').modal('hide');
 	    }       
 </script>
 
