@@ -120,7 +120,7 @@
 	        data =  {'fanbotId' : globalFnbtId, 'startDate': startDate};
 	        console.log(data);
 	            $.getJSON(ajaxurl, data, function(result){
-		            console.log(result + " ");
+		            console.log(result[0] + " ");
 
 		            $.each(result, function(i, field){
 		                console.log(field + " ");
