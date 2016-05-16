@@ -1,7 +1,7 @@
 	<?php 
 		include "../resources/functions.php"; 		
-		if( isset($_POST["day"],$_POST["month"],$_POST["year"]) ){
-			totalJson(date("1"),date("2016"),$_GET["fnbtId"],0);
+		if( isset($_POST["startDate"]) ){
+			totalJson(date("1"),date("2015"),$_GET["fnbtId"],0);
 		} else if( isset($_GET["fnbtId"]) && isset($_GET["clientId"])){
 			totalJson(date("m"),date("Y"),$_GET["fnbtId"],$_GET["clientId"]);				
 		} else if( isset($_GET["fnbtId"]) ){
