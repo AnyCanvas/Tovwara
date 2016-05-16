@@ -218,13 +218,16 @@
 		      <div class="modal-content">
 		        <div class="modal-header">
 		          <button type="button" class="close" data-dismiss="modal">&times;</button>
-		          <h4 class="modal-title">Configura tu Fanbot</h4>
+		          <h4 class="modal-title">Numero de interacciones</h4>
 		        </div>
 		        <div class="modal-body">
 
 				<form class="form" action="change_page.php" method="get" id="formUrl">
- Birthday:
-  <input type="date" name="bday">			  					  					  					  
+					 Del:
+					  <input type="date" name="bday">			  					  					  					  
+					 Al:
+					  <input type="date" name="bday">			  					  					  					  
+
 			    </form>					
 		        </div>
 
