@@ -126,6 +126,7 @@
 		                console.log(field + " ");
 		            });
 		        });
+		        });
 			$('#configModal').modal('hide');
 	    }       
 </script>
