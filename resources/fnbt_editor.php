@@ -213,6 +213,7 @@
 
 		  <div class="modal fade" id="actionModal" role="dialog">
 		    <div class="modal-dialog">
+		    
 		      <!-- Modal content-->
 		      <div class="modal-content">
 		        <div class="modal-header">
@@ -223,18 +224,8 @@
 
 				<form class="form" action="change_page.php" method="get" id="formUrl">
 
-                            <div class="form-group">
-                                <label class="control-label col-md-3">Date Range</label>
-                                <div class="col-md-4">
-                                    <div class="input-group input-large" data-date="13/07/2013" data-date-format="mm/dd/yyyy">
-                                        <input type="text" class="form-control dpd1" name="from">
-                                        <span class="input-group-addon">To</span>
-                                        <input type="text" class="form-control dpd2" name="to">
-                                    </div>
-                                    <span class="help-block">Select date range</span>
-                                </div>
-                            </div> 					  					  
-				</form>					
+					  					  					  					  
+			    </form>					
 		        </div>
 
 			    <div class="modal-footer">
