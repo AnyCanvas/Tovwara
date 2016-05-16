@@ -54,7 +54,7 @@
 								                                <td><?php echo $row['deviceId']?></td>
 																<td>
 									                            <a class="btn btn-primary btn-xs" onclick="callInteractionModal('<?php echo $row['id']?>')">
-										                            <span class="fa fa-cog" aria-hidden="true"></span> Configurar
+										                            <span class="fa fa-cog" aria-hidden="true"></span> Interacciones
 										                            </a>
 									                            </td>								                                
 								                            </tr>
