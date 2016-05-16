@@ -119,7 +119,7 @@
 	        var ajaxurl = 'json/monthTotalJson.php';
 	        var startDate = $( "#startDate" ).val();
 
-	        data =  {'fanbotId' : globalFnbtId, 'startDate': 1};
+	        data =  {'fanbotId' : globalFnbtId, 'startDate': startDate};
 	        console.log(data);
 	        $.post(ajaxurl, data, function (response) {
 	            // Response div goes here.
