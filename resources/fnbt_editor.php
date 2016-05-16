@@ -48,10 +48,15 @@
 										    while($row = $result->fetch_assoc()) { ?>
 											    			
 															<tr>
-								                                <td><?php echo $row['id']?></td>
+								                                <td><a href="specialStats.php?fnbtId=<?php echo $row['id']?>" target="_blank"><?php echo $row['id']?></a></td>
 								                                <td><kbd class="text-uppercase"><?php echo $row['name']?></kbd></td>
 								                                <td><?php echo $row['clientId']?></td>
 								                                <td><?php echo $row['deviceId']?></td>
+																<td>
+									                            <a class="btn btn-primary btn-xs" onclick="callInteractionModal('<?php echo $row['id']?>')">
+										                            <span class="fa fa-cog" aria-hidden="true"></span> Interacciones
+										                            </a>
+									                            </td>								                                
 								                            </tr>
 								
 								
@@ -85,6 +90,11 @@
 		$('#configModal').modal('show');
 	}
 
+    function callInteractionModal(id) {
+	    globalFnbtId = id;
+		$('#actionModal').modal('show');
+	}
+
 	function addFnbt(){
 
 	        var ajaxurl = 'resources/actionUrl.php';
@@ -101,7 +111,20 @@
 	        });
 			$('#configModal').modal('hide');
 	    }   
-    
+
+	function actionsNumber(id){
+
+	        var ajaxurl = 'json/monthTotalJson.php';
+	        var startDate = $( "#startDate" ).val();
+
+	        data =  {'fanbotId' : globalFnbtId, 'startDate': startDate};
+	        console.log(data);
+	        $.post(ajaxurl, data, function (response) {
+	            // Response div goes here.
+	            console.log(response);
+	            alert(response);
+	        });
+	    }       
 </script>
 
 		  <div class="modal fade" id="configModal" role="dialog">
@@ -175,6 +198,37 @@
 
 			    <div class="modal-footer">
 					<button id="cambiarBtn" class="btn btn-primary btn-sm" onclick="addFnbt()">Terminar</button>
+
+		        </div>
+	      
+	      	  </div>
+		    </div>
+		  </div>
+
+
+<!-- End modal --> 
+
+
+		  <div class="modal fade" id="actionModal" role="dialog">
+		    <div class="modal-dialog">
+		    
+		      <!-- Modal content-->
+		      <div class="modal-content">
+		        <div class="modal-header">
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		          <h4 class="modal-title">Numero de interacciones</h4>
+		        </div>
+		        <div class="modal-body">
+
+				<form class="form" action="change_page.php" method="get" id="formUrl">
+					 Fecha:
+					  <input type="date" name="startDate" id="startDate">			  					  					  
+		  					  					  
+			    </form>					
+		        </div>
+
+			    <div class="modal-footer">
+					<button id="cambiarBtn" class="btn btn-primary btn-sm" onclick="actionsNumber()">Terminar</button>
 
 		        </div>
 	      

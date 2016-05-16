@@ -3,20 +3,18 @@
 	if (!isLogged()){
 		header('Location: ./login.php');
 		exit;
-	}			
-	
-?> 
+	}  
+  ?> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="ThemeBucket">
     <link rel="shortcut icon" href="images/favicon.png">
 
-    <title>Usuario</title>
+    <title>Acciones</title>
 
     <!--Core CSS -->
     <link href="bs3/css/bootstrap.min.css" rel="stylesheet">
@@ -115,7 +113,7 @@
 <script>
 	$(document).ready( function () {
 	    
-	var table = $('#usersTable').DataTable({
+	var table = $('#actionsTable').DataTable({
 		language: {
 		        url: 'https://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json'
 		    },

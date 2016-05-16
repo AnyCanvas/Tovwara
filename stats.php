@@ -23,6 +23,7 @@
     <link href="bs3/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-reset.css" rel="stylesheet">
     <link href="font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="css/c3/c3.css" rel="stylesheet" type="text/css">
 
     
     <!-- Custom styles for this template -->
@@ -75,21 +76,54 @@
                          </span>
                     </header>
                     <div class="panel-body">
-
-                        <div class="chart">
-						<div id="singleLikes" style="height: 250px;"></div></div>
-
+                       <div class="chart">
+                         <div id="chart"></div>
+                       </div>
                     </div>
                 </section>
             </div>
         </div>
         
         <!-- Likes for each machine likes chart end-->
+        <div class="row">
+           <div class="col-sm-6">
+               <section class="panel">
+                   <header class="panel-heading">
+                       Likes/Checkin 
+                   <span class="tools pull-right">
+                       <a href="javascript:;" class="fa fa-chevron-down"></a>
+                    </span>
+                   </header>
+                   <div class="panel-body">
+                       <div class="chart">
+                         <div id="chart2"></div>
+                       </div>
+                   </div>
+               </section>
+           </div>
+           <div class="col-sm-6">
+               <section class="panel">
+                   <header class="panel-heading">
+                       Totales
+                   <span class="tools pull-right">
+                       <a href="javascript:;" class="fa fa-chevron-down"></a>
+                    </span>
+                   </header>
+                   <div class="panel-body">
 
-        
- 
+
+                       <div class="chart">
+                         <div id="chart3"></div>
+                       </div>
+
+                   </div>
+               </section>
+           </div>
+        </div>
+
         <!-- page end-->
         </section>
+ 
     </section>
     <!--main content end-->
     
@@ -111,47 +145,61 @@
 <script src="js/jQuery-slimScroll-1.3.0/jquery.slimscroll.js"></script>
 <script src="js/jquery.nicescroll.js"></script>
 
-<!--Morris Chart-->
-<script src="js/morris-chart/morris.js"></script>
-<script src="js/morris-chart/raphael-min.js"></script>
-<!--Easy Pie Chart-->
-<script src="js/easypiechart/jquery.easypiechart.js"></script>
-<!--Sparkline Chart-->
-<script src="js/sparkline/jquery.sparkline.js"></script>
-<!--jQuery Flot Chart-->
-<script src="js/flot-chart/jquery.flot.js"></script>
-<script src="js/flot-chart/jquery.flot.tooltip.min.js"></script>
-<script src="js/flot-chart/jquery.flot.resize.js"></script>
-<script src="js/flot-chart/jquery.flot.pie.resize.js"></script>
-
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script src="/js/c3/c3.js"></script>
 <!--common script init for all pages-->
 <script src="js/scripts.js"></script>
 
-    <script type="text/javascript">
 
-		new Morris.Line({
-		  // ID of the element in which to draw the chart.
-		  element: 'singleLikes',
-		  // Chart data records -- each entry in this array corresponds to a point on
-		  // the chart.
-		  data: [
-			  
-		  <?php getLikesGraph(date("m"),date("Y")); ?>
+<script>
 
-		  ],
-		  // The name of the data record attribute that contains x-values.
-		  xkey: 'd',
-		  // A list of names of data record attributes that contain y-values.
-		  ykeys: ['l'],
-		  // Labels for the ykeys -- will be displayed when you hover over the
-		  // chart.
-		  labels: ['Likes'],
-		  smooth: true,
-		  parseTime: false,
-
-		});
-
-    </script>
+    $(function () {
+      var chart = c3.generate({
+	  	bindto: '#chart',
+        data: {
+          url: 'json/interactionsJson.php',
+          mimeType: 'json',
+          type: 'area',
+        },
+        axis: {
+            x: {
+                min: 1,
+                label: {
+                   text: 'Interacciones mensuales',
+                   position: 'outter-center',
+                }
+            }
+        },
+        legend: {
+          position: 'right',
+        },
+      });
+    });
+    $(function () {
+      var chart = c3.generate({
+	  	bindto: '#chart2',
+        data: {
+          url: 'json/interactionsJson.php',
+          mimeType: 'json',
+          type : 'pie',
+          hide: ['Total'],
+        },
+        legend: {
+	       hide: ['Total'],
+	    },
+      });
+    });
+    $(function () {
+      var chart = c3.generate({
+	  	bindto: '#chart3',
+        data: {
+          url: 'json/monthTotalJson.php',
+          mimeType: 'json',
+          type : 'bar',
+        },
+      });
+    });
+</script>
 
 
 </body>

@@ -49,7 +49,7 @@
 											    			
 															<tr>
 								                                <td><?php echo $row['clientId']?></td>
-								                                <td><kbd class="text-uppercase"><?php echo $row['name']?></kbd></td>
+								                                <td><a href="specialStats.php?clientId=<?php echo $row['clientId']?>" target="_blank"><kbd class="text-uppercase"><?php echo $row['name']?></kbd></td>
 								                                <td><?php echo $row['username']?></td>
 								                                <td><?php 
 									                                switch($row['mode']){

@@ -18,7 +18,7 @@
 	}
 
 	
-	function getLikesGraph($month,$year){
+function getLikesGraph($month,$year){
 
 	require(realpath(dirname(__FILE__) . "/./config.php"));
     $servername = $config["db"]["fanbot"]["host"];
@@ -85,6 +85,179 @@
 	
 }	
 
+function totalJson($day,$month,$year,$fnbtId,$clientId){
+
+	require(realpath(dirname(__FILE__) . "/./config.php"));
+    $servername = $config["db"]["fanbot"]["host"];
+	$username = $config["db"]["fanbot"]["username"];
+	$password = $config["db"]["fanbot"]["password"];
+	$dbname = $config["db"]["fanbot"]["dbname"];
+
+		
+	// Create connection
+	$conn = new mysqli($servername, $username, $password, $dbname);
+	// Check connection
+	if ($conn->connect_error) {
+	    die("Connection failed: " . $conn->connect_error);
+	}
+
+	if ($day !== 0){
+		$string = $year.'-'.$month.'-'.$day;
+		$sql= "SELECT * FROM interactions WHERE date >= (STR_TO_DATE('".$string."', '%Y-%m-%d')) AND date <= (STR_TO_DATE('".$string."', '%Y-%m-%d') + INTERVAL 1 MONTH) AND fanbotId='".$fnbtId."'";
+	} else if( ($fnbtId !== 0) && ($clientId !== 0) ){
+		$sql = "SELECT * FROM interactions WHERE EXTRACT(MONTH FROM date) = '". $month. "' AND EXTRACT(YEAR FROM date) = '". $year."' AND fanbotId='".$fnbtId."' AND clientId='".$clientId."'";
+	} else if( $fnbtId !== 0 ){
+		$sql = "SELECT * FROM interactions WHERE EXTRACT(MONTH FROM date) = '". $month. "' AND EXTRACT(YEAR FROM date) = '". $year."' AND fanbotId='".$fnbtId."'";
+	}else if( $clientId !== 0 ){
+		$sql = "SELECT * FROM interactions WHERE EXTRACT(MONTH FROM date) = '". $month. "' AND EXTRACT(YEAR FROM date) = '". $year."' AND clientId='".$clientId."'"; 
+	} else{
+		$sql = "SELECT * FROM interactions WHERE EXTRACT(MONTH FROM date) = '". $month. "' AND EXTRACT(YEAR FROM date) = '". $year."'"; 
+	}
+	$result = $conn->query($sql);
+	$total = 0;
+	$like = 0;
+	$checkin = 0;
+	$i = 1;
+	if ($result->num_rows > 0) {		    
+
+		while($row = $result->fetch_assoc()) {
+			$total++;			
+			if($row['action'] == 'like'){
+			   $like++;						 	
+			} else if($row['action'] == 'post') {
+			   $checkin++; 	
+			}
+		}	
+	}
+	
+	echo("{");
+
+	echo('"Total":[');
+	echo $total;
+	echo('],');
+
+	echo('"Likes":[');
+	echo $like;
+	echo('],');	
+	echo('"Check in":[');
+	echo $checkin;
+	echo(']');	
+	echo('}');
+
+	$conn->close();
+	
+}
+
+function likesJson($month,$year,$fnbtId,$clientId){
+
+	require(realpath(dirname(__FILE__) . "/./config.php"));
+    $servername = $config["db"]["fanbot"]["host"];
+	$username = $config["db"]["fanbot"]["username"];
+	$password = $config["db"]["fanbot"]["password"];
+	$dbname = $config["db"]["fanbot"]["dbname"];
+
+		
+	// Create connection
+	$conn = new mysqli($servername, $username, $password, $dbname);
+	// Check connection
+	if ($conn->connect_error) {
+	    die("Connection failed: " . $conn->connect_error);
+	}
+
+	if( ($fnbtId !== 0) && ($clientId !== 0) ){
+		$sql = "SELECT * FROM interactions WHERE EXTRACT(MONTH FROM date) = '". $month. "' AND EXTRACT(YEAR FROM date) = '". $year."' AND fanbotId='".$fnbtId."' AND clientId='".$clientId."'";
+	} else if( $fnbtId !== 0 ){
+		$sql = "SELECT * FROM interactions WHERE EXTRACT(MONTH FROM date) = '". $month. "' AND EXTRACT(YEAR FROM date) = '". $year."' AND fanbotId='".$fnbtId."'";
+	}else if( $clientId !== 0 ){
+		$sql = "SELECT * FROM interactions WHERE EXTRACT(MONTH FROM date) = '". $month. "' AND EXTRACT(YEAR FROM date) = '". $year."' AND clientId='".$clientId."'"; 
+	} else{
+		$sql = "SELECT * FROM interactions WHERE EXTRACT(MONTH FROM date) = '". $month. "' AND EXTRACT(YEAR FROM date) = '". $year."'"; 
+	}
+
+	$result = $conn->query($sql);
+	$daysInMonth = cal_days_in_month(CAL_GREGORIAN, date("m"), date("Y"));
+	$dayArray = array();
+	$likeArray = array();
+	$postArray = array();
+	$i = 1;
+	for($i = 1; $i <= $daysInMonth; $i++){
+		$dayArray[$i] = 0;
+    	$likeArray[$i] = 0;
+	    $postArray[$i] = 0;
+		}
+	if ($result->num_rows > 0) {		    
+
+		    while($row = $result->fetch_assoc()) {
+
+			// Create a new date var from date in db
+			$date =new DateTime($row['date']);
+			// Get de number of day from the date variable
+			$day = $date->format('d');
+			// Create the array 
+			$i = 1;			
+			for($i = 1; $i <= $daysInMonth; $i++){
+				 if ($day == $i){
+				 	$dayArray[$i]++;
+				 	
+				 	if($row['action'] == 'like'){
+						$likeArray[$i]++;						 	
+				 	} else if($row['action'] == 'post') {
+						$postArray[$i]++; 	
+				 	}
+
+		    	}
+			}
+		}	
+	}
+	
+	echo("{");
+
+	echo('"Total":[0,');
+	for($i = 1; $i <= $daysInMonth; $i++){
+		if (isset($dayArray[$i])) {
+			echo $dayArray[$i];
+		} else {
+			echo 0;
+		}
+		if ($daysInMonth > $i) {
+			echo ', ';
+		}
+		
+		}
+	echo('],');
+
+	echo('"Likes":[0,');
+	for($i = 1; $i <= $daysInMonth; $i++){
+		if (isset($likeArray[$i])) {
+			echo $likeArray[$i];
+		} else {
+			echo 0;
+		}
+		if ($daysInMonth > $i) {
+			echo ', ';
+		}
+		
+		}
+	echo('],');	
+	echo('"Check in":[0,');
+	for($i = 1; $i <= $daysInMonth; $i++){
+		if (isset($postArray[$i])) {
+			echo $postArray[$i];
+		} else {
+			echo 0;
+		}
+		if ($daysInMonth > $i) {
+			echo ', ';
+		}
+		
+		}
+	echo(']');	
+	echo('}');
+
+	$conn->close();
+	
+}	
+
 function listInteractions(){
 	
 	
@@ -96,17 +269,16 @@ function listInteractions(){
 		                <div class="gauge-canvas">
 	                        <h4 class="widget-h">Mis Fanbot</h4>
 	                    </div>
-                    <table  class="table" id="usersTable">
+                    <table  class="table" id="actionsTable">
                     <thead>
                     <tr>
                         <th>Fecha</th>
                         <th>Hora</th>
+                        <th>ID</th>
                         <th>Nombre</th>
-                        <th>Apellido</th>
-                        <th>Email</th>
-                        <th>Genero</th>
+                        <th>Acción</th>
                         <th>Pagina de Facebook</th>
-                        <th>Nombre de la Fanbot</th>
+                        <th>Fanbot</th>
                     </tr>
                     </thead>
 
@@ -130,9 +302,10 @@ function listInteractions(){
 		}
 		
 		if ( $_SESSION['userId'] == 00){
-			$sql = "SELECT * FROM interactions";
+			$sql = "SELECT t2.fbID, t2.fbName, t2.id, t1.fbPage , t1.action, t1.date, t1.fanbotId FROM interactions t1, users t2 WHERE t1.userId = t2.fbID ORDER by t1.`date` DESC;";
 			}else{
-			$sql = "SELECT * FROM interactions WHERE clientId = '". $_SESSION['userId']. "'";
+			$sql = "SELECT t2.fbName, t2.id, t1.fbPage , t1.action, t1.date, t1.fanbotId FROM interactions t1, users t2 WHERE t1.userId = t2.fbID AND t1.`clientId`=". $_SESSION['userId']. " ORDER by t1.`date` DESC;";
+
 		}
 		$result = $conn->query($sql);
 		
@@ -150,27 +323,9 @@ function listInteractions(){
 				
 				echo "\t\t\t". '<td data-order='. (1/$orderDate) .'">'. $formatedDate. '</td>'. "\r\n";
 				echo "\t\t\t". '<td>'. $formatedHour. '</td>'. "\r\n";
-				
-				
-			    $sql2 = "SELECT * FROM users WHERE fbID = '". $row['userId'] . "'";
-				$result2 = $conn->query($sql2);
-				if ($result2->num_rows > 0) {	
-						    
-				    while($row2 = $result2->fetch_assoc()) { 
-						$firstName = $row2['firstName'];
-						$lastName = $row2['lastName'];
-						$email = $row2['email'];
-						$gender =  $row2['gender'];
-
-
-			    }
-			    
-			    }
-						echo "\t\t\t". '<td><a href="https://www.facebook.com/'. $row['userId'] . '" target="_blank">'. $firstName .'</td>'. "\r\n";
-						echo "\t\t\t". '<td>'. $lastName .'</td>'. "\r\n";
-						echo "\t\t\t". '<td>'. $email.' </td>'. "\r\n";
-						echo "\t\t\t". '<td>'.($gender == 'male' ? 'M' : '').($gender == 'female' ? 'F' : '').'</td>'. "\r\n";
-
+				echo "\t\t\t". '<td>'. $row['id'] .'</td>'. "\r\n";				
+				echo "\t\t\t". '<td><a href="http://facebook.com/'. $row['fbID'] .'" target="_blank">'. $row['fbName'] .'</a></td>'. "\r\n";
+			    echo "\t\t\t". '<td>'.$row['action']. '</td>'. "\r\n";
 			    echo "\t\t\t". '<td>'.$row['fbPage']. '</td>'. "\r\n";
 			    echo "\t\t\t". '<td>'.$row['fanbotId']. '</td>'. "\r\n";
 			    
@@ -192,11 +347,11 @@ function listInteractions(){
                     <tr>
                         <th>Fecha</th>
                         <th>Hora</th>
+                        <th>ID</th>
                         <th>Nombre</th>
-                        <th>Email</th>
-                        <th>Genero</th>
+                        <th>Acción</th>
                         <th>Pagina de Facebook</th>
-                        <th>Nombre de la Fanbot</th>
+                        <th>Fanbot</th>
                     </tr>
                     </tfoot>
                     </table>
@@ -207,6 +362,108 @@ function listInteractions(){
 		<?php
 
 	}	
+	
+function listUsers(){
+	
+	
+		?> 
+		<div class="row">
+            <div class="col-sm-12">
+                <section class="panel">
+                    <div class="panel-body">
+		                <div class="gauge-canvas">
+	                        <h4 class="widget-h">Mis Fanbot</h4>
+	                    </div>
+                    <table  class="table" id="actionsTable">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Email</th>
+                        <th>Sexo</th>
+                        <th>Likes</th>
+                        <th>Check-in</th>
+                        <th>Acciones</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+		
+		<?php	
+			
+		require(realpath(dirname(__FILE__) . "/./config.php"));
+    	$servername = $config["db"]["fanbot"]["host"];
+		$username = $config["db"]["fanbot"]["username"];
+		$password = $config["db"]["fanbot"]["password"];
+		$dbname = $config["db"]["fanbot"]["dbname"];
+
+		
+			
+		// Create connection
+		$conn = new mysqli($servername, $username, $password, $dbname);
+		// Check connection
+		if ($conn->connect_error) {
+		    die("Connection failed: " . $conn->connect_error);
+		}
+		
+		if ( $_SESSION['userId'] == 00){
+			$sql = "SELECT  COUNT(t2.fbId), COUNT(CASE WHEN t1.action = 'post' THEN +1 END), COUNT(CASE WHEN t1.action = 'like' THEN +1 END), t2.id, t2.firstName,t2.lastName, t2.fbId, t2.email, t2.gender FROM interactions t1, users t2 WHERE t1.userId = t2.fbID GROUP BY t2.fbId;";
+			}else{
+			$sql = "SELECT COUNT(t2.fbId), COUNT(CASE WHEN t1.action = 'post' THEN +1 END), COUNT(CASE WHEN t1.action = 'like' THEN +1 END), t2.id, t2.firstName,t2.lastName, t2.fbId, t2.email, t2.gender FROM interactions t1, users t2 WHERE t1.userId = t2.fbID AND t1.clientId=" . $_SESSION['userId']. "  GROUP BY t2.fbId;";
+
+		}
+		$result = $conn->query($sql);
+		
+		if ($result->num_rows > 0) {		    
+		    while($row = $result->fetch_assoc()) { 
+				
+				echo  "\t\t\t". '<tr class="gradeX">'. "\r\n";
+
+				echo "\t\t\t". '<td>'. $row['id'] .'</td>'. "\r\n";
+				echo "\t\t\t". '<td><a href="http://facebook.com/'. $row['fbId'] .'" target="_blank">'. $row['firstName'] .'</a></td>'. "\r\n";
+				echo "\t\t\t". '<td>'. $row['lastName'] .'</td>'. "\r\n";
+			    echo "\t\t\t". '<td>'.$row['email']. '</td>'. "\r\n";
+			    echo "\t\t\t". '<td>'.$row['gender']. '</td>'. "\r\n";
+				echo "\t\t\t". '<td>'. $row['COUNT(CASE WHEN t1.action = \'like\' THEN +1 END)'] . '</td>'. "\r\n";
+				echo "\t\t\t". '<td>'. $row['COUNT(CASE WHEN t1.action = \'post\' THEN +1 END)'] . '</td>'. "\r\n";
+				echo "\t\t\t". '<td>'. $row['COUNT(t2.fbId)'] . '</td>'. "\r\n";
+
+			    echo "\t\t    ".'</tr>'. "\r\n";
+			}
+			    return TRUE;	
+			} else {
+				echo "Empty query";
+				return FALSE;
+
+			}
+		$conn->close();
+		
+		?>
+		                    </tbody>
+
+                    <tfoot>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Email</th>
+                        <th>Sexo</th>
+                        <th>Likes</th>
+                        <th>Check-in</th>
+                        <th>Acciones</th>
+                    </tr>
+                    </tfoot>
+                    </table>
+                    </div>
+                </section>
+            </div>
+        </div>
+		<?php
+
+	}	
+	
+
 
 function addFanbot(){
 

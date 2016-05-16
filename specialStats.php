@@ -1,16 +1,20 @@
-<!-- Header start -->
-
 	<?php 
 		include "resources/functions.php"; 
 		if (!isLogged()){
 			header('Location: ./login.php');
 			exit;
 		}			
-		
+
+		if( isset($_GET["fnbtId"]) && isset($_GET["clientId"])){
+			$htmlVar = '?fnbtId='.$_GET["fnbtId"].'&clientId='.$_GET["clientId"];				
+		} else if( isset($_GET["fnbtId"]) ){
+			$htmlVar = '?fnbtId='.$_GET["fnbtId"];				
+		}else if( isset($_GET["clientId"]) ){
+			$htmlVar = '?clientId='.$_GET["clientId"];				
+		} else{
+			$htmlVar = '';				
+		}		
 	?> 
-
-<!-- Header end -->
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -29,9 +33,6 @@
     <link href="css/bootstrap-reset.css" rel="stylesheet">
     <link href="font-awesome/css/font-awesome.css" rel="stylesheet" />
     <link href="css/c3/c3.css" rel="stylesheet" type="text/css">
-
-	<!-- Data table-->
-	<link href="css/datatables/css/dataTables.bootstrap.css" rel="stylesheet" />	
 
     
     <!-- Custom styles for this template -->
@@ -73,7 +74,6 @@
         <section class="wrapper">
         <!-- page start-->
 
-
 		<!-- Likes for each month chart html -->        
         <div class="row">
             <div class="col-sm-12">
@@ -86,19 +86,53 @@
                     </header>
                     <div class="panel-body">
                        <div class="chart">
-                         <div id="likes"></div>
+                         <div id="chart"></div>
                        </div>
                     </div>
                 </section>
             </div>
         </div>
         
-        <!-- Likes chart end-->
-        
-		<?php require_once("resources/listFnbt.php"); ?>
- 
+        <!-- Likes for each machine likes chart end-->
+        <div class="row">
+           <div class="col-sm-6">
+               <section class="panel">
+                   <header class="panel-heading">
+                       Likes/Checkin 
+                   <span class="tools pull-right">
+                       <a href="javascript:;" class="fa fa-chevron-down"></a>
+                    </span>
+                   </header>
+                   <div class="panel-body">
+                       <div class="chart">
+                         <div id="chart2"></div>
+                       </div>
+                   </div>
+               </section>
+           </div>
+           <div class="col-sm-6">
+               <section class="panel">
+                   <header class="panel-heading">
+                       Totales
+                   <span class="tools pull-right">
+                       <a href="javascript:;" class="fa fa-chevron-down"></a>
+                    </span>
+                   </header>
+                   <div class="panel-body">
+
+
+                       <div class="chart">
+                         <div id="chart3"></div>
+                       </div>
+
+                   </div>
+               </section>
+           </div>
+        </div>
+
         <!-- page end-->
         </section>
+ 
     </section>
     <!--main content end-->
     
@@ -122,22 +156,17 @@
 
 <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 <script src="/js/c3/c3.js"></script>
-
 <!--common script init for all pages-->
 <script src="js/scripts.js"></script>
 
-<!-- Data tables-->
-<script src="css/datatables/js/jquery.dataTables.js"></script>
-<script src="css/datatables/js/dataTables.bootstrap.js"></script>
 
 <script>
-	
 
     $(function () {
       var chart = c3.generate({
-	  	bindto: '#likes',
+	  	bindto: '#chart',
         data: {
-          url: 'json/interactionsJson.php',
+          url: 'json/interactionsJson.php<?php echo $htmlVar ?>',
           mimeType: 'json',
           type: 'area',
         },
@@ -155,15 +184,32 @@
         },
       });
     });
-
-	$(document).ready( function () {
-    $('#fanbotTable').DataTable({
-	language: {
-	        url: 'https://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json'
-	    }	    
+    $(function () {
+      var chart = c3.generate({
+	  	bindto: '#chart2',
+        data: {
+          url: 'json/interactionsJson.php<?php echo $htmlVar ?>',
+          mimeType: 'json',
+          type : 'pie',
+          hide: ['Total'],
+        },
+        legend: {
+	       hide: ['Total'],
+	    },
+      });
     });
-} );
+    $(function () {
+      var chart = c3.generate({
+	  	bindto: '#chart3',
+        data: {
+          url: 'json/monthTotalJson.php<?php echo $htmlVar ?>',
+          mimeType: 'json',
+          type : 'bar',
+        },
+      });
+    });
 </script>
+
 
 </body>
 </html>

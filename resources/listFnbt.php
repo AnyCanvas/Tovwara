@@ -13,6 +13,7 @@
                                 <th>Pagina de Facebook</th>
                                 <th>Plan</th>
                                 <th>Status</th>
+                                <th>Ultima conexión</th>
                                 <th></th>
                                 <th></th>
 
@@ -101,6 +102,14 @@
 																			echo '</span>';
 																		?>
 																	</td>
+																	<td>
+																		<?php $datetime = new DateTime($fanbotList[$key]["last_heard"]);
+																			  $orderDate = $datetime->format('ymd');
+																			  echo '<span style="display: none;">'. $orderDate .'</span>'. $datetime->format('d-m-Y H:i'); 
+																	    ?>
+
+																	</td>
+
 																	<td>
 									                                <a class="btn btn-primary btn-xs" onclick="callModal('<?php echo $row['name']?>')">
 										                                <span class="fa fa-cog" aria-hidden="true"></span> Configurar
