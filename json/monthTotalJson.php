@@ -3,8 +3,10 @@
 		if( isset($_POST["startDate"]) ){
 			$string = $_POST["startDate"];
 			$time = strtotime($string);
+			$m = date("m", $time);
+			$y = date("Y", $time);
 			echo $_POST["fanbotId"];
-			totalJson(date("m", $time),date("Y", $time),$_POST["fanbotId"],0);
+			totalJson($m,$y,$_POST["fanbotId"],0);
 		} else if( isset($_GET["fnbtId"]) && isset($_GET["clientId"])){
 			totalJson(date("m"),date("Y"),$_GET["fnbtId"],$_GET["clientId"]);				
 		} else if( isset($_GET["fnbtId"]) ){
