@@ -119,12 +119,10 @@
 
 	        data =  {'fanbotId' : globalFnbtId, 'startDate': startDate};
 	        console.log(data);
-	            $.getJSON(ajaxurl, data, function(result){
-		            $.each(result, function(i, field){
-		                console.log(field + " ");
-		            });
-		        });
-//		        });
+	        $.post(ajaxurl, data, function (response) {
+	            // Response div goes here.
+	            console.log(response);
+	        });
 			$('#configModal').modal('hide');
 	    }       
 </script>
