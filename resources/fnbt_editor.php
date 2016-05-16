@@ -111,15 +111,14 @@
 			$('#configModal').modal('hide');
 	    }   
 
-	function listAction(){
+	function actionsNumber(){
 
 	        var ajaxurl = 'resources/actionUrl.php';
 	        var fanbotId = $("#fanbotId").val();
-	        var fanbotName = $( "#fanbotName" ).val();
-	        var fanbotClient = $( "#fanbotClient" ).val();
-	        var particleId = $( "#particleId" ).val();
+	        var startDate = $( "#fanbotName" ).val();
+	        var endDate = $( "#fanbotClient" ).val();
 
-	        data =  {'fanbotId' : fanbotId, 'fanbotName': fanbotName, 'fanbotClient' : fanbotClient, 'particleId': particleId};
+	        data =  {'fanbotId' : fanbotId, 'startDate': startDate, 'endDate' : endDate};
 	        console.log(data);
 	        $.post(ajaxurl, data, function (response) {
 	            // Response div goes here.
@@ -224,15 +223,14 @@
 
 				<form class="form" action="change_page.php" method="get" id="formUrl">
 					 Del:
-					  <input type="date" name="startDate">			  					  					  					  
+					  <input type="date" name="startDate">			  					  					  
 					 Al:
-					  <input type="date" name="endDate">			  					  					  					  
-
+					  <input type="date" name="endDate">			  					  					  
 			    </form>					
 		        </div>
 
 			    <div class="modal-footer">
-					<button id="cambiarBtn" class="btn btn-primary btn-sm" onclick="addFnbt()">Terminar</button>
+					<button id="cambiarBtn" class="btn btn-primary btn-sm" onclick="actionsNumber()">Terminar</button>
 
 		        </div>
 	      
