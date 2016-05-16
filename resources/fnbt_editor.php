@@ -90,7 +90,8 @@
 		$('#configModal').modal('show');
 	}
 
-    function callInteractionModal() {
+    function callInteractionModal(id) {
+	    fnbtId = id;
 		$('#actionModal').modal('show');
 	}
 
@@ -114,7 +115,6 @@
 	function actionsNumber(id){
 
 	        var ajaxurl = 'json/monthTotalJson.php';
-	        var fanbotId = id;
 	        var startDate = $( "#startDate" ).val();
 
 	        data =  {'fanbotId' : fanbotId, 'startDate': 1};
@@ -221,6 +221,8 @@
 		        <div class="modal-body">
 
 				<form class="form" action="change_page.php" method="get" id="formUrl">
+					<input type="text" name="fnbtId">			  					  					  
+
 					 Del:
 					  <input type="date" name="startDate">			  					  					  
 					 Al:
