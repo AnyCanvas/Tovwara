@@ -91,9 +91,7 @@
 	}
 
     function callInteractionModal(id) {
-	    alert(id);
 	    globalFnbtId = id;
-	    alert(globalFnbtId);
 		$('#actionModal').modal('show');
 	}
 
@@ -223,10 +221,9 @@
 		        <div class="modal-body">
 
 				<form class="form" action="change_page.php" method="get" id="formUrl">
-					 Del:
-					  <input type="date" name="startDate">			  					  					  
-					 Al:
-					  <input type="date" name="endDate">			  					  					  
+					 Fecha:
+					  <input type="date" name="startDate" id="startDate">			  					  					  
+		  					  					  
 			    </form>					
 		        </div>
 
