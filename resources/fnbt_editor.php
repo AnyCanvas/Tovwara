@@ -113,7 +113,7 @@
 
 	function actionsNumber(id){
 
-	        var ajaxurl = 'resources/actionUrl.php';
+	        var ajaxurl = 'json/monthTotalJson.php';
 	        var fanbotId = id;
 	        var startDate = $( "#startDate" ).val();
 	        var endDate = $( "#endDate" ).val();
