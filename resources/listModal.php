@@ -40,6 +40,7 @@
 	            alert(response);
 	        });
 			$('#configModal').modal('hide');
+			location.reload();
 
 	    }   
 </script>
