@@ -155,7 +155,7 @@
 <script src="js/jquery.nicescroll.js"></script>
 
 <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-<script src="/js/c3/c3.js"></script>
+<script src="js/c3/c3.js"></script>
 <!--common script init for all pages-->
 <script src="js/scripts.js"></script>
 
