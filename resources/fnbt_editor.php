@@ -124,7 +124,6 @@
 	            console.log(response);
 	            alert(response);
 	        });
-			$('#actionModal').modal('hide');
 	    }       
 </script>
 
