@@ -234,7 +234,8 @@
                                     </div>
                                     <span class="help-block">Select date range</span>
                                 </div>
-                            </div>		  					  					  
+                            </div>	
+					  </div>	  					  					  
 					  </form>					
 		        </div>
 
