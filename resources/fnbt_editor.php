@@ -121,7 +121,11 @@
 	        console.log(data);
 	        $.post(ajaxurl, data, function (response) {
 	            // Response div goes here.
-	            console.log(response);
+	            $.getJSON( response)
+				  .done(function( json ) {
+				    console.log( json.Total );
+				  })
+	            console.log();
 	        });
 			$('#configModal').modal('hide');
 	    }       
