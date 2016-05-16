@@ -53,7 +53,7 @@
 								                                <td><?php echo $row['clientId']?></td>
 								                                <td><?php echo $row['deviceId']?></td>
 																<td>
-									                            <a class="btn btn-primary btn-xs" onclick="callModal('<?php echo $row['id']?>')">
+									                            <a class="btn btn-primary btn-xs" onclick="callInteractionModal('<?php echo $row['id']?>')">
 										                            <span class="fa fa-cog" aria-hidden="true"></span> Configurar
 										                            </a>
 									                            </td>								                                
