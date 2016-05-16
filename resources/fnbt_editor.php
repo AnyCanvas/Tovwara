@@ -115,8 +115,8 @@
 
 	        var ajaxurl = 'resources/actionUrl.php';
 	        var fanbotId = $("#fanbotId").val();
-	        var startDate = $( "#fanbotName" ).val();
-	        var endDate = $( "#fanbotClient" ).val();
+	        var startDate = $( "#startDate" ).val();
+	        var endDate = $( "#endDate" ).val();
 
 	        data =  {'fanbotId' : fanbotId, 'startDate': startDate, 'endDate' : endDate};
 	        console.log(data);
