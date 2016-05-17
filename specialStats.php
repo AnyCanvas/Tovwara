@@ -208,7 +208,7 @@
         },
 		tooltip: {
 		  format: {
-		    title: function (x) { return 'Data ' + x; }
+		    title: function (x) { return 'Totales'; }
 		  }
 		}
       });
