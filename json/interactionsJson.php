@@ -8,6 +8,6 @@
 		}else if( isset($_GET["clientId"]) ){
 			likesJson(date("m"),date("Y"),0,$_GET["clientId"]);				
 		} else{
-			likesJson(date("m"),date("Y"),0,0);
+			likesJson(date("m"),date("Y"),0,$_SESSION['Id']);
 		}
 	?> 
