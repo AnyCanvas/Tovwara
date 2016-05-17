@@ -215,6 +215,11 @@
 		  format: {
 		    title: function (x) { return 'Totales'; }
 		  }
+		},
+		axis: {
+		  x: {
+		    categories: ['Totales']
+		  }
 		}
       });
     });
