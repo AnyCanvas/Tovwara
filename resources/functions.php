@@ -435,7 +435,7 @@ function listUsers(){
 				echo "\t\t\t". '<td>'. $row['COUNT(CASE WHEN t1.action = \'like\' THEN +1 END)'] . '</td>'. "\r\n";
 				echo "\t\t\t". '<td>'. $row['COUNT(CASE WHEN t1.action = \'post\' THEN +1 END)'] . '</td>'. "\r\n";
 				echo "\t\t\t". '<td>'. $row['COUNT(t2.fbId)'] . '</td>'. "\r\n";
-				echo "\t\t\t". '<td>'. $formatedDate . '</td>'. "\r\n";
+				echo "\t\t\t". '<td>'. $row['createdDate'] . '</td>'. "\r\n";
 
 			    echo "\t\t    ".'</tr>'. "\r\n";
 			}
