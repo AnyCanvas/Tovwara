@@ -1,6 +1,7 @@
 	<?php 
 		// Check if user is logged in 
 		include "../resources/functions.php"; 	
+
 		if (!isLogged()){
 			header('Location: ./login.php');
 			exit;
