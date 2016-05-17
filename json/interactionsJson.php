@@ -3,7 +3,6 @@
 		include "../resources/functions.php"; 	
 
 		if (!isLogged()){
-			header('Location: ./login.php');
 			exit;
 		}	
 
