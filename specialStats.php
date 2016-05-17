@@ -208,7 +208,7 @@
           type : 'bar',
         },
 		format: {
-		    title: "Totales"
+		    title: function (x) { return 'Totales'}
 		  }
 		},
       });
