@@ -193,6 +193,12 @@
           type : 'pie',
           hide: ['Total'],
         },
+            axis: {
+        x: {
+            type: 'category',
+            categories: ['Totales']
+	        }
+	    },
         legend: {
 	       hide: ['Total'],
 	    },
