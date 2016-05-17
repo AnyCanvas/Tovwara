@@ -196,6 +196,11 @@
         legend: {
 	       hide: ['Total'],
 	    },
+	    tooltip: {
+  format: {
+    title: function (x) { return 'Data ' + x; }
+  }
+},
       });
     });
     $(function () {
