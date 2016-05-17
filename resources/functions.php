@@ -418,10 +418,12 @@ function listUsers(){
 		
 		if ($result->num_rows > 0) {		    
 
-			// Create a new date var from date in db
-			$addDate =new DateTime($row['createdDate']);
 		    while($row = $result->fetch_assoc()) { 
 				
+
+				// Create a new date var from date in db
+				$addDate =new DateTime($row['createdDate']);
+
 				echo  "\t\t\t". '<tr class="gradeX">'. "\r\n";
 
 				echo "\t\t\t". '<td>'. $row['id'] .'</td>'. "\r\n";
