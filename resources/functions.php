@@ -321,7 +321,7 @@ function listInteractions(){
 				$formatedHour = $date->format('g:i a');		
 				$orderDate = $date->format('U');
 				
-				echo "\t\t\t". '<td data-order='. (1/$orderDate) .'">'. $formatedDate. '</td>'. "\r\n";
+				echo "\t\t\t". '<td data-order="'. (1/$orderDate) .'">'. $formatedDate. '</td>'. "\r\n";
 				echo "\t\t\t". '<td>'. $formatedHour. '</td>'. "\r\n";
 				echo "\t\t\t". '<td>'. $row['id'] .'</td>'. "\r\n";				
 				echo "\t\t\t". '<td><a href="http://facebook.com/'. $row['fbID'] .'" target="_blank">'. $row['fbName'] .'</a></td>'. "\r\n";
@@ -423,6 +423,7 @@ function listUsers(){
 
 				// Create a new date var from date in db
 				$addDate =new DateTime($row['createdDate']);
+				$orderDate = $addDate->format('U');
 
 				echo  "\t\t\t". '<tr class="gradeX">'. "\r\n";
 
@@ -434,7 +435,7 @@ function listUsers(){
 				echo "\t\t\t". '<td>'. $row['COUNT(CASE WHEN t1.action = \'like\' THEN +1 END)'] . '</td>'. "\r\n";
 				echo "\t\t\t". '<td>'. $row['COUNT(CASE WHEN t1.action = \'post\' THEN +1 END)'] . '</td>'. "\r\n";
 				echo "\t\t\t". '<td>'. $row['COUNT(t2.fbId)'] . '</td>'. "\r\n";
-				echo "\t\t\t". '<td>'. $addDate->format('Y-m-d') . '</td>'. "\r\n";
+				echo "\t\t\t". '<td data-order="'. (1/$orderDate) .'">'. $addDate->format('Y-m-d') . '</td>'. "\r\n";
 
 			    echo "\t\t    ".'</tr>'. "\r\n";
 			}
