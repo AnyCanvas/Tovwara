@@ -139,7 +139,7 @@ function totalJson($day,$month,$year,$fnbtId,$clientId){
 	echo('"Likes":[');
 	echo $like;
 	echo('],');	
-	echo('"Check in":[');
+	echo('"Checkin":[');
 	echo $checkin;
 	echo(']');	
 	echo('}');
@@ -239,7 +239,7 @@ function likesJson($month,$year,$fnbtId,$clientId){
 		
 		}
 	echo('],');	
-	echo('"Check in":[0,');
+	echo('"Checkin":[0,');
 	for($i = 1; $i <= $daysInMonth; $i++){
 		if (isset($postArray[$i])) {
 			echo $postArray[$i];
