@@ -1,7 +1,9 @@
 	<?php 
 		include "../resources/functions.php"; 	
 
-		if( isset($_GET["fnbtId"]) && isset($_GET["clientId"])){
+		if($_SESSION['clientId'] !== '00'){
+			likesJson(date("m"),date("Y"),0,$_SESSION['clientId']);
+		} if( isset($_GET["fnbtId"]) && isset($_GET["clientId"])){
 			likesJson(date("m"),date("Y"),$_GET["fnbtId"],$_GET["clientId"]);				
 		} else if( isset($_GET["fnbtId"]) ){
 			likesJson(date("m"),date("Y"),$_GET["fnbtId"],0);				
