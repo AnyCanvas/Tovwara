@@ -65,7 +65,7 @@
 								                                <?php if( $_SESSION['userId'] !== '00') { ?>
 								                                <td><kbd class="text-uppercase"><?php echo $row['name']?></kbd></td>
 																<?php } else { ?>
-								                                <td><a href="specialStats.php?fnbtId=<?php echo $row['id']?>" target="_blank"><?php echo $row['id']?></a></td>
+								                                <td><a href="specialStats.php?fnbtId=<?php echo $row['id']?>" target="_blank"><?php echo $row['name']?></a></td>
 																<?php } ?>
 								                                <td><a class="text-primary" target="_blank" href="http://facebook.com/<?php echo $config['link']?>"><?php echo $config['link']?></a></td>
 
