@@ -419,10 +419,7 @@ function listUsers(){
 		if ($result->num_rows > 0) {		    
 
 			// Create a new date var from date in db
-			$date =new DateTime($row['createdDate']);
-			// Get de number of day from the date variable
-			$formatedDate = $date->format('d/m/y');
-
+			$addDate =new DateTime($row['createdDate']);
 		    while($row = $result->fetch_assoc()) { 
 				
 				echo  "\t\t\t". '<tr class="gradeX">'. "\r\n";
@@ -435,7 +432,7 @@ function listUsers(){
 				echo "\t\t\t". '<td>'. $row['COUNT(CASE WHEN t1.action = \'like\' THEN +1 END)'] . '</td>'. "\r\n";
 				echo "\t\t\t". '<td>'. $row['COUNT(CASE WHEN t1.action = \'post\' THEN +1 END)'] . '</td>'. "\r\n";
 				echo "\t\t\t". '<td>'. $row['COUNT(t2.fbId)'] . '</td>'. "\r\n";
-				echo "\t\t\t". '<td>'. $row['createdDate'] . '</td>'. "\r\n";
+				echo "\t\t\t". '<td>'. $addDate->format('Y-m-d') . '</td>'. "\r\n";
 
 			    echo "\t\t    ".'</tr>'. "\r\n";
 			}
