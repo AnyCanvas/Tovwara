@@ -196,7 +196,6 @@
         legend: {
 	       hide: ['Total'],
 	    },
-	    tooltip: {
       });
     });
     $(function () {
