@@ -139,7 +139,7 @@ function totalJson($day,$month,$year,$fnbtId,$clientId){
 	echo('"Likes":[');
 	echo $like;
 	echo('],');	
-	echo('"Check in":[');
+	echo('"Check–in":[');
 	echo $checkin;
 	echo(']');	
 	echo('}');
@@ -169,7 +169,7 @@ function likesJson($month,$year,$fnbtId,$clientId){
 	} else if( $fnbtId !== 0 ){
 		$sql = "SELECT * FROM interactions WHERE EXTRACT(MONTH FROM date) = '". $month. "' AND EXTRACT(YEAR FROM date) = '". $year."' AND fanbotId='".$fnbtId."'";
 	}else if( $clientId !== 0 ){
-		$sql = "SELECT * FROM interactions WHERE EXTRACT(MONTH FROM date) = '". $month. "' AND EXTRACT(YEAR FROM date) = '". $year."' AND clientId='".$clientId."'"; 
+		$sql = "SELECT * FROM interactions WHERE EXTRACT(MONTH FROM date) = '". $month. "' AND EXTRACT(YEAR FROM date) = '". $year."' AND clientId='". $clientId ."'"; 
 	} else{
 		$sql = "SELECT * FROM interactions WHERE EXTRACT(MONTH FROM date) = '". $month. "' AND EXTRACT(YEAR FROM date) = '". $year."'"; 
 	}
@@ -239,7 +239,7 @@ function likesJson($month,$year,$fnbtId,$clientId){
 		
 		}
 	echo('],');	
-	echo('"Check in":[0,');
+	echo('"Check–in":[0,');
 	for($i = 1; $i <= $daysInMonth; $i++){
 		if (isset($postArray[$i])) {
 			echo $postArray[$i];
@@ -301,7 +301,7 @@ function listInteractions(){
 		    die("Connection failed: " . $conn->connect_error);
 		}
 		
-		if ( $_SESSION['userId'] == 00){
+		if ( $_SESSION['userId'] == '00'){
 			$sql = "SELECT t2.fbID, t2.fbName, t2.id, t1.fbPage , t1.action, t1.date, t1.fanbotId FROM interactions t1, users t2 WHERE t1.userId = t2.fbID ORDER by t1.`date` DESC;";
 			}else{
 			$sql = "SELECT t2.fbName, t2.id, t1.fbPage , t1.action, t1.date, t1.fanbotId FROM interactions t1, users t2 WHERE t1.userId = t2.fbID AND t1.`clientId`=". $_SESSION['userId']. " ORDER by t1.`date` DESC;";
@@ -321,7 +321,7 @@ function listInteractions(){
 				$formatedHour = $date->format('g:i a');		
 				$orderDate = $date->format('U');
 				
-				echo "\t\t\t". '<td data-order='. (1/$orderDate) .'">'. $formatedDate. '</td>'. "\r\n";
+				echo "\t\t\t". '<td data-order="'. (1/$orderDate) .'">'. $formatedDate. '</td>'. "\r\n";
 				echo "\t\t\t". '<td>'. $formatedHour. '</td>'. "\r\n";
 				echo "\t\t\t". '<td>'. $row['id'] .'</td>'. "\r\n";				
 				echo "\t\t\t". '<td><a href="http://facebook.com/'. $row['fbID'] .'" target="_blank">'. $row['fbName'] .'</a></td>'. "\r\n";
@@ -385,6 +385,7 @@ function listUsers(){
                         <th>Likes</th>
                         <th>Check-in</th>
                         <th>Acciones</th>
+                        <th>Creado</th>
                     </tr>
                     </thead>
 
@@ -407,17 +408,23 @@ function listUsers(){
 		    die("Connection failed: " . $conn->connect_error);
 		}
 		
-		if ( $_SESSION['userId'] == 00){
-			$sql = "SELECT  COUNT(t2.fbId), COUNT(CASE WHEN t1.action = 'post' THEN +1 END), COUNT(CASE WHEN t1.action = 'like' THEN +1 END), t2.id, t2.firstName,t2.lastName, t2.fbId, t2.email, t2.gender FROM interactions t1, users t2 WHERE t1.userId = t2.fbID GROUP BY t2.fbId;";
+		if ( $_SESSION['userId'] == '00'){
+			$sql = "SELECT  COUNT(t2.fbId), COUNT(CASE WHEN t1.action = 'post' THEN +1 END), COUNT(CASE WHEN t1.action = 'like' THEN +1 END), t2.id, t2.firstName,t2.lastName, t2.fbId, t2.email, t2.gender, t2.createdDate FROM interactions t1, users t2 WHERE t1.userId = t2.fbID GROUP BY t2.fbId;";
 			}else{
-			$sql = "SELECT COUNT(t2.fbId), COUNT(CASE WHEN t1.action = 'post' THEN +1 END), COUNT(CASE WHEN t1.action = 'like' THEN +1 END), t2.id, t2.firstName,t2.lastName, t2.fbId, t2.email, t2.gender FROM interactions t1, users t2 WHERE t1.userId = t2.fbID AND t1.clientId=" . $_SESSION['userId']. "  GROUP BY t2.fbId;";
+			$sql = "SELECT COUNT(t2.fbId), COUNT(CASE WHEN t1.action = 'post' THEN +1 END), COUNT(CASE WHEN t1.action = 'like' THEN +1 END), t2.id, t2.firstName,t2.lastName, t2.fbId, t2.email, t2.gender, t2.createdDate FROM interactions t1, users t2 WHERE t1.userId = t2.fbID AND t1.clientId=" . $_SESSION['userId']. "  GROUP BY t2.fbId;";
 
 		}
 		$result = $conn->query($sql);
 		
 		if ($result->num_rows > 0) {		    
+
 		    while($row = $result->fetch_assoc()) { 
 				
+
+				// Create a new date var from date in db
+				$addDate =new DateTime($row['createdDate']);
+				$orderDate = $addDate->format('U');
+
 				echo  "\t\t\t". '<tr class="gradeX">'. "\r\n";
 
 				echo "\t\t\t". '<td>'. $row['id'] .'</td>'. "\r\n";
@@ -428,6 +435,7 @@ function listUsers(){
 				echo "\t\t\t". '<td>'. $row['COUNT(CASE WHEN t1.action = \'like\' THEN +1 END)'] . '</td>'. "\r\n";
 				echo "\t\t\t". '<td>'. $row['COUNT(CASE WHEN t1.action = \'post\' THEN +1 END)'] . '</td>'. "\r\n";
 				echo "\t\t\t". '<td>'. $row['COUNT(t2.fbId)'] . '</td>'. "\r\n";
+				echo "\t\t\t". '<td data-order="'. (1/$orderDate) .'">'. $addDate->format('Y-m-d') . '</td>'. "\r\n";
 
 			    echo "\t\t    ".'</tr>'. "\r\n";
 			}
@@ -452,6 +460,7 @@ function listUsers(){
                         <th>Likes</th>
                         <th>Check-in</th>
                         <th>Acciones</th>
+                        <th>Creado</th>
                     </tr>
                     </tfoot>
                     </table>

@@ -98,7 +98,7 @@
            <div class="col-sm-6">
                <section class="panel">
                    <header class="panel-heading">
-                       Likes/Checkin 
+                       Likes/Check-in 
                    <span class="tools pull-right">
                        <a href="javascript:;" class="fa fa-chevron-down"></a>
                     </span>
@@ -182,6 +182,11 @@
         legend: {
           position: 'right',
         },
+		tooltip: {
+		  format: {
+		    title: function (x) { return 'Día ' + x + "º"; }
+		  }
+		}
       });
     });
     $(function () {
@@ -206,6 +211,17 @@
           mimeType: 'json',
           type : 'bar',
         },
+		tooltip: {
+		  format: {
+		    title: function (x) { return 'Totales'; }
+		  }
+		},
+	    axis: {
+	        x: {
+	            type: 'category',
+	            categories: ['Totales']
+	        }
+	    }
       });
     });
 </script>

@@ -1,6 +1,12 @@
 	<?php 
-		include "../resources/functions.php"; 		
-		if( isset($_POST["startDate"]) ){
+		include "../resources/functions.php"; 	
+
+		if (!isLogged()){
+			exit;
+		}			
+		if($_SESSION['userId'] !== '00'){
+			totalJson(0,date("m"),date("Y"),0,$_SESSION['userId']);
+		}  else if( isset($_POST["startDate"]) ){
 			$string = $_POST["startDate"];
 			$time = strtotime($string);
 			$d = date("d", $time);
