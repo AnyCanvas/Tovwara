@@ -1,15 +1,11 @@
 	<?php 
 		// Check if user is logged in 
-		function isLogged(){
-			session_start();
-			if(isset($_SESSION["userId"])){
-					return 1;
-			} else {
-				return 0;
-			}
-		}
-
 		include "../resources/functions.php"; 	
+		if (!isLogged()){
+			header('Location: ./login.php');
+			exit;
+		}	
+
 
 		if($_SESSION['userId'] !== 00){
 			likesJson(date("m"),date("Y"),0,$_SESSION['userId']);
