@@ -182,6 +182,11 @@
         legend: {
           position: 'right',
         },
+		tooltip: {
+		  format: {
+		    title: function (x) { return 'Día ' + x + "º"; }
+		  }
+		}
       });
     });
     $(function () {
