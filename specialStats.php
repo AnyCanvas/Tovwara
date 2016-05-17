@@ -197,10 +197,6 @@
 	       hide: ['Total'],
 	    },
 	    tooltip: {
-  format: {
-    title: function (x) { return 'Data ' + x; }
-  }
-},
       });
     });
     $(function () {
@@ -211,6 +207,10 @@
           mimeType: 'json',
           type : 'bar',
         },
+		format: {
+		    title: "Totales"
+		  }
+		},
       });
     });
 </script>
