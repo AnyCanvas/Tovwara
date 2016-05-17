@@ -207,10 +207,11 @@
           mimeType: 'json',
           type : 'bar',
         },
-		format: {
-		    title: function (x) { return 'Totales'}
+		tooltip: {
+		  format: {
+		    title: 'Totales'
 		  }
-		},
+		}
       });
     });
 </script>
