@@ -196,11 +196,7 @@
         legend: {
 	       hide: ['Total'],
 	    },
-		tooltip: {
-		  format: {
-		    title: "Totales"
-		  }
-		}
+
       });
     });
     $(function () {
