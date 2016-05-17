@@ -193,15 +193,15 @@
           type : 'pie',
           hide: ['Total'],
         },
-            axis: {
-        x: {
-            type: 'category',
-            categories: ['Totales']
-	        }
-	    },
         legend: {
 	       hide: ['Total'],
 	    },
+	    axis: {
+	        x: {
+	            type: 'category',
+	            categories: ['cat1', 'cat2', 'cat3', 'cat4', 'cat5', 'cat6', 'cat7', 'cat8', 'cat9']
+	        }
+	    }
       });
     });
     $(function () {
