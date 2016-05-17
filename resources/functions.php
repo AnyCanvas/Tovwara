@@ -385,6 +385,7 @@ function listUsers(){
                         <th>Likes</th>
                         <th>Check-in</th>
                         <th>Acciones</th>
+                        <th>Fecha de creación</th>
                     </tr>
                     </thead>
 
@@ -408,14 +409,20 @@ function listUsers(){
 		}
 		
 		if ( $_SESSION['userId'] == 00){
-			$sql = "SELECT  COUNT(t2.fbId), COUNT(CASE WHEN t1.action = 'post' THEN +1 END), COUNT(CASE WHEN t1.action = 'like' THEN +1 END), t2.id, t2.firstName,t2.lastName, t2.fbId, t2.email, t2.gender FROM interactions t1, users t2 WHERE t1.userId = t2.fbID GROUP BY t2.fbId;";
+			$sql = "SELECT  COUNT(t2.fbId), COUNT(CASE WHEN t1.action = 'post' THEN +1 END), COUNT(CASE WHEN t1.action = 'like' THEN +1 END), t2.id, t2.firstName,t2.lastName, t2.fbId, t2.email, t2.gender, t2.createdDate FROM interactions t1, users t2 WHERE t1.userId = t2.fbID GROUP BY t2.fbId;";
 			}else{
-			$sql = "SELECT COUNT(t2.fbId), COUNT(CASE WHEN t1.action = 'post' THEN +1 END), COUNT(CASE WHEN t1.action = 'like' THEN +1 END), t2.id, t2.firstName,t2.lastName, t2.fbId, t2.email, t2.gender FROM interactions t1, users t2 WHERE t1.userId = t2.fbID AND t1.clientId=" . $_SESSION['userId']. "  GROUP BY t2.fbId;";
+			$sql = "SELECT COUNT(t2.fbId), COUNT(CASE WHEN t1.action = 'post' THEN +1 END), COUNT(CASE WHEN t1.action = 'like' THEN +1 END), t2.id, t2.firstName,t2.lastName, t2.fbId, t2.email, t2.gender, t2.createdDate FROM interactions t1, users t2 WHERE t1.userId = t2.fbID AND t1.clientId=" . $_SESSION['userId']. "  GROUP BY t2.fbId;";
 
 		}
 		$result = $conn->query($sql);
 		
 		if ($result->num_rows > 0) {		    
+
+			// Create a new date var from date in db
+			$date =new DateTime($row['createdDate']);
+			// Get de number of day from the date variable
+			$formatedDate = $date->format('d/m/y');
+
 		    while($row = $result->fetch_assoc()) { 
 				
 				echo  "\t\t\t". '<tr class="gradeX">'. "\r\n";
@@ -428,6 +435,7 @@ function listUsers(){
 				echo "\t\t\t". '<td>'. $row['COUNT(CASE WHEN t1.action = \'like\' THEN +1 END)'] . '</td>'. "\r\n";
 				echo "\t\t\t". '<td>'. $row['COUNT(CASE WHEN t1.action = \'post\' THEN +1 END)'] . '</td>'. "\r\n";
 				echo "\t\t\t". '<td>'. $row['COUNT(t2.fbId)'] . '</td>'. "\r\n";
+				echo "\t\t\t". '<td>'. $formatedDate . '</td>'. "\r\n";
 
 			    echo "\t\t    ".'</tr>'. "\r\n";
 			}
@@ -452,6 +460,7 @@ function listUsers(){
                         <th>Likes</th>
                         <th>Check-in</th>
                         <th>Acciones</th>
+                        <th>Fecha de creación</th>
                     </tr>
                     </tfoot>
                     </table>
