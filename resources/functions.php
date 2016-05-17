@@ -108,7 +108,7 @@ function totalJson($day,$month,$year,$fnbtId,$clientId){
 		$sql = "SELECT * FROM interactions WHERE EXTRACT(MONTH FROM date) = '". $month. "' AND EXTRACT(YEAR FROM date) = '". $year."' AND fanbotId='".$fnbtId."' AND clientId='".$clientId."'";
 	} else if( $fnbtId !== 0 ){
 		$sql = "SELECT * FROM interactions WHERE EXTRACT(MONTH FROM date) = '". $month. "' AND EXTRACT(YEAR FROM date) = '". $year."' AND fanbotId='".$fnbtId."'";
-	}else if( $clientId !== 0 && $_SESSION['Id'] !== '00'){
+	}else if( $clientId !== 0 && $_SESSION['userId'] !== '00'){
 		$sql = "SELECT * FROM interactions WHERE EXTRACT(MONTH FROM date) = '". $month. "' AND EXTRACT(YEAR FROM date) = '". $year."' AND clientId='".$_SESSION['userId'] ."'"; 
 	} else{
 		$sql = "SELECT * FROM interactions WHERE EXTRACT(MONTH FROM date) = '". $month. "' AND EXTRACT(YEAR FROM date) = '". $year."'"; 
@@ -169,7 +169,7 @@ function likesJson($month,$year,$fnbtId,$clientId){
 	} else if( $fnbtId !== 0 ){
 		$sql = "SELECT * FROM interactions WHERE EXTRACT(MONTH FROM date) = '". $month. "' AND EXTRACT(YEAR FROM date) = '". $year."' AND fanbotId='".$fnbtId."'";
 	}else if( $clientId !== 0 && $_SESSION['userId'] !== '00'){
-		$sql = "SELECT * FROM interactions WHERE EXTRACT(MONTH FROM date) = '". $month. "' AND EXTRACT(YEAR FROM date) = '". $year."' AND clientId='". $clientId ."'"; 
+		$sql = "SELECT * FROM interactions WHERE EXTRACT(MONTH FROM date) = '". $month. "' AND EXTRACT(YEAR FROM date) = '". $year."' AND clientId='". $_SESSION['userId'] ."'"; 
 	} else{
 		$sql = "SELECT * FROM interactions WHERE EXTRACT(MONTH FROM date) = '". $month. "' AND EXTRACT(YEAR FROM date) = '". $year."'"; 
 	}
