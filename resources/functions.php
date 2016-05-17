@@ -385,7 +385,7 @@ function listUsers(){
                         <th>Likes</th>
                         <th>Check-in</th>
                         <th>Acciones</th>
-                        <th>Creado el:</th>
+                        <th>Creado</th>
                     </tr>
                     </thead>
 
@@ -460,7 +460,7 @@ function listUsers(){
                         <th>Likes</th>
                         <th>Check-in</th>
                         <th>Acciones</th>
-                        <th>Creado el:</th>
+                        <th>Creado</th>
                     </tr>
                     </tfoot>
                     </table>
