@@ -139,7 +139,7 @@ function totalJson($day,$month,$year,$fnbtId,$clientId){
 	echo('"Likes":[');
 	echo $like;
 	echo('],');	
-	echo('"Check\-in":[');
+	echo('\'Check\-in\':[');
 	echo $checkin;
 	echo(']');	
 	echo('}');
