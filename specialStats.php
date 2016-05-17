@@ -216,11 +216,12 @@
 		    title: function (x) { return 'Totales'; }
 		  }
 		},
-		axis: {
-		  x: {
-		    categories: ['Totales']
-		  }
-		}
+	    axis: {
+	        x: {
+	            type: 'category',
+	            categories: ['cat1', 'cat2', 'cat3', 'cat4', 'cat5', 'cat6', 'cat7', 'cat8', 'cat9']
+	        }
+	    }
       });
     });
 </script>
