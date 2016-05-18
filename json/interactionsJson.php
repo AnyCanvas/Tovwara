@@ -13,9 +13,9 @@
 		}
 
 		if( isset($_GET["y"]) ){
-			$m = $_GET["y"];
+			$y = $_GET["y"];
 		} else {
-			$m = date("Y");
+			$y = date("Y");
 		}
 
 		if($_SESSION['userId'] !== '00'){
