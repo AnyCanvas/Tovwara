@@ -92,7 +92,7 @@
                             </div>
                             <button type="submit" class="btn btn-success">Sign in</button>
                         </form>
-                        </div>
+                       </div>
                        <div class="chart">
                          <div id="chart"></div>
                        </div>
