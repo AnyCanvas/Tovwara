@@ -198,7 +198,7 @@
       });
 
 	 function  changeDate(){
-	   	chart.load({
+	   	chart3.load({
 
 	        columns: [
 	            ['Total', 230, 190, 300, 500, 300, 400]
