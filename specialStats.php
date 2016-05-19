@@ -222,7 +222,7 @@
 	            type: 'category',
 	            categories: ['Totales']
 	        }
-	    }
+	    },
       });
     });
 </script>

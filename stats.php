@@ -204,6 +204,17 @@
           mimeType: 'json',
           type : 'bar',
         },
+		tooltip: {
+		  format: {
+		    title: function (x) { return 'Totales'; }
+		  }
+		},
+	    axis: {
+	        x: {
+	            type: 'category',
+	            categories: ['Totales']
+	        }
+	    },
       });
 
 	  date = new Date();
