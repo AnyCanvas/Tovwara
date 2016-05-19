@@ -217,7 +217,7 @@
 		    chart.load({
 			   	bindto : "#chart",
 		        unload: chart.columns,
-				url: 'json/interactionsJson.php?m=' + m + '&y=' + y,
+				url: 'json/interactionsJson.php?m=' + m,
 				mimeType: 'json',	
 		    });
 		}
