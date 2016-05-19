@@ -197,7 +197,15 @@
 	    },
       });
 
-
+	 function  changeDate(){
+	   	chart.load({
+		   	bindto : "#chart",
+	        columns: [
+	            ['Total', 230, 190, 300, 500, 300, 400]
+	        ],
+	        unload: [true],
+	    });	   
+	   }
       var chart = c3.generate({
 	  	bindto: '#chart3',
         data: {
