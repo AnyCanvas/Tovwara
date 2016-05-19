@@ -216,9 +216,9 @@
       });
 
 	setTimeout(function () {
-	    chart.transform({
-//	  	bindto: '#chart',
-//	    unload: chart.columns,
+	    chart.load({
+	  	bindto: '#chart',
+	    unload: chart.columns,
 
 	    });
 	}, 1000);
