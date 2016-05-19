@@ -229,6 +229,13 @@
 				mimeType: 'json',	
 		    });
 
+		    chart3.load({
+			   	bindto : "#chart3",
+//		        unload: chart.columns,
+				url: 'json/monthTotalJson.php?m=' + m,
+				mimeType: 'json',	
+		    });
+
 	});
 
     });
