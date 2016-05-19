@@ -212,9 +212,12 @@
    function  changeDate(){
    	chart.load({
 	  	bindto: '#chart',
-        columns: [
-            ['data1', 230, 190, 300, 500, 300, 400]
-        ]
+        data: {
+          url: 'json/interactionsJson.php',
+          mimeType: 'json',
+          type : 'pie',
+          hide: ['Total'],
+        },
     });	   
    }
 </script>
