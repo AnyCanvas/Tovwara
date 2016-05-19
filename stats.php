@@ -209,7 +209,7 @@
 
 	$('#reloadCharts').on('click', function () {
 	
-		if(alert(document.getElementById("month").value) !== ""){
+		if( document.getElementById("month").value !== ""){
 		    chart.load({
 			   	bindto : "#chart",
 		        unload: chart.columns,
