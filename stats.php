@@ -193,7 +193,7 @@
           hide: ['Total'],
         },
         legend: {
-	       hide: ['Total'],hjkjkhkj
+	       hide: ['Total'],
 	    },
       });
 
