@@ -79,7 +79,7 @@
                             <div class="form-inline">
                             <div class="form-group">
                                 <label class="sr-only" for="month">Selecciona el mes</label>
-								<input type="month" name="month">
+								<input type="month" name="month" id="month">
                             </div>
                             <button id="reloadCharts" type="submit" class="btn btn-success">Cambiar</button>
                         </div>
@@ -209,15 +209,17 @@
 
 	$('#reloadCharts').on('click', function () {
 	
-	    chart.load({
-		   	bindto : "#chart",
-	        unload: chart.columns,
-	        columns: [
-	            ['data1', 130, 120, 150, 140, 160, 150],
-	            ['data4', 30, 20, 50, 40, 60, 50],
-	        ],
-
-	    });
+		if(alert(document.getElementById("month").value) !== null){
+		    chart.load({
+			   	bindto : "#chart",
+		        unload: chart.columns,
+		        columns: [
+		            ['data1', 130, 120, 150, 140, 160, 150],
+		            ['data4', 30, 20, 50, 40, 60, 50],
+		        ],
+	
+		    });
+		}
 	});
 
     });
