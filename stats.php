@@ -81,7 +81,7 @@
                                 <label class="sr-only" for="month">Selecciona el mes</label>
 								<input type="month" name="month">
                             </div>
-                            <button type="submit" class="btn btn-success">Cambiar</button>
+                            <button type="submit" class="btn btn-success" onclick="changeDate();">Cambiar</button>
                         </form>
                        </div>
                        <div class="chart">
@@ -210,7 +210,12 @@
     });
     
    function  changeDate(){
-	   
+   	chart.load({
+	  	bindto: '#chart',
+        columns: [
+            ['data1', 230, 190, 300, 500, 300, 400]
+        ]
+    });	   
    }
 </script>
 
