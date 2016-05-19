@@ -206,7 +206,8 @@
         },
       });
 
-    document.getElementById("month").max = '2016-05';
+	  date = new Date();
+      document.getElementById("month").max = date.getFullYear() + '-' + date.getMonth();
 
 	$('#reloadCharts').on('click', function () {
 		date = document.getElementById("month").value;
