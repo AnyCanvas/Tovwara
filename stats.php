@@ -208,7 +208,7 @@
 
 	  date = new Date();
 	  if (date.getMonth() <= 9){
-		  strDate = date.getFullYear() + '-0' + date.getMonth();		  		  
+		  strDate = date.getFullYear() + '-0' + int (date.getMonth() + 1);		  		  
 	  } else {
 		  strDate = date.getFullYear() + '-' + date.getMonth();		  
 	  }
