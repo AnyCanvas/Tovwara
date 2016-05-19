@@ -193,7 +193,7 @@
           hide: ['Total'],
         },
         legend: {
-	       hide: ['Total'],
+	       hide: ['Total'],hjkjkhkj
 	    },
       });
 
@@ -209,15 +209,14 @@
 
 	$('#reloadCharts').on('click', function () {
 		date = document.getElementById("month").value;
+		m = str.substring(5);
+		y = str.substring(0, 3);
 		
 		if( date !== ""){
 		    chart.load({
 			   	bindto : "#chart",
 		        unload: chart.columns,
-		        columns: [
-		            ['data1', 130, 120, 150, 140, 160, 150],
-		            ['data4', 30, 20, 50, 40, 60, 50],
-		        ],
+				url: 'json/interactionsJson.php?m=' + m + '&y=' + y,
 	
 		    });
 		}
