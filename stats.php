@@ -211,6 +211,7 @@
     
    function  changeDate(){
    	chart.load({
+	   	bindto : "#chart";
         columns: [
             ['Total', 230, 190, 300, 500, 300, 400]
         ]
