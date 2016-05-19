@@ -210,15 +210,18 @@
     });
     
    function  changeDate(){
-   	chart.load({
-	  	bindto: '#chart',
+      var chart = c3.generate({
+	  	bindto: '#chart1',
         data: {
           url: 'json/interactionsJson.php',
           mimeType: 'json',
           type : 'pie',
           hide: ['Total'],
         },
-    });	   
+        legend: {
+	       hide: ['Total'],
+	    },
+      });
    }
 </script>
 
