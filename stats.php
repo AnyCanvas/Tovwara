@@ -218,10 +218,8 @@
 	setTimeout(function () {
 	    chart.transform({
 	  	bindto: '#chart',
-	        columns: [
-	            ['data1', 130, 120, 150, 140, 160, 150],
-	            ['data4', 30, 20, 50, 40, 60, 50],
-	        ],		    
+	    unload: chart.columns,
+
 	    });
 	}, 1000);
 
