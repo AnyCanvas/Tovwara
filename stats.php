@@ -214,6 +214,8 @@
           type : 'bar',
         },
       });
+
+chart.transform('bar');
     });
     
 	$('#reloadCharts').on('click', function () {
