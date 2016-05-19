@@ -206,6 +206,7 @@
         },
       });
 
+    document.getElementById("month").max('20016-05');
 
 	$('#reloadCharts').on('click', function () {
 		date = document.getElementById("month").value;
