@@ -76,13 +76,13 @@
                     </header>
                     <div class="panel-body">
 						<div class="position-center">
-                            <form class="form-inline" role="form">
+                            <div class="form-inline">
                             <div class="form-group">
                                 <label class="sr-only" for="month">Selecciona el mes</label>
 								<input type="month" name="month">
                             </div>
-                            <button type="submit" class="btn btn-success" onclick="changeDate();">Cambiar</button>
-                        </form>
+                            <button id="reloadCharts" type="submit" class="btn btn-success">Cambiar</button>
+                        </div>
                        </div>
                        <div class="chart">
                          <div id="chart"></div>
@@ -197,9 +197,20 @@
 	    },
       });
 
+	$('#reloadCharts').on('click', function () {
+	
+	    chart.load({
+		   	bindto : "#chart",
+	        columns: [
+	            ['data1', 130, 120, 150, 140, 160, 150],
+	            ['data4', 30, 20, 50, 40, 60, 50],
+	        ],
+	            unload: chart.columns,
+	    });
+	});
 	 function  changeDate(){
 	   	chart.load({
-		   	bindto : "#chart",
+
 	        columns: [
 	            ['Total', 230, 190, 300, 500, 300, 400]
 	        ],
