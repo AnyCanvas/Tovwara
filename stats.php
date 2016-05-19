@@ -216,7 +216,7 @@
 			y = date.substring(0, 3);
 		    chart.load({
 			   	bindto : "#chart",
-		        unload: chart.columns,
+//		        unload: chart.columns,
 				url: 'json/interactionsJson.php?m=' + m,
 				mimeType: 'json',	
 		    });
