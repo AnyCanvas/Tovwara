@@ -215,12 +215,11 @@
         },
       });
 
-chart.transform('bar');
     });
     
 	$('#reloadCharts').on('click', function () {
 	
-	    chart.load({
+	    var chart = c3.load({
 		   	bindto : "#chart",
 	        columns: [
 	            ['data1', 130, 120, 150, 140, 160, 150],
