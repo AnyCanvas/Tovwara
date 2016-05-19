@@ -221,6 +221,14 @@
 				mimeType: 'json',	
 		    });
 		}
+
+		    chart2.load({
+			   	bindto : "#chart2",
+//		        unload: chart.columns,
+				url: 'json/interactionsJson.php?m=' + m,
+				mimeType: 'json',	
+		    });
+
 	});
 
     });
