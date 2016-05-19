@@ -207,7 +207,11 @@
       });
 
 	  date = new Date();
-	  strDate = date.getFullYear() + '-' + date.getMonth();
+	  if (date.getMonth() <= 9){
+		  strDate = date.getFullYear() + '-0' + date.getMonth();		  		  
+	  } else {
+		  strDate = date.getFullYear() + '-' + date.getMonth();		  
+	  }
       document.getElementById("month").max = strDate;
 
 	$('#reloadCharts').on('click', function () {
