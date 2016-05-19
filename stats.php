@@ -218,7 +218,7 @@
 			   	bindto : "#chart",
 		        unload: chart.columns,
 				url: 'json/interactionsJson.php?m=' + m + '&y=' + y,
-	
+				mimeType: 'json',	
 		    });
 		}
 	});
