@@ -220,7 +220,7 @@
 		
 		if( date !== ""){
 			m = date.substring(5);
-			y = date.substring(0, 3);
+			y = date.substring(0, 4);
 		    chart.load({
 			   	bindto : "#chart",
 //		        unload: chart.columns,
