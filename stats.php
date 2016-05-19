@@ -183,9 +183,19 @@
           position: 'right',
         },
       });
+
+   function  changeDate(){
+   	chart.load({
+	   	bindto : "#chart",
+        columns: [
+            ['Total', 230, 190, 300, 500, 300, 400]
+        ],
+        unload: [true],
+    });	   
+   }
     });
     $(function () {
-      var chart = c3.generate({
+      var chart2 = c3.generate({
 	  	bindto: '#chart2',
         data: {
           url: 'json/interactionsJson.php',
@@ -208,16 +218,6 @@
         },
       });
     });
-    
-   function  changeDate(){
-   	c3.chart.load({
-	   	bindto : "#chart",
-        columns: [
-            ['Total', 230, 190, 300, 500, 300, 400]
-        ],
-        unload: [true],
-    });	   
-   }
 </script>
 
 
