@@ -219,6 +219,10 @@
 	    chart.load({
 	  	bindto: '#chart',
 	    unload: chart.columns,
+	        columns: [
+	            ['data1', 130, 120, 150, 140, 160, 150],
+	            ['data4', 30, 20, 50, 40, 60, 50],
+	        ],
 
 	    });
 	}, 1000);
@@ -229,11 +233,12 @@
 	
 	    chart.data({
 		   	bindto : "#chart",
+	        unload: chart.columns,
 	        columns: [
 	            ['data1', 130, 120, 150, 140, 160, 150],
 	            ['data4', 30, 20, 50, 40, 60, 50],
 	        ],
-	            unload: chart.columns,
+
 	    });
 	});
 </script>
