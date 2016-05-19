@@ -207,7 +207,7 @@
       });
 
 	  date = new Date();
-	  strDate = date.getFullYear() + '-' + date.getMonth()+1
+	  strDate = date.getFullYear() + '-' + date.getMonth();
       document.getElementById("month").max = strDate;
 
 	$('#reloadCharts').on('click', function () {
