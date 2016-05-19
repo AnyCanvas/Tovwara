@@ -184,17 +184,6 @@
         },
       });
 
-   function  changeDate(){
-   	chart.load({
-	   	bindto : "#chart",
-        columns: [
-            ['Total', 230, 190, 300, 500, 300, 400]
-        ],
-        unload: [true],
-    });	   
-   }
-    });
-    $(function () {
       var chart2 = c3.generate({
 	  	bindto: '#chart2',
         data: {
@@ -207,8 +196,8 @@
 	       hide: ['Total'],
 	    },
       });
-    });
-    $(function () {
+
+
       var chart = c3.generate({
 	  	bindto: '#chart3',
         data: {
