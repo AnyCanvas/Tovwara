@@ -212,8 +212,8 @@
 
 		
 		if( date !== ""){
-			m = str.substring(5);
-			y = str.substring(0, 3);
+			m = date.substring(5);
+			y = date.substring(0, 3);
 		    chart.load({
 			   	bindto : "#chart",
 		        unload: chart.columns,
