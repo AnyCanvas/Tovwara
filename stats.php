@@ -215,6 +215,15 @@
         },
       });
 
+	setTimeout(function () {
+	    chart.transform({
+	  	bindto: '#chart',
+
+          type : 'bar',
+		    
+	    });
+	}, 1000);
+
     });
     
 	$('#reloadCharts').on('click', function () {
