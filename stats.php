@@ -208,8 +208,9 @@
 
 
 	$('#reloadCharts').on('click', function () {
-	
-		if( document.getElementById("month").value !== ""){
+		date = document.getElementById("month").value;
+		
+		if( date !== ""){
 		    chart.load({
 			   	bindto : "#chart",
 		        unload: chart.columns,
