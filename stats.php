@@ -197,6 +197,16 @@
 	    },
       });
 
+      var chart3 = c3.generate({
+	  	bindto: '#chart3',
+        data: {
+          url: 'json/monthTotalJson.php',
+          mimeType: 'json',
+          type : 'bar',
+        },
+      });
+
+
 	 function  changeDate(){
 	   	chart3.load({
 
@@ -206,15 +216,6 @@
 	        unload: [true],
 	    });	   
 	   }
-      var chart = c3.generate({
-	  	bindto: '#chart3',
-        data: {
-          url: 'json/monthTotalJson.php',
-          mimeType: 'json',
-          type : 'bar',
-        },
-      });
-
 	setTimeout(function () {
 	    chart.load({
 	  	bindto: '#chart',
