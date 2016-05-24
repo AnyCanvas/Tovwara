@@ -173,11 +173,11 @@
 
     $(function () {
 
-      if ( (url('?fnbtId') !== null) && (url('?clientId') !== null) ){
+      if ( (url('?fnbtId') !== undefined) && (url('?clientId') !== undefined) ){
 	    var urlVar = '?fnbtId=' + url('?fnbtId') + '&clientId=' + url('?clientId'); 
-      } else if (url('?fnbtId') !== null){
+      } else if (url('?fnbtId') !== undefined){
 	    var urlVar = '?fnbtId=' + url('?fnbtId');
-      } else if (url('?clientId') !== null){
+      } else if (url('?clientId') !== undefined){
 	    var urlVar = '?clientId=' + url('?clientId'); 	      
       } else{
 	      
