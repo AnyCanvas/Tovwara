@@ -3,7 +3,8 @@
 		if (!isLogged()){
 			header('Location: ./login.php');
 			exit;
-		}				
+		}			
+
 	?> 
 
 <!DOCTYPE html>
