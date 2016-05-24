@@ -174,9 +174,9 @@
     $(function () {
 
       if (url('?fnbtId') !== null){
+	    alert(url('?fnbtId'));   
 	      
       } else{
-	    alert(url('?fnbtId'));   
       }
 
       var chart = c3.generate({
