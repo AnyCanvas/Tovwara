@@ -262,7 +262,7 @@
 		    chart.load({
 			   	bindto : "#chart",
 //		        unload: chart.columns,
-				url: 'json/interactionsJson.php?m=' + m + '&y=' + y + urlVar,
+				url: 'json/interactionsJson.php' + urlVar + '&m=' + m + '&y=' + y,
 				mimeType: 'json',	
 		    });
 		}
@@ -270,14 +270,14 @@
 		    chart2.load({
 			   	bindto : "#chart2",
 //		        unload: chart.columns,
-				url: 'json/interactionsJson.php?m=' + m + '&y=' + y + urlVar,
+				url: 'json/interactionsJson.php' + urlVar + '&m=' + m + '&y=' + y,
 				mimeType: 'json',	
 		    });
 
 		    chart3.load({
 			   	bindto : "#chart3",
 //		        unload: chart.columns,
-				url: 'json/monthTotalJson.php?m=' + m + '&y=' + y + urlVar,
+				url: 'json/monthTotalJson.php' + urlVar + '&m=' + m + '&y=' + y,
 				mimeType: 'json',	
 		    });
 
