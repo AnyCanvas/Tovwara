@@ -173,10 +173,10 @@
 
     $(function () {
 
-      if (url('?silly') !== null{
+      if (url('?fnbtId') !== null){
 	      
       } else{
-	    alert(url('?silly'));   
+	    alert(url('?fnbtId'));   
       }
 
       var chart = c3.generate({
