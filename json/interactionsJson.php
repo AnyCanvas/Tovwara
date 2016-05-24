@@ -25,7 +25,7 @@
 		} else if( isset($_GET["fnbtId"]) ){
 			likesJson($m,$y,$_GET["fnbtId"],0);				
 		}else if( isset($_GET["clientId"]) ){
-			likesJson(date("m"),date("Y"),0,$_GET["clientId"]);				
+			likesJson($m,$y,0,$_GET["clientId"]);				
 		} else{
 			likesJson($m,$y,0,0);
 		}
