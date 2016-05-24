@@ -173,7 +173,7 @@
 
     $(function () {
 
-      if (url('?fnbtId') !== null && url('?clientId') !== null){
+      if ( (url('?fnbtId') !== null) && (url('?clientId') !== null) ){
 	    var urlVar = '?fnbtId=' + url('?fnbtId') + '&clientId=' + url('?clientId'); 
       } else if (url('?fnbtId') !== null){
 	    var urlVar = '?fnbtId=' + url('?fnbtId');
