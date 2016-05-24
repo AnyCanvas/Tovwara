@@ -85,6 +85,15 @@
                          </span>
                     </header>
                     <div class="panel-body">
+						<div class="position-center">
+                            <div class="form-inline">
+                            <div class="form-group">
+                                <label class="sr-only" for="month">Selecciona el mes</label>
+								<input type="month" name="month" id="month">
+                            </div>
+                            <button id="reloadCharts" type="submit" class="btn btn-success">Cambiar</button>
+                        </div>
+                       </div>
                        <div class="chart">
                          <div id="chart"></div>
                        </div>
@@ -160,10 +169,16 @@
 <!--common script init for all pages-->
 <script src="js/scripts.js"></script>
 
-
 <script>
 
     $(function () {
+
+      if (url('?silly') !== null{
+	      
+      } else{
+	    alert(url('?silly'));   
+      }
+
       var chart = c3.generate({
 	  	bindto: '#chart',
         data: {
@@ -187,11 +202,10 @@
 		  format: {
 		    title: function (x) { return 'Día ' + x + "º"; }
 		  }
-		}
+		},
       });
-    });
-    $(function () {
-      var chart = c3.generate({
+
+      var chart2 = c3.generate({
 	  	bindto: '#chart2',
         data: {
           url: 'json/interactionsJson.php<?php echo $htmlVar ?>',
@@ -203,9 +217,8 @@
 	       hide: ['Total'],
 	    },
       });
-    });
-    $(function () {
-      var chart = c3.generate({
+
+      var chart3 = c3.generate({
 	  	bindto: '#chart3',
         data: {
           url: 'json/monthTotalJson.php<?php echo $htmlVar ?>',
@@ -224,9 +237,50 @@
 	        }
 	    },
       });
-    });
-</script>
 
+	  date = new Date();
+	  if (date.getMonth() <= 9){
+		  strDate = date.getFullYear() + '-0' + (date.getMonth() + 1);		  		  
+	  } else {
+		  strDate = date.getFullYear() + '-' + date.getMonth();		  
+	  }
+      document.getElementById("month").max = strDate;
+
+	$('#reloadCharts').on('click', function () {
+		date = document.getElementById("month").value;
+
+		
+		if( date !== ""){
+			m = date.substring(5);
+			y = date.substring(0, 4);
+		    chart.load({
+			   	bindto : "#chart",
+//		        unload: chart.columns,
+				url: 'json/interactionsJson.php?m=' + m + '&y=' + y,
+				mimeType: 'json',	
+		    });
+		}
+
+		    chart2.load({
+			   	bindto : "#chart2",
+//		        unload: chart.columns,
+				url: 'json/interactionsJson.php?m=' + m + '&y=' + y,
+				mimeType: 'json',	
+		    });
+
+		    chart3.load({
+			   	bindto : "#chart3",
+//		        unload: chart.columns,
+				url: 'json/monthTotalJson.php?m=' + m + '&y=' + y,
+				mimeType: 'json',	
+		    });
+
+	});
+
+    });
+    
+
+</script>
 
 </body>
 </html>
