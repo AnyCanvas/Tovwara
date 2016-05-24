@@ -180,7 +180,7 @@
       } else if (url('?clientId') !== undefined){
 	    var urlVar = '?clientId=' + url('?clientId'); 	      
       } else{
-	      
+	    var urlVar = '';  
       }
 
 	  alert(urlVar);   
@@ -188,7 +188,7 @@
       var chart = c3.generate({
 	  	bindto: '#chart',
         data: {
-          url: 'json/interactionsJson.php<?php echo $htmlVar ?>',
+          url: 'json/interactionsJson.php' + urlVar,
           mimeType: 'json',
           type: 'area',
         },
@@ -214,7 +214,7 @@
       var chart2 = c3.generate({
 	  	bindto: '#chart2',
         data: {
-          url: 'json/interactionsJson.php<?php echo $htmlVar ?>',
+          url: 'json/interactionsJson.php' + urlVar,
           mimeType: 'json',
           type : 'pie',
           hide: ['Total'],
@@ -227,7 +227,7 @@
       var chart3 = c3.generate({
 	  	bindto: '#chart3',
         data: {
-          url: 'json/monthTotalJson.php<?php echo $htmlVar ?>',
+          url: 'json/monthTotalJson.php' + urlVar,
           mimeType: 'json',
           type : 'bar',
         },
@@ -262,7 +262,7 @@
 		    chart.load({
 			   	bindto : "#chart",
 //		        unload: chart.columns,
-				url: 'json/interactionsJson.php?m=' + m + '&y=' + y,
+				url: 'json/interactionsJson.php?m=' + m + '&y=' + y + urlVar,
 				mimeType: 'json',	
 		    });
 		}
@@ -270,14 +270,14 @@
 		    chart2.load({
 			   	bindto : "#chart2",
 //		        unload: chart.columns,
-				url: 'json/interactionsJson.php?m=' + m + '&y=' + y,
+				url: 'json/interactionsJson.php?m=' + m + '&y=' + y + urlVar,
 				mimeType: 'json',	
 		    });
 
 		    chart3.load({
 			   	bindto : "#chart3",
 //		        unload: chart.columns,
-				url: 'json/monthTotalJson.php?m=' + m + '&y=' + y,
+				url: 'json/monthTotalJson.php?m=' + m + '&y=' + y + urlVar,
 				mimeType: 'json',	
 		    });
 
