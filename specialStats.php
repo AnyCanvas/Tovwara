@@ -3,17 +3,7 @@
 		if (!isLogged()){
 			header('Location: ./login.php');
 			exit;
-		}			
-
-		if( isset($_GET["fnbtId"]) && isset($_GET["clientId"])){
-			$htmlVar = '?fnbtId='.$_GET["fnbtId"].'&clientId='.$_GET["clientId"];				
-		} else if( isset($_GET["fnbtId"]) ){
-			$htmlVar = '?fnbtId='.$_GET["fnbtId"];				
-		}else if( isset($_GET["clientId"]) ){
-			$htmlVar = '?clientId='.$_GET["clientId"];				
-		} else{
-			$htmlVar = '';				
-		}		
+		}				
 	?> 
 
 <!DOCTYPE html>
@@ -182,8 +172,6 @@
       } else{
 	    var urlVar = '';  
       }
-
-	  alert(urlVar);   
 
       var chart = c3.generate({
 	  	bindto: '#chart',
