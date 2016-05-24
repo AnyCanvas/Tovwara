@@ -173,11 +173,17 @@
 
     $(function () {
 
-      if (url('?fnbtId') !== null){
-	    alert(url('?fnbtId'));   
-	      
+      if (url('?fnbtId') !== null && url('?clientId') !== null){
+	    var urlVar = '?fnbtId=' + url('?fnbtId') + '&clientId=' + url('?clientId'); 
+      } else if (url('?fnbtId') !== null){
+	    var urlVar = '?fnbtId=' + url('?fnbtId');
+      } else if (url('?clientId') !== null){
+	    var urlVar = '?clientId=' + url('?clientId'); 	      
       } else{
+	      
       }
+
+	  alert(urlVar);   
 
       var chart = c3.generate({
 	  	bindto: '#chart',
