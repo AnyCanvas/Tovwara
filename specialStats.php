@@ -5,15 +5,6 @@
 			exit;
 		}			
 
-		if( isset($_GET["fnbtId"]) && isset($_GET["clientId"])){
-			$htmlVar = '?fnbtId='.$_GET["fnbtId"].'&clientId='.$_GET["clientId"];				
-		} else if( isset($_GET["fnbtId"]) ){
-			$htmlVar = '?fnbtId='.$_GET["fnbtId"];				
-		}else if( isset($_GET["clientId"]) ){
-			$htmlVar = '?clientId='.$_GET["clientId"];				
-		} else{
-			$htmlVar = '';				
-		}		
 	?> 
 
 <!DOCTYPE html>
@@ -85,6 +76,15 @@
                          </span>
                     </header>
                     <div class="panel-body">
+						<div class="position-center">
+                            <div class="form-inline">
+                            <div class="form-group">
+                                <label class="sr-only" for="month">Selecciona el mes</label>
+								<input type="month" name="month" id="month">
+                            </div>
+                            <button id="reloadCharts" type="submit" class="btn btn-success">Cambiar</button>
+                        </div>
+                       </div>
                        <div class="chart">
                          <div id="chart"></div>
                        </div>
@@ -148,6 +148,7 @@
 
 <!--Core js-->
 <script src="js/jquery.js"></script>
+<script src="js/url.js"></script>
 <script src="bs3/js/bootstrap.min.js"></script>
 <script class="include" type="text/javascript" src="js/jquery.dcjqaccordion.2.7.js"></script>
 <script src="js/jquery.scrollTo.min.js"></script>
@@ -159,14 +160,24 @@
 <!--common script init for all pages-->
 <script src="js/scripts.js"></script>
 
-
 <script>
 
     $(function () {
+
+      if ( (url('?fnbtId') !== undefined) && (url('?clientId') !== undefined) ){
+	    var urlVar = '?fnbtId=' + url('?fnbtId') + '&clientId=' + url('?clientId'); 
+      } else if (url('?fnbtId') !== undefined){
+	    var urlVar = '?fnbtId=' + url('?fnbtId');
+      } else if (url('?clientId') !== undefined){
+	    var urlVar = '?clientId=' + url('?clientId'); 	      
+      } else{
+	    var urlVar = '';  
+      }
+
       var chart = c3.generate({
 	  	bindto: '#chart',
         data: {
-          url: 'json/interactionsJson.php<?php echo $htmlVar ?>',
+          url: 'json/interactionsJson.php' + urlVar,
           mimeType: 'json',
           type: 'area',
         },
@@ -186,14 +197,13 @@
 		  format: {
 		    title: function (x) { return 'Día ' + x + "º"; }
 		  }
-		}
+		},
       });
-    });
-    $(function () {
-      var chart = c3.generate({
+
+      var chart2 = c3.generate({
 	  	bindto: '#chart2',
         data: {
-          url: 'json/interactionsJson.php<?php echo $htmlVar ?>',
+          url: 'json/interactionsJson.php' + urlVar,
           mimeType: 'json',
           type : 'pie',
           hide: ['Total'],
@@ -202,12 +212,11 @@
 	       hide: ['Total'],
 	    },
       });
-    });
-    $(function () {
-      var chart = c3.generate({
+
+      var chart3 = c3.generate({
 	  	bindto: '#chart3',
         data: {
-          url: 'json/monthTotalJson.php<?php echo $htmlVar ?>',
+          url: 'json/monthTotalJson.php' + urlVar,
           mimeType: 'json',
           type : 'bar',
         },
@@ -221,11 +230,52 @@
 	            type: 'category',
 	            categories: ['Totales']
 	        }
-	    }
+	    },
       });
-    });
-</script>
 
+	  date = new Date();
+	  if (date.getMonth() <= 9){
+		  strDate = date.getFullYear() + '-0' + (date.getMonth() + 1);		  		  
+	  } else {
+		  strDate = date.getFullYear() + '-' + date.getMonth();		  
+	  }
+      document.getElementById("month").max = strDate;
+
+	$('#reloadCharts').on('click', function () {
+		date = document.getElementById("month").value;
+
+		
+		if( date !== ""){
+			m = date.substring(5);
+			y = date.substring(0, 4);
+		    chart.load({
+			   	bindto : "#chart",
+//		        unload: chart.columns,
+				url: 'json/interactionsJson.php' + urlVar + '&m=' + m + '&y=' + y,
+				mimeType: 'json',	
+		    });
+		}
+
+		    chart2.load({
+			   	bindto : "#chart2",
+//		        unload: chart.columns,
+				url: 'json/interactionsJson.php' + urlVar + '&m=' + m + '&y=' + y,
+				mimeType: 'json',	
+		    });
+
+		    chart3.load({
+			   	bindto : "#chart3",
+//		        unload: chart.columns,
+				url: 'json/monthTotalJson.php' + urlVar + '&m=' + m + '&y=' + y,
+				mimeType: 'json',	
+		    });
+
+	});
+
+    });
+    
+
+</script>
 
 </body>
 </html>
