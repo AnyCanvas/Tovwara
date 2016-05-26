@@ -161,7 +161,8 @@
 		dom: 'Bfrtip',
 	    buttons: [
 	        'csv', 'pdf'
-	    ]
+	    ],
+	    "order": [[ 0, 'asc' ], [ 1, 'asc' ]]
 		});
 	});
 </script>
