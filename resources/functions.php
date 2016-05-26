@@ -456,7 +456,7 @@ function interactionsJson(){
 			    echo $row['fanbotId']. ', ';
 			    
 
-			    echo ' ]';
+			    echo ' ],';
 			}
 				$conn->close();
 				echo  '] }';
