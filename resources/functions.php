@@ -456,19 +456,20 @@ function interactionsJson(){
 			    echo $row['fanbotId']. ', ';
 			    
 
-			    echo ']';
+			    echo ' ]';
 			}
+				$conn->close();
+				echo  '] }';
 			    return TRUE;	
 			} else {
+				$conn->close();
+
 				echo '[ ]';
+				echo  '] }';
+
 				return FALSE;
 
 			}
-
-		echo  '] }';
-
-		$conn->close();
-
 }	
 
 function addFanbot(){
