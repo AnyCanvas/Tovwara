@@ -434,10 +434,14 @@ function interactionsJson(){
 
 		echo  '{ "data": [';
 
-
+        $i = 0;
 		if ($result->num_rows > 0) {		    
 		    while($row = $result->fetch_assoc()) { 				
-				
+				if ($i == 0){
+					$i++;
+				} else {
+			    	echo ',';					
+				}
 				// Create a new date var from date in db
 				$date =new DateTime($row['date']);
 				// Get de number of day from the date variable
@@ -456,7 +460,7 @@ function interactionsJson(){
 			    echo '"', $row['fanbotId']. '"';
 			    
 
-			    echo ' ],';
+			    echo ' ]';
 			}
 				$conn->close();
 				echo  '] }';
