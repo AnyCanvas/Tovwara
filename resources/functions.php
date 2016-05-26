@@ -454,7 +454,8 @@ function interactionsJson(){
 				echo '"', $formatedDate . '", ';
 				echo '"', $formatedHour. '", ';
 				echo '"', $row['id'] .'", ';				
-				echo '"', $row['fbID'] .'", ';
+//				echo '"', $row['fbID'] .'", ';
+				echo '"'. $row['fbName']. '", ';
 			    echo '"', $row['action']. '", ';
 			    echo '"', $row['fbPage']. '", ';
 			    echo '"', $row['fanbotId']. '"';
