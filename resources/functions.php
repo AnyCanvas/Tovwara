@@ -447,13 +447,13 @@ function interactionsJson(){
 				
 				echo '[ ';
 //				echo "\t\t\t". '<td data-order="'. (1/$orderDate) .'">'. $formatedDate. '</td>'. "\r\n";
-				echo $formatedDate . ', ';
-				echo $formatedHour. ', ';
-				echo $row['id'] .', ';				
-				echo $row['fbID'] .', ';
-			    echo $row['action']. ', ';
-			    echo $row['fbPage']. ', ';
-			    echo $row['fanbotId']. ', ';
+				echo '"', $formatedDate . '", ';
+				echo '"', $formatedHour. '", ';
+				echo '"', $row['id'] .'", ';				
+				echo '"', $row['fbID'] .'", ';
+			    echo '"', $row['action']. '", ';
+			    echo '"', $row['fbPage']. '", ';
+			    echo '"', $row['fanbotId']. '"';
 			    
 
 			    echo ' ],';
