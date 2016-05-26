@@ -61,7 +61,45 @@
     <section id="main-content">
         <section class="wrapper">
         <!-- page start-->
-		<?php listInteractions(); ?>			
+			<div class="row">
+	            <div class="col-sm-12">
+	                <section class="panel">
+	                    <div class="panel-body">
+			                <div class="gauge-canvas">
+		                        <h4 class="widget-h">Mis Fanbot</h4>
+		                    </div>
+	                    <table  class="table" id="actionsTable">
+	                    <thead>
+	                    <tr>
+	                        <th>Fecha</th>
+	                        <th>Hora</th>
+	                        <th>ID</th>
+	                        <th>Nombre</th>
+	                        <th>Acción</th>
+	                        <th>Pagina de Facebook</th>
+	                        <th>Fanbot</th>
+	                    </tr>
+	                    </thead>
+	
+	                    <tbody>			
+			            </tbody>
+	
+	                    <tfoot>
+	                    <tr>
+	                        <th>Fecha</th>
+	                        <th>Hora</th>
+	                        <th>ID</th>
+	                        <th>Nombre</th>
+	                        <th>Acción</th>
+	                        <th>Pagina de Facebook</th>
+	                        <th>Fanbot</th>
+	                    </tr>
+	                    </tfoot>
+	                    </table>
+	                    </div>
+	                </section>
+	            </div>
+	        </div>
         <!-- page end-->
         </section>
     </section>
@@ -115,6 +153,7 @@
 	$(document).ready( function () {
 	    
 	var table = $('#actionsTable').DataTable({
+		"ajax": 'json/interactionsTableJson.php',
 		language: {
 		        url: 'https://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json'
 		    },
