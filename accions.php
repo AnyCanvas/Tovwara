@@ -175,7 +175,7 @@
                 },
                 "targets": 3
             },
-            { "visible": false,  "targets": [ 3 ] }
+            { "visible": false,  "targets": [ 4 ] }
         ],
 		});
 	});
