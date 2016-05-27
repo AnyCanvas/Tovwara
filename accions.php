@@ -157,7 +157,7 @@
 			"url": 'json/interactionsTableJson.php',
 		    "dataSrc": function ( json ) {
 		      for ( var i=0, ien=json.length ; i<ien ; i++ ) {
-		        json[i][0] = '<a href="/message/'+json[i][0]+'>View message</a>';
+		        json[i] = '<a href="/message/'+json[i]+'>View message</a>';
 		      }
 		      return json;
 		      }
