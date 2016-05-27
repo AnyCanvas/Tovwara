@@ -160,7 +160,7 @@
 		        json[i][0] = '<a href="/message/'+json[i][0]+'>View message</a>';
 		      }
 		      return json;
-		      },
+		      }
 	    },
 		language: {
 		        url: 'https://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json'
