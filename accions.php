@@ -153,15 +153,7 @@
 	$(document).ready( function () {
 	    
 	var table = $('#actionsTable').DataTable({
-		"ajax": {
-			"url": 'json/interactionsTableJson.php',
-		    "dataSrc": function ( json ) {
-		      for ( var i=0, ien=json.length ; i<ien ; i++ ) {
-		        json[i] = '<a href="/message/'+json[i]+'>View message</a>';
-		      }
-		      return json;
-		      }
-	    },
+		"ajax": 'json/interactionsTableJson.php',
 		language: {
 		        url: 'https://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json'
 		    },
@@ -171,6 +163,16 @@
 	        'csv', 'pdf'
 	    ],
 	    "order": [[ 0, 'asc' ], [ 1, 'asc' ]],
+        "columnDefs": [
+            {
+                // The `data` parameter refers to the data for the cell (defined by the
+                // `data` option, which defaults to the column being worked with, in
+                // this case `data: 0`.
+                "render": function ( data, type, row ) {
+                    return data +' ('+ row[3]+')';
+                },
+                "targets": 0
+            },
 		});
 	});
 </script>
