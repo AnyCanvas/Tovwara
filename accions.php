@@ -171,7 +171,8 @@
                 // `data` option, which defaults to the column being worked with, in
                 // this case `data: 0`.
                 "render": function ( data, type, row ) {
-                    return data +' ('+ row[4]+')';
+                    return '<a href="'+ row[4] +'">'+ data +'</a>';
+                    
                 },
                 "targets": 3
             },
