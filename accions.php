@@ -162,7 +162,13 @@
 	    buttons: [
 	        'csv', 'pdf'
 	    ],
-	    "order": [[ 0, 'asc' ], [ 1, 'asc' ]]
+	    "order": [[ 0, 'asc' ], [ 1, 'asc' ]],
+    "dataSrc": function ( json ) {
+      for ( var i=0, ien=json.length ; i<ien ; i++ ) {
+        json[i][0] = '<a href="/message/'+json[i][0]+'>View message</a>';
+      }
+      return json;
+    },
 		});
 	});
 </script>
