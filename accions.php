@@ -75,6 +75,7 @@
 	                        <th>Hora</th>
 	                        <th>ID</th>
 	                        <th>Nombre</th>
+	                        <th>FB id</th>
 	                        <th>Acción</th>
 	                        <th>Pagina de Facebook</th>
 	                        <th>Fanbot</th>
@@ -90,6 +91,7 @@
 	                        <th>Hora</th>
 	                        <th>ID</th>
 	                        <th>Nombre</th>
+	                        <th>FB id</th>
 	                        <th>Acción</th>
 	                        <th>Pagina de Facebook</th>
 	                        <th>Fanbot</th>
@@ -169,10 +171,11 @@
                 // `data` option, which defaults to the column being worked with, in
                 // this case `data: 0`.
                 "render": function ( data, type, row ) {
-                    return data +' ('+ row[3]+')';
+                    return data +' ('+ row[4]+')';
                 },
-                "targets": 1
+                "targets": 3
             },
+            { "visible": false,  "targets": [ 3 ] }
         ],
 		});
 	});
