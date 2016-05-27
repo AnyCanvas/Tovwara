@@ -171,7 +171,7 @@
                 // `data` option, which defaults to the column being worked with, in
                 // this case `data: 0`.
                 "render": function ( data, type, row ) {
-                    return '<a href="facebook.com/'+ row[4] +'">'+ data +'</a>';
+                    return '<a href="facebook.com/'+ row[4] +'" target="_blank">'+ data +'</a>';
                     
                 },
                 "targets": 3
