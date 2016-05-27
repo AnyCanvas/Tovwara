@@ -171,7 +171,7 @@
                 "render": function ( data, type, row ) {
                     return data +' ('+ row[3]+')';
                 },
-                "targets": 0
+                "targets": 1
             },
         ],
 		});
