@@ -166,7 +166,7 @@
       var chart = c3.generate({
 	  	bindto: '#chart',
         data: {
-          url: 'json/interactionsJson.php',
+          url: 'json/monthlyInteractionsJson.php',
           mimeType: 'json',
           type: 'area',
         },
