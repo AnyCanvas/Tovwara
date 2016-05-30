@@ -81,6 +81,115 @@ function totalJson($day,$month,$year,$fnbtId,$clientId){
 	
 }
 
+function monthlyLikesJson($year,$fnbtId,$clientId){
+
+	require(realpath(dirname(__FILE__) . "/./config.php"));
+    $servername = $config["db"]["fanbot"]["host"];
+	$username = $config["db"]["fanbot"]["username"];
+	$password = $config["db"]["fanbot"]["password"];
+	$dbname = $config["db"]["fanbot"]["dbname"];
+
+		
+	// Create connection
+	$conn = new mysqli($servername, $username, $password, $dbname);
+	// Check connection
+	if ($conn->connect_error) {
+	    die("Connection failed: " . $conn->connect_error);
+	}
+
+	if( ($fnbtId !== 0) && ($clientId !== 0) ){
+		$sql = "SELECT * FROM interactions WHERE EXTRACT(YEAR FROM date) = '". $year."' AND fanbotId='".$fnbtId."' AND clientId='".$clientId."'";
+	} else if( $fnbtId !== 0 ){
+		$sql = "SELECT * FROM interactions WHERE EXTRACT(YEAR FROM date) = '". $year."' AND fanbotId='".$fnbtId."'";
+	}else if( $clientId !== 0 ){
+		$sql = "SELECT * FROM interactions WHERE EXTRACT(YEAR FROM date) = '". $year."' AND clientId='".$clientId."'"; 
+	} else{
+		$sql = "SELECT * FROM interactions WHERE EXTRACT(YEAR FROM date) = '". $year."'"; 
+	}
+
+	$result = $conn->query($sql);
+	$monthArray = array();
+	$likeArray = array();
+	$postArray = array();
+	$i = 1;
+	for($i = 1; $i <= 12; $i++){
+		$monthArray[$i] = 0;
+    	$likeArray[$i] = 0;
+	    $postArray[$i] = 0;
+		}
+	if ($result->num_rows > 0) {		    
+
+		    while($row = $result->fetch_assoc()) {
+
+			// Create a new date var from date in db
+			$date =new DateTime($row['date']);
+			// Get de number of day from the date variable
+			$day = $date->format('d');
+			// Create the array 
+			$i = 1;			
+			for($i = 1; $i <= 12; $i++){
+				 if ($day == $i){
+				 	$dayArray[$i]++;
+				 	
+				 	if($row['action'] == 'like'){
+						$likeArray[$i]++;						 	
+				 	} else if($row['action'] == 'post') {
+						$postArray[$i]++; 	
+				 	}
+
+		    	}
+			}
+		}	
+	}
+	
+	echo("{");
+
+	echo('"Total":[0,');
+	for($i = 1; $i <= 12; $i++){
+		if (isset($dayArray[$i])) {
+			echo $dayArray[$i];
+		} else {
+			echo 0;
+		}
+		if ($daysInMonth > $i) {
+			echo ', ';
+		}
+		
+		}
+	echo('],');
+
+	echo('"Likes":[0,');
+	for($i = 1; $i <= 12; $i++){
+		if (isset($likeArray[$i])) {
+			echo $likeArray[$i];
+		} else {
+			echo 0;
+		}
+		if ($daysInMonth > $i) {
+			echo ', ';
+		}
+		
+		}
+	echo('],');	
+	echo('"Check–in":[0,');
+	for($i = 1; $i <= 12; $i++){
+		if (isset($postArray[$i])) {
+			echo $postArray[$i];
+		} else {
+			echo 0;
+		}
+		if ($daysInMonth > $i) {
+			echo ', ';
+		}
+		
+		}
+	echo(']');	
+	echo('}');
+
+	$conn->close();
+	
+}	
+
 function likesJson($month,$year,$fnbtId,$clientId){
 
 	require(realpath(dirname(__FILE__) . "/./config.php"));
