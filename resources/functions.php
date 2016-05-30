@@ -128,7 +128,7 @@ function monthlyLikesJson($year,$fnbtId,$clientId){
 			// Create the array 
 			$i = 1;			
 			for($i = 1; $i <= 12; $i++){
-				 if ($day == $i){
+				 if ($month == $i){
 				 	$dayArray[$i]++;
 				 	
 				 	if($row['action'] == 'like'){
