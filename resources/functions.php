@@ -124,7 +124,7 @@ function monthlyLikesJson($year,$fnbtId,$clientId){
 			// Create a new date var from date in db
 			$date =new DateTime($row['date']);
 			// Get de number of day from the date variable
-			$day = $date->format('d');
+			$month = $date->format('m');
 			// Create the array 
 			$i = 1;			
 			for($i = 1; $i <= 12; $i++){
