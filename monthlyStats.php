@@ -192,7 +192,7 @@
       var chart2 = c3.generate({
 	  	bindto: '#chart2',
         data: {
-          url: 'json/interactionsJson.php',
+          url: 'json/monthlyInteractionsJson.php',
           mimeType: 'json',
           type : 'pie',
           hide: ['Total'],
