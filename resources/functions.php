@@ -151,7 +151,7 @@ function monthlyLikesJson($year,$fnbtId,$clientId){
 		} else {
 			echo 0;
 		}
-		if ($daysInMonth > $i) {
+		if (12 > $i) {
 			echo ', ';
 		}
 		
@@ -165,7 +165,7 @@ function monthlyLikesJson($year,$fnbtId,$clientId){
 		} else {
 			echo 0;
 		}
-		if ($daysInMonth > $i) {
+		if (12 > $i) {
 			echo ', ';
 		}
 		
@@ -178,7 +178,7 @@ function monthlyLikesJson($year,$fnbtId,$clientId){
 		} else {
 			echo 0;
 		}
-		if ($daysInMonth > $i) {
+		if (12 > $i) {
 			echo ', ';
 		}
 		
