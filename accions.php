@@ -172,7 +172,7 @@
                 // this case `data: 0`.
                 "render": function ( data, type, row ) {
 				      if (type === 'set') {
-					    var row.date = new Date(data * 1000);
+					    row.date = new Date(data * 1000);
 				        // Store the computed display and filter values for efficiency
 				        row.display = val=="" ? "" : row.date.getFullYear();
 				        row.sort  = val=="" ? "" : data;
