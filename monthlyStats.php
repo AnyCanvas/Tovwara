@@ -229,8 +229,8 @@
 	$('#reloadCharts').on('click', function () {
 		y = document.getElementById("year").value;
 
-		
-		if( date !== ""){
+	    date = new Date();		
+		if( y !== "" && y <= date.getFullYear()){
 		    chart.load({
 			   	bindto : "#chart",
 //		        unload: chart.columns,
