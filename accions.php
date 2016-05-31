@@ -169,14 +169,11 @@
             {
 	            "targets": 0,
 				"render": function ( data, type, full, meta ) {
-    				    if (type === 'set') {
-					    date = new Date(data * 1000);
-				        // Store the computed display and filter values for efficiency
-				        display = val=="" ? "" : row.date.getFullYear();
-				        sort  = val=="" ? "" : data;
-				        return;
-				      }
-				      else if (type === 'display') {
+					date = new Date(data * 1000);
+				    sort  = val=="" ? "" : data;
+				    display = val=="" ? "" : row.date.getFullYear();
+
+				    if (type === 'display') {
 				        return display;
 				      }
 				      else if (type === 'sort') {
