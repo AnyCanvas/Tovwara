@@ -168,22 +168,22 @@
         "columnDefs": [
             {
 	            "targets": 0,
-                "data": function ( row, type, val, meta ) {
+				"render": function ( data, type, full, meta ) {
     				    if (type === 'set') {
-					    row.date = new Date(val * 1000);
+					    date = new Date(data * 1000);
 				        // Store the computed display and filter values for efficiency
-				        row.display = val=="" ? "" : row.date.getFullYear();
-				        row.sort  = val=="" ? "" : val;
+				        display = val=="" ? "" : row.date.getFullYear();
+				        sort  = val=="" ? "" : data;
 				        return;
 				      }
 				      else if (type === 'display') {
-				        return row.display;
+				        return display;
 				      }
 				      else if (type === 'sort') {
-				        return row.sort;
+				        return sort;
 				      }
 				      // 'sort', 'type' and undefined all just use the integer
-				      return row.display;
+				      return display;
 			    }
             },
             {
