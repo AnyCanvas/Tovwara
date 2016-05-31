@@ -79,7 +79,7 @@
                             <div class="form-inline">
                             <div class="form-group">
                                 <label class="sr-only" for="month">Selecciona el mes</label>
-								<input type="month" name="month" id="month">
+								<input type="number" name="month" id="month">
                             </div>
                             <button id="reloadCharts" type="submit" class="btn btn-success">Cambiar</button>
                         </div>
@@ -231,12 +231,10 @@
       document.getElementById("month").max = strDate;
 
 	$('#reloadCharts').on('click', function () {
-		date = document.getElementById("month").value;
+		y = document.getElementById("month").value;
 
 		
 		if( date !== ""){
-			m = date.substring(5);
-			y = date.substring(0, 4);
 		    chart.load({
 			   	bindto : "#chart",
 //		        unload: chart.columns,
