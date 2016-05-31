@@ -168,7 +168,7 @@
         data: {
           url: 'json/monthlyInteractionsJson.php',
           mimeType: 'json',
-          type: 'area',
+          type: 'bar',
         },
         axis: {
             x: {
