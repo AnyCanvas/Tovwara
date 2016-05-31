@@ -168,7 +168,7 @@
         "columnDefs": [
             {
 	            "targets": [ 0 ],
-                "data": function ( row, type, val, meta ) {
+                "render": function ( row, type, val, meta ) {
     				    if (type === 'set') {
 					    row.date = new Date(val * 1000);
 				        // Store the computed display and filter values for efficiency
