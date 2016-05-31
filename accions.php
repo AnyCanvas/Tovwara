@@ -172,7 +172,7 @@
                 // this case `data: 0`.
                 "render": function ( data, type, row ) {
 	                var date = new Date(data * 1000);
-                    return date.getTime();
+                    return date.getFullYear();
                     
                 },
                 "targets": 0
