@@ -184,7 +184,7 @@
 				      }
 				      // 'sort', 'type' and undefined all just use the integer
 				      return row.display;
-			    },
+			    }
             },
             {
                 // The `data` parameter refers to the data for the cell (defined by the
@@ -192,7 +192,6 @@
                 // this case `data: 0`.
                 "render": function ( data, type, row ) {
                     return '<a href="http://www.facebook.com/'+ row[4] +'" target="_blank">'+ data +'</a>';
-                    
                 },
                 "targets": 3
             },
