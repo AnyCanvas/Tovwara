@@ -78,7 +78,7 @@
 						<div class="position-center">
                             <div class="form-inline">
                             <div class="form-group">
-                                <label class="sr-only" for="month">Selecciona el mes</label>
+                                <label for="month">Selecciona el mes</label>
 								<input type="month" name="month" id="month">
                             </div>
                             <button id="reloadCharts" type="submit" class="btn btn-success">Cambiar</button>
