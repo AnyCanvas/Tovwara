@@ -78,7 +78,7 @@
 						<div class="position-center">
                             <div class="form-inline">
                             <div class="form-group">
-                                <label class="sr-only" for="year">Selecciona anuales</label>
+                                <label for="year">Selecciona año</label>
 								<input type="number" name="year" id="year" min="1">
                             </div>
                             <button id="reloadCharts" type="submit" class="btn btn-success">Cambiar</button>
