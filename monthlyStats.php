@@ -79,7 +79,7 @@
                             <div class="form-inline">
                             <div class="form-group">
                                 <label class="sr-only" for="year">Selecciona anuales</label>
-								<input type="number" name="year" id="year">
+								<input type="number" name="year" id="year" min="1">
                             </div>
                             <button id="reloadCharts" type="submit" class="btn btn-success">Cambiar</button>
                         </div>
@@ -230,7 +230,7 @@
 		y = document.getElementById("year").value;
 
 	    date = new Date();		
-		if( y !== "" && y <= date.getFullYear()){
+		if( y !== "" && y <= date.getFullYear() ){
 		    chart.load({
 			   	bindto : "#chart",
 //		        unload: chart.columns,
