@@ -224,10 +224,10 @@
 
 	  date = new Date();
 	  strDate = date.getFullYear();		  		  
-      document.getElementById("month").max = strDate;
+      document.getElementById("year").max = strDate;
 
 	$('#reloadCharts').on('click', function () {
-		y = document.getElementById("month").value;
+		y = document.getElementById("year").value;
 
 		
 		if( date !== ""){
