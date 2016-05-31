@@ -170,8 +170,8 @@
 	            "targets": 0,
 				"render": function ( data, type, full, meta ) {
 					date = new Date(data * 1000);
-				    sort  = val=="" ? "" : data;
-				    display = val=="" ? "" : row.date.getFullYear();
+				    sort  = data=="" ? "" : data;
+				    display = data=="" ? "" : row.date.getFullYear();
 
 				    if (type === 'display') {
 				        return display;
