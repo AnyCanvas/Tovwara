@@ -171,8 +171,21 @@
                 // `data` option, which defaults to the column being worked with, in
                 // this case `data: 0`.
                 "render": function ( data, type, row ) {
-	                var date = new Date(data * 1000);
-                    return date.getFullYear();
+				      if (type === 'set') {
+					    var row.date = new Date(data * 1000);
+				        // Store the computed display and filter values for efficiency
+				        row.display = val=="" ? "" : row.date.getFullYear();
+				        row.sort  = val=="" ? "" : data;
+				        return;
+				      }
+				      else if (type === 'display') {
+				        return row.display;
+				      }
+				      else if (type === 'sort') {
+				        return row.display;
+				      }
+				      // 'sort', 'type' and undefined all just use the integer
+				      return row.price;
                     
                 },
                 "targets": 0
