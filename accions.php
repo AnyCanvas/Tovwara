@@ -171,7 +171,7 @@
                 // `data` option, which defaults to the column being worked with, in
                 // this case `data: 0`.
                 "render": function ( data, type, row ) {
-	                var date = new Date(data * 1000).format('h:i:s')
+	                var date = new Date(data * 1000).format('h:i:s');
                     return date;
                     
                 },
