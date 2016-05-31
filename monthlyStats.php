@@ -230,7 +230,7 @@
 		y = document.getElementById("year").value;
 
 	    date = new Date();		
-		if( y !== "" && ( y <= date.getFullYear() || y >= 1 ) ){
+		if( y !== "" && y <= date.getFullYear() && y >= 1 ){
 		    chart.load({
 			   	bindto : "#chart",
 //		        unload: chart.columns,
@@ -249,7 +249,7 @@
 		    chart3.load({
 			   	bindto : "#chart3",
 //		        unload: chart.columns,
-				url: 'json/monthTotalJson.php?m=' + m + '&y=' + y,
+				url: 'json/monthTotalJson.php?y=' + y,
 				mimeType: 'json',	
 		    });
 
