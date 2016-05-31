@@ -167,7 +167,7 @@
 	    "order": [[ 0, 'asc' ], [ 1, 'asc' ]],
         "columnDefs": [
             {
-	            "targets": [ 0 ],
+	            "targets": 0,
                 "render": function ( row, type, val, meta ) {
     				    if (type === 'set') {
 					    row.date = new Date(val * 1000);
