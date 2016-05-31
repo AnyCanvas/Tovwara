@@ -168,10 +168,7 @@
         "columnDefs": [
             {
 	            "targets": 0,
-                // The `data` parameter refers to the data for the cell (defined by the
-                // `data` option, which defaults to the column being worked with, in
-                // this case `data: 0`.
-					"data": function ( row, type, val, meta ) {
+                "data": function ( row, type, val, meta ) {
     				    if (type === 'set') {
 					    row.date = new Date(val * 1000);
 				        // Store the computed display and filter values for efficiency
@@ -187,8 +184,7 @@
 				      }
 				      // 'sort', 'type' and undefined all just use the integer
 				      return row.display;
-                    
-                },
+			    },
             },
             {
                 // The `data` parameter refers to the data for the cell (defined by the
