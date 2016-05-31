@@ -78,8 +78,8 @@
 						<div class="position-center">
                             <div class="form-inline">
                             <div class="form-group">
-                                <label class="sr-only" for="month">Selecciona el mes</label>
-								<input type="number" name="month" id="month">
+                                <label class="sr-only" for="year">Selecciona anuales</label>
+								<input type="number" name="year" id="year">
                             </div>
                             <button id="reloadCharts" type="submit" class="btn btn-success">Cambiar</button>
                         </div>
@@ -223,11 +223,7 @@
       });
 
 	  date = new Date();
-	  if (date.getMonth() <= 9){
-		  strDate = date.getFullYear() + '-0' + (date.getMonth() + 1);		  		  
-	  } else {
-		  strDate = date.getFullYear() + '-' + date.getMonth();		  
-	  }
+	  strDate = date.getFullYear();		  		  
       document.getElementById("month").max = strDate;
 
 	$('#reloadCharts').on('click', function () {
