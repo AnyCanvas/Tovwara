@@ -171,7 +171,7 @@
 				"render": function ( data, type, full, meta ) {
 					date = new Date(data * 1000);
 				    sort  = data=="" ? "" : data;
-				    display = data=="" ? "" : date.getFullYear();
+				    display = data=="" ? "" : date.getDay() + '/' + date.getMonth() + '/' + date.getFullYear();
 
 				    if (type === 'display') {
 				        return display;
