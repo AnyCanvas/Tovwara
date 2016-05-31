@@ -172,20 +172,20 @@
                 // this case `data: 0`.
                 "render": function ( data, type, row ) {
 				      if (type === 'set') {
-					    row.date = new Date(data * 1000);
+					    date = new Date(data * 1000);
 				        // Store the computed display and filter values for efficiency
-				        row.display = val=="" ? "" : row.date.getFullYear();
-				        row.sort  = val=="" ? "" : data;
+				        displayData = val=="" ? "" : row.date.getFullYear();
+				        sortData  = val=="" ? "" : data;
 				        return;
 				      }
 				      else if (type === 'display') {
-				        return row.display;
+				        return displayData;
 				      }
 				      else if (type === 'sort') {
-				        return row.display;
+				        return rowData;
 				      }
 				      // 'sort', 'type' and undefined all just use the integer
-				      return row.price;
+				      return displayData;
                     
                 },
                 "targets": 0
