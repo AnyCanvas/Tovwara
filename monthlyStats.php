@@ -240,7 +240,7 @@
 		    chart.load({
 			   	bindto : "#chart",
 //		        unload: chart.columns,
-				url: 'json/interactionsJson.php?m=' + m + '&y=' + y,
+				url: 'json/monthlyInteractionsJson.php?y=' + y,
 				mimeType: 'json',	
 		    });
 		}
@@ -248,7 +248,7 @@
 		    chart2.load({
 			   	bindto : "#chart2",
 //		        unload: chart.columns,
-				url: 'json/interactionsJson.php?m=' + m + '&y=' + y,
+				url: 'json/monthlyInteractionsJson.php?y=' + y,
 				mimeType: 'json',	
 		    });
 
