@@ -2,5 +2,5 @@
 		// Check if user is logged in 
 		include "../resources/functions.php"; 	
 
-        interactionsJson();
+        interactionsTableJson();
 	?> 

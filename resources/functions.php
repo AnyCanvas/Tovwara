@@ -514,7 +514,7 @@ function listUsers(){
 
 	}	
 	
-function interactionsJson(){
+function interactionsTableJson(){
 	
 			
 		require(realpath(dirname(__FILE__) . "/./config.php"));
@@ -556,11 +556,11 @@ function interactionsJson(){
 				// Get de number of day from the date variable
 				$formatedDate = $date->format('d/m/y');
 				$formatedHour = $date->format('g:i a');		
-				$orderDate = $date->format('U');
+				$unixDate = $date->format('U');
 				
 				echo '[ ';
 //				echo "\t\t\t". '<td data-order="'. (1/$orderDate) .'">'. $formatedDate. '</td>'. "\r\n";
-				echo '"', $formatedDate . '", ';
+				echo '"', $unixDate . '", ';
 				echo '"', $formatedHour. '", ';
 				echo '"', $row['id'] .'", ';				
 //				echo '"', $row['fbID'] .'", ';

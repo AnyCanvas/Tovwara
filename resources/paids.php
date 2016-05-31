@@ -177,7 +177,6 @@ function fnbtAction(){
 					        	<option value="03">Premium</option>
 								<option value="00">Asombrandom</option>
 							</select>
-
 					  </div>
 
 <!-- Fanbot court date -->
