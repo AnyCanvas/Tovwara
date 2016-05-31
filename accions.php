@@ -167,6 +167,7 @@
 	    "order": [[ 0, 'asc' ], [ 1, 'asc' ]],
         "columnDefs": [
             {
+	            "targets": 0,
                 // The `data` parameter refers to the data for the cell (defined by the
                 // `data` option, which defaults to the column being worked with, in
                 // this case `data: 0`.
@@ -188,7 +189,6 @@
 				      return row.display;
                     
                 },
-                "targets": 0
             },
             {
                 // The `data` parameter refers to the data for the cell (defined by the
