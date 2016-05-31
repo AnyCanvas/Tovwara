@@ -170,22 +170,22 @@
                 // The `data` parameter refers to the data for the cell (defined by the
                 // `data` option, which defaults to the column being worked with, in
                 // this case `data: 0`.
-                "render": function ( data, type, row ) {
-				      if (type === 'set') {
-					    date = new Date(data * 1000);
+					"data": function ( row, type, val, meta ) {
+    				    if (type === 'set') {
+					    row.date = new Date(val * 1000);
 				        // Store the computed display and filter values for efficiency
-				        displayData = val=="" ? "" : row.date.getFullYear();
-				        sortData  = val=="" ? "" : data;
+				        row.display = val=="" ? "" : row.date.getFullYear();
+				        row.sort  = val=="" ? "" : val;
 				        return;
 				      }
 				      else if (type === 'display') {
-				        return displayData;
+				        return row.display;
 				      }
 				      else if (type === 'sort') {
-				        return rowData;
+				        return row.sort;
 				      }
 				      // 'sort', 'type' and undefined all just use the integer
-				      return displayData;
+				      return row.display;
                     
                 },
                 "targets": 0
