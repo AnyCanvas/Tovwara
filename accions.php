@@ -82,19 +82,25 @@
 							  </div>  
 								<div class="form-group">
 								  <div class="form-inline">
+      								<div class="form-group">
+
 									  <label for="sel1">Genero:</label>
 									  <select class="form-control" id="sel1">
 									    <option>Todos</option>
 									    <option>Hombres</option>
 									    <option>Mujer</option>
 									  </select>
+      								</div>
 
+    								<div class="form-group">
 									  <label for="sel1">Acción:</label>
 									  <select class="form-control" id="sel1">
 									    <option>Todos</option>
 									    <option>Like</option>
 									    <option>Check-in</option>
 									  </select>
+    								</div>
+    								
 								  </div>
 								</div>
 
