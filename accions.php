@@ -66,7 +66,7 @@
 	            <div class="col-sm-12">
 	                <section class="panel">
 	                    <header class="panel-heading">
-							Búsqueda avanzada
+							Filtrar
 	                    </header>
 	                    <div class="panel-body">
 
@@ -80,7 +80,7 @@
 								  </div>
 
     						      <div class="form-group">
-									<label for="sel1">Acción:</label>
+									<label for="sel1">Tipo de acción:</label>
 									  <select class="form-control" id="sel1">
 									    <option>Todos</option>
 									    <option>Like</option>
