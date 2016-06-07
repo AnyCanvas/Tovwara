@@ -78,10 +78,8 @@
 								    <input type="date" class="datepick" id="start-date"> a 
 								    <input type="date" class="datepicker" id="end-date">
 								  </div>
-								  <div class="form-group">
 								    <label for="pwd">Password:</label>
 								    <input type="password" class="form-control" id="pwd">
-								  </div>
 								  <div class="checkbox">
 								    <label><input type="checkbox"> Remember me</label>
 								  </div>
