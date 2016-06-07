@@ -81,12 +81,14 @@
 								</div>
 							  </div>  
 								<div class="form-group">
-								  <label for="sel1">Genero:</label>
-								  <select class="form-control" id="sel1">
-								    <option>Todos</option>
-								    <option>Hombres</option>
-								    <option>Mujer</option>
-								  </select>
+								  <div class="form-inline">
+									  <label for="sel1">Genero:</label>
+									  <select class="form-control" id="sel1">
+									    <option>Todos</option>
+									    <option>Hombres</option>
+									    <option>Mujer</option>
+									  </select>
+								  </div>
 								</div>
 
 								<div class="form-group">
