@@ -91,10 +91,10 @@
 							  </div>  
 
 						      <div class="form-inline">
-      						    <div class="form-group">
+      						    <div class="form-group  pull-right">
 
-    							  <button type="submit" class="btn btn-default pull-right">Buscar</button>
-    						 	  <button type="submit" class="btn btn-default pull-right">Limpiar</button>
+    							  <button type="submit" class="btn btn-default">Buscar</button>
+    						 	  <button type="submit" class="btn btn-default">Limpiar</button>
       						    </div>
 						      </div>
 
