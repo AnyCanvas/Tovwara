@@ -78,7 +78,6 @@
 								    <input type="date" class="datepick" id="start-date"> a 
 								    <input type="date" class="datepicker" id="end-date">
 								  </div>
-								</div>
 
     						  <div class="form-group">
 									  <label for="sel1">Acción:</label>
