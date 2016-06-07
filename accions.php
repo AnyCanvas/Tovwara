@@ -62,12 +62,23 @@
         <section class="wrapper">
         <!-- page start-->
 			<div class="row">
+				
 	            <div class="col-sm-12">
 	                <section class="panel">
+	                    <header class="panel-heading">
+							Búsqueda avanzada
+	                    </header>
 	                    <div class="panel-body">
-			                <div class="gauge-canvas">
-		                        <h4 class="widget-h">Mis Fanbot</h4>
-		                    </div>
+	                    </div>
+	                </section>
+	            </div>
+
+	            <div class="col-sm-12">
+	                <section class="panel">
+	                    <header class="panel-heading">
+							Tabla de acciones
+	                    </header>
+	                    <div class="panel-body">
 	                    <table  class="table" id="actionsTable">
 	                    <thead>
 	                    <tr>
