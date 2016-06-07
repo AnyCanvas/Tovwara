@@ -89,6 +89,15 @@
 									    <option>Mujer</option>
 									  </select>
 								  </div>
+
+								  <div class="form-inline">
+									  <label for="sel1">Acción:</label>
+									  <select class="form-control" id="sel1">
+									    <option>Todos</option>
+									    <option>Like</option>
+									    <option>Check-in</option>
+									  </select>
+								  </div>
 								</div>
 
 								<div class="form-group">
