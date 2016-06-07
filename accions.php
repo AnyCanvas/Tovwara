@@ -79,7 +79,7 @@
 								    <input type="date" class="datepicker" id="end-date">
 								  </div>
 								</div>
-
+							  </div>  
 								<div class="form-group">
 								  <label for="sel1">Genero:</label>
 								  <select class="form-control" id="sel1">
@@ -88,8 +88,12 @@
 								    <option>Mujer</option>
 								  </select>
 								</div>
+
+								<div class="form-group">
 							    <label for="email">Email address:</label>
 							    <input type="email" class="form-control" id="email">
+								</div>
+
     							<button type="submit" class="btn btn-default">Submit</button>
 							</form>	                    
 
