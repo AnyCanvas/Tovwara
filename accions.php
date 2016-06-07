@@ -237,6 +237,11 @@
             { "visible": false,  "targets": [ 4 ] }
         ],
 		});
+
+		$('#start-date, #end-date').on('change', function(){
+		    $('#end-date').attr('min', $('#start-date').val());
+		});
+
 	});
 </script>
 
