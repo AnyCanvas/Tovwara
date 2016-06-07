@@ -70,19 +70,20 @@
 	                    </header>
 	                    <div class="panel-body">
 
-						<div class="form-group">
-	                        <label class="col-sm-3 control-label">Fecha</label>
-	                        <div class="col-sm-6">
-	                            <input type="text" class="form-control">
-	                        </div>
-	                    </div>    
-
-						<div class="form-group">
-	                        <label class="col-sm-3 control-label">Hora</label>
-	                        <div class="col-sm-6">
-	                            <input type="text" class="form-control">
-	                        </div>
-	                    </div>    	                    
+							<form role="form">
+							  <div class="form-group">
+							    <label for="email">Email address:</label>
+							    <input type="email" class="form-control" id="email">
+							  </div>
+							  <div class="form-group">
+							    <label for="pwd">Password:</label>
+							    <input type="password" class="form-control" id="pwd">
+							  </div>
+							  <div class="checkbox">
+							    <label><input type="checkbox"> Remember me</label>
+							  </div>
+							  <button type="submit" class="btn btn-default">Submit</button>
+							</form>	                    
 
 	                    </div>
 	                </section>
