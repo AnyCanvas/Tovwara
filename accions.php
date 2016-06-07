@@ -75,7 +75,7 @@
 								<div class="form-inline">
 								  <div class="form-group">
 								    <label for="start-date">Rango de fecha:</label>
-								    <input type="date" class="datepicker" id="start-date"><b>/</b>
+								    <input type="date" class="datepicker" id="start-date"><b><h1>/</h1></b>
 								    <input type="date" class="datepicker" id="end-date">
 								  </div>
 
