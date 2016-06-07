@@ -74,8 +74,9 @@
 							  <div class="form-group">
 								<div class="form-inline">
 								  <div class="form-group">
-								    <label for="email">Email address:</label>
-								    <input type="email" class="form-control" id="email">
+								    <label for="email">Rango de fecha:</label>
+								    <input type="start-date" class="datepicker" id="start-date">
+								    <input type="end-date" class="datepicker" id="end-date">
 								  </div>
 								  <div class="form-group">
 								    <label for="pwd">Password:</label>
@@ -84,7 +85,6 @@
 								  <div class="checkbox">
 								    <label><input type="checkbox"> Remember me</label>
 								  </div>
-								  <button type="submit" class="btn btn-default">Submit</button>
 								</div>
 
 							    <label for="email">Email address:</label>
