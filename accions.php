@@ -79,20 +79,8 @@
 								    <input type="date" class="datepicker" id="end-date">
 								  </div>
 								</div>
-							  </div>  
-								<div class="form-group">
-								  <div class="form-inline">
-      								<div class="form-group">
 
-									  <label for="sel1">Genero:</label>
-									  <select class="form-control" id="sel1">
-									    <option>Todos</option>
-									    <option>Hombres</option>
-									    <option>Mujer</option>
-									  </select>
-      								</div>
-
-    								<div class="form-group">
+    						  <div class="form-group">
 									  <label for="sel1">Acción:</label>
 									  <select class="form-control" id="sel1">
 									    <option>Todos</option>
@@ -100,22 +88,17 @@
 									    <option>Check-in</option>
 									  </select>
     								</div>
-    								
-								  </div>
-								</div>
 
-								<div class="form-group">
-							    <label for="email">Email address:</label>
-							    <input type="email" class="form-control" id="email">
-								</div>
+							  </div>  
 
-						    <div class="form-inline">
+						      <div class="form-inline">
       						    <div class="form-group">
 
     							  <button type="submit" class="btn btn-default">Buscar</button>
     						 	  <button type="submit" class="btn btn-default">Limpiar</button>
       						    </div>
-						    </div>
+						      </div>
+
 							</form>	                    
 
 	                    </div>
