@@ -75,8 +75,8 @@
 								<div class="form-inline">
 								  <div class="form-group">
 								    <label for="email">Rango de fecha:</label>
-								    <input type="start-date" class="datepicker" id="start-date">
-								    <input type="end-date" class="datepicker" id="end-date">
+								    <input type="date" class="datepick" id="start-date">
+								    <input type="date" class="datepicker" id="end-date">
 								  </div>
 								  <div class="form-group">
 								    <label for="pwd">Password:</label>
