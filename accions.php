@@ -80,10 +80,17 @@
 								  </div>
 								</div>
 
+								<div class="form-group">
+								  <label for="sel1">Genero:</label>
+								  <select class="form-control" id="sel1">
+								    <option>Todos</option>
+								    <option>Hombres</option>
+								    <option>Mujer</option>
+								  </select>
+								</div>
 							    <label for="email">Email address:</label>
 							    <input type="email" class="form-control" id="email">
-
-							  <button type="submit" class="btn btn-default">Submit</button>
+    							<button type="submit" class="btn btn-default">Submit</button>
 							</form>	                    
 
 	                    </div>
