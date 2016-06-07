@@ -109,7 +109,13 @@
 							    <input type="email" class="form-control" id="email">
 								</div>
 
-    							<button type="submit" class="btn btn-default">Submit</button>
+						    <div class="form-inline">
+      						    <div class="form-group">
+
+    							  <button type="submit" class="btn btn-default">Buscar</button>
+    						 	  <button type="submit" class="btn btn-default">Limpiar</button>
+      						    </div>
+						    </div>
 							</form>	                    
 
 	                    </div>
