@@ -79,15 +79,15 @@
 								    <input type="date" class="datepicker" id="end-date">
 								  </div>
 
-    						  <div class="form-group">
-									  <label for="sel1">Acción:</label>
+    						      <div class="form-group">
+									<label for="sel1">Acción:</label>
 									  <select class="form-control" id="sel1">
 									    <option>Todos</option>
 									    <option>Like</option>
 									    <option>Check-in</option>
 									  </select>
-    								</div>
-
+    							  </div>
+							    </div>
 							  </div>  
 
 						      <div class="form-inline">
