@@ -93,8 +93,8 @@
 						      <div class="form-inline">
       						    <div class="form-group">
 
-    							  <button type="submit" class="btn btn-default">Buscar</button>
-    						 	  <button type="submit" class="btn btn-default">Limpiar</button>
+    							  <button type="submit" class="btn btn-default pull-right">Buscar</button>
+    						 	  <button type="submit" class="btn btn-default pull-right">Limpiar</button>
       						    </div>
 						      </div>
 
