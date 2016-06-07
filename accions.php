@@ -74,24 +74,31 @@
 	                        <div class="col-sm-6">
 	                            <input type="text" class="form-control">
 	                        </div>
+	                    </div>    
+						<div class="form-group">
 	                        <label class="col-sm-3 control-label">Hora</label>
 	                        <div class="col-sm-6">
 	                            <input type="text" class="form-control">
 	                        </div>
+	                    </div>    	                    
+						<div class="form-group">
 	                        <label class="col-sm-3 control-label">Acción </label>
 	                        <div class="col-sm-6">
 	                            <input type="text" class="form-control">
 	                        </div>
+	                    </div>    	                    
+						<div class="form-group">
 	                        <label class="col-sm-3 control-label">Pagina de Facebook </label>
 	                        <div class="col-sm-6">
 	                            <input type="text" class="form-control">
 	                        </div>
+	                    </div>    	                    
+						<div class="form-group">
 	                        <label class="col-sm-3 control-label">Maquina</label>
 	                        <div class="col-sm-6">
 	                            <input type="text" class="form-control">
 	                        </div>
                         </div>
-
 	                    </div>
 	                </section>
 	            </div>
