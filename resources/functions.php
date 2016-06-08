@@ -627,7 +627,7 @@ function usersTableJson()
 				echo ',';
 			}
 			// Create a new date var from date in db
-			$date =new DateTime($row['date']);
+			$date =new DateTime($row['createdDate']);
 			// Get de number of day from the date variable
 			$formatedDate = $date->format('d/m/y');
 			$formatedHour = $date->format('g:i a');
