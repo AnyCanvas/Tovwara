@@ -252,7 +252,7 @@ $(document).ready( function () {
                 "render": function ( data, type, full, meta ) {
                     date = new Date(data * 1000);
                     sort  = data=="" ? "" : data;
-                    display = data=="" ? "" : date.getDay() + '/' + date.getMonth() + '/' + date.getFullYear();
+                    display = data=="" ? "" : date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear();
 
                     if (type === 'display') {
                         return display;
