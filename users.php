@@ -255,7 +255,7 @@ $(document).ready( function () {
         "order": [[ 0, 'asc' ], [ 1, 'asc' ]],
         "columnDefs": [
             {
-                "targets": 0,
+                "targets": 8,
                 "render": function ( data, type, full, meta ) {
                     date = new Date(data * 1000);
                     sort  = data=="" ? "" : data;

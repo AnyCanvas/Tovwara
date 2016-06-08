@@ -245,10 +245,10 @@ $(document).ready( function () {
         buttons: [
             'csv', 'pdf'
         ],
-        "order": [[ 9, 'asc' ], [ 0, 'asc' ]],
+        "order": [[ 0, 'asc' ], [ 1, 'asc' ]],
         "columnDefs": [
             {
-                "targets": 10,
+                "targets": 0,
                 "render": function ( data, type, full, meta ) {
                     date = new Date(data * 1000);
                     sort  = data=="" ? "" : data;
@@ -269,11 +269,11 @@ $(document).ready( function () {
                 // `data` option, which defaults to the column being worked with, in
                 // this case `data: 0`.
                 "render": function ( data, type, row ) {
-                    return '<a href="http://www.facebook.com/'+ row[3] +'" target="_blank">'+ data +'<\/a>';
+                    return '<a href="http://www.facebook.com/'+ row[4] +'" target="_blank">'+ data +'<\/a>';
                 },
-                "targets": 9
+                "targets": 3
             },
-            { "visible": false,  "targets": [ 3 ] }
+            { "visible": false,  "targets": [ 4 ] }
         ],
         });
 
