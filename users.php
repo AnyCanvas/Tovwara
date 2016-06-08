@@ -258,7 +258,7 @@ $(document).ready( function () {
         buttons: [
             'csv', 'pdf'
         ],
-        "order": [[ 0, 'asc' ], [ 1, 'asc' ]],
+        "order": [[ 9, 'asc' ], [ 0, 'asc' ]],
         "columnDefs": [
             {
                 "targets": 9,
