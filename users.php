@@ -115,56 +115,62 @@
                                         <thead>
                                             <tr>
                                                 <th>
-                                                    Fecha
-                                                </th>
-                                                <th>
-                                                    Hora
-                                                </th>
-                                                <th>
                                                     ID
                                                 </th>
                                                 <th>
                                                     Nombre
                                                 </th>
                                                 <th>
-                                                    FB id
+                                                    Apellido
                                                 </th>
                                                 <th>
-                                                    Acción
+                                                    Email
                                                 </th>
                                                 <th>
-                                                    Pagina de Facebook
+                                                    Sexo
                                                 </th>
                                                 <th>
-                                                    Fanbot
+                                                    Likes
+                                                </th>
+                                                <th>
+                                                    Check-in
+                                                </th>
+                                                <th>
+                                                    Totales
+                                                </th>
+                                                <th>
+                                                    Creado
                                                 </th>
                                             </tr>
                                         </thead>
                                         <tfoot>
                                             <tr>
                                                 <th>
-                                                    Fecha
-                                                </th>
-                                                <th>
-                                                    Hora
-                                                </th>
-                                                <th>
                                                     ID
                                                 </th>
                                                 <th>
                                                     Nombre
                                                 </th>
                                                 <th>
-                                                    FB id
+                                                    Apellido
                                                 </th>
                                                 <th>
-                                                    Acción
+                                                    Email
                                                 </th>
                                                 <th>
-                                                    Pagina de Facebook
+                                                    Sexo
                                                 </th>
                                                 <th>
-                                                    Fanbot
+                                                    Likes
+                                                </th>
+                                                <th>
+                                                    Check-in
+                                                </th>
+                                                <th>
+                                                    Totales
+                                                </th>
+                                                <th>
+                                                    Creado
                                                 </th>
                                             </tr>
                                         </tfoot>
