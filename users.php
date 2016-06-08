@@ -107,7 +107,7 @@
                         <div class="col-sm-12">
                             <section class="panel">
                                 <header class="panel-heading">
-                                    Tabla de acciones
+                                    Tabla de usuarios
                                 </header>
                                 <div class="panel-body">
                                     <table class="table"
@@ -243,7 +243,7 @@
 $(document).ready( function () {
 
         var table = $('#actionsTable').DataTable({
-        "ajax": 'json/interactionsTableJson.php',
+        "ajax": 'json/usersTableJson.php',
         language: {
                 url: 'https://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json'
             },

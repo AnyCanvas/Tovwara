@@ -559,16 +559,14 @@ function interactionsTableJson(){
 				$unixDate = $date->format('U');
 				
 				echo '[ ';
-//				echo "\t\t\t". '<td data-order="'. (1/$orderDate) .'">'. $formatedDate. '</td>'. "\r\n";
-				echo '"', $unixDate . '", ';
-				echo '"', $formatedHour. '", ';
+				echo '"'. $unixDate . '", ';
+				echo '"'. $formatedHour. '", ';
 				echo '"', $row['id'] .'", ';				
-//				echo '"', $row['fbID'] .'", ';
 				echo '"'. $row['fbName']. '", ';
 				echo '"'. $row['fbID']. '", ';
-			    echo '"', $row['action']. '", ';
-			    echo '"', $row['fbPage']. '", ';
-			    echo '"', $row['fanbotId']. '"';
+			    echo '"'. $row['action']. '", ';
+			    echo '"'. $row['fbPage']. '", ';
+			    echo '"'. $row['fanbotId']. '"';
 			    
 
 			    echo ' ]';
@@ -586,6 +584,82 @@ function interactionsTableJson(){
 
 			}
 }	
+
+function usersTableJson()
+{
+
+	require(realpath(dirname(__FILE__) . "/./config.php"));
+	$servername = $config["db"]["fanbot"]["host"];
+	$username = $config["db"]["fanbot"]["username"];
+	$password = $config["db"]["fanbot"]["password"];
+	$dbname = $config["db"]["fanbot"]["dbname"];
+
+	// Create connection
+	$conn = new mysqli($servername, $username, $password, $dbname);
+	// Check connection
+	if ($conn->connect_error)
+	{
+		die("Connection failed: " . $conn->connect_error);
+	}
+
+	//  if ( $_SESSION['userId'] == '00'){
+	$sql = "SELECT  COUNT(t2.fbId), COUNT(CASE WHEN t1.action = 'post' THEN +1 END), COUNT(CASE WHEN t1.action = 'like' THEN +1 END), t2.id, t2.firstName,t2.lastName, t2.fbId, t2.email, t2.gender, t2.createdDate FROM interactions t1, users t2 WHERE t1.userId = t2.fbID GROUP BY t2.fbId;";
+	//   }else{
+	//   $sql = "SELECT COUNT(t2.fbId), COUNT(CASE WHEN t1.action = 'post' THEN +1 END), COUNT(CASE WHEN t1.action = 'like' THEN +1 END), t2.id, t2.firstName,t2.lastName, t2.fbId, t2.email, t2.gender, t2.createdDate FROM interactions t1, users t2 WHERE t1.userId = t2.fbID AND t1.clientId=" . $_SESSION['userId']. "  GROUP BY t2.fbId;";
+
+	//  }
+	$result = $conn->query($sql);
+
+
+	echo  '{ "data": [';
+
+	$i = 0;
+	if ($result->num_rows > 0)
+	{
+		while
+		($row = $result->fetch_assoc())
+		{
+			if ($i == 0)
+			{
+				$i++;
+			} else
+			{
+				echo ',';
+			}
+			// Create a new date var from date in db
+			$date =new DateTime($row['date']);
+			// Get de number of day from the date variable
+			$formatedDate = $date->format('d/m/y');
+			$formatedHour = $date->format('g:i a');
+			$unixDate = $date->format('U');
+
+			echo '[ ';
+			echo '"'. $row['id'] . '", ';
+			echo '"'. $row['firstName'] .'", ';
+			echo '"'. $row['lastName']. '", ';
+			echo '"'. $row['fbID']. '", ';
+			echo '"'. $row['email']. '", ';
+			echo '"'. $row['gender']. '", ';
+			echo '"'. $row['COUNT(CASE WHEN t1.action = \'like\' THEN +1 END)'] . '"';
+			echo '"'. $row['COUNT(CASE WHEN t1.action = \'post\' THEN +1 END)'] . '"';
+			echo '"'. $row['COUNT(t2.fbId)'] . '"';
+			echo '"'. $unixDate . '"';
+
+
+			echo ' ]';
+		}
+		$conn->close();
+		echo  '] }';
+		return TRUE;
+	} else
+	{
+		$conn->close();
+		echo '[ ]';
+		echo  '] }';
+		return FALSE;
+
+	}
+}
 
 function addFanbot(){
 
