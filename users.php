@@ -91,6 +91,22 @@
                                                         </option>
                                                     </select>
                                                 </div>
+                                                <div class="form-group">
+                                                    <label for="sel1">Genero:</label> <select class="form-control"
+                                                         id="sel1">
+                                                        <option>
+                                                            Todos
+                                                        </option>
+                                                        <option>
+                                                            Hombre
+                                                        </option>
+                                                        <option>
+                                                            Mujer
+                                                        </option>
+                                                    </select>
+                                                </div>
+
+
                                             </div>
                                         </div>
                                         <div class="form-inline">
