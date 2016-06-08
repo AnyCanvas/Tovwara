@@ -637,7 +637,7 @@ function usersTableJson()
 			echo '"'. $row['id'] . '", ';
 			echo '"'. $row['firstName'] .'", ';
 			echo '"'. $row['lastName']. '", ';
-			echo '"'. $row['fbID']. '", ';
+			echo '"'. $row['fbId']. '", ';
 			echo '"'. $row['email']. '", ';
 			echo '"'. $row['gender']. '", ';
 			echo '"'. $row['COUNT(CASE WHEN t1.action = \'like\' THEN +1 END)'] . '"';
