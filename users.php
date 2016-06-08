@@ -260,7 +260,7 @@ $(document).ready( function () {
         ],
         "order": [ [ 9, 'asc' ] ],
         "columnDefs": [
-            {
+/*            {
                 "targets": 9,
                 "render": function ( data, type, full, meta ) {
                     date = new Date(data * 1000);
@@ -276,7 +276,7 @@ $(document).ready( function () {
                       // 'sort', 'type' and undefined all just use the integer
                       return display;
                 }
-            },
+            },*/
             {
                 // The `data` parameter refers to the data for the cell (defined by the
                 // `data` option, which defaults to the column being worked with, in
