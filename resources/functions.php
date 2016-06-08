@@ -627,10 +627,14 @@ function usersTableJson()
 				echo ',';
 			}
 			// Create a new date var from date in db
+			if ($row['createdDate'] != ""){
 			$date =new DateTime($row['createdDate']);
 			// Get de number of day from the date variable
 			$unixDate = $date->format('U');
-
+			} else {
+			$unixDate = "";	
+			}
+			
 			echo '[ ';
 			echo '"'. $row['id'] . '", ';
 			echo '"'. $row['firstName'] .'", ';
