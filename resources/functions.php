@@ -640,9 +640,9 @@ function usersTableJson()
 			echo '"'. $row['fbId']. '", ';
 			echo '"'. $row['email']. '", ';
 			echo '"'. $row['gender']. '", ';
-			echo '"'. $row['COUNT(CASE WHEN t1.action = \'like\' THEN +1 END)'] . '"';
-			echo '"'. $row['COUNT(CASE WHEN t1.action = \'post\' THEN +1 END)'] . '"';
-			echo '"'. $row['COUNT(t2.fbId)'] . '"';
+			echo '"'. $row['COUNT(CASE WHEN t1.action = \'like\' THEN +1 END)'] . '", ';
+			echo '"'. $row['COUNT(CASE WHEN t1.action = \'post\' THEN +1 END)'] . '", ';
+			echo '"'. $row['COUNT(t2.fbId)'] . '", ';
 			echo '"'. $unixDate . '"';
 
 
