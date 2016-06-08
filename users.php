@@ -280,7 +280,7 @@ $(document).ready( function () {
                 },
                 "targets": 1
             },
-            { "visible": false,  "targets": [ 4 ] }
+            { "visible": false,  "targets": [ 3 ] }
         ],
         });
 
