@@ -258,7 +258,7 @@ $(document).ready( function () {
         buttons: [
             'csv', 'pdf'
         ],
-        "order": [ [ 10, 'asc' ] ],
+//        "order": [ [ 9, 'asc' ] ],
         "columnDefs": [
 /*            {
                 "targets": 9,
@@ -290,9 +290,9 @@ $(document).ready( function () {
         ],
         });
 
-        $('#start-date, #end-date').on('change', function(){
-            $('#end-date').attr('min', $('#start-date').val());
-        });
+//        $('#start-date, #end-date').on('change', function(){
+//            $('#end-date').attr('min', $('#start-date').val());
+//        });
 
         });
         </script>
