@@ -18,7 +18,7 @@
         <link rel="shortcut icon"
               href="images/favicon.png">
         <title>
-            Acciones
+            Usuarios
         </title><!--Core CSS -->
         <link href="bs3/css/bootstrap.min.css"
               rel="stylesheet"
