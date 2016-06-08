@@ -260,10 +260,12 @@ $(document).ready( function () {
         ],
         "order": [ [ 9, 'desc' ] ],
         "columnDefs": [
-   /*         {
+           {
                 "targets": 9,
                 "render": function ( data, type, full, meta ) {
-                    date = new Date(data * 1000);
+					var utcSeconds = data;
+					var date = new Date(0); // The 0 there is the key, which sets the date to the epoch
+					date.setUTCSeconds(utcSeconds);	                
                     sort  = data=="" ? "" : data;
                     display = data=="" ? "" : date.getDay() + '/' + date.getMonth() + '/' + date.getFullYear();
 
@@ -276,7 +278,7 @@ $(document).ready( function () {
                       // 'sort', 'type' and undefined all just use the integer
                       return display;
                 }
-            }, */
+            }, 
             {
                 // The `data` parameter refers to the data for the cell (defined by the
                 // `data` option, which defaults to the column being worked with, in
