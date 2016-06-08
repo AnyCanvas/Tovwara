@@ -124,6 +124,9 @@
                                                     Apellido
                                                 </th>
                                                 <th>
+                                                    FB id
+                                                </th>
+                                                <th>
                                                     Email
                                                 </th>
                                                 <th>
@@ -153,6 +156,9 @@
                                                 </th>
                                                 <th>
                                                     Apellido
+                                                </th>
+                                                <th>
+                                                    FB id
                                                 </th>
                                                 <th>
                                                     Email
