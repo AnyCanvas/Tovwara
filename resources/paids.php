@@ -86,7 +86,7 @@
 																	?></td>
 																	<td>
 									                                <a class="btn btn-primary btn-xs" onclick="callModal('<?php echo $row['id']. "','". $row['plan']. "','". $row['courtDate']. "','". $row['freeMonth']. "','". $row['estatus'];?>')">
-										                                <span class="fa fa-cog" aria-hidden="true"></span> Editar
+										                                <span class="fa fa-cog" aria-hidden="true"></span> Corte
 										                                </a>
 									                                </td>	
 									                                <td>					
