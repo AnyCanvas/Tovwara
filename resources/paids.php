@@ -168,42 +168,19 @@ function fnbtAction(){
 
 				<form class="form" action="change_page.php" method="get" id="formUrl">
 
-<!-- Fanbot plan label -->
-					  <div class="form-group">
-							<label for="fanbotPlan" class="control-label">Mes gratis: </label>
-							<select class="form-control" id="fanbotPlan">
-					        	<option value="01">Basic</option>
-								<option value="02">Pro</option>
-					        	<option value="03">Premium</option>
-								<option value="00">Asombrandom</option>
-							</select>
-					  </div>
-
 <!-- Fanbot court date -->
 					  <div class="form-group">
 							<label for="courtDate">Dia de corte:</label>
 							<input type="date" class="form-control" id="courtDate"></select>
 					  </div>
 
-<!-- Fanbot free month -->
-					  <div class="form-group">
-							<label for="freeMonth" class="control-label">Mes gratis: </label>
-							<select class="form-control" id="freeMonth">
-					        	<option value="1">Si</option>
-								<option value="0">No</option>
-							</select>
-
-					  </div>
-
 <!-- Fanbot paid status -->
 					  <div class="form-group">
 							<label class="control-label">Estado de pago: </label>
-
 							<select class="form-control" id="paidStatus">
 					        	<option value="1">Pagado</option>
 								<option value="0">Vencido</option>
 							</select>
-					  
 					  </div>
 					  					  					  
 					  <div class="form-group">
