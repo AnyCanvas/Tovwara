@@ -78,20 +78,6 @@
                                                          id="end-date">
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="sel1">Tipo de acción:</label> <select class="form-control"
-                                                         id="sel1">
-                                                        <option>
-                                                            Todos
-                                                        </option>
-                                                        <option>
-                                                            Like
-                                                        </option>
-                                                        <option>
-                                                            Check-in
-                                                        </option>
-                                                    </select>
-                                                </div>
-                                                <div class="form-group">
                                                     <label for="sel1">Genero:</label> <select class="form-control"
                                                          id="sel1">
                                                         <option>
