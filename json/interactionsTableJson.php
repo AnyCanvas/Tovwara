@@ -2,6 +2,10 @@
 		// Check if user is logged in 
 		include "../resources/functions.php"; 	
 
+		if (!isLogged()){
+			exit;
+		}	
+
 		if( isset($_GET["sD"]) && isset($_GET["eD"])){
 			$startDate = $_GET["sD"];
 			$endDate = $_GET["eD"];
