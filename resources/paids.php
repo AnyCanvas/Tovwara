@@ -86,7 +86,7 @@
 																	?></td>
 																	<td>
 									                                <a class="btn btn-primary btn-xs" onclick="callModal('<?php echo $row['id']. "','". $row['plan']. "','". $row['courtDate']. "','". $row['freeMonth']. "','". $row['estatus'];?>')">
-										                                <span class="fa fa-cog" aria-hidden="true"></span> Corte
+										                                <span class="fa fa-cog" aria-hidden="true"></span> Editar
 										                                </a>
 									                                </td>	
 									                                <td>					
@@ -168,19 +168,75 @@ function fnbtAction(){
 
 				<form class="form" action="change_page.php" method="get" id="formUrl">
 
+<!-- Fanbot plan label -->
+					  <div class="form-group">
+							<label for="fanbotPlan" class="control-label">Mes gratis: </label>
+							<select class="form-control" id="fanbotPlan">
+					        	<option value="01">Basic</option>
+								<option value="02">Pro</option>
+					        	<option value="03">Premium</option>
+								<option value="00">Asombrandom</option>
+							</select>
+
+					  </div>
+
 <!-- Fanbot court date -->
 					  <div class="form-group">
 							<label for="courtDate">Dia de corte:</label>
-							<input type="date" class="form-control" id="courtDate"></select>
+							<select class="form-control" id="courtDate">
+					        <option>1</option>
+					        <option>2</option>
+					        <option>3</option>
+					        <option>4</option>
+					        <option>5</option>
+					        <option>6</option>
+					        <option>7</option>
+					        <option>8</option>
+					        <option>9</option>
+					        <option>10</option>
+					        <option>11</option>
+					        <option>12</option>
+					        <option>13</option>
+					        <option>14</option>
+					        <option>15</option>
+					        <option>16</option>
+					        <option>17</option>
+					        <option>18</option>
+					        <option>19</option>
+					        <option>20</option>
+					        <option>21</option>
+					        <option>22</option>
+					        <option>23</option>
+					        <option>24</option>
+					        <option>25</option>
+					        <option>26</option>
+					        <option>27</option>
+					        <option>28</option>
+					        <option>29</option>
+					        <option>30</option>
+					        <option>31</option>
+					      </select>
+					  </div>
+
+<!-- Fanbot free month -->
+					  <div class="form-group">
+							<label for="freeMonth" class="control-label">Mes gratis: </label>
+							<select class="form-control" id="freeMonth">
+					        	<option value="1">Si</option>
+								<option value="0">No</option>
+							</select>
+
 					  </div>
 
 <!-- Fanbot paid status -->
 					  <div class="form-group">
 							<label class="control-label">Estado de pago: </label>
+
 							<select class="form-control" id="paidStatus">
 					        	<option value="1">Pagado</option>
 								<option value="0">Vencido</option>
 							</select>
+					  
 					  </div>
 					  					  					  
 					  <div class="form-group">
