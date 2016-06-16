@@ -479,7 +479,7 @@ function interactionsTableJson($userId)
 }
 
 
-function usersTableJson($userId)
+function usersTableJson($userId, $startDate, $endDate, $gender)
 {
 
 	require(realpath(dirname(__FILE__) . "/./config.php"));
