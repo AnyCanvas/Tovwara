@@ -78,8 +78,8 @@
 						<div class="position-center">
                             <div class="form-inline">
                             <div class="form-group">
-                                <label for="month">Selecciona el mes</label>
-								<input type="month" name="month" id="month">
+                                <label for="year">Selecciona año</label>
+								<input type="number" name="year" id="year" min="1">
                             </div>
                             <button id="reloadCharts" type="submit" class="btn btn-success">Cambiar</button>
                         </div>
@@ -166,9 +166,9 @@
       var chart = c3.generate({
 	  	bindto: '#chart',
         data: {
-          url: 'json/interactionsJson.php',
+          url: 'json/monthlyInteractionsJson.php',
           mimeType: 'json',
-          type: 'area',
+          type: 'bar',
         },
         axis: {
             x: {
@@ -184,7 +184,7 @@
         },
 		tooltip: {
 		  format: {
-		    title: function (x) { return 'Día ' + x + "º"; }
+		    title: function (x) { return 'Mes ' + x; }
 		  }
 		},
       });
@@ -192,7 +192,7 @@
       var chart2 = c3.generate({
 	  	bindto: '#chart2',
         data: {
-          url: 'json/interactionsJson.php',
+          url: 'json/monthlyInteractionsJson.php',
           mimeType: 'json',
           type : 'pie',
           hide: ['Total'],
@@ -223,24 +223,18 @@
       });
 
 	  date = new Date();
-	  if (date.getMonth() <= 9){
-		  strDate = date.getFullYear() + '-0' + (date.getMonth() + 1);		  		  
-	  } else {
-		  strDate = date.getFullYear() + '-' + date.getMonth();		  
-	  }
-      document.getElementById("month").max = strDate;
+	  strDate = date.getFullYear();		  		  
+      document.getElementById("year").max = strDate;
 
 	$('#reloadCharts').on('click', function () {
-		date = document.getElementById("month").value;
+		y = document.getElementById("year").value;
 
-		
-		if( date !== ""){
-			m = date.substring(5);
-			y = date.substring(0, 4);
+	    date = new Date();		
+		if( y !== "" && y <= date.getFullYear() && y >= 1 ){
 		    chart.load({
 			   	bindto : "#chart",
 //		        unload: chart.columns,
-				url: 'json/interactionsJson.php?m=' + m + '&y=' + y,
+				url: 'json/monthlyInteractionsJson.php?y=' + y,
 				mimeType: 'json',	
 		    });
 		}
@@ -248,14 +242,14 @@
 		    chart2.load({
 			   	bindto : "#chart2",
 //		        unload: chart.columns,
-				url: 'json/interactionsJson.php?m=' + m + '&y=' + y,
+				url: 'json/monthlyInteractionsJson.php?y=' + y,
 				mimeType: 'json',	
 		    });
 
 		    chart3.load({
 			   	bindto : "#chart3",
 //		        unload: chart.columns,
-				url: 'json/monthTotalJson.php?m=' + m + '&y=' + y,
+				url: 'json/monthTotalJson.php?y=' + y,
 				mimeType: 'json',	
 		    });
 
