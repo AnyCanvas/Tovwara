@@ -11,5 +11,5 @@
 			$interactionType = $_GET["iT"];
 		}
 
-        interactionsTableJson();
+        interactionsTableJson($_SESSION['userId']);
 	?> 
