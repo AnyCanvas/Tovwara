@@ -10,5 +10,5 @@
 		if( isset($_GET["g"]) ){
 			$gender = $_GET["g"];
 		}
-		usersTableJson();
+		usersTableJson($_SESSION['userId']);
 	?> 

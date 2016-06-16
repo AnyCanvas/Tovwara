@@ -397,7 +397,7 @@ function likesJson($month, $year, $fnbtId, $clientId)
 }
 
 
-function interactionsTableJson()
+function interactionsTableJson($userId)
 {
 
 
@@ -422,7 +422,7 @@ function interactionsTableJson()
 		$sql = "SELECT t2.fbID, t2.fbName, t2.id, t1.fbPage , t1.action, t1.date, t1.fanbotId FROM interactions t1, users t2 WHERE t1.userId = t2.fbID ORDER by t1.`date` DESC;";
 	}else
 	{
-		$sql = "SELECT t2.fbID, t2.fbName, t2.id, t1.fbPage , t1.action, t1.date, t1.fanbotId FROM interactions t1, users t2 WHERE t1.userId = t2.fbID AND t1.`clientId`=". $_SESSION['userId']. " ORDER by t1.`date` DESC;";
+		$sql = "SELECT t2.fbID, t2.fbName, t2.id, t1.fbPage , t1.action, t1.date, t1.fanbotId FROM interactions t1, users t2 WHERE t1.userId = t2.fbID AND t1.`clientId`=". $userId . " ORDER by t1.`date` DESC;";
 	}
 
 	$result = $conn->query($sql);
@@ -479,7 +479,7 @@ function interactionsTableJson()
 }
 
 
-function usersTableJson()
+function usersTableJson($userId)
 {
 
 	require(realpath(dirname(__FILE__) . "/./config.php"));
@@ -496,10 +496,10 @@ function usersTableJson()
 		die("Connection failed: " . $conn->connect_error);
 	}
 
-	  if ( $_SESSION['userId'] == '00'){
+	  if ( $_SESSION["userId"] == '00'){
 	$sql = "SELECT  COUNT(t2.fbId), COUNT(CASE WHEN t1.action = 'post' THEN +1 END), COUNT(CASE WHEN t1.action = 'like' THEN +1 END), t2.id, t2.firstName,t2.lastName, t2.fbId, t2.email, t2.gender, t2.createdDate FROM interactions t1, users t2 WHERE t1.userId = t2.fbID GROUP BY t2.fbId;";
 	   }else{
-	$sql = "SELECT  COUNT(t2.fbId), COUNT(CASE WHEN t1.action = 'post' THEN +1 END), COUNT(CASE WHEN t1.action = 'like' THEN +1 END), t2.id, t2.firstName,t2.lastName, t2.fbId, t2.email, t2.gender, t2.createdDate FROM interactions t1, users t2 WHERE t1.userId = t2.fbID AND t1.clientId=" . $_SESSION['userId']. " GROUP BY t2.fbId;";
+	$sql = "SELECT  COUNT(t2.fbId), COUNT(CASE WHEN t1.action = 'post' THEN +1 END), COUNT(CASE WHEN t1.action = 'like' THEN +1 END), t2.id, t2.firstName,t2.lastName, t2.fbId, t2.email, t2.gender, t2.createdDate FROM interactions t1, users t2 WHERE t1.userId = t2.fbID AND t1.clientId=" . $userId . " GROUP BY t2.fbId;";
 
 	  }
 	$result = $conn->query($sql);
