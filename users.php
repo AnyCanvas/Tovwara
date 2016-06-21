@@ -38,51 +38,6 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
-<<<<<<< HEAD
-    </head>
-    <body>
-        <section id="container">
-            <!-- Header start -->
-            <?php require_once("resources/header.php"); ?><!-- Header end -->
-            <!-- Left sidebar start -->
-            <?php require_once("resources/leftSidebar.php"); ?><!-- Left sidebar end -->
-            <!--main content start-->
-            <section id="main-content">
-                <section class="wrapper">
-                    <!-- page start-->
-                    <!-- page start-->
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <section class="panel">
-                                <header class="panel-heading">
-                                    Filtrar
-                                </header>
-                                <div class="panel-body">
-                                    <form role="form">
-                                        <div class="form-group">
-                                            <div class="form-inline">
-                                                <div class="form-group">
-                                                    <label for="start-date">Rango de fecha:</label> <input type="date"
-                                                         class="datepicker"
-                                                         id="start-date"><b>/</b> <input type="date"
-                                                         class="datepicker"
-                                                         id="end-date">
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="sel1">Genero:</label> <select class="form-control"
-                                                         id="sel1">
-                                                        <option>
-                                                            Todos
-                                                        </option>
-                                                        <option>
-                                                            Hombre
-                                                        </option>
-                                                        <option>
-                                                            Mujer
-                                                        </option>
-                                                    </select>
-                                                </div>
-=======
 </head>
 <body>
 
@@ -141,7 +96,6 @@
 
 <!--common script init for all pages-->
 <script src="js/scripts.js"></script>
->>>>>>> parent of 6fb2818... Merge branch 'development'
 
 <!-- Data tables-->
 <script src="css/datatables/js/jquery.dataTables.js"></script>
