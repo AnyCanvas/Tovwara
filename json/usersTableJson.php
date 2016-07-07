@@ -1,5 +1,7 @@
 <?php
 // Check if user is logged in
+// sD = Start date, uG = User gender, Interaction type.
+
 include "../resources/functions.php";
 
 if (!isLogged())
@@ -10,33 +12,22 @@ if (!isLogged())
 if
 ( isset($_GET["sD"]) && isset($_GET["eD"]))
 {
-	$startDate = $_GET["sD"];
-	$endDate = $_GET["eD"];
+	$sD = $_GET["sD"];
+	$eD = $_GET["eD"];
 } else
 {
-	$startDate = $endDate = '';
+	$sD = $eD = 0;
 }
 
 if
-( isset($_GET["g"]) )
+( isset($_GET["uG"]) )
 {
-	$gender = $_GET["g"];
+	$uG = $_GET["uG"];
 } else
 {
-	$gender = '';
+	$uG = 0;
 }
 
-if ($startDate != '' && $endDate != '' && $gender != '')
-{
+usersTableJson($_SESSION['userId'], $sD, $eD, $uG);
 
-} else if ( $startDate != '' && $endDate != '' )
-	{
-	usersTableJson($_SESSION['userId'], $startDate, $endDate, 0);
-	} else if ( $gender != '' )
-	{
-		usersTableJson($_SESSION['userId'], 0, 0, $gender);
-	} else
-{
-	usersTableJson($_SESSION['userId'], 0, 0, 0);
-}
 ?>

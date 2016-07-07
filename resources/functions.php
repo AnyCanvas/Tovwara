@@ -397,7 +397,7 @@ function likesJson($month, $year, $fnbtId, $clientId)
 }
 
 
-function interactionsTableJson($userId)
+function interactionsTableJson($userId, $sD, $eD, $iT)
 {
 
 
@@ -417,12 +417,31 @@ function interactionsTableJson($userId)
 		die("Connection failed: " . $conn->connect_error);
 	}
 
-	if ( $userId == '00')
+	$sql = "SELECT t2.fbID, t2.fbName, t2.id, t1.fbPage , t1.action, t1.date, t1.fanbotId FROM interactions t1, users t2 WHERE t1.userId = t2.fbID";
+
+	if ( $sd != 0 && $eD != 0)
 	{
-		$sql = "SELECT t2.fbID, t2.fbName, t2.id, t1.fbPage , t1.action, t1.date, t1.fanbotId FROM interactions t1, users t2 WHERE t1.userId = t2.fbID ORDER by t1.`date` DESC;";
+		$sql .= "";
 	}else
 	{
-		$sql = "SELECT t2.fbID, t2.fbName, t2.id, t1.fbPage , t1.action, t1.date, t1.fanbotId FROM interactions t1, users t2 WHERE t1.userId = t2.fbID AND t1.`clientId`=". $userId . " ORDER by t1.`date` DESC;";
+		$sql .= "";
+	}
+
+	if ( $iT != 0)
+	{
+		$sql .= "";
+	}else
+	{
+		$sql .= "";
+	}
+
+
+	if ( $userId == '00')
+	{
+		$sql .= "ORDER by t1.`date` DESC;";
+	}else
+	{
+		$sql .= " AND t1.`clientId`=". $userId . " ORDER by t1.`date` DESC;";
 	}
 
 	$result = $conn->query($sql);
@@ -479,7 +498,7 @@ function interactionsTableJson($userId)
 }
 
 
-function usersTableJson($userId, $startDate, $endDate, $gender)
+function usersTableJson($userId, $sD, $eD, $uG)
 {
 
 	require(realpath(dirname(__FILE__) . "/./config.php"));
