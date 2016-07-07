@@ -515,10 +515,12 @@ function usersTableJson($userId, $sD, $eD, $uG)
 		die("Connection failed: " . $conn->connect_error);
 	}
 
+	$sql .= "SELECT  COUNT(t2.fbId), COUNT(CASE WHEN t1.action = 'post' THEN +1 END), COUNT(CASE WHEN t1.action = 'like' THEN +1 END), t2.id, t2.firstName,t2.lastName, t2.fbId, t2.email, t2.gender, t2.createdDate FROM interactions t1, users t2 WHERE t1.userId = t2.fbID";
+
 	  if ( $userId == '00'){
-	$sql = "SELECT  COUNT(t2.fbId), COUNT(CASE WHEN t1.action = 'post' THEN +1 END), COUNT(CASE WHEN t1.action = 'like' THEN +1 END), t2.id, t2.firstName,t2.lastName, t2.fbId, t2.email, t2.gender, t2.createdDate FROM interactions t1, users t2 WHERE t1.userId = t2.fbID GROUP BY t2.fbId;";
+	$sql .= " GROUP BY t2.fbId;";
 	   }else{
-	$sql = "SELECT  COUNT(t2.fbId), COUNT(CASE WHEN t1.action = 'post' THEN +1 END), COUNT(CASE WHEN t1.action = 'like' THEN +1 END), t2.id, t2.firstName,t2.lastName, t2.fbId, t2.email, t2.gender, t2.createdDate FROM interactions t1, users t2 WHERE t1.userId = t2.fbID AND t1.clientId=" . $userId . " GROUP BY t2.fbId;";
+	$sql = " AND t1.clientId=" . $userId . " GROUP BY t2.fbId;";
 
 	  }
 	$result = $conn->query($sql);
