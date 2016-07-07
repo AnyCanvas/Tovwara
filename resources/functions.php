@@ -438,7 +438,7 @@ function interactionsTableJson($userId, $sD, $eD, $iT)
 
 	if ( $userId == '00')
 	{
-		$sql .= "ORDER by t1.`date` DESC;";
+		$sql .= " ORDER by t1.`date` DESC;";
 	}else
 	{
 		$sql .= " AND t1.`clientId`=". $userId . " ORDER by t1.`date` DESC;";
