@@ -302,7 +302,7 @@ $(document).ready( function () {
 		  {
 			$('#actionsTable').DataTable( {
 				destroy: true,
-			    ajax: 'json/interactionsTableJson.php'
+			    ajax: 'json/usersTableJson.php'
 			} );
 		  }, 5000);
 
