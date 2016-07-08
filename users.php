@@ -97,7 +97,7 @@
                                         <div class="form-inline">
                                             <div class="form-group  pull-right">
                                                 <button type="submit"
-                                                     class="btn btn-default">Buscar</button> <button type="submit"
+                                                     class="btn btn-default" id="reloadTable">Buscar</button> <button type="submit"
                                                      class="btn btn-default">Limpiar</button>
                                             </div>
                                         </div>
@@ -297,9 +297,7 @@ $(document).ready( function () {
             $('#end-date').attr('min', $('#start-date').val());
         });
 
-		setTimeout(
-		  function() 
-		  {
+		$('#reloadTable').on('click', function () {
 			$('#actionsTable').DataTable( {
 				destroy: true,
 		        "ajax": 'json/usersTableJson.php',
@@ -344,7 +342,7 @@ $(document).ready( function () {
 		           { "visible": false,  "targets": [ 3 ] }
 		        ],
 			} );
-		  }, 5000);
+		  });
 
 
         });
