@@ -422,7 +422,12 @@ function interactionsTableJson($userId, $sD, $eD, $iT)
 
 	if ( $iT != 0)
 	{
-		$sql .= "";
+		if($iT == '1'){
+			$iT = 'like';
+		} else if($iT == '2'){
+			$iT = 'post';
+		} 
+		$sql .= " AND t1.action='". $iT ."'";
 	}
 
 
