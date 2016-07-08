@@ -66,7 +66,7 @@
                                     Filtrar
                                 </header>
                                 <div class="panel-body">
-                                    <form role="form">
+                                    <div role="form">
                                         <div class="form-group">
                                             <div class="form-inline">
                                                 <div class="form-group">
@@ -77,15 +77,15 @@
                                                          id="end-date">
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="sel1">Tipo de acción:</label> <select class="form-control"
-                                                         id="sel1">
-                                                        <option>
+                                                    <label for="action-type">Tipo de acción:</label> <select class="form-control"
+                                                         id="action-type">
+                                                        <option value="0">
                                                             Todos
                                                         </option>
-                                                        <option>
+                                                        <option value="1">
                                                             Like
                                                         </option>
-                                                        <option>
+                                                        <option value="2">
                                                             Check-in
                                                         </option>
                                                     </select>
@@ -99,7 +99,7 @@
                                                      class="btn btn-default">Limpiar</button>
                                             </div>
                                         </div>
-                                    </form>
+                                    </div>
                                 </div>
                             </section>
                         </div>
@@ -279,7 +279,59 @@ $(document).ready( function () {
 
         $('#start-date, #end-date').on('change', function(){
             $('#end-date').attr('min', $('#start-date').val());
+            $('#start-date').attr('max', $('#end-date').val());
         });
+
+
+		$('#reloadTable').on('click', function () {
+			
+			var sD = document.getElementById("start-date").value;
+			var eD = document.getElementById("end-date").value;
+			var iT = document.getElementById("action-type").value;
+
+			$('#actionsTable').DataTable( {
+				destroy: true,
+		        "ajax": 'json/interactionsTableJson.php?sd=' + sD + '&ed=' + eD + '&it=' + iT,
+		        language: {
+		                url: 'https://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json'
+		            },
+		        "pageLength": 50,       
+		        dom: 'Bfrtip',
+		        buttons: [
+		            'csv', 'pdf'
+		        ],
+		        "order": [[ 0, 'desc' ], [ 1, 'desc' ]],
+		        "columnDefs": [
+		            {
+		                "targets": 0,
+		                "render": function ( data, type, full, meta ) {
+		                    date = new Date(data * 1000);
+		                    sort  = data=="" ? "" : data;
+		                    display = data=="" ? "" : date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear();
+		
+		                    if (type === 'display') {
+		                        return display;
+		                      }
+		                      else if (type === 'sort') {
+		                        return sort;
+		                      }
+		                      // 'sort', 'type' and undefined all just use the integer
+		                      return display;
+		                }
+		            },
+		            {
+		                // The `data` parameter refers to the data for the cell (defined by the
+		                // `data` option, which defaults to the column being worked with, in
+		                // this case `data: 0`.
+		                "render": function ( data, type, row ) {
+		                    return '<a href="http://www.facebook.com/'+ row[4] +'" target="_blank">'+ data +'<\/a>';
+		                },
+		                "targets": 3
+		            },
+		            { "visible": false,  "targets": [ 4 ] }
+		        ],
+			} );
+		  });
 
         });
         </script>

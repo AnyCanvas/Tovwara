@@ -9,19 +9,19 @@ if (!isLogged())
 }
 
 if
-( isset($_GET["sD"]) && isset($_GET["eD"]))
+( isset($_GET["sd"]) && isset($_GET["ed"]))
 {
-	$sD = $_GET["sD"];
-	$eD = $_GET["eD"];
+	$sD = $_GET["sd"];
+	$eD = $_GET["ed"];
 } else 
 {
 	$sD = $eD = 0;
 }
 
 if
-( isset($_GET["iT"]) )
+( isset($_GET["it"]) )
 {
-	$iT = $_GET["iT"];
+	$iT = $_GET["it"];
 } else
 {
 	$iT = 0;

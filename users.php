@@ -295,6 +295,7 @@ $(document).ready( function () {
 
         $('#start-date, #end-date').on('change', function(){
             $('#end-date').attr('min', $('#start-date').val());
+            $('#start-date').attr('max', $('#end-date').val());
         });
 
 		$('#reloadTable').on('click', function () {

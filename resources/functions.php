@@ -415,9 +415,9 @@ function interactionsTableJson($userId, $sD, $eD, $iT)
 
 	$sql = "SELECT t2.fbID, t2.fbName, t2.id, t1.fbPage , t1.action, t1.date, t1.fanbotId FROM interactions t1, users t2 WHERE t1.userId = t2.fbID";
 
-	if ( $sd != 0 && $eD != 0)
+	if ( $sD != 0 && $eD != 0)
 	{
-		$sql .= "";
+		$sql .=  " AND t2.createdDate >= (STR_TO_DATE('".$sD."', '%Y-%m-%d')) AND t2.createdDate <= (STR_TO_DATE('".$eD."', '%Y-%m-%d'))";
 	}
 
 	if ( $iT != 0)
