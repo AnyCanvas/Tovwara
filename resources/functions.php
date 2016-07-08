@@ -418,15 +418,9 @@ function interactionsTableJson($userId, $sD, $eD, $iT)
 	if ( $sd != 0 && $eD != 0)
 	{
 		$sql .= "";
-	}else
-	{
-		$sql .= "";
 	}
 
 	if ( $iT != 0)
-	{
-		$sql .= "";
-	}else
 	{
 		$sql .= "";
 	}
@@ -514,6 +508,11 @@ function usersTableJson($userId, $sD, $eD, $uG)
 	if ( $userId != '00')
 	{
 		$sql .= " AND t1.clientId=" . $userId;
+	}
+
+	if ( $sd != 0 && $eD != 0)
+	{
+		$sql .=  " date >= (STR_TO_DATE('".$sd."', '%Y-%m-%d')) AND date <= (STR_TO_DATE('".$eD."', '%Y-%m-%d'))";
 	}
 
 	$sql .= " GROUP BY t2.fbId;";
