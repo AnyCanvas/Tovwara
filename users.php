@@ -67,7 +67,7 @@
                                     Filtrar
                                 </header>
                                 <div class="panel-body">
-                                    <form role="form">
+                                    <div role="form">
                                         <div class="form-group">
                                             <div class="form-inline">
                                                 <div class="form-group">
@@ -101,7 +101,7 @@
                                                      class="btn btn-default">Limpiar</button>
                                             </div>
                                         </div>
-                                    </form>
+                                    </div>
                                 </div>
                             </section>
                         </div>
