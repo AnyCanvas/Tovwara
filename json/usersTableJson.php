@@ -21,9 +21,9 @@ if
 }
 
 if
-( isset($_GET["uG"]) )
+( isset($_GET["ug"]) )
 {
-	$uG = $_GET["uG"];
+	$uG = $_GET["ug"];
 } else
 {
 	$uG = 0;

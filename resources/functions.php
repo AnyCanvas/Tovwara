@@ -515,6 +515,16 @@ function usersTableJson($userId, $sD, $eD, $uG)
 		$sql .=  " AND t2.createdDate >= (STR_TO_DATE('".$sD."', '%Y-%m-%d')) AND t2.createdDate <= (STR_TO_DATE('".$eD."', '%Y-%m-%d'))";
 	}
 
+
+	if ( $uG != '0')
+	{
+		if ($uG == '1'){
+			$uG = 'male';
+		} else if (uG == '2'){
+			$uG = 'female';
+		} 
+		$sql .= " AND t2.gender=" . $uG;
+	}
 	$sql .= " GROUP BY t2.fbId;";
 
 	$result = $conn->query($sql);

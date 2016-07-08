@@ -78,15 +78,15 @@
                                                          id="end-date">
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="sel1">Genero:</label> <select class="form-control"
-                                                         id="sel1">
-                                                        <option>
+                                                    <label for="user-gender">Genero:</label> <select class="form-control"
+                                                         id="user-gender">
+                                                        <option value="0">
                                                             Todos
                                                         </option>
-                                                        <option>
+                                                        <option value="1">
                                                             Hombre
                                                         </option>
-                                                        <option>
+                                                        <option value="2">
                                                             Mujer
                                                         </option>
                                                     </select>
@@ -299,13 +299,13 @@ $(document).ready( function () {
 
 		$('#reloadTable').on('click', function () {
 			
-			alert(document.getElementById("start-date").value);
 			var sD = document.getElementById("start-date").value;
 			var eD = document.getElementById("end-date").value;
+			var uG = document.getElementById("user-gender").value;
 
 			$('#actionsTable').DataTable( {
 				destroy: true,
-		        "ajax": 'json/usersTableJson.php?sd=' + sD + '&ed=' + eD,
+		        "ajax": 'json/usersTableJson.php?sd=' + sD + '&ed=' + eD + '&ug=' + uG,
 		        language: {
 		                url: 'https://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json'
 		            },
