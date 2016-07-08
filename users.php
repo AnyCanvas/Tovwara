@@ -300,9 +300,12 @@ $(document).ready( function () {
 		$('#reloadTable').on('click', function () {
 			
 			alert(document.getElementById("start-date").value);
+			var sD = document.getElementById("start-date").value;
+			var eD = document.getElementById("end-date").value;
+
 			$('#actionsTable').DataTable( {
 				destroy: true,
-		        "ajax": 'json/usersTableJson.php',
+		        "ajax": 'json/usersTableJson.php?sd=' + sD + '&endDate=' + eD,
 		        language: {
 		                url: 'https://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json'
 		            },
