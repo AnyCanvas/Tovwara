@@ -417,7 +417,7 @@ function interactionsTableJson($userId, $sD, $eD, $iT)
 
 	if ( $sD != 0 && $eD != 0)
 	{
-		$sql .=  " AND t2.createdDate >= (STR_TO_DATE('".$sD."', '%Y-%m-%d')) AND t2.createdDate <= (STR_TO_DATE('".$eD."', '%Y-%m-%d'))";
+		$sql .=  " AND t1.date >= (STR_TO_DATE('".$sD."', '%Y-%m-%d')) AND t1.date <= (STR_TO_DATE('".$eD."', '%Y-%m-%d'))";
 	}
 
 	if ( $iT != 0)
