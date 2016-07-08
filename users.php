@@ -301,8 +301,47 @@ $(document).ready( function () {
 		  function() 
 		  {
 			$('#actionsTable').DataTable( {
-				destroy: true,
-			    ajax: 'json/usersTableJson.php'
+		        "ajax": 'json/usersTableJson.php',
+		        language: {
+		                url: 'https://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json'
+		            },
+		        "pageLength": 50,       
+		        dom: 'Bfrtip',
+		        buttons: [
+		            'csv', 'pdf'
+		        ],
+		        "order": [ [ 9, 'desc' ] ],
+		        "columnDefs": [
+		           {
+		                "targets": 9,
+		                "render": function ( data, type, full, meta ) {
+							var utcSeconds = data;
+							var date = new Date(0); // The 0 there is the key, which sets the date to the epoch
+							date.setUTCSeconds(utcSeconds);           
+		                    sort  = data =="" ? "" : data;
+		                    display = data =="" ? "" : date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear();;
+		
+		                    if (type === 'display') {
+		                        return display;
+		                      }
+		                      else if (type === 'sort') {
+		                        return sort;
+		                      }
+		                      // 'sort', 'type' and undefined all just use the integer
+		                      return display;
+		                }
+		            }, 
+		            {
+		                // The `data` parameter refers to the data for the cell (defined by the
+		                // `data` option, which defaults to the column being worked with, in
+		                // this case `data: 0`.
+		                "render": function ( data, type, row ) {
+		                    return '<a href="http://www.facebook.com/'+ row[3] +'" target="_blank">'+ data +'<\/a>';
+		                },
+		                "targets": 1
+		            },
+		           { "visible": false,  "targets": [ 3 ] }
+		        ],
 			} );
 		  }, 5000);
 
