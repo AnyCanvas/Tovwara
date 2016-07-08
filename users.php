@@ -297,7 +297,18 @@ $(document).ready( function () {
             $('#end-date').attr('min', $('#start-date').val());
         });
 
+		setTimeout(
+		  function() 
+		  {
+			$('#actionsTable').DataTable( {
+			    ajax: 'json/interactionsTableJson.php'
+			} );
+		  }, 5000);
+
+
         });
+        
+
         </script>
     </body>
 </html>
