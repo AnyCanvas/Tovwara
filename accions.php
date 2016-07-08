@@ -95,7 +95,7 @@
                                         <div class="form-inline">
                                             <div class="form-group  pull-right">
                                                 <button type="submit"
-                                                     class="btn btn-default">Buscar</button> <button type="submit"
+                                                     class="btn btn-default" id="reloadTable">Buscar</button> <button type="submit"
                                                      class="btn btn-default">Limpiar</button>
                                             </div>
                                         </div>
