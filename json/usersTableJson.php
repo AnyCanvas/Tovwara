@@ -16,7 +16,8 @@ if
 	$eD = $_GET["ed"];
 } else
 {
-	$sD = $eD = 0;
+	$sD = 0;
+	$eD = 0;
 }
 
 if
