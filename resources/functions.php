@@ -523,7 +523,7 @@ function usersTableJson($userId, $sD, $eD, $uG)
 		} else if (uG == '2'){
 			$uG = 'female';
 		} 
-		$sql .= " AND t2.gender=" . $uG;
+		$sql .= " AND t2.gender= '" . $uG . "'";
 	}
 	$sql .= " GROUP BY t2.fbId;";
 
