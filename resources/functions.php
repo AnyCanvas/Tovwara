@@ -41,31 +41,34 @@ function totalJson($day, $month, $year, $fnbtId, $clientId)
 		die("Connection failed: " . $conn->connect_error);
 	}
 
+	$sql = "SELECT * FROM interactions WHERE";
 	if ($day !== 0)
 	{
 		$string = $year.'-'.$month.'-'.$day;
-		$sql= "SELECT * FROM interactions WHERE date >= (STR_TO_DATE('".$string."', '%Y-%m-%d')) AND date <= (STR_TO_DATE('".$string."', '%Y-%m-%d') + INTERVAL 1 MONTH) AND fanbotId='".$fnbtId."'";
-	} else if
-		( ($fnbtId !== 0) && ($clientId !== 0) )
-		{
-			$sql = "SELECT * FROM interactions WHERE EXTRACT(MONTH FROM date) = '". $month. "' AND EXTRACT(YEAR FROM date) = '". $year."' AND fanbotId='".$fnbtId."' AND clientId='".$clientId."'";
-		} else if
-		( $fnbtId !== 0 )
-		{
-			$sql = "SELECT * FROM interactions WHERE EXTRACT(MONTH FROM date) = '". $month. "' AND EXTRACT(YEAR FROM date) = '". $year."' AND fanbotId='".$fnbtId."'";
-		}else if
-		( $clientId !== 0 )
-		{
-			$sql = "SELECT * FROM interactions WHERE EXTRACT(MONTH FROM date) = '". $month. "' AND EXTRACT(YEAR FROM date) = '". $year."' AND clientId='".$clientId."'";
-		} else
+		$sql .=  " date >= (STR_TO_DATE('".$string."', '%Y-%m-%d')) AND date <= (STR_TO_DATE('".$string."', '%Y-%m-%d') + INTERVAL 1 MONTH)";
+	} else
 	{
-		$sql = "SELECT * FROM interactions WHERE EXTRACT(MONTH FROM date) = '". $month. "' AND EXTRACT(YEAR FROM date) = '". $year."'";
+		$sql .= " EXTRACT(MONTH FROM date) = '". $month. "' AND EXTRACT(YEAR FROM date) = '". $year."'";
 	}
+
+	if
+	( $fnbtId !== 0 )
+	{
+		$sql .= " AND fanbotId='".$fnbtId."'";
+	}
+
+	if
+	( $clientId !== 0 )
+	{
+		$sql .= " AND clientId='".$clientId."'";
+	}
+
 	$result = $conn->query($sql);
 	$total = 0;
 	$like = 0;
 	$checkin = 0;
 	$i = 1;
+
 	if ($result->num_rows > 0)
 	{
 
@@ -122,21 +125,18 @@ function monthlyLikesJson($year, $fnbtId, $clientId)
 		die("Connection failed: " . $conn->connect_error);
 	}
 
+	$sql = "SELECT * FROM interactions WHERE EXTRACT(YEAR FROM date) = '". $year."'";
+
 	if
-	( ($fnbtId !== 0) && ($clientId !== 0) )
+	( $fnbtId !== 0 )
 	{
-		$sql = "SELECT * FROM interactions WHERE EXTRACT(YEAR FROM date) = '". $year."' AND fanbotId='".$fnbtId."' AND clientId='".$clientId."'";
-	} else if
-		( $fnbtId !== 0 )
-		{
-			$sql = "SELECT * FROM interactions WHERE EXTRACT(YEAR FROM date) = '". $year."' AND fanbotId='".$fnbtId."'";
-		}else if
-		( $clientId !== 0 )
-		{
-			$sql = "SELECT * FROM interactions WHERE EXTRACT(YEAR FROM date) = '". $year."' AND clientId='".$clientId."'";
-		} else
+		$sql = " AND fanbotId='".$fnbtId."'";
+	}
+	
+	if
+	( $clientId !== 0 )
 	{
-		$sql = "SELECT * FROM interactions WHERE EXTRACT(YEAR FROM date) = '". $year."'";
+		$sql = " AND clientId='".$clientId."'";
 	}
 
 	$result = $conn->query($sql);
@@ -268,21 +268,17 @@ function likesJson($month, $year, $fnbtId, $clientId)
 		die("Connection failed: " . $conn->connect_error);
 	}
 
+	$sql = "SELECT * FROM interactions WHERE EXTRACT(MONTH FROM date) = '". $month. "' AND EXTRACT(YEAR FROM date) = '". $year."'";
+
 	if
-	( ($fnbtId !== 0) && ($clientId !== 0) )
+	( $fnbtId !== 0 )
 	{
-		$sql = "SELECT * FROM interactions WHERE EXTRACT(MONTH FROM date) = '". $month. "' AND EXTRACT(YEAR FROM date) = '". $year."' AND fanbotId='".$fnbtId."' AND clientId='".$clientId."'";
-	} else if
-		( $fnbtId !== 0 )
-		{
-			$sql = "SELECT * FROM interactions WHERE EXTRACT(MONTH FROM date) = '". $month. "' AND EXTRACT(YEAR FROM date) = '". $year."' AND fanbotId='".$fnbtId."'";
-		}else if
-		( $clientId !== 0 )
-		{
-			$sql = "SELECT * FROM interactions WHERE EXTRACT(MONTH FROM date) = '". $month. "' AND EXTRACT(YEAR FROM date) = '". $year."' AND clientId='".$clientId."'";
-		} else
+		$sql .= " AND fanbotId='".$fnbtId."'";
+	}
+	if
+	( $clientId !== 0 )
 	{
-		$sql = "SELECT * FROM interactions WHERE EXTRACT(MONTH FROM date) = '". $month. "' AND EXTRACT(YEAR FROM date) = '". $year."'";
+		$sql .= " AND clientId='".$clientId."'";
 	}
 
 	$result = $conn->query($sql);
@@ -436,14 +432,12 @@ function interactionsTableJson($userId, $sD, $eD, $iT)
 	}
 
 
-	if ( $userId == '00')
+	if ( $userId != '00')
 	{
-		$sql .= " ORDER by t1.`date` DESC;";
-	}else
-	{
-		$sql .= " AND t1.`clientId`=". $userId . " ORDER by t1.`date` DESC;";
+		$sql .= " AND t1.`clientId`=". $userId;
 	}
 
+	$sql .= " ORDER by t1.`date` DESC;";
 	$result = $conn->query($sql);
 
 
@@ -517,12 +511,13 @@ function usersTableJson($userId, $sD, $eD, $uG)
 
 	$sql .= "SELECT  COUNT(t2.fbId), COUNT(CASE WHEN t1.action = 'post' THEN +1 END), COUNT(CASE WHEN t1.action = 'like' THEN +1 END), t2.id, t2.firstName,t2.lastName, t2.fbId, t2.email, t2.gender, t2.createdDate FROM interactions t1, users t2 WHERE t1.userId = t2.fbID";
 
-	  if ( $userId == '00'){
-	$sql .= " GROUP BY t2.fbId;";
-	   }else{
-	$sql = " AND t1.clientId=" . $userId . " GROUP BY t2.fbId;";
+	if ( $userId != '00')
+	{
+		$sql .= " AND t1.clientId=" . $userId;
+	}
 
-	  }
+	$sql .= " GROUP BY t2.fbId;";
+
 	$result = $conn->query($sql);
 
 
