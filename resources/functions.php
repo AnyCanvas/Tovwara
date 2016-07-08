@@ -512,7 +512,7 @@ function usersTableJson($userId, $sD, $eD, $uG)
 
 	if ( $sd != 0 && $eD != 0)
 	{
-		$sql .=  " date >= (STR_TO_DATE('".$sd."', '%Y-%m-%d')) AND date <= (STR_TO_DATE('".$eD."', '%Y-%m-%d'))";
+		$sql .=  " AND date >= (STR_TO_DATE('".$sd."', '%Y-%m-%d')) AND date <= (STR_TO_DATE('".$eD."', '%Y-%m-%d'))";
 	}
 
 	$sql .= " GROUP BY t2.fbId;";

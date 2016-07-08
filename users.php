@@ -305,7 +305,7 @@ $(document).ready( function () {
 
 			$('#actionsTable').DataTable( {
 				destroy: true,
-		        "ajax": 'json/usersTableJson.php?sd=' + sD + '&endDate=' + eD,
+		        "ajax": 'json/usersTableJson.php?sd=' + sD + '&ed=' + eD,
 		        language: {
 		                url: 'https://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json'
 		            },
