@@ -510,9 +510,9 @@ function usersTableJson($userId, $sD, $eD, $uG)
 		$sql .= " AND t1.clientId=" . $userId;
 	}
 
-	if ( $sd != 0 && $eD != 0)
+	if ( $sD != 0 && $eD != 0)
 	{
-		$sql .=  " AND t2.createdDate >= (STR_TO_DATE('".$sd."', '%Y-%m-%d')) AND t2.createdDate <= (STR_TO_DATE('".$eD."', '%Y-%m-%d'))";
+		$sql .=  " AND t2.createdDate >= (STR_TO_DATE('".$sD."', '%Y-%m-%d')) AND t2.createdDate <= (STR_TO_DATE('".$eD."', '%Y-%m-%d'))";
 	}
 
 	$sql .= " GROUP BY t2.fbId;";
