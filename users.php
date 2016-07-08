@@ -298,6 +298,8 @@ $(document).ready( function () {
         });
 
 		$('#reloadTable').on('click', function () {
+			
+			alert(document.getElementById("start-date").value);
 			$('#actionsTable').DataTable( {
 				destroy: true,
 		        "ajax": 'json/usersTableJson.php',
