@@ -301,6 +301,7 @@ $(document).ready( function () {
 		  function() 
 		  {
 			$('#actionsTable').DataTable( {
+				destroy: true,
 			    ajax: 'json/interactionsTableJson.php'
 			} );
 		  }, 5000);
