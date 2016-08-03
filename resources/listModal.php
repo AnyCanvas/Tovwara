@@ -5,7 +5,9 @@
 	     document.getElementById('fanbotName').value = fanbotName;
 
 		$( "select" ).change(function() {
-		  alert( $( this ).val() );
+		  if( $( this ).val() == '2' ){
+			  $("#questions").show();
+		  }
 		});
 	}
 
@@ -80,7 +82,7 @@
                             </label>
 					  </div>
 
-					  <div class="form-group" style="margin-bottom: 2vh; display: none;">
+					  <div class="form-group" id="questions"style="margin-bottom: 2vh; display: none;">
                             <label for="inputQ1" class="control-label">1ª pregunta:</label>
                             <input type="text" class="form-control" id="q1">
                       </div>
