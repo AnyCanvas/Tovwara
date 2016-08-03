@@ -55,6 +55,7 @@
 						<div class="input-group">									  
 							<div for="facebookUrl" class="input-group-addon">http://facebook.com/</div>
 							<input type="text" class="form-control input-sm" id="facebookPage" placeholder="Link de tu pagina" name="facebookPage">
+							<a onclick="changeImage()" class="btn btn-default btn-xs">Verificar</a>						
 	    				</div>		
 					  </div>
 					  <div class="form-group">
@@ -69,7 +70,6 @@
 								</select>
                             </label>
 					  </div>
-					  <a onclick="changeImage()" class="btn btn-default btn-xs">Verificar</a>						
 
 					  <div class="form-group">
 						<div class="input-group">									  
