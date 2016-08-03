@@ -716,10 +716,10 @@ function changeFacebookPage()
 	$facebookPage  = $_POST["facebookPage"];
 
 	if ($actionType == 'rate'){
-		$q['q1']  = $_POST["q1"];		
-		$q['q2']  = $_POST["q2"];		
-		$q['q3']  = $_POST["q3"];		
-		$q['q4']  = $_POST["q4"];		
+		$q['1']  = $_POST["q1"];		
+		$q['2']  = $_POST["q2"];		
+		$q['3']  = $_POST["q3"];		
+		$q['4']  = $_POST["q4"];		
 	}
 
 
