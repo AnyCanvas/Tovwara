@@ -29,9 +29,14 @@
 	        var ajaxurl = 'resources/actionUrl.php';
 	        var facebookPage = $("#facebookPage").val();
 	        var fanbotName = $( "#fanbotName" ).val();
-	        var actionType = $("#action").is(':checked') ? "post" : "like";
+	        var actionType = $( "#accion" ).val();
 	        data =  {'facebookPage' : facebookPage, 'actionType': actionType,'fanbotName': fanbotName, };
-	        console.log(data);
+	        if(actionType == '2'){
+   	          data =  {'facebookPage' : facebookPage, 'actionType': actionType,'fanbotName': fanbotName, 'q1' : $( "#q1" ).val(), 'q2': $( "#q2" ).val(), 'q3': $( "#q3" ).val(), 'q4': $( "#q4" ).val()};		    		        
+	        } else {
+   	          data =  {'facebookPage' : facebookPage, 'actionType': actionType,'fanbotName': fanbotName };		    
+	        }
+	        console.log(data);	        
 	        $.post(ajaxurl, data, function (response) {
 	        });
 			$('#configModal').modal('hide');
@@ -64,7 +69,7 @@
 					  </div>
 					  <div class="form-group" style="margin-bottom: 2vh;">
 							<label class="checkbox-inline">
-								<select name="interaccion" form="carform">
+								<select name="interaccion" id="accion">
 								  <option value="0">Like</option>
 								  <option value="1">Check-in</option>
 								  <option value="2">Encuesta</option>
@@ -74,22 +79,22 @@
 
 					  <div class="form-group" style="margin-bottom: 2vh;">
                             <label for="inputQ1" class="control-label">1ª pregunta:</label>
-                            <input type="text" class="form-control" id="Q1">
+                            <input type="text" class="form-control" id="q1">
                       </div>
 
 					  <div class="form-group" style="margin-bottom: 2vh;">
                             <label for="inputQ2" class="control-label">2ª pregunta:</label>
-                            <input type="text" class="form-control" id="Q2">
+                            <input type="text" class="form-control" id="q2">
                       </div>
 
 					  <div class="form-group" style="margin-bottom: 2vh;">
                             <label for="inputQ3" class="control-label">3ª pregunta:</label>
-                            <input type="text" class="form-control" id="Q3" >
+                            <input type="text" class="form-control" id="q3" >
                       </div>                      
 
 					  <div class="form-group" style="margin-bottom: 2vh;">
                             <label for="inputQ4" class="control-label">4ª pregunta:</label>
-                            <input type="text" class="form-control" id="Q4">
+                            <input type="text" class="form-control" id="q4">
                       </div>
 
 					</form>					

@@ -702,6 +702,17 @@ function changeFacebookPage()
 	$fnbtName  = $_POST["fanbotName"];
 	$actionType  = $_POST["actionType"];
 
+	switch ($actionType){
+		case '0': $actionType='like';
+			break;
+
+		case '1': $actionType='post';
+			break;
+
+		case '2': $actionType='rate';
+			break;
+
+	}
 	$facebookPage  = $_POST["facebookPage"];
 
 
