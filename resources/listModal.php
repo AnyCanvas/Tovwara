@@ -23,6 +23,9 @@
 
     }
 
+	$( "select" ).change(function() {
+	  alert( $( this ).val() );
+	});
 	   
 	function action(){
 
@@ -77,7 +80,7 @@
                             </label>
 					  </div>
 
-					  <div class="form-group" style="margin-bottom: 2vh;">
+					  <div class="form-group" style="margin-bottom: 2vh; display: none;">
                             <label for="inputQ1" class="control-label">1ª pregunta:</label>
                             <input type="text" class="form-control" id="q1">
                       </div>
