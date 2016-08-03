@@ -3,6 +3,10 @@
 	    localStorage.setItem("fanbotName", fanbotName);
 		$('#configModal').modal('show');
 	     document.getElementById('fanbotName').value = fanbotName;
+
+		$( "select" ).change(function() {
+		  alert( $( this ).val() );
+		});
 	}
 
     function changeImage() {
@@ -22,10 +26,6 @@
     })
 
     }
-
-	$( "select" ).change(function() {
-	  alert( $( this ).val() );
-	});
 	   
 	function action(){
 
