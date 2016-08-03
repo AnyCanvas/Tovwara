@@ -51,7 +51,7 @@
 		        </div>
 		        <div class="modal-body">
 					<form class="form-inline" id="formUrl">
-					  <div class="form-group">
+					  <div class="form-group" style="margin-bottom: 2vh;">
 						<div class="input-group">									  
 							<div for="facebookUrl" class="input-group-addon">http://facebook.com/</div>
 							<input type="text" class="form-control input-sm" id="facebookPage" placeholder="Link de tu pagina" name="facebookPage">
@@ -62,7 +62,7 @@
 					  <div class="form-group">
 						<input class="form-controlinput-sm" type='hidden' id= 'fanbotName' name='fanbotName' value='' />				  
 					  </div>
-					  <div class="form-group">
+					  <div class="form-group" style="margin-bottom: 2vh;">
 							<label class="checkbox-inline">
 								<select name="interaccion" form="carform">
 								  <option value="0">Like</option>
@@ -72,21 +72,20 @@
                             </label>
 					  </div>
 
-					  <div class="form-group">
+					  <div class="form-group" style="margin-bottom: 2vh;">
                             <label for="inputEmail1" class="col-lg-2 col-sm-2 control-label">Email</label>
                             <div class="col-lg-10">
                                 <input type="email" class="form-control" id="inputEmail1" placeholder="Email">
-                                <p class="help-block">Example block-level help text here.</p>
                             </div>
                       </div>
-					  <div class="form-group">
+					  <div class="form-group" style="margin-bottom: 2vh;">
 						<div class="input-group">									  
 							<input type="text" class="form-control input-sm" id="q1" placeholder="Q1" name="Q1">
 							<input type="text" class="form-control input-sm" id="q2" placeholder="Q2" name="Q2">
 
 	    				</div>		
 					  </div>
-					  <div class="form-group">
+					  <div class="form-group" style="margin-bottom: 2vh;">
 						<div class="input-group">									  
 							<input type="text" class="form-control input-sm" id="q3" placeholder="Q3" name="Q3">
 							<input type="text" class="form-control input-sm" id="q4" placeholder="Q4" name="Q4">
