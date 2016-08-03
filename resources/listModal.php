@@ -73,23 +73,24 @@
 					  </div>
 
 					  <div class="form-group" style="margin-bottom: 2vh;">
-                            <label for="inputEmail1" class="control-label">Email</label>
-                            <input type="email" class="form-control" id="inputEmail1" placeholder="Email">
+                            <label for="inputQ1" class="control-label">1ª pregunta:</label>
+                            <input type="text" class="form-control" id="Q1" placeholder="Escribe la pregunta aqui.">
                       </div>
-					  <div class="form-group" style="margin-bottom: 2vh;">
-						<div class="input-group">									  
-							<input type="text" class="form-control input-sm" id="q1" placeholder="Q1" name="Q1">
-							<input type="text" class="form-control input-sm" id="q2" placeholder="Q2" name="Q2">
 
-	    				</div>		
-					  </div>
 					  <div class="form-group" style="margin-bottom: 2vh;">
-						<div class="input-group">									  
-							<input type="text" class="form-control input-sm" id="q3" placeholder="Q3" name="Q3">
-							<input type="text" class="form-control input-sm" id="q4" placeholder="Q4" name="Q4">
-	    				</div>		
-					  </div>
+                            <label for="inputQ2" class="control-label">2ª pregunta:</label>
+                            <input type="text" class="form-control" id="Q2" placeholder="Escribe la pregunta aqui.">
+                      </div>
 
+					  <div class="form-group" style="margin-bottom: 2vh;">
+                            <label for="inputQ3" class="control-label">3ª pregunta:</label>
+                            <input type="text" class="form-control" id="Q3" placeholder="Escribe la pregunta aqui.">
+                      </div>                      
+
+					  <div class="form-group" style="margin-bottom: 2vh;">
+                            <label for="inputQ4" class="control-label">4ª pregunta:</label>
+                            <input type="text" class="form-control" id="Q4" placeholder="Escribe la pregunta aqui.">
+                      </div>
 
 					</form>					
 		        </div>
