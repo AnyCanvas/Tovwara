@@ -7,6 +7,8 @@
 		$( "select" ).change(function() {
 		  if( $( this ).val() == '2' ){
 			  $("#questions").show();
+		  } else{
+			  $("#questions").hide();			  
 		  }
 		});
 	}
@@ -83,7 +85,7 @@
 					  </div>
 					  
 					  <div id="questions" style="display: none;">
-						  <div class="form-group" style="margin-bottom: 2vh; display: none;">
+						  <div class="form-group" style="margin-bottom: 2vh;">
 	                            <label for="inputQ1" class="control-label">1ª pregunta:</label>
 	                            <input type="text" class="form-control" id="q1">
 	                      </div>
