@@ -715,6 +715,13 @@ function changeFacebookPage()
 	}
 	$facebookPage  = $_POST["facebookPage"];
 
+	if ($actionType == 'rate'){
+		$q['q1']  = $_POST["q1"];		
+		$q['q2']  = $_POST["q2"];		
+		$q['q3']  = $_POST["q3"];		
+		$q['q4']  = $_POST["q4"];		
+	}
+
 
 	require(realpath(dirname(__FILE__) . "/./config.php"));
 	$servername = $config["db"]["fanbot"]["host"];
@@ -753,7 +760,13 @@ function changeFacebookPage()
 	$config['type'] = $actionType;
 	$configJson = json_encode($config);
 
-	$sql = "UPDATE fanbot SET config ='". $configJson ."' WHERE name = '". $fnbtName ."'";
+	if ($actionType == 'rate'){
+		$qJson = json_encode($q);
+		$sql = "UPDATE fanbot SET config ='". $configJson ."', survey = '". $qJson ."' WHERE name = '". $fnbtName ."'";
+	} else {
+		$sql = "UPDATE fanbot SET config ='". $configJson ."' WHERE name = '". $fnbtName ."'";				
+	}
+
 
 	if ($conn->query($sql) === TRUE)
 	{
