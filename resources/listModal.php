@@ -74,22 +74,22 @@
 
 					  <div class="form-group" style="margin-bottom: 2vh;">
                             <label for="inputQ1" class="control-label">1ª pregunta:</label>
-                            <input type="text" class="form-control" id="Q1" placeholder="Escribe la pregunta aqui.">
+                            <input type="text" class="form-control" id="Q1">
                       </div>
 
 					  <div class="form-group" style="margin-bottom: 2vh;">
                             <label for="inputQ2" class="control-label">2ª pregunta:</label>
-                            <input type="text" class="form-control" id="Q2" placeholder="Escribe la pregunta aqui.">
+                            <input type="text" class="form-control" id="Q2">
                       </div>
 
 					  <div class="form-group" style="margin-bottom: 2vh;">
                             <label for="inputQ3" class="control-label">3ª pregunta:</label>
-                            <input type="text" class="form-control" id="Q3" placeholder="Escribe la pregunta aqui.">
+                            <input type="text" class="form-control" id="Q3" >
                       </div>                      
 
 					  <div class="form-group" style="margin-bottom: 2vh;">
                             <label for="inputQ4" class="control-label">4ª pregunta:</label>
-                            <input type="text" class="form-control" id="Q4" placeholder="Escribe la pregunta aqui.">
+                            <input type="text" class="form-control" id="Q4">
                       </div>
 
 					</form>					
