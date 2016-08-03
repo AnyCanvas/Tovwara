@@ -74,8 +74,7 @@
 
 					  <div class="form-group" style="margin-bottom: 2vh;">
                             <label for="inputEmail1" class="control-label">Email</label>
-                                <input type="email" class="form-control" id="inputEmail1" placeholder="Email">
-                            </div>
+                            <input type="email" class="form-control" id="inputEmail1" placeholder="Email">
                       </div>
 					  <div class="form-group" style="margin-bottom: 2vh;">
 						<div class="input-group">									  
