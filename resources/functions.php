@@ -404,7 +404,6 @@ function interactionsTableJson($userId, $sD, $eD, $iT)
 	$dbname = $config["db"]["fanbot"]["dbname"];
 
 
-
 	// Create connection
 	$conn = new mysqli($servername, $username, $password, $dbname);
 	// Check connection

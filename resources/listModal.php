@@ -66,6 +66,15 @@
                             </label>
 					  </div>
 					  <a onclick="changeImage()" class="btn btn-default btn-xs">Verificar</a>						
+
+					  <div class="form-group">
+						<div class="input-group">									  
+							<input type="text" class="form-control input-sm" id="q1" placeholder="Q1" name="Q1">
+							<input type="text" class="form-control input-sm" id="q2" placeholder="Q2" name="Q2">
+							<input type="text" class="form-control input-sm" id="q3" placeholder="Q3" name="Q3">
+							<input type="text" class="form-control input-sm" id="q4" placeholder="Q4" name="Q4">
+	    				</div>		
+					  </div>
 					</form>					
 		        </div>
 
