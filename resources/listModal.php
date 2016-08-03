@@ -73,6 +73,13 @@
 					  </div>
 
 					  <div class="form-group">
+                            <label for="inputEmail1" class="col-lg-2 col-sm-2 control-label">Email</label>
+                            <div class="col-lg-10">
+                                <input type="email" class="form-control" id="inputEmail1" placeholder="Email">
+                                <p class="help-block">Example block-level help text here.</p>
+                            </div>
+                      </div>
+					  <div class="form-group">
 						<div class="input-group">									  
 							<input type="text" class="form-control input-sm" id="q1" placeholder="Q1" name="Q1">
 							<input type="text" class="form-control input-sm" id="q2" placeholder="Q2" name="Q2">
