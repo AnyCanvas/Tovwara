@@ -55,8 +55,9 @@
 						<div class="input-group">									  
 							<div for="facebookUrl" class="input-group-addon">http://facebook.com/</div>
 							<input type="text" class="form-control input-sm" id="facebookPage" placeholder="Link de tu pagina" name="facebookPage">
-							<a onclick="changeImage()" class="btn btn-default btn-xs">Verificar</a>						
 	    				</div>		
+						<a onclick="changeImage()" class="btn btn-default btn-xs">Verificar</a>						
+
 					  </div>
 					  <div class="form-group">
 						<input class="form-controlinput-sm" type='hidden' id= 'fanbotName' name='fanbotName' value='' />				  
