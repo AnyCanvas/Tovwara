@@ -62,6 +62,12 @@
 					  </div>
 					  <div class="form-group">
 							<label class="checkbox-inline">
+								<select name="interaccion" form="carform">
+								  <option value="0">Like</option>
+								  <option value="1">Check-in</option>
+								  <option value="2">Encuesta</option>
+								</select>
+
                                 <input type="checkbox" id="action" value="1"> Activar Check-in&nbsp;
                             </label>
 					  </div>
@@ -70,20 +76,13 @@
 					  <div class="form-group">
 						<div class="input-group">									  
 							<input type="text" class="form-control input-sm" id="q1" placeholder="Q1" name="Q1">
-	    				</div>		
-					  </div>
-					  <div class="form-group">
-						<div class="input-group">									  
 							<input type="text" class="form-control input-sm" id="q2" placeholder="Q2" name="Q2">
+
 	    				</div>		
 					  </div>
 					  <div class="form-group">
 						<div class="input-group">									  
 							<input type="text" class="form-control input-sm" id="q3" placeholder="Q3" name="Q3">
-	    				</div>		
-					  </div>
-					  <div class="form-group">
-						<div class="input-group">									  
 							<input type="text" class="form-control input-sm" id="q4" placeholder="Q4" name="Q4">
 	    				</div>		
 					  </div>
