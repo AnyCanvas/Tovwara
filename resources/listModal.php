@@ -81,26 +81,28 @@
 								</select>
                             </label>
 					  </div>
-
-					  <div class="form-group" id="questions"style="margin-bottom: 2vh; display: none;">
-                            <label for="inputQ1" class="control-label">1ª pregunta:</label>
-                            <input type="text" class="form-control" id="q1">
-                      </div>
-
-					  <div class="form-group" style="margin-bottom: 2vh;">
-                            <label for="inputQ2" class="control-label">2ª pregunta:</label>
-                            <input type="text" class="form-control" id="q2">
-                      </div>
-
-					  <div class="form-group" style="margin-bottom: 2vh;">
-                            <label for="inputQ3" class="control-label">3ª pregunta:</label>
-                            <input type="text" class="form-control" id="q3" >
-                      </div>                      
-
-					  <div class="form-group" style="margin-bottom: 2vh;">
-                            <label for="inputQ4" class="control-label">4ª pregunta:</label>
-                            <input type="text" class="form-control" id="q4">
-                      </div>
+					  
+					  <div id="questions" style="display: none;">
+						  <div class="form-group" style="margin-bottom: 2vh; display: none;">
+	                            <label for="inputQ1" class="control-label">1ª pregunta:</label>
+	                            <input type="text" class="form-control" id="q1">
+	                      </div>
+	
+						  <div class="form-group" style="margin-bottom: 2vh;">
+	                            <label for="inputQ2" class="control-label">2ª pregunta:</label>
+	                            <input type="text" class="form-control" id="q2">
+	                      </div>
+	
+						  <div class="form-group" style="margin-bottom: 2vh;">
+	                            <label for="inputQ3" class="control-label">3ª pregunta:</label>
+	                            <input type="text" class="form-control" id="q3" >
+	                      </div>                      
+	
+						  <div class="form-group" style="margin-bottom: 2vh;">
+	                            <label for="inputQ4" class="control-label">4ª pregunta:</label>
+	                            <input type="text" class="form-control" id="q4">
+	                      </div>
+					  </div>
 
 					</form>					
 		        </div>
