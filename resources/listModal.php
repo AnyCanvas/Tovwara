@@ -66,7 +66,7 @@
 								  <option value="0">Like</option>
 								  <option value="1">Check-in</option>
 								  <option value="2">Encuesta</option>
-								</select>Activar Check-in&nbsp;
+								</select>
                             </label>
 					  </div>
 					  <a onclick="changeImage()" class="btn btn-default btn-xs">Verificar</a>						
