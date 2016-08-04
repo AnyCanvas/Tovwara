@@ -457,13 +457,13 @@ function interactionsTableJson($userId, $sD, $eD, $iT)
 			// Create a new date var from date in db
 			$date =new DateTime($row['date']);
 			// Get de number of day from the date variable
-			$formatedDate = $date->format('d/m/y');
-			$formatedHour = $date->format('g:i a');
+//			$formatedDate = $date->format('d/m/y');
+//			$formatedHour = $date->format('g:i a');
 			$unixDate = $date->format('U');
 
 			echo '[ ';
 			echo '"'. $unixDate . '", ';
-			echo '"'. $formatedHour. '", ';
+			echo '"'. $unixDate. '", ';
 			echo '"', $row['id'] .'", ';
 			echo '"'. $row['fbName']. '", ';
 			echo '"'. $row['fbID']. '", ';

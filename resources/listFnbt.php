@@ -108,7 +108,9 @@
 																		?>
 																	</td>
 																	<td>
-																		<?php $datetime = new DateTime($fanbotList[$key]["last_heard"]);
+																		<?php 
+																			  $timezone = $_SESSION['time'];
+																			  $datetime = new DateTime($fanbotList[$key]["last_heard"]);
 																			  $orderDate = $datetime->format('ymd');
 																			  echo '<span style="display: none;">'. $orderDate .'</span>'. $datetime->format('d-m-Y H:i'); 
 																	    ?>
