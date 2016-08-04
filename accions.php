@@ -265,6 +265,24 @@ $(document).ready( function () {
                 }
             },
             {
+                "targets": 1,
+                "render": function ( data, type, full, meta ) {
+                    date = new Date(data * 1000);
+                    sort  = data=="" ? "" : data;
+                    display = data=="" ? "" : date.getHours() + ':' + date.getMinutes();
+
+                    if (type === 'display') {
+                        return display;
+                      }
+                      else if (type === 'sort') {
+                        return sort;
+                      }
+                      // 'sort', 'type' and undefined all just use the integer
+                      return display;
+                }
+            },		            
+
+            {
                 // The `data` parameter refers to the data for the cell (defined by the
                 // `data` option, which defaults to the column being worked with, in
                 // this case `data: 0`.
@@ -324,7 +342,7 @@ $(document).ready( function () {
 		                "render": function ( data, type, full, meta ) {
 		                    date = new Date(data * 1000);
 		                    sort  = data=="" ? "" : data;
-		                    display = data=="" ? "" : date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear();
+		                    display = data=="" ? "" : date.getHours() + ':' + date.getMinutes();
 		
 		                    if (type === 'display') {
 		                        return display;
