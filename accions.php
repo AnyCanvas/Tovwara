@@ -320,7 +320,7 @@ $(document).ready( function () {
 		                }
 		            },
 		            {
-		                "targets": 2,
+		                "targets": 1,
 		                "render": function ( data, type, full, meta ) {
 		                    date = new Date(data * 1000);
 		                    sort  = data=="" ? "" : data;

@@ -463,7 +463,7 @@ function interactionsTableJson($userId, $sD, $eD, $iT)
 
 			echo '[ ';
 			echo '"'. $unixDate . '", ';
-			echo '"'. $unixDate. '", ';
+			echo '"'. $unixDate . '", ';
 			echo '"', $row['id'] .'", ';
 			echo '"'. $row['fbName']. '", ';
 			echo '"'. $row['fbID']. '", ';
