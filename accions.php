@@ -234,6 +234,13 @@
               type="text/javascript">
 </script><script type="text/javascript">
 $(document).ready( function () {
+		
+		function addZero(i) {
+		    if (i < 10) {
+		        i = "0" + i;
+		    }
+		    return i;
+		}
 
         var table = $('#actionsTable').DataTable({
         "ajax": 'json/interactionsTableJson.php',
@@ -269,7 +276,7 @@ $(document).ready( function () {
                 "render": function ( data, type, full, meta ) {
                     date = new Date(data * 1000);
                     sort  = data=="" ? "" : data;
-                    display = data=="" ? "" : date.getHours() + ':' + date.getMinutes();
+                    display = data=="" ? "" : addZero( date.getHours() ) + ':' + addZero( date.getMinutes() );
 
                     if (type === 'display') {
                         return display;
@@ -342,7 +349,7 @@ $(document).ready( function () {
 		                "render": function ( data, type, full, meta ) {
 		                    date = new Date(data * 1000);
 		                    sort  = data=="" ? "" : data;
-		                    display = data=="" ? "" : date.getHours() + ':' + date.getMinutes();
+		                    display = data=="" ? "" : addZero( date.getHours() ) + ':' + addZero( date.getMinutes() );
 		
 		                    if (type === 'display') {
 		                        return display;
