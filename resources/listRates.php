@@ -83,7 +83,9 @@
 							
                             </tbody>
                         </table>
-						<p><?php print_r(array_unique($Q)); ?></p>
+						<p><?php 
+								  $Q = array_unique($Q);
+								  print_r($Q); ?></p>
 						
 						<p><?php print_r($A); ?></p>
 
