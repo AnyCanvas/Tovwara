@@ -86,7 +86,25 @@
 
 												foreach($A as $Afor){
 													if($Qfor == $Afor){
-														$Atable[$c][intval($Afor)+1]++;
+														switch($Afor+1){
+															case 1:
+																$Atable[$c][1]++;
+																break;
+															case 2:
+																$Atable[$c][1]++;
+																break;
+															case 3:
+																$Atable[$c][1]++;
+																break;
+															case 4:
+																$Atable[$c][1]++;
+																break;
+															case 5:
+																$Atable[$c][1]++;
+																break;
+															
+															
+														}
 													}
 												}
 												$c++;
