@@ -57,7 +57,7 @@
 										    ?>
 											    			
 															<tr>
-								                                <td><kbd class="text-uppercase"><?php echo $row['data']?></kbd></td>								
+								                                <td><?php echo $row['data']?></td>								
 								                                <td>0</td>										
 
 								                                <td>0</td>										
