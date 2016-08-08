@@ -51,9 +51,10 @@
 
 										$result = $conn->query($sql);
 										
+										$c = 0;
 										if ($result->num_rows > 0) {		    
 										    while($row = $result->fetch_assoc()) { 
-											    $config = json_decode($row["config"], true);
+											    $data = json_decode($row['data'], true);
 										    ?>
 											    			
 															<tr>
@@ -68,9 +69,10 @@
 
 								                                <td>0</td>										
 								                            </tr>
+													
 								
-								
-								<?php			    }
+								<?php			$Q[$c] = $data[0];
+											    	}
 											}
 										$conn->close();
 								
@@ -79,6 +81,7 @@
 							
                             </tbody>
                         </table>
+						<?php print_r($Q); ?>
                     </div>
                 </section>
             </div>
