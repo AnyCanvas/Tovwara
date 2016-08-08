@@ -79,6 +79,12 @@
 											$Q = array_unique($Q);    	   	
 											foreach ($Q as $Qfor){
 												$Qtable[$c] = $Qfor;
+												$Qtable[$c][1]=0;
+												$Qtable[$c][2]=0;
+												$Qtable[$c][3]=0;
+												$Qtable[$c][4]=0;
+												$Qtable[$c][5]=0;
+
 												foreach($A as $Afor){
 													if($Qfor == $Afor){
 														$Qtable[$c][intval($Afor)+1]++;
