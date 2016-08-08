@@ -69,7 +69,6 @@
 
 								                                <td>0</td>										
 								                            </tr>
-													
 								
 								<?php			$Q[$c] = $data['q'];
 												$c++;
@@ -82,7 +81,7 @@
 							
                             </tbody>
                         </table>
-						<?php print_r($Q); ?>
+						<?php print_r(array_unique($Q)); ?>
                     </div>
                 </section>
             </div>
