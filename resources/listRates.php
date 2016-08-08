@@ -43,11 +43,11 @@
 										    die("Connection failed: " . $conn->connect_error);
 										}
 										
-//										if($_SESSION['userId'] == '00'){
+										if($_SESSION['userId'] == '00'){
 											$sql = "SELECT * FROM interactions WHERE action = 'rate'";
-//										}else {
-//											$sql = "SELECT data FROM interactions WHERE action = '". $_SESSION['userId']. "' AND action = 'rate'";
-//										}
+										}else {
+											$sql = "SELECT data FROM interactions WHERE clientId = '". $_SESSION['userId']. "' AND action = 'rate'";
+										}
 
 										$result = $conn->query($sql);
 										
