@@ -71,7 +71,7 @@
 								                            </tr>
 													
 								
-								<?php			$Q[$c] = $data[0];
+								<?php			$Q[$c] = $data['q'];
 												$c++;
 											    	}
 											}
