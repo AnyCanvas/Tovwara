@@ -114,13 +114,6 @@
 							
                             </tbody>
                         </table>
-						<p><?php 
-								  print_r($Q); ?></p>
-						
-						<p><?php print_r($A); ?></p>
-
-						<p><?php print_r($Atable); ?></p>
-
                     </div>
                 </section>
             </div>
