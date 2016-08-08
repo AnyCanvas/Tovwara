@@ -71,7 +71,8 @@
 								                            </tr>
 								
 								<?php			$Q[$c] = $data['q'];
-												$A[$data['q']] = $data['a'];
+												$A[$c*2] = $data['q'];
+												$A[($c*2)+1] = $data['a'];
 												$c++;
 											    	}
 											}
