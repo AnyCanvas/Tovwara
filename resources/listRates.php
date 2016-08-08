@@ -87,7 +87,7 @@
 
 												foreach($A as $Afor){
 													if($Qfor == $Afor){
-														$Qtable[$c][intval($Afor)+1]++;
+//														$Qtable[$c][intval($Afor)+1]++;
 													}
 												}
 												$c++;
@@ -103,6 +103,8 @@
 						<p><?php 
 								  print_r($Q); ?></p>
 						
+						<p><?php print_r($A); ?></p>
+
 						<p><?php print_r($Qtable); ?></p>
 
                     </div>
