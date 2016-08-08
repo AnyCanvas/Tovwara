@@ -55,22 +55,7 @@
 										if ($result->num_rows > 0) {		    
 										    while($row = $result->fetch_assoc()) { 
 											    $data = json_decode($row['data'], true);
-										    ?>
-											    			
-															<tr>
-								                                <td><?php echo $row['data']?></td>								
-								                                <td>0</td>										
-
-								                                <td>0</td>										
-
-								                                <td>0</td>										
-
-								                                <td>0</td>										
-
-								                                <td>0</td>										
-								                            </tr>
-								
-								<?php			$Q[$c] = $data['q'];
+												$Q[$c] = $data['q'];
 												$A[$c*2] = $data['q'];
 												$A[($c*2)+1] = $data['a'];
 												$c++;
