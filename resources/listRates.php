@@ -8,7 +8,6 @@
                         <table id="fanbotTable" class="table">
                             <thead>
                             <tr>
-                                <th class="hidden-phone">Numero de serie</th>
                                 <th>Pregunta</th>
                                 <th>1</th>
                                 <th>2</th>
