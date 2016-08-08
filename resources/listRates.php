@@ -91,16 +91,16 @@
 																$Atable[$c][1]++;
 																break;
 															case 2:
-																$Atable[$c][1]++;
+																$Atable[$c][2]++;
 																break;
 															case 3:
-																$Atable[$c][1]++;
+																$Atable[$c][3]++;
 																break;
 															case 4:
-																$Atable[$c][1]++;
+																$Atable[$c][4]++;
 																break;
 															case 5:
-																$Atable[$c][1]++;
+																$Atable[$c][5]++;
 																break;
 															
 															
