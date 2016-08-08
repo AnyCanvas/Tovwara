@@ -15,8 +15,6 @@
                                 <th>3</th>
                                 <th>4</th>
                                 <th>5</th>
-                                <th></th>
-
                             </tr>
                             </thead>
                             <tbody>
@@ -60,23 +58,20 @@
 										    ?>
 											    			
 															<tr>
+								                                <td><kbd class="text-uppercase"><?php echo $row['data']?></kbd></td>								
+								                                <td>0</td>										
 
-								                                <td><kbd class="text-uppercase"><?php echo $row['data']?></kbd></td>				
-								                            </tr>
-								
+								                                <td>0</td>										
+
+								                                <td>0</td>										
+
+								                                <td>0</td>										
+
+								                                <td>0</td>										
 								                            </tr>
 								
 								
 								<?php			    }
-											} else {	
-															?> 
-															
-															<tr>
-								                                <td>No tienes ninguna Fanbot asignada</td>
-								                            </tr>
-								                            
-								                            <?php
-																										
 											}
 										$conn->close();
 								
@@ -89,19 +84,3 @@
                 </section>
             </div>
         </div>
-        
-<script>
-function fnbtAction(name){
-        var ajaxurl = 'resources/activateFnbt.php',
-        data =  {'name': name};
-        $.post(ajaxurl, data, function (response) {
-            // Response div goes here.
-            alert(response);
-        });
-    }
-</script>
- <!-- Modal that configures a Fanbot facebook page -->
-
-    	<?php require_once("listModal.php"); ?>
-
-<!-- End modal --> 
