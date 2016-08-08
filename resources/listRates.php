@@ -72,6 +72,7 @@
 													
 								
 								<?php			$Q[$c] = $data[0];
+												$c++;
 											    	}
 											}
 										$conn->close();
