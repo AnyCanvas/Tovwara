@@ -45,7 +45,7 @@
 										}
 										
 //										if($_SESSION['userId'] == '00'){
-											$sql = "SELECT data FROM interactions AND action = 'rate'";
+											$sql = "SELECT * FROM interactions WHERE action = 'rate'";
 //										}else {
 //											$sql = "SELECT data FROM interactions WHERE action = '". $_SESSION['userId']. "' AND action = 'rate'";
 //										}
