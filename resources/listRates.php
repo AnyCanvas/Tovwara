@@ -44,11 +44,11 @@
 										    die("Connection failed: " . $conn->connect_error);
 										}
 										
-										if($_SESSION['userId'] == '00'){
-											$sql = "SELECT data FROM fanbot AND action = 'rate'";
-										}else {
-											$sql = "SELECT data FROM interactions WHERE action = '". $_SESSION['userId']. "' AND action = 'rate'";
-										}
+//										if($_SESSION['userId'] == '00'){
+											$sql = "SELECT data FROM interactions AND action = 'rate'";
+//										}else {
+//											$sql = "SELECT data FROM interactions WHERE action = '". $_SESSION['userId']. "' AND action = 'rate'";
+//										}
 
 										$result = $conn->query($sql);
 										
