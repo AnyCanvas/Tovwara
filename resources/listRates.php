@@ -81,7 +81,7 @@
 												$Qtable[$c] = $Qfor;
 												foreach($A as $Afor){
 													if($Qfor == $Afor){
-														$Qtable[$c][$Afor+1]++;
+														$Qtable[$c][intval($Afor)+1]++;
 													}
 												}
 												$c++;
