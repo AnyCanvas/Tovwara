@@ -9,6 +9,7 @@
                             <thead>
                             <tr>
                                 <th>Pregunta</th>
+                                <th>Promedio</th>
                                 <th>1</th>
                                 <th>2</th>
                                 <th>3</th>
@@ -98,6 +99,7 @@
 											foreach($Q as $Qfor){
 												echo '<tr>';
 								                echo '<td>'. $Qfor .'</td>';	
+								                echo '<td>'. ($Atable[$c][1] + $Atable[$c][2] +$Atable[$c][3] +$Atable[$c][4] +$Atable[$c][5]) / 2 .'</td>';	
 								                echo '<td>'. $Atable[$c][1] .'</td>';	
 								                echo '<td>'. $Atable[$c][2] .'</td>';	
 								                echo '<td>'. $Atable[$c][3] .'</td>';	
