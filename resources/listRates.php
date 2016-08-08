@@ -109,6 +109,18 @@
 												}
 												$c++;
 											}
+											$c = 1;
+											foreach($Q as $Qfor){
+												echo '<tr>';
+								                echo '<td>'. $Qfor .'</td>';	
+								                echo '<td>'. $Atable[$c][1] .'</td>';	
+								                echo '<td>'. $Atable[$c][2] .'</td>';	
+								                echo '<td>'. $Atable[$c][3] .'</td>';	
+								                echo '<td>'. $Atable[$c][4] .'</td>';	
+								                echo '<td>'. $Atable[$c][5] .'</td>';	
+												echo '</tr>';
+												$c++;
+											}
 											}
 										$conn->close();
 								
