@@ -84,9 +84,9 @@
 												$Atable[$c][4]=0;
 												$Atable[$c][5]=0;
 
-												foreach($A as $Afor){
+												foreach($A as $key => $Afor){
 													if($Qfor == $Afor){
-														switch($Afor+1){
+														switch($A[$key+1]){
 															case 1:
 																$Atable[$c][1]++;
 																break;
