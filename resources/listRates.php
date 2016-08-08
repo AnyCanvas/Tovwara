@@ -84,6 +84,7 @@
                             </tbody>
                         </table>
 						<p><?php 
+								  print_r($Q);
 								  $Q = array_unique($Q);
 								  print_r($Q); ?></p>
 						
