@@ -75,19 +75,18 @@
 												$A[($c*2)+1] = $data['a'];
 												$c++;
 											    	}
-											$c = 0;
+											$c = 1;
 											$Q = array_unique($Q);    	   	
 											foreach ($Q as $Qfor){
-												$Qtable[$c] = $Qfor;
-												$Qtable[$c][1]=0;
-												$Qtable[$c][2]=0;
-												$Qtable[$c][3]=0;
-												$Qtable[$c][4]=0;
-												$Qtable[$c][5]=0;
+												$Atable[$c][1]=0;
+												$Atable[$c][2]=0;
+												$Atable[$c][3]=0;
+												$Atable[$c][4]=0;
+												$Atable[$c][5]=0;
 
 												foreach($A as $Afor){
 													if($Qfor == $Afor){
-//														$Qtable[$c][intval($Afor)+1]++;
+														$Atable[$c][intval($Afor)+1]++;
 													}
 												}
 												$c++;
@@ -105,7 +104,7 @@
 						
 						<p><?php print_r($A); ?></p>
 
-						<p><?php print_r($Qtable); ?></p>
+						<p><?php print_r($Atable); ?></p>
 
                     </div>
                 </section>
