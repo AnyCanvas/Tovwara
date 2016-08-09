@@ -34,18 +34,62 @@ function getLikesGraph($month,$year){
 	    die("Connection failed: " . $conn->connect_error);
 	}
 
+<<<<<<< HEAD
 		if($_SESSION['userId'] == '00'){
 			$sql = "SELECT * FROM interactions WHERE EXTRACT(MONTH FROM date) = '". $month. "' AND EXTRACT(YEAR FROM date) = '". $year."'"; 
 			} else {
 			$sql = "SELECT * FROM interactions WHERE EXTRACT(MONTH FROM date) = '". $month. "' AND EXTRACT(YEAR FROM date) = '". $year."' AND clientId = '". $_SESSION['userId']."'"; 
 			}
+=======
+	$sql = "SELECT * FROM interactions WHERE";
+	if ($day !== 0)
+	{
+		$string = $year.'-'.$month.'-'.$day;
+		$sql .=  " date >= (STR_TO_DATE('".$string."', '%Y-%m-%d')) AND date <= (STR_TO_DATE('".$string."', '%Y-%m-%d') + INTERVAL 1 MONTH)";
+	} else
+	{
+		$sql .= " EXTRACT(MONTH FROM date) = '". $month. "' AND EXTRACT(YEAR FROM date) = '". $year."'";
+	}
+
+	if
+	( $fnbtId !== 0 )
+	{
+		$sql .= " AND fanbotId='".$fnbtId."'";
+	}
+
+	if
+	( $clientId !== 0 )
+	{
+		$sql .= " AND clientId='".$clientId."'";
+	}
+>>>>>>> development
 
 	$result = $conn->query($sql);
 	$daysInMonth = cal_days_in_month(CAL_GREGORIAN, date("m"), date("Y"));
 	$dayArray = array();
 	$i = 1;
+<<<<<<< HEAD
 	for($i = 1; $i <= $daysInMonth; $i++){
 		$dayArray[$i] = 0;
+=======
+
+	if ($result->num_rows > 0)
+	{
+
+		while
+		($row = $result->fetch_assoc())
+		{
+			$total++;
+			if
+			($row['action'] == 'like')
+			{
+				$like++;
+			} else if
+				($row['action'] == 'post')
+				{
+					$checkin++;
+				}
+>>>>>>> development
 		}
 	if ($result->num_rows > 0) {		    
 
@@ -101,6 +145,7 @@ function totalJson($day,$month,$year,$fnbtId,$clientId){
 	    die("Connection failed: " . $conn->connect_error);
 	}
 
+<<<<<<< HEAD
 	if ($day !== 0){
 		$string = $year.'-'.$month.'-'.$day;
 		$sql= "SELECT * FROM interactions WHERE date >= (STR_TO_DATE('".$string."', '%Y-%m-%d')) AND date <= (STR_TO_DATE('".$string."', '%Y-%m-%d') + INTERVAL 1 MONTH) AND fanbotId='".$fnbtId."'";
@@ -112,6 +157,20 @@ function totalJson($day,$month,$year,$fnbtId,$clientId){
 		$sql = "SELECT * FROM interactions WHERE EXTRACT(MONTH FROM date) = '". $month. "' AND EXTRACT(YEAR FROM date) = '". $year."' AND clientId='".$clientId."'"; 
 	} else{
 		$sql = "SELECT * FROM interactions WHERE EXTRACT(MONTH FROM date) = '". $month. "' AND EXTRACT(YEAR FROM date) = '". $year."'"; 
+=======
+	$sql = "SELECT * FROM interactions WHERE EXTRACT(YEAR FROM date) = '". $year."'";
+
+	if
+	( $fnbtId !== 0 )
+	{
+		$sql = " AND fanbotId='".$fnbtId."'";
+	}
+	
+	if
+	( $clientId !== 0 )
+	{
+		$sql = " AND clientId='".$clientId."'";
+>>>>>>> development
 	}
 	$result = $conn->query($sql);
 	$total = 0;
@@ -164,6 +223,7 @@ function likesJson($month,$year,$fnbtId,$clientId){
 	    die("Connection failed: " . $conn->connect_error);
 	}
 
+<<<<<<< HEAD
 	if( ($fnbtId !== 0) && ($clientId !== 0) ){
 		$sql = "SELECT * FROM interactions WHERE EXTRACT(MONTH FROM date) = '". $month. "' AND EXTRACT(YEAR FROM date) = '". $year."' AND fanbotId='".$fnbtId."' AND clientId='".$clientId."'";
 	} else if( $fnbtId !== 0 ){
@@ -172,6 +232,19 @@ function likesJson($month,$year,$fnbtId,$clientId){
 		$sql = "SELECT * FROM interactions WHERE EXTRACT(MONTH FROM date) = '". $month. "' AND EXTRACT(YEAR FROM date) = '". $year."' AND clientId='".$clientId."'"; 
 	} else{
 		$sql = "SELECT * FROM interactions WHERE EXTRACT(MONTH FROM date) = '". $month. "' AND EXTRACT(YEAR FROM date) = '". $year."'"; 
+=======
+	$sql = "SELECT * FROM interactions WHERE EXTRACT(MONTH FROM date) = '". $month. "' AND EXTRACT(YEAR FROM date) = '". $year."'";
+
+	if
+	( $fnbtId !== 0 )
+	{
+		$sql .= " AND fanbotId='".$fnbtId."'";
+	}
+	if
+	( $clientId !== 0 )
+	{
+		$sql .= " AND clientId='".$clientId."'";
+>>>>>>> development
 	}
 
 	$result = $conn->query($sql);
@@ -255,6 +328,7 @@ function likesJson($month,$year,$fnbtId,$clientId){
 	echo('}');
 
 	$conn->close();
+<<<<<<< HEAD
 	
 }	
 
@@ -299,6 +373,92 @@ function listInteractions(){
 		// Check connection
 		if ($conn->connect_error) {
 		    die("Connection failed: " . $conn->connect_error);
+=======
+
+}
+
+
+function interactionsTableJson($userId, $sD, $eD, $iT)
+{
+
+
+	require(realpath(dirname(__FILE__) . "/./config.php"));
+	$servername = $config["db"]["fanbot"]["host"];
+	$username = $config["db"]["fanbot"]["username"];
+	$password = $config["db"]["fanbot"]["password"];
+	$dbname = $config["db"]["fanbot"]["dbname"];
+
+
+	// Create connection
+	$conn = new mysqli($servername, $username, $password, $dbname);
+	// Check connection
+	if ($conn->connect_error)
+	{
+		die("Connection failed: " . $conn->connect_error);
+	}
+
+	$sql = "SELECT t2.fbID, t2.fbName, t2.id, t1.fbPage , t1.action, t1.date, t1.fanbotId FROM interactions t1, users t2 WHERE t1.userId = t2.fbID";
+
+	if ( $sD != 0 && $eD != 0)
+	{
+		$sql .=  " AND t1.date >= (STR_TO_DATE('".$sD."', '%Y-%m-%d')) AND t1.date <= (STR_TO_DATE('".$eD."', '%Y-%m-%d'))";
+	}
+
+	if ( $iT != 0)
+	{
+		if($iT == '1'){
+			$iT = 'like';
+		} else if($iT == '2'){
+			$iT = 'post';
+		} 
+		$sql .= " AND t1.action='". $iT ."'";
+	}
+
+
+	if ( $userId != '00')
+	{
+		$sql .= " AND t1.`clientId`=". $userId;
+	}
+
+	$sql .= " ORDER by t1.`date` DESC;";
+	$result = $conn->query($sql);
+
+
+	echo  '{ "data": [';
+
+	$i = 0;
+	if ($result->num_rows > 0)
+	{
+		while
+		($row = $result->fetch_assoc())
+		{
+			if ($i == 0)
+			{
+				$i++;
+			} else
+			{
+				echo ',';
+			}
+			// Create a new date var from date in db
+			$date =new DateTime($row['date']);
+			// Get de number of day from the date variable
+//			$formatedDate = $date->format('d/m/y');
+//			$formatedHour = $date->format('g:i a');
+			$unixDate = $date->format('U');
+
+			echo '[ ';
+			echo '"'. $unixDate . '", ';
+			echo '"'. $unixDate . '", ';
+			echo '"', $row['id'] .'", ';
+			echo '"'. $row['fbName']. '", ';
+			echo '"'. $row['fbID']. '", ';
+			echo '"'. $row['action']. '", ';
+			echo '"'. $row['fbPage']. '", ';
+			echo '"'. $row['fanbotId']. '"';
+
+
+			echo ' ]';
+>>>>>>> development
 		}
 		
 		if ( $_SESSION['userId'] == '00'){
@@ -306,6 +466,7 @@ function listInteractions(){
 			}else{
 			$sql = "SELECT t2.fbID, t2.fbName, t2.id, t1.fbPage , t1.action, t1.date, t1.fanbotId FROM interactions t1, users t2 WHERE t1.userId = t2.fbID AND t1.`clientId`=". $_SESSION['userId']. " ORDER by t1.`date` DESC;";
 
+<<<<<<< HEAD
 		}
 		$result = $conn->query($sql);
 		
@@ -316,6 +477,71 @@ function listInteractions(){
 				
 				// Create a new date var from date in db
 				$date =new DateTime($row['date']);
+=======
+function usersTableJson($userId, $sD, $eD, $uG)
+{
+
+	require(realpath(dirname(__FILE__) . "/./config.php"));
+	$servername = $config["db"]["fanbot"]["host"];
+	$username = $config["db"]["fanbot"]["username"];
+	$password = $config["db"]["fanbot"]["password"];
+	$dbname = $config["db"]["fanbot"]["dbname"];
+
+	// Create connection
+	$conn = new mysqli($servername, $username, $password, $dbname);
+	// Check connection
+	if ($conn->connect_error)
+	{
+		die("Connection failed: " . $conn->connect_error);
+	}
+
+	$sql = "SELECT  COUNT(t2.fbId), COUNT(CASE WHEN t1.action = 'post' THEN +1 END), COUNT(CASE WHEN t1.action = 'like' THEN +1 END), t2.id, t2.firstName,t2.lastName, t2.fbId, t2.email, t2.gender, t2.createdDate FROM interactions t1, users t2 WHERE t1.userId = t2.fbID";
+
+	if ( $userId != '00')
+	{
+		$sql .= " AND t1.clientId=" . $userId;
+	}
+
+	if ( $sD != 0 && $eD != 0)
+	{
+		$sql .=  " AND t2.createdDate >= (STR_TO_DATE('".$sD."', '%Y-%m-%d')) AND t2.createdDate <= (STR_TO_DATE('".$eD."', '%Y-%m-%d'))";
+	}
+
+
+	if ( $uG != '0')
+	{
+		if ($uG == '1'){
+			$uG = 'male';
+		} else if (uG == '2'){
+			$uG = 'female';
+		} 
+		$sql .= " AND t2.gender= '" . $uG . "'";
+	}
+	$sql .= " GROUP BY t2.fbId;";
+
+	$result = $conn->query($sql);
+
+
+	echo  '{ "data": [';
+
+	$i = 0;
+	if ($result->num_rows > 0)
+	{
+		while
+		($row = $result->fetch_assoc())
+		{
+			if ($i == 0)
+			{
+				$i++;
+			} else
+			{
+				echo ',';
+			}
+			// Create a new date var from date in db
+			if ($row['createdDate'] != "")
+			{
+				$date =new DateTime($row['createdDate']);
+>>>>>>> development
 				// Get de number of day from the date variable
 				$formatedDate = $date->format('d/m/y');
 				$formatedHour = $date->format('g:i a');		
@@ -571,14 +797,35 @@ function changeFacebookPage(){
 	$fnbtName  = $_POST["fanbotName"];
 	$actionType  = $_POST["actionType"];
 
+	switch ($actionType){
+		case '0': $actionType='like';
+			break;
+
+		case '1': $actionType='post';
+			break;
+
+		case '2': $actionType='rate';
+			break;
+
+	}
 	$facebookPage  = $_POST["facebookPage"];
 
+<<<<<<< HEAD
 				
 	require(realpath(dirname(__FILE__) . "/./config.php"));		
 		$servername = $config["db"]["fanbot"]["host"];
 		$username = $config["db"]["fanbot"]["username"];
 		$password = $config["db"]["fanbot"]["password"];
 		$dbname = $config["db"]["fanbot"]["dbname"];
+=======
+	if ($actionType == 'rate'){
+		$q['1']  = $_POST["q1"];		
+		$q['2']  = $_POST["q2"];		
+		$q['3']  = $_POST["q3"];		
+		$q['4']  = $_POST["q4"];		
+	}
+
+>>>>>>> development
 
 		// Create connection
 		$conn = new mysqli($servername, $username, $password, $dbname);
@@ -639,6 +886,16 @@ function changeFacebookPage(){
 		$cabeceras .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 		$cabeceras .= 'From: Gerardo Ruiz <gerardo@fanbot.me>' . "\r\n";
 
+<<<<<<< HEAD
+=======
+	if ($actionType == 'rate'){
+		$qJson = json_encode($q);
+		$sql = "UPDATE fanbot SET config ='". $configJson ."', survey = '". $qJson ."' WHERE name = '". $fnbtName ."'";
+	} else {
+		$sql = "UPDATE fanbot SET config ='". $configJson ."' WHERE name = '". $fnbtName ."'";				
+	}
+
+>>>>>>> development
 
 		mail($para, $titulo, $mensaje, $cabeceras);		
 	}

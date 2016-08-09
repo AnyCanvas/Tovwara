@@ -1,14 +1,34 @@
-	<?php 
-		// Check if user is logged in 
-		include "../resources/functions.php"; 	
+<?php
+// Check if user is logged in
+// sD = Start date, uG = User gender, Interaction type.
 
-		if( isset($_GET["sD"]) && isset($_GET["eD"])){
-			$startDate = $_GET["sD"];
-			$endDate = $_GET["eD"];
-		}
+include "../resources/functions.php";
 
-		if( isset($_GET["g"]) ){
-			$gender = $_GET["g"];
-		}
-		usersTableJson();
-	?> 
+if (!isLogged())
+{
+	exit;
+}
+
+if
+( isset($_GET["sd"]) && isset($_GET["ed"]))
+{
+	$sD = $_GET["sd"];
+	$eD = $_GET["ed"];
+} else
+{
+	$sD = 0;
+	$eD = 0;
+}
+
+if
+( isset($_GET["ug"]) )
+{
+	$uG = $_GET["ug"];
+} else
+{
+	$uG = 0;
+}
+
+usersTableJson($_SESSION['userId'], $sD, $eD, $uG);
+
+?>

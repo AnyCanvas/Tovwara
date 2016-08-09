@@ -1,9 +1,9 @@
 	<?php 
 		include "resources/functions.php"; 
-//		if (!isLogged()){
-//			header('Location: ./login.php');
-//			exit;
-//		}			
+		if (!isLogged()){
+			header('Location: ./login.php');
+			exit;
+		}			
 		
 	?> 
 
@@ -64,7 +64,7 @@
         <section class="wrapper">
         <!-- page start-->
 
-		<?php require_once("resources/spei.php"); ?>
+		<?php require_once("resources/listRates.php"); ?>
 
         <!-- page end-->
         </section>
@@ -118,7 +118,6 @@
 	    }	    
     });
 } );
-
 </script>
 
 </body>

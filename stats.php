@@ -243,7 +243,7 @@
 				url: 'json/interactionsJson.php?m=' + m + '&y=' + y,
 				mimeType: 'json',	
 		    });
-		}
+
 
 		    chart2.load({
 			   	bindto : "#chart2",
@@ -259,6 +259,7 @@
 				mimeType: 'json',	
 		    });
 
+		}
 	});
 
     });

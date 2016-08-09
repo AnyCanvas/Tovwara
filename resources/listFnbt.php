@@ -63,7 +63,7 @@
 								                                <td><?php echo $row['id']?></td>
 								                                
 								                                <?php if( $_SESSION['userId'] !== '00') { ?>
-								                                <td><kbd class="text-uppercase"><?php echo $row['name']?></kbd></td>
+								                                <td><a href="specialStats.php?fnbtId=<?php echo $row['id']?>" target="_blank"><kbd class="text-uppercase"><?php echo $row['name']?></kbd></td>
 																<?php } else { ?>
 								                                <td><a href="specialStats.php?fnbtId=<?php echo $row['id']?>" target="_blank"><kbd class="text-uppercase"><?php echo $row['name']?></kbd></a></td>
 																<?php } ?>
@@ -108,7 +108,9 @@
 																		?>
 																	</td>
 																	<td>
-																		<?php $datetime = new DateTime($fanbotList[$key]["last_heard"]);
+																		<?php 
+																			  // $timezone = $_SESSION['time'];
+																			  $datetime = new DateTime($fanbotList[$key]["last_heard"]);
 																			  $orderDate = $datetime->format('ymd');
 																			  echo '<span style="display: none;">'. $orderDate .'</span>'. $datetime->format('d-m-Y H:i'); 
 																	    ?>

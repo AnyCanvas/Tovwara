@@ -3,6 +3,14 @@
 	    localStorage.setItem("fanbotName", fanbotName);
 		$('#configModal').modal('show');
 	     document.getElementById('fanbotName').value = fanbotName;
+
+		$( "select" ).change(function() {
+		  if( $( this ).val() == '2' ){
+			  $("#questions").show();
+		  } else{
+			  $("#questions").hide();			  
+		  }
+		});
 	}
 
     function changeImage() {
@@ -22,16 +30,20 @@
     })
 
     }
-
 	   
 	function action(){
 
 	        var ajaxurl = 'resources/actionUrl.php';
 	        var facebookPage = $("#facebookPage").val();
 	        var fanbotName = $( "#fanbotName" ).val();
-	        var actionType = $("#action").is(':checked') ? "post" : "like";
+	        var actionType = $( "#accion" ).val();
 	        data =  {'facebookPage' : facebookPage, 'actionType': actionType,'fanbotName': fanbotName, };
-	        console.log(data);
+	        if(actionType == '2'){
+   	          data =  {'facebookPage' : facebookPage, 'actionType': actionType,'fanbotName': fanbotName, 'q1' : $( "#q1" ).val(), 'q2': $( "#q2" ).val(), 'q3': $( "#q3" ).val(), 'q4': $( "#q4" ).val()};		    		        
+	        } else {
+   	          data =  {'facebookPage' : facebookPage, 'actionType': actionType,'fanbotName': fanbotName };		    
+	        }
+	        console.log(data);	        
 	        $.post(ajaxurl, data, function (response) {
 	        });
 			$('#configModal').modal('hide');
@@ -51,21 +63,49 @@
 		        </div>
 		        <div class="modal-body">
 					<form class="form-inline" id="formUrl">
-					  <div class="form-group">
+					  <div class="form-group" style="margin-bottom: 2vh;">
 						<div class="input-group">									  
 							<div for="facebookUrl" class="input-group-addon">http://facebook.com/</div>
 							<input type="text" class="form-control input-sm" id="facebookPage" placeholder="Link de tu pagina" name="facebookPage">
 	    				</div>		
+						<a onclick="changeImage()" class="btn btn-default btn-xs">Verificar</a>						
+
 					  </div>
 					  <div class="form-group">
 						<input class="form-controlinput-sm" type='hidden' id= 'fanbotName' name='fanbotName' value='' />				  
 					  </div>
-					  <div class="form-group">
+					  <div class="form-group" style="margin-bottom: 2vh;">
 							<label class="checkbox-inline">
-                                <input type="checkbox" id="action" value="1"> Activar Check-in&nbsp;
+								<select name="interaccion" id="accion">
+								  <option value="0">Like</option>
+								  <option value="1">Check-in</option>
+								  <option value="2">Encuesta</option>
+								</select>
                             </label>
 					  </div>
-					  <a onclick="changeImage()" class="btn btn-default btn-xs">Verificar</a>						
+					  
+					  <div id="questions" style="display: none;">
+						  <div class="form-group" style="margin-bottom: 2vh;">
+	                            <label for="inputQ1" class="control-label">1ª pregunta:</label>
+	                            <input type="text" class="form-control" id="q1">
+	                      </div>
+	
+						  <div class="form-group" style="margin-bottom: 2vh;">
+	                            <label for="inputQ2" class="control-label">2ª pregunta:</label>
+	                            <input type="text" class="form-control" id="q2">
+	                      </div>
+	
+						  <div class="form-group" style="margin-bottom: 2vh;">
+	                            <label for="inputQ3" class="control-label">3ª pregunta:</label>
+	                            <input type="text" class="form-control" id="q3" >
+	                      </div>                      
+	
+						  <div class="form-group" style="margin-bottom: 2vh;">
+	                            <label for="inputQ4" class="control-label">4ª pregunta:</label>
+	                            <input type="text" class="form-control" id="q4">
+	                      </div>
+					  </div>
+
 					</form>					
 		        </div>
 
