@@ -56,8 +56,8 @@
 										if ($result->num_rows > 0) {		    
 										    while($row = $result->fetch_assoc()) { 
 											    $data = json_decode($row['data'], true);
-												$Q[$c] = urldecode ( $data['q'] );
-												$A[$c*2] = urldecode ( $data['q'] );
+												$Q[$c] = $data['q'];
+												$A[$c*2] = $data['q'];
 												$A[($c*2)+1] = $data['a'];
 												$c++;
 											    	}
@@ -98,7 +98,7 @@
 											$c = 1;
 											foreach($Q as $Qfor){
 												echo '<tr>';
-								                echo '<td>'.  $Qfor .'</td>';	
+								                echo '<td>'.  urldecode ($Qfor ) .'</td>';	
 								                echo '<td>'. ($Atable[$c][1] + ($Atable[$c][2]* 2) + ($Atable[$c][3]* 3) + ($Atable[$c][4]* 4) +( $Atable[$c][5] * 5)) / ($Atable[$c][1] + $Atable[$c][2] + $Atable[$c][3] + $Atable[$c][4] +$Atable[$c][5]) .'</td>';	
 								                echo '<td>'. $Atable[$c][1] .'</td>';	
 								                echo '<td>'. $Atable[$c][2] .'</td>';	
