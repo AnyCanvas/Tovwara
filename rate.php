@@ -9,8 +9,7 @@
 
 <!DOCTYPE html>
 <html>
-<meta charset="ISO-8859-1">
-<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><head>
     <meta charset="utf-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
