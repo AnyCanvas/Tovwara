@@ -98,7 +98,7 @@
 											$c = 1;
 											foreach($Q as $Qfor){
 												echo '<tr>';
-								                echo '<td>'. urldecode ($Qfor) .'</td>';	
+								                echo '<td>'. urldecode ( $Qfor ) .'</td>';	
 								                echo '<td>'. ($Atable[$c][1] + ($Atable[$c][2]* 2) + ($Atable[$c][3]* 3) + ($Atable[$c][4]* 4) +( $Atable[$c][5] * 5)) / ($Atable[$c][1] + $Atable[$c][2] + $Atable[$c][3] + $Atable[$c][4] +$Atable[$c][5]) .'</td>';	
 								                echo '<td>'. $Atable[$c][1] .'</td>';	
 								                echo '<td>'. $Atable[$c][2] .'</td>';	
