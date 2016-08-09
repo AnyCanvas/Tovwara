@@ -39,7 +39,7 @@
 	        var actionType = $( "#accion" ).val();
 	        data =  {'facebookPage' : facebookPage, 'actionType': actionType,'fanbotName': fanbotName, };
 	        if(actionType == '2'){
-   	          data =  {'facebookPage' : facebookPage, 'actionType': actionType,'fanbotName': fanbotName, 'q1' : $( "#q1" ).val(), 'q2': $( "#q2" ).val(), 'q3': $( "#q3" ).val(), 'q4': $( "#q4" ).val()};		    		        
+   	          data =  {'facebookPage' : facebookPage, 'actionType': actionType,'fanbotName': fanbotName, 'q1' : utf8_encode($( "#q1" ).val() ), 'q2': utf8_encode( $( "#q2" ).val() ), 'q3': utf8_encode( $( "#q3" ).val() ), 'q4': utf8_encode($( "#q4" ).val() )};		    		        
 	        } else {
    	          data =  {'facebookPage' : facebookPage, 'actionType': actionType,'fanbotName': fanbotName };		    
 	        }
