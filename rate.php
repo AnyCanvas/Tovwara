@@ -8,7 +8,8 @@
 	?> 
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
+<meta charset="ISO-8859-1">
 <head>
     <meta charset="utf-8">
 
