@@ -115,7 +115,7 @@
     $('#fanbotTable').DataTable({
     "columnDefs": [
         {
-            "targets": 0,
+            "targets": 5,
             "render": function ( data, type, full, meta ) {
                 date = new Date(data * 1000);
                 sort  = data=="" ? "" : data;
