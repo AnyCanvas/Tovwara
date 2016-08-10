@@ -158,7 +158,33 @@
     });
 
 	$(document).ready( function () {
+
+		function addZero(i) {
+		    if (i < 10) {
+		        i = "0" + i;
+		    }
+		    return i;
+		}
+
     $('#fanbotTable').DataTable({
+    "columnDefs": [
+        {
+            "targets": 5,
+            "render": function ( data, type, full, meta ) {
+                date = new Date(data * 1000);
+                sort  = data=="" ? "" : data;
+                display = data=="" ? "" : date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear() + ' ' + addZero( date.getHours() ) + ':' + addZero( date.getMinutes() );
+                if (type === 'display') {
+                    return display;
+                  }
+                  else if (type === 'sort') {
+                    return sort;
+                  }
+                  // 'sort', 'type' and undefined all just use the integer
+                  return display;
+            }
+        },
+	],
 	language: {
 	        url: 'https://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json'
 	    }	    
