@@ -113,6 +113,25 @@
 <script>
 	$(document).ready( function () {
     $('#fanbotTable').DataTable({
+    "columnDefs": [
+        {
+            "targets": 0,
+            "render": function ( data, type, full, meta ) {
+                date = new Date(data * 1000);
+                sort  = data=="" ? "" : data;
+                display = data=="" ? "" : date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear();
+
+                if (type === 'display') {
+                    return display;
+                  }
+                  else if (type === 'sort') {
+                    return sort;
+                  }
+                  // 'sort', 'type' and undefined all just use the integer
+                  return display;
+            }
+        },
+
 	language: {
 	        url: 'https://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json'
 	    }	    
