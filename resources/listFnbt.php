@@ -112,7 +112,7 @@
 																			  // $timezone = $_SESSION['time'];
 																			  $datetime = new DateTime($fanbotList[$key]["last_heard"]);
 																			  $orderDate = $datetime->format('ymd');
-																			  $unixDate = $datetime->format('ymd');
+																			  $unixDate = $datetime->format('U');
 																			  echo $unixDate; 
 																	    ?>
 
