@@ -167,6 +167,7 @@
 		}
 
     $('#fanbotTable').DataTable({
+    "order": [[ 5, 'desc' ], [ 1, 'desc' ]],
     "columnDefs": [
         {
             "targets": 5,
