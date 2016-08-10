@@ -120,7 +120,6 @@
                 date = new Date(data * 1000);
                 sort  = data=="" ? "" : data;
                 display = data=="" ? "" : date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear();
-
                 if (type === 'display') {
                     return display;
                   }
@@ -131,7 +130,7 @@
                   return display;
             }
         },
-
+	],
 	language: {
 	        url: 'https://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json'
 	    }	    
