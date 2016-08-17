@@ -67,6 +67,8 @@ function totalJson($day, $month, $year, $fnbtId, $clientId)
 	$total = 0;
 	$like = 0;
 	$checkin = 0;
+	$rate = 0;
+
 	$i = 1;
 
 	if ($result->num_rows > 0)
@@ -84,7 +86,12 @@ function totalJson($day, $month, $year, $fnbtId, $clientId)
 				($row['action'] == 'post')
 				{
 					$checkin++;
+			} else if
+				($row['action'] == 'rate')
+				{
+					$rate++;
 				}
+
 		}
 	}
 
@@ -99,6 +106,9 @@ function totalJson($day, $month, $year, $fnbtId, $clientId)
 	echo('],');
 	echo('"Check–in":[');
 	echo $checkin;
+	echo(']');
+	echo('"Encuesta":[');
+	echo $rate;
 	echo(']');
 	echo('}');
 
@@ -414,7 +424,7 @@ function likesJson($month, $year, $fnbtId, $clientId)
 
 	}
 	echo('],');
-	echo('"Rate":[0,');
+	echo('"Encuestas":[0,');
 	for
 	($i = 1; $i <= $daysInMonth; $i++)
 	{
