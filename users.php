@@ -140,6 +140,9 @@
                                                     Check-in
                                                 </th>
                                                 <th>
+                                                    Encuesta
+                                                </th>
+                                                <th>
                                                     Totales
                                                 </th>
                                                 <th>
@@ -172,6 +175,9 @@
                                                 </th>
                                                 <th>
                                                     Check-in
+                                                </th>
+                                                <th>
+                                                    Encuesta
                                                 </th>
                                                 <th>
                                                     Totales
