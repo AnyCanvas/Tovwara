@@ -143,6 +143,7 @@ function monthlyLikesJson($year, $fnbtId, $clientId)
 	$monthArray = array();
 	$likeArray = array();
 	$postArray = array();
+	$rateArray = array();
 	$i = 1;
 	for
 	($i = 1; $i <= 12; $i++)
@@ -179,7 +180,11 @@ function monthlyLikesJson($year, $fnbtId, $clientId)
 						($row['action'] == 'post')
 						{
 							$postArray[$i]++;
-						}
+						} else if
+						($row['action'] == 'rate')
+						{
+							$rateArray[$i]++;
+						} 
 
 				}
 			}
@@ -226,6 +231,24 @@ function monthlyLikesJson($year, $fnbtId, $clientId)
 	}
 	echo('],');
 	echo('"Check–in":[0,');
+	for
+	($i = 1; $i <= 12; $i++)
+	{
+		if (isset($postArray[$i]))
+		{
+			echo $postArray[$i];
+		} else
+		{
+			echo 0;
+		}
+		if (12 > $i)
+		{
+			echo ', ';
+		}
+
+	}
+	echo('],');
+	echo('"Encuesta":[0,');
 	for
 	($i = 1; $i <= 12; $i++)
 	{
