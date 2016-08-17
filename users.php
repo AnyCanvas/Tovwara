@@ -295,7 +295,8 @@ $(document).ready( function () {
                 },
                 "targets": 1
             },
-           { "visible": false,  "targets": [ 3 ] }
+           { "visible": false,  "targets": [ 3 ] },
+           { "visible": false,  "targets": [ 10 ] }
         ],
         });
 

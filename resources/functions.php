@@ -579,9 +579,9 @@ function usersTableJson($userId, $sD, $eD, $uG)
 	if ( $uG != '0')
 	{
 		if ($uG == '1'){
-			$uG = 'M';
+			$uG = 'male';
 		} else if (uG == '2'){
-			$uG = 'F';
+			$uG = 'female';
 		} 
 		$sql .= " AND t2.gender= '" . $uG . "'";
 	}
