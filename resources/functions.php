@@ -309,6 +309,7 @@ function likesJson($month, $year, $fnbtId, $clientId)
 	$dayArray = array();
 	$likeArray = array();
 	$postArray = array();
+	$rateArray = array();
 	$i = 1;
 	for
 	($i = 1; $i <= $daysInMonth; $i++)
@@ -316,6 +317,7 @@ function likesJson($month, $year, $fnbtId, $clientId)
 		$dayArray[$i] = 0;
 		$likeArray[$i] = 0;
 		$postArray[$i] = 0;
+		$rateArray[$i] = 0;
 	}
 	if ($result->num_rows > 0)
 	{
@@ -345,8 +347,11 @@ function likesJson($month, $year, $fnbtId, $clientId)
 						($row['action'] == 'post')
 						{
 							$postArray[$i]++;
-						}
-
+						} else if
+						($row['action'] == 'rate')
+						{
+							$rateArray[$i]++;
+						} 
 				}
 			}
 		}
@@ -398,6 +403,24 @@ function likesJson($month, $year, $fnbtId, $clientId)
 		if (isset($postArray[$i]))
 		{
 			echo $postArray[$i];
+		} else
+		{
+			echo 0;
+		}
+		if ($daysInMonth > $i)
+		{
+			echo ', ';
+		}
+
+	}
+	echo('],');
+	echo('"Rate":[0,');
+	for
+	($i = 1; $i <= $daysInMonth; $i++)
+	{
+		if (isset($rateArray[$i]))
+		{
+			echo $rateArray[$i];
 		} else
 		{
 			echo 0;
