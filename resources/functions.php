@@ -106,7 +106,7 @@ function totalJson($day, $month, $year, $fnbtId, $clientId)
 	echo('],');
 	echo('"Check–in":[');
 	echo $checkin;
-	echo(']');
+	echo('],');
 	echo('"Encuesta":[');
 	echo $rate;
 	echo(']');
