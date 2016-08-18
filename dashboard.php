@@ -185,8 +185,7 @@
                   return display;
             },
         },
-		           { "visible": false,  "targets": [ 8 ] },
-		           { "visible": false,  "targets": [ 7 ] }
+		{ "visible": false,  "targets": [ 8 ] }
 
 	],
 	language: {
