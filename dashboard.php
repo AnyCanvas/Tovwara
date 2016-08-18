@@ -183,10 +183,10 @@
                   }
                   // 'sort', 'type' and undefined all just use the integer
                   return display;
-            }
-        },
+            },
 		           { "visible": false,  "targets": [ 8 ] },
 		           { "visible": false,  "targets": [ 7 ] }
+        },
 	],
 	language: {
 	        url: 'https://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json'
