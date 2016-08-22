@@ -186,6 +186,7 @@
             },
         },
 		{ "visible": false,  "targets": [ 7 ] },
+		{ "visible": false,  "targets": [ 7 ] },
 		{ "visible": false,  "targets": [ 6 ] }
 
 	],
