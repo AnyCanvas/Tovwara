@@ -185,7 +185,7 @@
                   return display;
             },
         },
-		{ "visible": false,  "targets": [ 7 ] },
+		{ "visible": false,  "targets": [ 3 ] },
 		{ "visible": false,  "targets": [ 7 ] },
 		{ "visible": false,  "targets": [ 6 ] }
 
