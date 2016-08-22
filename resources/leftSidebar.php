@@ -13,12 +13,13 @@
             <li class="sub-menu">
                 <a href="javascript:;">
                     <i class="fa fa-laptop"></i>
-                    <span>Reportes</span>
+                    <span>Fanbot Classic</span>
                 </a>
                 <ul class="sub">  
-                    <li><a href="stats.php">Estadísticas</a></li>
-                    <li><a href="accions.php">Accíones</a></li>
+                    <li><a href="stats.php">Generales</a></li>
+                    <li><a href="accions.php">Acciones</a></li>
                     <li><a href="users.php">Usuarios</a></li>
+                    <li><a href="rates.php">Encuestas</a></li>
                 </ul>
             </li>
 
