@@ -19,7 +19,7 @@
                     <li><a href="stats.php">Generales</a></li>
                     <li><a href="accions.php">Acciones</a></li>
                     <li><a href="users.php">Usuarios</a></li>
-                    <li><a href="rates.php">Encuestas</a></li>
+                    <li><a href="rate.php">Encuestas</a></li>
                 </ul>
             </li>
 
