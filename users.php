@@ -140,6 +140,9 @@
                                                     Check-in
                                                 </th>
                                                 <th>
+                                                    Encuesta
+                                                </th>
+                                                <th>
                                                     Totales
                                                 </th>
                                                 <th>
@@ -172,6 +175,9 @@
                                                 </th>
                                                 <th>
                                                     Check-in
+                                                </th>
+                                                <th>
+                                                    Encuesta
                                                 </th>
                                                 <th>
                                                     Totales
@@ -259,10 +265,10 @@ $(document).ready( function () {
         buttons: [
             'csv', 'pdf'
         ],
-        "order": [ [ 9, 'desc' ] ],
+        "order": [ [ 10, 'desc' ] ],
         "columnDefs": [
            {
-                "targets": 9,
+                "targets": 10,
                 "render": function ( data, type, full, meta ) {
 					var utcSeconds = data;
 					var date = new Date(0); // The 0 there is the key, which sets the date to the epoch
@@ -289,7 +295,8 @@ $(document).ready( function () {
                 },
                 "targets": 1
             },
-           { "visible": false,  "targets": [ 3 ] }
+           { "visible": false,  "targets": [ 3 ] },
+           { "visible": false,  "targets": [ 10 ] }
         ],
         });
 
@@ -315,10 +322,10 @@ $(document).ready( function () {
 		        buttons: [
 		            'csv', 'pdf'
 		        ],
-		        "order": [ [ 9, 'desc' ] ],
+		        "order": [ [ 10, 'desc' ] ],
 		        "columnDefs": [
 		           {
-		                "targets": 9,
+		                "targets": 10,
 		                "render": function ( data, type, full, meta ) {
 							var utcSeconds = data;
 							var date = new Date(0); // The 0 there is the key, which sets the date to the epoch

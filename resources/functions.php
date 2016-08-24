@@ -67,6 +67,8 @@ function totalJson($day, $month, $year, $fnbtId, $clientId)
 	$total = 0;
 	$like = 0;
 	$checkin = 0;
+	$rate = 0;
+
 	$i = 1;
 
 	if ($result->num_rows > 0)
@@ -84,7 +86,12 @@ function totalJson($day, $month, $year, $fnbtId, $clientId)
 				($row['action'] == 'post')
 				{
 					$checkin++;
+			} else if
+				($row['action'] == 'rate')
+				{
+					$rate++;
 				}
+
 		}
 	}
 
@@ -99,6 +106,9 @@ function totalJson($day, $month, $year, $fnbtId, $clientId)
 	echo('],');
 	echo('"Check–in":[');
 	echo $checkin;
+	echo('],');
+	echo('"Encuesta":[');
+	echo $rate;
 	echo(']');
 	echo('}');
 
@@ -143,6 +153,7 @@ function monthlyLikesJson($year, $fnbtId, $clientId)
 	$monthArray = array();
 	$likeArray = array();
 	$postArray = array();
+	$rateArray = array();
 	$i = 1;
 	for
 	($i = 1; $i <= 12; $i++)
@@ -179,7 +190,11 @@ function monthlyLikesJson($year, $fnbtId, $clientId)
 						($row['action'] == 'post')
 						{
 							$postArray[$i]++;
-						}
+						} else if
+						($row['action'] == 'rate')
+						{
+							$rateArray[$i]++;
+						} 
 
 				}
 			}
@@ -226,6 +241,24 @@ function monthlyLikesJson($year, $fnbtId, $clientId)
 	}
 	echo('],');
 	echo('"Check–in":[0,');
+	for
+	($i = 1; $i <= 12; $i++)
+	{
+		if (isset($postArray[$i]))
+		{
+			echo $postArray[$i];
+		} else
+		{
+			echo 0;
+		}
+		if (12 > $i)
+		{
+			echo ', ';
+		}
+
+	}
+	echo('],');
+	echo('"Encuesta":[0,');
 	for
 	($i = 1; $i <= 12; $i++)
 	{
@@ -286,6 +319,7 @@ function likesJson($month, $year, $fnbtId, $clientId)
 	$dayArray = array();
 	$likeArray = array();
 	$postArray = array();
+	$rateArray = array();
 	$i = 1;
 	for
 	($i = 1; $i <= $daysInMonth; $i++)
@@ -293,6 +327,7 @@ function likesJson($month, $year, $fnbtId, $clientId)
 		$dayArray[$i] = 0;
 		$likeArray[$i] = 0;
 		$postArray[$i] = 0;
+		$rateArray[$i] = 0;
 	}
 	if ($result->num_rows > 0)
 	{
@@ -322,8 +357,11 @@ function likesJson($month, $year, $fnbtId, $clientId)
 						($row['action'] == 'post')
 						{
 							$postArray[$i]++;
-						}
-
+						} else if
+						($row['action'] == 'rate')
+						{
+							$rateArray[$i]++;
+						} 
 				}
 			}
 		}
@@ -375,6 +413,24 @@ function likesJson($month, $year, $fnbtId, $clientId)
 		if (isset($postArray[$i]))
 		{
 			echo $postArray[$i];
+		} else
+		{
+			echo 0;
+		}
+		if ($daysInMonth > $i)
+		{
+			echo ', ';
+		}
+
+	}
+	echo('],');
+	echo('"Encuestas":[0,');
+	for
+	($i = 1; $i <= $daysInMonth; $i++)
+	{
+		if (isset($rateArray[$i]))
+		{
+			echo $rateArray[$i];
 		} else
 		{
 			echo 0;
@@ -507,7 +563,7 @@ function usersTableJson($userId, $sD, $eD, $uG)
 		die("Connection failed: " . $conn->connect_error);
 	}
 
-	$sql = "SELECT  COUNT(t2.fbId), COUNT(CASE WHEN t1.action = 'post' THEN +1 END), COUNT(CASE WHEN t1.action = 'like' THEN +1 END), t2.id, t2.firstName,t2.lastName, t2.fbId, t2.email, t2.gender, t2.createdDate FROM interactions t1, users t2 WHERE t1.userId = t2.fbID";
+	$sql = "SELECT  COUNT(t2.fbId), COUNT(CASE WHEN t1.action = 'post' THEN +1 END), COUNT(CASE WHEN t1.action = 'like' THEN +1 END), COUNT(CASE WHEN t1.action = 'rate' THEN +1 END), t2.id, t2.firstName,t2.lastName, t2.fbId, t2.email, t2.gender, t2.createdDate FROM interactions t1, users t2 WHERE t1.userId = t2.fbID";
 
 	if ( $userId != '00')
 	{
@@ -569,6 +625,7 @@ function usersTableJson($userId, $sD, $eD, $uG)
 			echo '"'. $row['gender']. '", ';
 			echo '"'. $row['COUNT(CASE WHEN t1.action = \'like\' THEN +1 END)'] . '", ';
 			echo '"'. $row['COUNT(CASE WHEN t1.action = \'post\' THEN +1 END)'] . '", ';
+			echo '"'. $row['COUNT(CASE WHEN t1.action = \'rate\' THEN +1 END)'] . '", ';
 			echo '"'. $row['COUNT(t2.fbId)'] . '", ';
 			echo '"'. $unixDate . '"';
 
