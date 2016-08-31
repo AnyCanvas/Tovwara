@@ -84,7 +84,7 @@
                         <div class="panel-body">
                             <div class="wdgt-value">
                                 <h1 class="count">25</h1>
-                                <p>New Users</p>
+                                <p>Like</p>
                             </div>
                         </div>
 
@@ -101,7 +101,7 @@
                         <div class="panel-body">
                             <div class="wdgt-value">
                                 <h1 class="count">295</h1>
-                                <p>Sales</p>
+                                <p>Check-in</p>
                             </div>
                         </div>
 
@@ -118,7 +118,7 @@
                         <div class="panel-body">
                             <div class="wdgt-value">
                                 <h1 class="count">25</h1>
-                                <p>New Users</p>
+                                <p>Encuestas</p>
                             </div>
                         </div>
 
@@ -135,7 +135,7 @@
                         <div class="panel-body">
                             <div class="wdgt-value">
                                 <h1 class="count">295</h1>
-                                <p>Sales</p>
+                                <p>Meta</p>
                             </div>
                         </div>
 
