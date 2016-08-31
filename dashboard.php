@@ -78,7 +78,7 @@
                 <div class="profile-nav alt">
                     <section class="panel text-center">
                         <div class="user-heading alt wdgt-row terques-bg">
-                            <i class="fa fa-user"></i>
+                            <i class="fa fa-thumbs-up"></i>
                         </div>
 
                         <div class="panel-body">
@@ -95,7 +95,7 @@
                 <div class="profile-nav alt">
                     <section class="panel text-center">
                         <div class="user-heading alt wdgt-row red-bg">
-                            <i class="fa fa-tags"></i>
+                            <i class="fa fa-map-marker"></i>
                         </div>
 
                         <div class="panel-body">
@@ -112,7 +112,7 @@
                 <div class="profile-nav alt">
                     <section class="panel text-center">
                         <div class="user-heading alt wdgt-row terques-bg">
-                            <i class="fa fa-user"></i>
+                            <i class="fa fa-star"></i>
                         </div>
 
                         <div class="panel-body">
@@ -129,12 +129,12 @@
                 <div class="profile-nav alt">
                     <section class="panel text-center">
                         <div class="user-heading alt wdgt-row red-bg">
-                            <i class="fa fa-tags"></i>
+                            <i class="fa fa-flag"></i>
                         </div>
 
                         <div class="panel-body">
                             <div class="wdgt-value">
-                                <h1 class="count">295</h1>
+                                <h1 class="count">399</h1>
                                 <p>Meta</p>
                             </div>
                         </div>
