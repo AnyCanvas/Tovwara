@@ -84,7 +84,7 @@
                         <div class="panel-body">
                             <div class="wdgt-value">
                                 <h1 class="count">25</h1>
-                                <p>Like</p>
+                                <h5>Like</h5>
                             </div>
                         </div>
 
@@ -94,14 +94,14 @@
             <div class="col-md-3">
                 <div class="profile-nav alt">
                     <section class="panel text-center">
-                        <div class="user-heading alt wdgt-row red-bg">
+                        <div class="user-heading alt wdgt-row terques-bg">
                             <i class="fa fa-map-marker"></i>
                         </div>
 
                         <div class="panel-body">
                             <div class="wdgt-value">
                                 <h1 class="count">295</h1>
-                                <p>Check-in</p>
+                                <h5>Check-in</h5>
                             </div>
                         </div>
 
@@ -118,7 +118,7 @@
                         <div class="panel-body">
                             <div class="wdgt-value">
                                 <h1 class="count">25</h1>
-                                <p>Encuestas</p>
+                                <h5>Encuestas</h5>
                             </div>
                         </div>
 
@@ -128,14 +128,14 @@
             <div class="col-md-3">
                 <div class="profile-nav alt">
                     <section class="panel text-center">
-                        <div class="user-heading alt wdgt-row red-bg">
+                        <div class="user-heading alt wdgt-row terques-bg">
                             <i class="fa fa-flag"></i>
                         </div>
 
                         <div class="panel-body">
                             <div class="wdgt-value">
                                 <h1 class="count">399</h1>
-                                <p>Meta</p>
+                                <h5>Meta</h5>
                             </div>
                         </div>
 
