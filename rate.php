@@ -67,6 +67,8 @@
 		<?php require_once("resources/listRates.php"); ?>
 
         <!-- page end-->
+
+<?php rateJson(); ?>
         </section>
     </section>
     <!--main content end-->
@@ -119,7 +121,5 @@
     });
 } );
 </script>
-
-<?php rateJson(); ?>
 </body>
 </html>
