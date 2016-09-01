@@ -83,8 +83,8 @@
 
                         <div class="panel-body">
                             <div class="wdgt-value">
-                                <h1 class="count">25</h1>
-                                <h5>Like</h5>
+                                <h1 class="count">0</h1>
+                                <h5>Likes</h5>
                             </div>
                         </div>
 
@@ -100,8 +100,8 @@
 
                         <div class="panel-body">
                             <div class="wdgt-value">
-                                <h1 class="count">295</h1>
-                                <h5>Check-in</h5>
+                                <h1 class="count">0</h1>
+                                <h5>Check-ins</h5>
                             </div>
                         </div>
 
@@ -117,7 +117,7 @@
 
                         <div class="panel-body">
                             <div class="wdgt-value">
-                                <h1 class="count">25</h1>
+                                <h1 class="count">0</h1>
                                 <h5>Encuestas</h5>
                             </div>
                         </div>
@@ -134,7 +134,7 @@
 
                         <div class="panel-body">
                             <div class="wdgt-value">
-                                <h1 class="count">399</h1>
+                                <h1 class="count">0/399</h1>
                                 <h5>Meta</h5>
                             </div>
                         </div>
@@ -249,6 +249,17 @@
 
 	$(document).ready( function () {
 
+
+	  var xhttp = new XMLHttpRequest();
+	  xhttp.onreadystatechange = function() {
+	    if (this.readyState == 4 && this.status == 200) {
+	      console.log(this.responseText);
+	    }
+	  };
+	  xhttp.open("GET", "json/interactionsJson.php", true);
+	  xhttp.send();		
+		var total = JSON.parse(text);
+		
 		function addZero(i) {
 		    if (i < 10) {
 		        i = "0" + i;
