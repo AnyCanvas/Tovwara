@@ -83,7 +83,7 @@
 
                         <div class="panel-body">
                             <div class="wdgt-value">
-                                <h1 class="count">0</h1>
+                                <h1 id="likes" class="count">0</h1>
                                 <h5>Likes</h5>
                             </div>
                         </div>
@@ -100,7 +100,7 @@
 
                         <div class="panel-body">
                             <div class="wdgt-value">
-                                <h1 class="count">0</h1>
+                                <h1 id="checkins" class="count">0</h1>
                                 <h5>Check-ins</h5>
                             </div>
                         </div>
@@ -117,7 +117,7 @@
 
                         <div class="panel-body">
                             <div class="wdgt-value">
-                                <h1 class="count">0</h1>
+                                <h1 id="encuestas" class="count">0</h1>
                                 <h5>Encuestas</h5>
                             </div>
                         </div>
@@ -134,7 +134,7 @@
 
                         <div class="panel-body">
                             <div class="wdgt-value">
-                                <h1 class="count">0/399</h1>
+                                <h1 id="total" class="count">0/399</h1>
                                 <h5>Meta</h5>
                             </div>
                         </div>
@@ -254,11 +254,16 @@
 	  xhttp.onreadystatechange = function() {
 	    if (this.readyState == 4 && this.status == 200) {
 	      console.log(this.responseText);
+		  var total = JSON.parse(this.responseText);
+		  document.getElementById("total").innerHTML = total[0];
+		  document.getElementById("encuestas").innerHTML = total[3];
+		  document.getElementById("checkins").innerHTML = total[2];
+		  document.getElementById("likes").innerHTML = total[1];
 	    }
 	  };
 	  xhttp.open("GET", "json/monthTotalJson.php", true);
 	  xhttp.send();		
-//	  var total = JSON.parse(text);
+
 		
 		function addZero(i) {
 		    if (i < 10) {
