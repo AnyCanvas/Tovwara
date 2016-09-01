@@ -134,7 +134,7 @@
 
                         <div class="panel-body">
                             <div class="wdgt-value">
-                                <h1 id="total" class="count">0/399</h1>
+                                <h1 class="count"><span id="total"></span>/399</h1>
                                 <h5>Meta</h5>
                             </div>
                         </div>
