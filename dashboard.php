@@ -256,9 +256,9 @@
 	      console.log(this.responseText);
 	    }
 	  };
-	  xhttp.open("GET", "json/interactionsJson.php", true);
+	  xhttp.open("GET", "json/monthTotalJson.php", true);
 	  xhttp.send();		
-		var total = JSON.parse(text);
+//	  var total = JSON.parse(text);
 		
 		function addZero(i) {
 		    if (i < 10) {
