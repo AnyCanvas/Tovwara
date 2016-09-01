@@ -256,9 +256,9 @@
 	      console.log(this.responseText);
 		  var total = JSON.parse(this.responseText);
 		  document.getElementById("total").innerHTML = total["Total"];
-		  document.getElementById("encuestas").innerHTML = total["Likes"];
+		  document.getElementById("likes").innerHTML = total["Likes"];
 		  document.getElementById("checkins").innerHTML = total["Check-in"];
-		  document.getElementById("likes").innerHTML = total["Encuestas];
+		  document.getElementById("encuestas").innerHTML = total["Encuestas"];
 	    }
 	  };
 	  xhttp.open("GET", "json/monthTotalJson.php", true);
