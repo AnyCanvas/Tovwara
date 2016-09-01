@@ -255,10 +255,10 @@
 	    if (this.readyState == 4 && this.status == 200) {
 	      console.log(this.responseText);
 		  var total = JSON.parse(this.responseText);
-		  document.getElementById("total").innerHTML = total[0];
-		  document.getElementById("encuestas").innerHTML = total[3];
-		  document.getElementById("checkins").innerHTML = total[2];
-		  document.getElementById("likes").innerHTML = total[1];
+		  document.getElementById("total").innerHTML = total[{"Total"];
+		  document.getElementById("encuestas").innerHTML = total["Likes"];
+		  document.getElementById("checkins").innerHTML = total["Check-in"];
+		  document.getElementById("likes").innerHTML = total["Encuestas];
 	    }
 	  };
 	  xhttp.open("GET", "json/monthTotalJson.php", true);
