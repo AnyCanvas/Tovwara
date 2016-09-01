@@ -253,7 +253,6 @@
 	  var xhttp = new XMLHttpRequest();
 	  xhttp.onreadystatechange = function() {
 	    if (this.readyState == 4 && this.status == 200) {
-	      console.log(this.responseText);
 		  var total = JSON.parse(this.responseText);
 		  document.getElementById("total").innerHTML = total["Total"];
 		  document.getElementById("likes").innerHTML = total["Likes"];
