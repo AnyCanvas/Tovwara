@@ -282,6 +282,44 @@ function monthlyLikesJson($year, $fnbtId, $clientId)
 
 }
 
+function rateJson()
+{
+	require(realpath(dirname(__FILE__) . "/./config.php"));
+	$servername = $config["db"]["fanbot"]["host"];
+	$username = $config["db"]["fanbot"]["username"];
+	$password = $config["db"]["fanbot"]["password"];
+	$dbname = $config["db"]["fanbot"]["dbname"];								
+	
+		
+	// Create connection
+	$conn = new mysqli($servername, $username, $password, $dbname);
+	// Check connection
+	if ($conn->connect_error) {
+	    die("Connection failed: " . $conn->connect_error);
+	}
+	
+	if($_SESSION['userId'] == '00'){
+		$sql = "SELECT * FROM interactions WHERE action = 'rate'";
+	}else {
+		$sql = "SELECT data FROM interactions WHERE clientId = '". $_SESSION['userId']. "' AND action = 'rate'";
+	}
+
+	$result = $conn->query($sql);
+	
+	$c = 0;
+	if ($result->num_rows > 0) {		    
+	    while($row = $result->fetch_assoc()) { 
+		    $data = json_decode($row['data'], true);
+			$A[$c] = $data['a'];
+			$c++;
+		}	   	
+	}
+	
+	print_r($A);
+	
+	$conn->close();
+}
+
 
 function likesJson($month, $year, $fnbtId, $clientId)
 {

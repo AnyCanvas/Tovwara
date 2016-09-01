@@ -1,11 +1,11 @@
-	<?php 
-		include "resources/functions.php"; 
-		if (!isLogged()){
-			header('Location: ./login.php');
-			exit;
-		}			
+<?php 
+	include "resources/functions.php"; 
+	if (!isLogged()){
+		header('Location: ./login.php');
+		exit;
+	}			
 		
-	?> 
+?> 
 
 <!DOCTYPE html>
 <html>
@@ -120,5 +120,6 @@
 } );
 </script>
 
+<?php rateJson(); ?>
 </body>
 </html>
