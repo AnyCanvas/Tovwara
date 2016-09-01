@@ -257,7 +257,7 @@
 		  var total = JSON.parse(this.responseText);
 		  document.getElementById("total").innerHTML = total["Total"];
 		  document.getElementById("likes").innerHTML = total["Likes"];
-		  document.getElementById("checkins").innerHTML = total["Check-in"];
+		  document.getElementById("checkins").innerHTML = total["Check–in"];
 		  document.getElementById("encuestas").innerHTML = total["Encuestas"];
 	    }
 	  };
