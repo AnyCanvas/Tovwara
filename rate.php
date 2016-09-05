@@ -151,8 +151,8 @@
 <script src="css/datatables/js/dataTables.bootstrap.js"></script>
 
 <script>
-$(document).ready( function () {
 
+$(function () {
 
       var chart2 = c3.generate({
 	  	bindto: '#chart2',
@@ -166,6 +166,9 @@ $(document).ready( function () {
 	       hide: ['Total'],
 	    },
       });
+
+});
+$(document).ready( function () {
 
     $('#fanbotTable').DataTable({
 	language: {
