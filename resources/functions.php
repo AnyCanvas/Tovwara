@@ -315,7 +315,7 @@ function rateJson()
 		}	   	
 	}
 	
-	print_r($A);
+	print_r(array_count_values($A));
 	
 	$conn->close();
 }
