@@ -315,6 +315,22 @@ function rateJson()
 		}	   	
 	}
 	
+	if( !( isset($A[1]) ) ){
+		$A[1] = 0;		
+	}
+	if( !( isset($A[2]) ) ){
+		$A[1] = 0;		
+	}
+	if( !( isset($A[3]) ) ){
+		$A[1] = 0;		
+	}
+	if( !( isset($A[4]) ) ){
+		$A[1] = 0;		
+	}
+	if( !( isset($A[5]) ) ){
+		$A[1] = 0;		
+	}
+
 	print_r(array_count_values($A));
 	
 	$conn->close();
