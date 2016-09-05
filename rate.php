@@ -167,7 +167,27 @@ $(function () {
 	    },
       });
 
+      var chart3 = c3.generate({
+	  	bindto: '#chart3',
+        data: {
+          url: 'json/rateJson.php',
+          mimeType: 'json',
+          type : 'bar',
+        },
+		tooltip: {
+		  format: {
+		    title: function (x) { return 'Totales'; }
+		  }
+		},
+	    axis: {
+	        x: {
+	            type: 'category',
+	            categories: ['Totales']
+	        }
+	    },
+      });
 });
+
 $(document).ready( function () {
 
     $('#fanbotTable').DataTable({
