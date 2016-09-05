@@ -101,7 +101,7 @@
 
         <!-- page start-->
 
-		<?php require_once("resources/listRates.php"); ?>
+		<?php //require_once("resources/listRates.php"); ?>
 
         <!-- page end-->
 
