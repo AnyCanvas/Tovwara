@@ -23,7 +23,7 @@
     <link href="bs3/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-reset.css" rel="stylesheet">
     <link href="font-awesome/css/font-awesome.css" rel="stylesheet" />
-	<link href="css/datatables/css/dataTables.bootstrap.css" rel="stylesheet" />	
+    <link href="css/c3/c3.css" rel="stylesheet" type="text/css">	
     
     <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet">
@@ -101,7 +101,7 @@
 
         <!-- page start-->
 
-		<?php //require_once("resources/listRates.php"); ?>
+		<?php require_once("resources/listRates.php"); ?>
 
         <!-- page end-->
 
