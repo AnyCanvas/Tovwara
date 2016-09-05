@@ -62,13 +62,49 @@
     <!--main content start-->
     <section id="main-content">
         <section class="wrapper">
+
+       <div class="row">
+           <div class="col-sm-6">
+               <section class="panel">
+                   <header class="panel-heading">
+                       Acciones
+                   <span class="tools pull-right">
+                       <a href="javascript:;" class="fa fa-chevron-down"></a>
+                    </span>
+                   </header>
+                   <div class="panel-body">
+                       <div class="chart">
+                         <div id="chart2"></div>
+                       </div>
+                   </div>
+               </section>
+           </div>
+           <div class="col-sm-6">
+               <section class="panel">
+                   <header class="panel-heading">
+                       Totales
+                   <span class="tools pull-right">
+                       <a href="javascript:;" class="fa fa-chevron-down"></a>
+                    </span>
+                   </header>
+                   <div class="panel-body">
+
+
+                       <div class="chart">
+                         <div id="chart3"></div>
+                       </div>
+
+                   </div>
+               </section>
+           </div>
+        </div>
+
         <!-- page start-->
 
 		<?php require_once("resources/listRates.php"); ?>
 
         <!-- page end-->
 
-<?php rateJson(); ?>
         </section>
     </section>
     <!--main content end-->
