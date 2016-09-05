@@ -141,6 +141,8 @@
 <script src="js/flot-chart/jquery.flot.resize.js"></script>
 <script src="js/flot-chart/jquery.flot.pie.resize.js"></script>
 
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script src="js/c3/c3.js"></script>
 <!--common script init for all pages-->
 <script src="js/scripts.js"></script>
 
