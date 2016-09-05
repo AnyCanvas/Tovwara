@@ -149,7 +149,22 @@
 <script src="css/datatables/js/dataTables.bootstrap.js"></script>
 
 <script>
-	$(document).ready( function () {
+$(document).ready( function () {
+
+
+      var chart2 = c3.generate({
+	  	bindto: '#chart2',
+        data: {
+          url: 'json/rateJson.php',
+          mimeType: 'json',
+          type : 'pie',
+          hide: ['Total'],
+        },
+        legend: {
+	       hide: ['Total'],
+	    },
+      });
+
     $('#fanbotTable').DataTable({
 	language: {
 	        url: 'https://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json'
