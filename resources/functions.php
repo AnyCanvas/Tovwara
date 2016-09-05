@@ -318,7 +318,7 @@ function rateJson()
 
 	$A = array_count_values($A);
 
-	echo ("{");
+	echo ("[{");
 
 	if( !( isset($A[1]) ) ){
 		echo ('1:0,') ;		
@@ -355,7 +355,7 @@ function rateJson()
 		
 	}
 
-	echo ("}");
+	echo ("}]");
 	$conn->close();
 }
 
