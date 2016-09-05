@@ -314,7 +314,10 @@ function rateJson()
 			$c++;
 		}	   	
 	}
-	
+
+
+	$rateCount = array_count_values($A);
+
 	if( !( isset($A[1]) ) ){
 		$A[1] = 0;		
 	}
@@ -331,7 +334,7 @@ function rateJson()
 		$A[1] = 0;		
 	}
 
-	print_r(array_count_values($A));
+	print_r($rateCount);
 	
 	$conn->close();
 }
