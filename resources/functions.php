@@ -318,44 +318,44 @@ function rateJson()
 
 	$A = array_count_values($A);
 
-	echo ("[{");
+	echo ("{");
 
 	if( !( isset($A[1]) ) ){
-		echo ('1:0,') ;		
+		echo ('1:[0],') ;		
 	} else {
-		echo ('"1":'. $A[1] .',') ;		
+		echo ('"1":['. $A[1] .'],') ;		
 		
 	}
 
 	if( !( isset($A[2]) ) ){
-		echo ('"2":0,') ;		
+		echo ('"2":[0],') ;		
 	} else {
-		echo ('"2":'. $A[2] .',') ;		
+		echo ('"2":['. $A[2] .'],') ;		
 		
 	}
 
 	if( !( isset($A[3]) ) ){
-		echo ('"3":0,') ;		
+		echo ('"3":[0],') ;		
 	} else {
-		echo ('"3":'. $A[3] .',') ;		
+		echo ('"3":['. $A[3] .'],') ;		
 		
 	}
 
 	if( !( isset($A[4]) ) ){
-		echo ('"4":0,') ;		
+		echo ('"4":[0],') ;		
 	} else {
-		echo ('"4":'. $A[4] .',') ;		
+		echo ('"4":['. $A[4] .'],') ;		
 		
 	}
 	
 	if( !( isset($A[5]) ) ){
-		echo ('"5":0,') ;		
+		echo ('"5":[0],') ;		
 	} else {
-		echo ('"5":'. $A[5]) ;		
+		echo ('"5":['. $A[5]), ']' ;		
 		
 	}
 
-	echo ("}]");
+	echo ("}");
 	$conn->close();
 }
 
