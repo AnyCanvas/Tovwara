@@ -322,16 +322,16 @@ function rateJson()
 		$A[1] = 0;		
 	}
 	if( !( isset($A[2]) ) ){
-		$A[1] = 0;		
+		$A[2] = 0;		
 	}
 	if( !( isset($A[3]) ) ){
-		$A[1] = 0;		
+		$A[3] = 0;		
 	}
 	if( !( isset($A[4]) ) ){
-		$A[1] = 0;		
+		$A[4] = 0;		
 	}
 	if( !( isset($A[5]) ) ){
-		$A[1] = 0;		
+		$A[5] = 0;		
 	}
 
 	print_r($rateCount);
