@@ -316,7 +316,7 @@ function rateJson()
 	}
 
 
-	$rateCount = array_count_values($A);
+	$A = array_count_values($A);
 
 	if( !( isset($A[1]) ) ){
 		echo ('1:0,') ;		
