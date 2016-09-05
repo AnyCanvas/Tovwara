@@ -321,7 +321,7 @@ function rateJson()
 	echo ("{");
 
 	if( !( isset($A[1]) ) ){
-		echo ('"1 \\\\xE2\\\\xAD\\\\x90":[0],') ;		
+		echo ('"1 &#9734;":[0],') ;		
 	} else {
 		echo ('"1 &#9734;":['. $A[1] .'],') ;		
 		
