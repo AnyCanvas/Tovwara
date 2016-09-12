@@ -83,7 +83,7 @@
 
                         <div class="panel-body">
                             <div class="wdgt-value">
-                                <h1 id="likesN" class="count">0</h1>
+                                <h1 id="likes" class="count">0</h1>
                                 <h5>Likes</h5>
                             </div>
                         </div>
@@ -156,7 +156,7 @@
                     </header>
                     <div class="panel-body">
                        <div class="chart">
-                         <div id="likes"></div>
+                         <div id="fanbotTable"></div>
                        </div>
                     </div>
                 </section>
@@ -235,7 +235,7 @@
 	    if (this.readyState == 4 && this.status == 200) {
 		  var total = JSON.parse(this.responseText);
 		  document.getElementById("total").innerHTML = total["Total"];
-		  document.getElementById("likesN").innerHTML = total["Likes"];
+		  document.getElementById("likes").innerHTML = total["Likes"];
 		  document.getElementById("checkins").innerHTML = total["Check\–in"];
 		  document.getElementById("encuestas").innerHTML = total["Encuestas"];
 	    }
