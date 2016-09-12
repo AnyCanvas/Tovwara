@@ -143,26 +143,6 @@
                 </div>
             </div>
         </div>
-                
-
-		<!-- Likes for each month chart html -->        
-        <div class="row">
-            <div class="col-sm-12">
-                <section class="panel">
-                    <header class="panel-heading">
-                        Interacciones este mes
-                        <span class="tools pull-right">
-                            <a href="javascript:;" class="fa fa-chevron-down"></a>
-                         </span>
-                    </header>
-                    <div class="panel-body">
-                       <div class="chart">
-                         <div id="likes"></div>
-                       </div>
-                    </div>
-                </section>
-            </div>
-        </div>
 
 		<!-- Likes for each month chart html -->        
         <div class="row">
