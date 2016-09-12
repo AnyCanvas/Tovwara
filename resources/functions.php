@@ -321,37 +321,37 @@ function rateJson()
 	echo ("{");
 
 	if( !( isset($A[1]) ) ){
-		echo ('"1 &#9734;":[0],') ;		
+		echo ('"1 Estrella":[0],') ;		
 	} else {
-		echo ('"1 &#9734;":['. $A[1] .'],') ;		
+		echo ('"1  Estrella":['. $A[1] .'],') ;		
 		
 	}
 
 	if( !( isset($A[2]) ) ){
-		echo ('"2 &#9734;":[0],') ;		
+		echo ('"2  Estrellas":[0],') ;		
 	} else {
-		echo ('"2 &#9734;":['. $A[2] .'],') ;		
+		echo ('"2  Estrellas":['. $A[2] .'],') ;		
 		
 	}
 
 	if( !( isset($A[3]) ) ){
-		echo ('"3 &#9734;":[0],') ;		
+		echo ('"3  Estrellas":[0],') ;		
 	} else {
-		echo ('"3 &#9734;":['. $A[3] .'],') ;		
+		echo ('"3  Estrellas":['. $A[3] .'],') ;		
 		
 	}
 
 	if( !( isset($A[4]) ) ){
-		echo ('"4 &#9734;":[0],') ;		
+		echo ('"4  Estrellas":[0],') ;		
 	} else {
-		echo ('"4 &#9734;":['. $A[4] .'],') ;		
+		echo ('"4  Estrellas":['. $A[4] .'],') ;		
 		
 	}
 	
 	if( !( isset($A[5]) ) ){
-		echo ('"5 estrellas":[0],') ;		
+		echo ('"5 Estrellas":[0],') ;		
 	} else {
-		echo ('"5 &#9734;":['. $A[5]), ']' ;		
+		echo ('"5  Estrellas":['. $A[5]), ']' ;		
 		
 	}
 
