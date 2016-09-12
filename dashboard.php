@@ -156,7 +156,7 @@
                     </header>
                     <div class="panel-body">
                        <div class="chart">
-                         <div id="Fanbotchart"></div>
+                         <div id="likes"></div>
                        </div>
                     </div>
                 </section>
@@ -251,7 +251,7 @@
 		    return i;
 		}
 
-    $('#Fanbotchart').DataTable({
+    $('#fanbotTable').DataTable({
     "order": [[ 5, 'desc' ], [ 1, 'desc' ]],
     "columnDefs": [
         {
