@@ -73,6 +73,76 @@
         <section class="wrapper">
         <!-- page start-->
 
+		<div class="row">
+            <div class="col-md-3">
+                <div class="profile-nav alt">
+                    <section class="panel text-center">
+                        <div class="user-heading alt wdgt-row terques-bg">
+                            <i class="fa fa-thumbs-up"></i>
+                        </div>
+
+                        <div class="panel-body">
+                            <div class="wdgt-value">
+                                <h1 id="likesN" class="count">0</h1>
+                                <h5>Likes</h5>
+                            </div>
+                        </div>
+
+                    </section>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="profile-nav alt">
+                    <section class="panel text-center">
+                        <div class="user-heading alt wdgt-row terques-bg">
+                            <i class="fa fa-map-marker"></i>
+                        </div>
+
+                        <div class="panel-body">
+                            <div class="wdgt-value">
+                                <h1 id="checkins" class="count">0</h1>
+                                <h5>Check-ins</h5>
+                            </div>
+                        </div>
+
+                    </section>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="profile-nav alt">
+                    <section class="panel text-center">
+                        <div class="user-heading alt wdgt-row terques-bg">
+                            <i class="fa fa-star"></i>
+                        </div>
+
+                        <div class="panel-body">
+                            <div class="wdgt-value">
+                                <h1 id="encuestas" class="count">0</h1>
+                                <h5>Encuestas</h5>
+                            </div>
+                        </div>
+
+                    </section>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="profile-nav alt">
+                    <section class="panel text-center">
+                        <div class="user-heading alt wdgt-row terques-bg">
+                            <i class="fa fa-flag"></i>
+                        </div>
+
+                        <div class="panel-body">
+                            <div class="wdgt-value">
+                                <h1 class="count"><span id="total"></span>/399</h1>
+                                <h5>Meta</h5>
+                            </div>
+                        </div>
+
+                    </section>
+                </div>
+            </div>
+        </div>
 
 		<!-- Likes for each month chart html -->        
         <div class="row">
@@ -159,6 +229,21 @@
 
 	$(document).ready( function () {
 
+
+	  var xhttp = new XMLHttpRequest();
+	  xhttp.onreadystatechange = function() {
+	    if (this.readyState == 4 && this.status == 200) {
+		  var total = JSON.parse(this.responseText);
+		  document.getElementById("total").innerHTML = total["Total"];
+		  document.getElementById("likesN").innerHTML = total["Likes"];
+		  document.getElementById("checkins").innerHTML = total["Check\–in"];
+		  document.getElementById("encuestas").innerHTML = total["Encuestas"];
+	    }
+	  };
+	  xhttp.open("GET", "json/monthTotalJson.php", true);
+	  xhttp.send();		
+
+		
 		function addZero(i) {
 		    if (i < 10) {
 		        i = "0" + i;

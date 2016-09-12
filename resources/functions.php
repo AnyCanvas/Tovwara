@@ -107,7 +107,7 @@ function totalJson($day, $month, $year, $fnbtId, $clientId)
 	echo('"Check–in":[');
 	echo $checkin;
 	echo('],');
-	echo('"Encuesta":[');
+	echo('"Encuestas":[');
 	echo $rate;
 	echo(']');
 	echo('}');
@@ -280,6 +280,83 @@ function monthlyLikesJson($year, $fnbtId, $clientId)
 
 	$conn->close();
 
+}
+
+function rateJson()
+{
+	require(realpath(dirname(__FILE__) . "/./config.php"));
+	$servername = $config["db"]["fanbot"]["host"];
+	$username = $config["db"]["fanbot"]["username"];
+	$password = $config["db"]["fanbot"]["password"];
+	$dbname = $config["db"]["fanbot"]["dbname"];								
+	
+		
+	// Create connection
+	$conn = new mysqli($servername, $username, $password, $dbname);
+	// Check connection
+	if ($conn->connect_error) {
+	    die("Connection failed: " . $conn->connect_error);
+	}
+	
+	if($_SESSION['userId'] == '00'){
+		$sql = "SELECT * FROM interactions WHERE action = 'rate'";
+	}else {
+		$sql = "SELECT data FROM interactions WHERE clientId = '". $_SESSION['userId']. "' AND action = 'rate'";
+	}
+
+	$result = $conn->query($sql);
+	
+	$c = 0;
+	if ($result->num_rows > 0) {		    
+	    while($row = $result->fetch_assoc()) { 
+		    $data = json_decode($row['data'], true);
+			$A[$c] = $data['a'];
+			$c++;
+		}	   	
+	}
+
+
+	$A = array_count_values($A);
+
+	echo ("{");
+
+	if( !( isset($A[1]) ) ){
+		echo ('"1 Estrella":[0],') ;		
+	} else {
+		echo ('"1  Estrella":['. $A[1] .'],') ;		
+		
+	}
+
+	if( !( isset($A[2]) ) ){
+		echo ('"2  Estrellas":[0],') ;		
+	} else {
+		echo ('"2  Estrellas":['. $A[2] .'],') ;		
+		
+	}
+
+	if( !( isset($A[3]) ) ){
+		echo ('"3  Estrellas":[0],') ;		
+	} else {
+		echo ('"3  Estrellas":['. $A[3] .'],') ;		
+		
+	}
+
+	if( !( isset($A[4]) ) ){
+		echo ('"4  Estrellas":[0],') ;		
+	} else {
+		echo ('"4  Estrellas":['. $A[4] .'],') ;		
+		
+	}
+	
+	if( !( isset($A[5]) ) ){
+		echo ('"5 Estrellas":[0],') ;		
+	} else {
+		echo ('"5  Estrellas":['. $A[5]), ']' ;		
+		
+	}
+
+	echo ("}");
+	$conn->close();
 }
 
 

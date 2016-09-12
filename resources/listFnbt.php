@@ -29,7 +29,6 @@
 										curl_close($ch);
 										
 									
-									
 										$fanbotList = json_decode($output, true);									
 
 										require(realpath(dirname(__FILE__) . "/./config.php"));
