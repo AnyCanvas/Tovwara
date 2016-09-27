@@ -22,17 +22,26 @@
                     <li><a href="rate.php">Encuestas</a></li>
                 </ul>
             </li>
+
+
             <li class="sub-menu">
                 <a href="javascript:;">
+                    <i class="fa fa-laptop"></i>
+                    <span>Estadísticas</span>
+                </a>
+                <ul class="sub">  
+                    <li><a href="stats.php">Generales</a></li>
+                    <li><a href="accions.php">Acciones</a></li>
+                    <li><a href="users.php">Usuarios</a></li>
+                    <li><a href="rate.php">Encuestas</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="list.php">
                     <i class="fa fa-cogs"></i>
                     <span>Mis Fanbot</span>
                 </a>
-                <ul class="sub">  
-					<li><a href="listclassic.php">Fanbot Classic</a></li>
-					<li><a href="listmobile.php">Fanbot Mobile</a></li>
-                </ul>
             </li>
-
 
 			<?php if($_SESSION['userId'] == '00'){ ?>
 
