@@ -45,8 +45,8 @@
 										    die("Connection failed: " . $conn->connect_error);
 										}
 										
-											if($_SESSION['userId'] == '00'){
-											$sql = "SELECT * FROM fanbot WHERE id LIKE '%SCM\%'";
+										if($_SESSION['userId'] == '00'){
+											$sql = "SELECT * FROM fanbot WHERE id LIKE '%SCM%'";
 										}else {
 											$sql = "SELECT * FROM fanbot WHERE id LIKE '%SCM%' AND clientId = '". $_SESSION['userId']. "'";
 										}
