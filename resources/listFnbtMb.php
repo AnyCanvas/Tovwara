@@ -46,9 +46,9 @@
 										}
 										
 										if($_SESSION['userId'] == '00'){
-											$sql = "SELECT * FROM fanbot";
+											$sql = "SELECT * FROM fanbot WHERE id LIKE '%MMM%'";
 										}else {
-											$sql = "SELECT * FROM fanbot WHERE clientId = '". $_SESSION['userId']. "'";
+											$sql = "SELECT * FROM fanbot WHERE id LIKE '%MMM%' AND clientId = '". $_SESSION['userId']. "'";
 										}
 
 										$result = $conn->query($sql);
