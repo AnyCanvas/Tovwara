@@ -13,7 +13,7 @@
             <li class="sub-menu">
                 <a href="javascript:;">
                     <i class="fa fa-laptop"></i>
-                    <span>Fanbot Classic</span>
+                    <span>Estadísticas</span>
                 </a>
                 <ul class="sub">  
                     <li><a href="stats.php">Generales</a></li>
@@ -23,12 +23,17 @@
                 </ul>
             </li>
 
-            <li>
-                <a href="list.php">
-                    <i class="fa fa-cogs"></i>
+            <li class="sub-menu">
+                <a href="javascript:;">
+                    <i class="fa fa-laptop"></i>
                     <span>Mis Fanbot</span>
                 </a>
+                <ul class="sub">  
+                    <li><a href="listclassic.php">Classic</a></li>
+                    <li><a href="listmobile.php">Mobile</a></li>
+                </ul>
             </li>
+
 
 			<?php if($_SESSION['userId'] == '00'){ ?>
 

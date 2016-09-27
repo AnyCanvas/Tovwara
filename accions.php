@@ -298,6 +298,21 @@ $(document).ready( function () {
                 },
                 "targets": 3
             },
+		    {
+		        // The `data` parameter refers to the data for the cell (defined by the
+		        // `data` option, which defaults to the column being worked with, in
+		        // this case `data: 0`.
+		        "render": function ( data, type, row ) {
+			        if ( data.indexOf("MMM") != -1){
+		            	return "Mobile";				                
+			        } else {
+		            	return "Classic";				                
+			        }
+			        
+			        return "N/A";
+		        },
+		        "targets": 7
+		    },
             { "visible": false,  "targets": [ 4 ] }
         ],
         });
@@ -369,6 +384,21 @@ $(document).ready( function () {
 		                    return '<a href="http://www.facebook.com/'+ row[4] +'" target="_blank">'+ data +'<\/a>';
 		                },
 		                "targets": 3
+		            },
+		            {
+		                // The `data` parameter refers to the data for the cell (defined by the
+		                // `data` option, which defaults to the column being worked with, in
+		                // this case `data: 0`.
+		                "render": function ( data, type, row ) {
+			                if ( data.indexOf("MMM") != -1){
+		                    	return "Mobile";				                
+			                } else {
+		                    	return "Classic";				                
+			                }
+			                
+			                return "N/A";
+		                },
+		                "targets": 7
 		            },
 		            { "visible": false,  "targets": [ 4 ] }
 		        ],
