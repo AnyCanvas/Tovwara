@@ -380,8 +380,10 @@ $(document).ready( function () {
 			                } else {
 		                    	return "Classic";				                
 			                }
+			                
+			                return 
 		                },
-		                "targets": 6
+		                "targets": 7
 		            },
 		            { "visible": false,  "targets": [ 4 ] }
 		        ],
