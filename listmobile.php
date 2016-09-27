@@ -64,7 +64,7 @@
         <section class="wrapper">
         <!-- page start-->
 
-		<?php require_once("resources/listFnbt.php"); ?>
+		<?php require_once("resources/listFnbtMb.php"); ?>
 
         <!-- page end-->
         </section>

@@ -28,8 +28,8 @@
                     <span>Mis Fanbot</span>
                 </a>
                 <ul class="sub">  
-					<li><a href="list.php">Fanbot Classic</a></li>
-					<li><a href="list.php">Fanbot Mobile</a></li>
+					<li><a href="listclassic.php">Fanbot Classic</a></li>
+					<li><a href="listmobile.php">Fanbot Mobile</a></li>
                 </ul>
             </li>
 
