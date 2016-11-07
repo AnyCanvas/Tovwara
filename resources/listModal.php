@@ -65,7 +65,7 @@
 					<form class="form-inline" id="formUrl">
 					  <div class="form-group" style="margin-bottom: 2vh;">
 						<div class="input-group">									  
-							<div for="facebookUrl" class="input-group-addon">http://facebook.com/</div>
+							<div for="facebookUrl" class="input-group-addon">https://facebook.com/</div>
 							<input type="text" class="form-control input-sm" id="facebookPage" placeholder="Link de tu pagina" name="facebookPage">
 	    				</div>		
 						<a onclick="changeImage()" class="btn btn-default btn-xs">Verificar</a>						
