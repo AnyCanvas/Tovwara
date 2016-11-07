@@ -742,7 +742,7 @@ function addFanbot()
 	// Check connection
 	if ($conn->connect_error)
 	{
-		die("Connection failed: " . $conn->connect_error);
+		die("Connection failed");
 	}
 
 	mysql_set_charset('utf8',$conn); //THIS IS THE IMPORTANT PART
@@ -780,7 +780,7 @@ function addClient()
 	// Check connection
 	if ($conn->connect_error)
 	{
-		die("Connection failed: " . $conn->connect_error);
+		die("Connection failed");
 	}
 
 	mysql_set_charset('utf8',$conn); //THIS IS THE IMPORTANT PART
@@ -829,7 +829,7 @@ function editPaid()
 	{
 	} else
 	{
-		echo "Error: " . $sql . "<br>" . $conn->error;
+		echo "Error";
 	}
 
 	$conn->close();
@@ -913,7 +913,7 @@ function changeFacebookPage()
 	{
 	} else
 	{
-		echo "Error: " . $sql . "<br>" . $conn->error;
+		echo "Error";
 	}
 
 	$conn->close();
