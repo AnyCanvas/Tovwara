@@ -745,6 +745,8 @@ function addFanbot()
 		die("Connection failed: " . $conn->connect_error);
 	}
 
+	mysql_set_charset('utf8',$conn); //THIS IS THE IMPORTANT PART
+
 	$sql = "INSERT INTO fanbot  (id, name, clientId, deviceId) VALUES ( '". $fanbotId. "','".  $fanbotName. "','". $fanbotClient. "','". $particleId. "')";
 
 	if ($conn->query($sql) === TRUE)
@@ -781,6 +783,8 @@ function addClient()
 		die("Connection failed: " . $conn->connect_error);
 	}
 
+	mysql_set_charset('utf8',$conn); //THIS IS THE IMPORTANT PART
+
 	$sql = "INSERT INTO accounts  (clientId, name, username, password, mode) VALUES ( '". $clientId. "','".  $clientName. "','". $clientMail. "','". md5($clientPassword).  "','". $mode. "')";
 
 	if ($conn->query($sql) === TRUE)
@@ -816,6 +820,8 @@ function editPaid()
 	{
 		die("Connection failed: " . $conn->connect_error);
 	}
+
+	mysql_set_charset('utf8',$conn); //THIS IS THE IMPORTANT PART
 
 	$sql = "UPDATE fanbot SET courtDate = ". $courtDate ." , plan = ". $fanbotPlan .", freeMonth = ". $freeMonth .", estatus = ". $paidStatus ." WHERE id = '". $fanbotId ."'";
 
@@ -871,6 +877,7 @@ function changeFacebookPage()
 		die("Connection failed: " . $conn->connect_error);
 	}
 
+	mysql_set_charset('utf8',$conn); //THIS IS THE IMPORTANT PART
 
 	$sql = "SELECT * FROM fanbot WHERE name = '". $fnbtName ."' ";
 	$result = $conn->query($sql);
