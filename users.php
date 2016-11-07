@@ -242,15 +242,15 @@
               type="text/javascript">
 </script><script src="css/datatables/js/buttons.html5.min.js"
               type="text/javascript">
-</script><script src="http://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"
               type="text/javascript">
-</script><script src="http://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"
+</script><script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"
               type="text/javascript">
-</script><script src="http://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"
+</script><script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"
               type="text/javascript">
-</script><script src="http://cdn.datatables.net/buttons/1.0.3/js/buttons.html5.min.js"
+</script><script src="https://cdn.datatables.net/buttons/1.0.3/js/buttons.html5.min.js"
               type="text/javascript">
-</script><script src="http://cdn.datatables.net/buttons/1.0.3/js/buttons.print.min.js"
+</script><script src="https://cdn.datatables.net/buttons/1.0.3/js/buttons.print.min.js"
               type="text/javascript">
 </script><script type="text/javascript">
 $(document).ready( function () {
@@ -291,7 +291,7 @@ $(document).ready( function () {
                 // `data` option, which defaults to the column being worked with, in
                 // this case `data: 0`.
                 "render": function ( data, type, row ) {
-                    return '<a href="http://www.facebook.com/'+ row[3] +'" target="_blank">'+ data +'<\/a>';
+                    return '<a href="https://www.facebook.com/'+ row[3] +'" target="_blank">'+ data +'<\/a>';
                 },
                 "targets": 1
             },
@@ -348,7 +348,7 @@ $(document).ready( function () {
 		                // `data` option, which defaults to the column being worked with, in
 		                // this case `data: 0`.
 		                "render": function ( data, type, row ) {
-		                    return '<a href="http://www.facebook.com/'+ row[3] +'" target="_blank">'+ data +'<\/a>';
+		                    return '<a href="https://www.facebook.com/'+ row[3] +'" target="_blank">'+ data +'<\/a>';
 		                },
 		                "targets": 1
 		            },

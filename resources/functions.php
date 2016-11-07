@@ -742,8 +742,10 @@ function addFanbot()
 	// Check connection
 	if ($conn->connect_error)
 	{
-		die("Connection failed: " . $conn->connect_error);
+		die("Connection failed");
 	}
+
+	mysql_set_charset('utf8',$conn); //THIS IS THE IMPORTANT PART
 
 	$sql = "INSERT INTO fanbot  (id, name, clientId, deviceId) VALUES ( '". $fanbotId. "','".  $fanbotName. "','". $fanbotClient. "','". $particleId. "')";
 
@@ -751,7 +753,7 @@ function addFanbot()
 	{
 	} else
 	{
-		echo "Error: " . $sql . "<br>" . $conn->error;
+		echo "Error";
 	}
 
 	$conn->close();
@@ -778,8 +780,10 @@ function addClient()
 	// Check connection
 	if ($conn->connect_error)
 	{
-		die("Connection failed: " . $conn->connect_error);
+		die("Connection failed");
 	}
+
+	mysql_set_charset('utf8',$conn); //THIS IS THE IMPORTANT PART
 
 	$sql = "INSERT INTO accounts  (clientId, name, username, password, mode) VALUES ( '". $clientId. "','".  $clientName. "','". $clientMail. "','". md5($clientPassword).  "','". $mode. "')";
 
@@ -817,13 +821,15 @@ function editPaid()
 		die("Connection failed: " . $conn->connect_error);
 	}
 
+	mysql_set_charset('utf8',$conn); //THIS IS THE IMPORTANT PART
+
 	$sql = "UPDATE fanbot SET courtDate = ". $courtDate ." , plan = ". $fanbotPlan .", freeMonth = ". $freeMonth .", estatus = ". $paidStatus ." WHERE id = '". $fanbotId ."'";
 
 	if ($conn->query($sql) === TRUE)
 	{
 	} else
 	{
-		echo "Error: " . $sql . "<br>" . $conn->error;
+		echo "Error";
 	}
 
 	$conn->close();
@@ -871,6 +877,7 @@ function changeFacebookPage()
 		die("Connection failed: " . $conn->connect_error);
 	}
 
+	mysql_set_charset('utf8',$conn); //THIS IS THE IMPORTANT PART
 
 	$sql = "SELECT * FROM fanbot WHERE name = '". $fnbtName ."' ";
 	$result = $conn->query($sql);
@@ -906,7 +913,7 @@ function changeFacebookPage()
 	{
 	} else
 	{
-		echo "Error: " . $sql . "<br>" . $conn->error;
+		echo "Error";
 	}
 
 	$conn->close();
