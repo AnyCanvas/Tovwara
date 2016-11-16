@@ -923,8 +923,6 @@ function changePrice()
 
 	$fnbtName  = $_POST["fanbotName"];
 
-
-	if ($actionType == 'rate'){
 		$p['1']  = $_POST["p1"];		
 		$p['2']  = $_POST["p2"];		
 		$p['3']  = $_POST["p3"];		
@@ -933,9 +931,6 @@ function changePrice()
 		$p['2']  = $_POST["p6"];		
 		$p['3']  = $_POST["p7"];		
 		$p['4']  = $_POST["p8"];		
-
-	}
-
 
 	require(realpath(dirname(__FILE__) . "/./config.php"));
 	$servername = $config["db"]["fanbot"]["host"];
