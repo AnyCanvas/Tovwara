@@ -13,6 +13,19 @@
 		});
 	}
 
+    function callPices(fanbotName) {
+	    localStorage.setItem("fanbotName", fanbotName);
+		$('#configModal').modal('show');
+	     document.getElementById('fanbotName').value = fanbotName;
+
+		$( "select" ).change(function() {
+		  if( $( this ).val() == '2' ){
+			  $("#questions").show();
+		  } else{
+			  $("#questions").hide();			  
+		  }
+		});
+	}
     function changeImage() {
         image_url = "https://graph.facebook.com/"+ document.getElementById('facebookPage').value +"/picture";
 	    $.get(image_url)
@@ -127,7 +140,7 @@
 		  </div>
 
 
-		  <div class="modal fade" id="configModal" role="dialog">
+		  <div class="modal fade" id="priceModal" role="dialog">
 		    <div class="modal-dialog">
 		    
 		      <!-- Modal content-->
