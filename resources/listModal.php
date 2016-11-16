@@ -71,7 +71,7 @@
 	        $.post(ajaxurl, data, function (response) {
 	        });
 			$('#priceModal').modal('hide');
-			location.reload();
+//			location.reload();
 
 	    }   
 </script>
