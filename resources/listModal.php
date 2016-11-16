@@ -13,9 +13,9 @@
 		});
 	}
 
-    function callPices(fanbotName) {
+    function callPice(fanbotName) {
 	    localStorage.setItem("fanbotName", fanbotName);
-		$('#configModal').modal('show');
+		$('#priceModal').modal('show');
 	     document.getElementById('fanbotName').value = fanbotName;
 
 		$( "select" ).change(function() {
