@@ -172,22 +172,22 @@
 	                            <input type="text" class="form-control" id="p4">
 	                      </div>
 						  <div class="form-group" style="margin-bottom: 2vh;">
-	                            <label for="inputQ1" class="control-label">1º premio::</label>
+	                            <label for="inputQ1" class="control-label">5º premio::</label>
 	                            <input type="text" class="form-control" id="p5">
 	                      </div>
 	
 						  <div class="form-group" style="margin-bottom: 2vh;">
-	                            <label for="inputQ2" class="control-label">2º premio:</label>
+	                            <label for="inputQ2" class="control-label">6º premio:</label>
 	                            <input type="text" class="form-control" id="p6">
 	                      </div>
 	
 						  <div class="form-group" style="margin-bottom: 2vh;">
-	                            <label for="inputQ3" class="control-label">3º premio:</label>
+	                            <label for="inputQ3" class="control-label">7º premio:</label>
 	                            <input type="text" class="form-control" id="p7" >
 	                      </div>                      
 	
 						  <div class="form-group" style="margin-bottom: 2vh;">
-	                            <label for="inputQ4" class="control-label">4º premio:</label>
+	                            <label for="inputQ4" class="control-label">8º premio:</label>
 	                            <input type="text" class="form-control" id="p8">
 	                      </div>
 					  </div>
@@ -197,12 +197,6 @@
 
 			    <div class="modal-footer">
 				    <div class="center-block">
-			            <p style="text-align: center;">Aquí aparecerá la imagen de tu pagina.</p>	            
-						<img id="fbImg" src="https://graph.facebook.com/fanbotme/picture" class="img-responsive img-thumbnail center-block" alt="Cinque Terre">
-					</div>
-					<div id="modalAlert" class="alert alert-danger fade-in text-center" style="display: none; margin: 5px;">
-					  <strong>La pagina de Facebook escrita no existe. </strong> 
-					</div>
 					<p>
 					<button onclick="action()" id="cambiarBtn" class="btn btn-primary btn-sm" disabled="disabled">Cambiar</button>
 					</p>
