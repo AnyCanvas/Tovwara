@@ -125,3 +125,76 @@
 	      	  </div>
 		    </div>
 		  </div>
+
+
+		  <div class="modal fade" id="configModal" role="dialog">
+		    <div class="modal-dialog">
+		    
+		      <!-- Modal content-->
+		      <div class="modal-content">
+		        <div class="modal-header">
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		          <h4 class="modal-title">Configura tu Fanbot</h4>
+		        </div>
+		        <div class="modal-body">
+					<form class="form-inline" id="formUrl">					  
+					  <div id="prices">
+						  <div class="form-group" style="margin-bottom: 2vh;">
+	                            <label for="inputQ1" class="control-label">1º premio:</label>
+	                            <input type="text" class="form-control" id="p1">
+	                      </div>
+	
+						  <div class="form-group" style="margin-bottom: 2vh;">
+	                            <label for="inputQ2" class="control-label">2º premio:</label>
+	                            <input type="text" class="form-control" id="p2">
+	                      </div>
+	
+						  <div class="form-group" style="margin-bottom: 2vh;">
+	                            <label for="inputQ3" class="control-label">3º premio:</label>
+	                            <input type="text" class="form-control" id="p3" >
+	                      </div>                      
+	
+						  <div class="form-group" style="margin-bottom: 2vh;">
+	                            <label for="inputQ4" class="control-label">4º premio:</label>
+	                            <input type="text" class="form-control" id="p4">
+	                      </div>
+						  <div class="form-group" style="margin-bottom: 2vh;">
+	                            <label for="inputQ1" class="control-label">1º premio::</label>
+	                            <input type="text" class="form-control" id="p5">
+	                      </div>
+	
+						  <div class="form-group" style="margin-bottom: 2vh;">
+	                            <label for="inputQ2" class="control-label">2º premio:</label>
+	                            <input type="text" class="form-control" id="p6">
+	                      </div>
+	
+						  <div class="form-group" style="margin-bottom: 2vh;">
+	                            <label for="inputQ3" class="control-label">3º premio:</label>
+	                            <input type="text" class="form-control" id="p7" >
+	                      </div>                      
+	
+						  <div class="form-group" style="margin-bottom: 2vh;">
+	                            <label for="inputQ4" class="control-label">4º premio:</label>
+	                            <input type="text" class="form-control" id="p8">
+	                      </div>
+					  </div>
+
+					</form>					
+		        </div>
+
+			    <div class="modal-footer">
+				    <div class="center-block">
+			            <p style="text-align: center;">Aquí aparecerá la imagen de tu pagina.</p>	            
+						<img id="fbImg" src="https://graph.facebook.com/fanbotme/picture" class="img-responsive img-thumbnail center-block" alt="Cinque Terre">
+					</div>
+					<div id="modalAlert" class="alert alert-danger fade-in text-center" style="display: none; margin: 5px;">
+					  <strong>La pagina de Facebook escrita no existe. </strong> 
+					</div>
+					<p>
+					<button onclick="action()" id="cambiarBtn" class="btn btn-primary btn-sm" disabled="disabled">Cambiar</button>
+					</p>
+		        </div>
+		      
+	      	  </div>
+		    </div>
+		  </div>
