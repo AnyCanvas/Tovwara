@@ -13,7 +13,7 @@
 		});
 	}
 
-    function callPice(fanbotName) {
+    function callPrice(fanbotName) {
 	    localStorage.setItem("fanbotName", fanbotName);
 		$('#priceModal').modal('show');
 	     document.getElementById('fanbotName').value = fanbotName;
