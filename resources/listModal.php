@@ -66,7 +66,7 @@
 	function pricesAction(){
 
 	        var ajaxurl = 'resources/priceUrl.php';
-   	          data =  {'p1' : encodeURIComponent( $( "#p1" ).val() ), 'p2': encodeURIComponent( $( "#p2" ).val() ), 'p3': encodeURIComponent( $( "#p3" ).val() ), 'p4': encodeURIComponent( $( "#p4" ).val() ), 'p5': encodeURIComponent( $( "#p5" ).val() ), 'p6': encodeURIComponent( $( "#p6" ).val() ), 'p7': encodeURIComponent( $( "#p7" ).val() ), 'p8': encodeURIComponent( $( "#p8" ).val() )};		    		        
+   	          data =  {'fanbotName': fanbotName, 'p1' : encodeURIComponent( $( "#p1" ).val() ), 'p2': encodeURIComponent( $( "#p2" ).val() ), 'p3': encodeURIComponent( $( "#p3" ).val() ), 'p4': encodeURIComponent( $( "#p4" ).val() ), 'p5': encodeURIComponent( $( "#p5" ).val() ), 'p6': encodeURIComponent( $( "#p6" ).val() ), 'p7': encodeURIComponent( $( "#p7" ).val() ), 'p8': encodeURIComponent( $( "#p8" ).val() )};		    		        
 	        console.log(data);	        
 	        $.post(ajaxurl, data, function (response) {
 	        });
