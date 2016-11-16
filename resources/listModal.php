@@ -158,7 +158,7 @@
 		      <div class="modal-content">
 		        <div class="modal-header">
 		          <button type="button" class="close" data-dismiss="modal">&times;</button>
-		          <h4 class="modal-title">Configura tu Fanbot</h4>
+		          <h4 class="modal-title">Configura tus premios</h4>
 		        </div>
 		        <div class="modal-body">
 					<form class="form-inline" id="formUrl">					  
@@ -209,7 +209,7 @@
 			    <div class="modal-footer">
 				    <div class="center-block">
 					<p>
-					<button onclick="pricesAction()" id="cambiarBtn" class="btn btn-primary btn-sm" disabled="disabled">Cambiar</button>
+					<button onclick="pricesAction()" id="cambiarBtn" class="btn btn-primary btn-sm">Cambiar</button>
 					</p>
 		        </div>
 		      
