@@ -927,10 +927,10 @@ function changePrice()
 		$p['2']  = $_POST["p2"];		
 		$p['3']  = $_POST["p3"];		
 		$p['4']  = $_POST["p4"];		
-		$p['1']  = $_POST["p5"];		
-		$p['2']  = $_POST["p6"];		
-		$p['3']  = $_POST["p7"];		
-		$p['4']  = $_POST["p8"];		
+		$p['5']  = $_POST["p5"];		
+		$p['6']  = $_POST["p6"];		
+		$p['7']  = $_POST["p7"];		
+		$p['8']  = $_POST["p8"];		
 
 	require(realpath(dirname(__FILE__) . "/./config.php"));
 	$servername = $config["db"]["fanbot"]["host"];
