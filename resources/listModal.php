@@ -160,47 +160,48 @@
 		      <div class="modal-content">
 		        <div class="modal-header">
 		          <button type="button" class="close" data-dismiss="modal">&times;</button>
-		          <h4 class="modal-title">Configura tus premios</h4>
+		          <h4 class="modal-title">Configura tus premios, puedes repetir el texto en varias cápsulas.
+</h4>
 		        </div>
 		        <div class="modal-body">
 					<form class="form-inline" id="formUrl">					  
 					  <div id="prices">
 						  <div class="form-group" style="margin-bottom: 2vh;">
-	                            <label for="inputQ1" class="control-label">1º premio:</label>
+	                            <label for="inputQ1" class="control-label">Cápsula #1:</label>
 	                            <input type="text" class="form-control" id="p1">
 	                      </div>
 	
 						  <div class="form-group" style="margin-bottom: 2vh;">
-	                            <label for="inputQ2" class="control-label">2º premio:</label>
+	                            <label for="inputQ2" class="control-label">Cápsula #2:</label>
 	                            <input type="text" class="form-control" id="p2">
 	                      </div>
 	
 						  <div class="form-group" style="margin-bottom: 2vh;">
-	                            <label for="inputQ3" class="control-label">3º premio:</label>
+	                            <label for="inputQ3" class="control-label">Cápsula #3:</label>
 	                            <input type="text" class="form-control" id="p3" >
 	                      </div>                      
 	
 						  <div class="form-group" style="margin-bottom: 2vh;">
-	                            <label for="inputQ4" class="control-label">4º premio:</label>
+	                            <label for="inputQ4" class="control-label">Cápsula #4:</label>
 	                            <input type="text" class="form-control" id="p4">
 	                      </div>
 						  <div class="form-group" style="margin-bottom: 2vh;">
-	                            <label for="inputQ1" class="control-label">5º premio::</label>
+	                            <label for="inputQ1" class="control-label">Cápsula #5:</label>
 	                            <input type="text" class="form-control" id="p5">
 	                      </div>
 	
 						  <div class="form-group" style="margin-bottom: 2vh;">
-	                            <label for="inputQ2" class="control-label">6º premio:</label>
+	                            <label for="inputQ2" class="control-label">Cápsula #6:</label>
 	                            <input type="text" class="form-control" id="p6">
 	                      </div>
 	
 						  <div class="form-group" style="margin-bottom: 2vh;">
-	                            <label for="inputQ3" class="control-label">7º premio:</label>
+	                            <label for="inputQ3" class="control-label">Cápsula #7:</label>
 	                            <input type="text" class="form-control" id="p7" >
 	                      </div>                      
 	
 						  <div class="form-group" style="margin-bottom: 2vh;">
-	                            <label for="inputQ4" class="control-label">8º premio:</label>
+	                            <label for="inputQ4" class="control-label">Cápsula #8:</label>
 	                            <input type="text" class="form-control" id="p8">
 	                      </div>
 					  </div>
