@@ -93,7 +93,7 @@
 			$('#priceModal').modal('hide');
 			location.reload();
 			} else {
-				alert("!Todos los campos deben de estar llenos o todos los campos tienen que estar vacios¡");
+				alert("Todas las esferas tienen que tener un texto");
 			}
 
 	    }   
