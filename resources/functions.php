@@ -932,6 +932,23 @@ function changePrice()
 		$p['7']  = $_POST["p7"];		
 		$p['8']  = $_POST["p8"];		
 
+	$bool = true;
+
+	foreach ($p as $k => $v) {
+	    if (empty($v)) {
+	        $bool = false;
+	    }
+	}
+	
+	
+	if( !($bool) ){
+		$pJson = "NULL";
+
+	} else {
+		$pJson = json_encode($p);	
+	}
+	
+	
 	require(realpath(dirname(__FILE__) . "/./config.php"));
 	$servername = $config["db"]["fanbot"]["host"];
 	$username = $config["db"]["fanbot"]["username"];
@@ -946,7 +963,7 @@ function changePrice()
 		die("Connection failed: " . $conn->connect_error);
 	}
 
-	$pJson = json_encode($p);
+
 	$sql = "UPDATE fanbot SET price ='". $pJson ."' WHERE name = '". $fnbtName ."'";
 
 
