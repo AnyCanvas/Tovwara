@@ -188,41 +188,41 @@
 					  <div id="prices">
 						  <div class="form-group" style="margin-bottom: 2vh;">
 	                            <label for="inputQ1" class="control-label">Esfera #1:</label>
-	                            <input type="text" class="form-control" id="p1">
+	                            <input type="text" maxlength="50" class="form-control" id="p1">
 	                      </div>
 	
 						  <div class="form-group" style="margin-bottom: 2vh;">
 	                            <label for="inputQ2" class="control-label">Esfera #2:</label>
-	                            <input type="text" class="form-control" id="p2">
+	                            <input type="text" maxlength="50" class="form-control" id="p2">
 	                      </div>
 	
 						  <div class="form-group" style="margin-bottom: 2vh;">
 	                            <label for="inputQ3" class="control-label">Esfera #3:</label>
-	                            <input type="text" class="form-control" id="p3" >
+	                            <input type="text" maxlength="50" class="form-control" id="p3" >
 	                      </div>                      
 	
 						  <div class="form-group" style="margin-bottom: 2vh;">
 	                            <label for="inputQ4" class="control-label">Esfera #4:</label>
-	                            <input type="text" class="form-control" id="p4">
+	                            <input type="text" maxlength="50" class="form-control" id="p4">
 	                      </div>
 						  <div class="form-group" style="margin-bottom: 2vh;">
 	                            <label for="inputQ1" class="control-label">Esfera #5:</label>
-	                            <input type="text" class="form-control" id="p5">
+	                            <input type="text" maxlength="50" class="form-control" id="p5">
 	                      </div>
 	
 						  <div class="form-group" style="margin-bottom: 2vh;">
 	                            <label for="inputQ2" class="control-label">Esfera #6:</label>
-	                            <input type="text" class="form-control" id="p6">
+	                            <input type="text" maxlength="50" class="form-control" id="p6">
 	                      </div>
 	
 						  <div class="form-group" style="margin-bottom: 2vh;">
 	                            <label for="inputQ3" class="control-label">Esfera #7:</label>
-	                            <input type="text" class="form-control" id="p7" >
+	                            <input type="text" maxlength="50" class="form-control" id="p7" >
 	                      </div>                      
 	
 						  <div class="form-group" style="margin-bottom: 2vh;">
 	                            <label for="inputQ4" class="control-label">Esfera #8:</label>
-	                            <input type="text" class="form-control" id="p8">
+	                            <input type="text" maxlength="50" class="form-control" id="p8">
 	                      </div>
 					  </div>
 
