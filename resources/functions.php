@@ -918,6 +918,68 @@ function changeFacebookPage()
 }
 
 
+function changePrice()
+{
+
+	$fnbtName  = $_POST["fanbotName"];
+
+		$p['1']  = $_POST["p1"];		
+		$p['2']  = $_POST["p2"];		
+		$p['3']  = $_POST["p3"];		
+		$p['4']  = $_POST["p4"];		
+		$p['5']  = $_POST["p5"];		
+		$p['6']  = $_POST["p6"];		
+		$p['7']  = $_POST["p7"];		
+		$p['8']  = $_POST["p8"];		
+
+	$bool = true;
+
+	foreach ($p as $k => $v) {
+	    if (empty($v)) {
+	        $bool = false;
+	    }
+	}
+	
+	
+	if( !($bool) ){
+		$pJson = "NULL";
+
+	} else {
+		$pJson = json_encode($p);	
+	}
+	
+	
+	require(realpath(dirname(__FILE__) . "/./config.php"));
+	$servername = $config["db"]["fanbot"]["host"];
+	$username = $config["db"]["fanbot"]["username"];
+	$password = $config["db"]["fanbot"]["password"];
+	$dbname = $config["db"]["fanbot"]["dbname"];
+
+	// Create connection
+	$conn = new mysqli($servername, $username, $password, $dbname);
+	// Check connection
+	if ($conn->connect_error)
+	{
+		die("Connection failed: " . $conn->connect_error);
+	}
+
+
+	$sql = "UPDATE fanbot SET price ='". $pJson ."' WHERE name = '". $fnbtName ."'";
+
+
+	if ($conn->query($sql) === TRUE)
+	{
+	} else
+	{
+		echo "Error";
+	}
+
+	$conn->close();
+
+	echo("done");
+}
+
+
 function conektaSPEI()
 {
 	require_once("libraries/conekta/Conekta.php");

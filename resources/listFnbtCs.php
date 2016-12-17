@@ -16,7 +16,7 @@
                                 <th>Ultima conexión</th>
                                 <th></th>
                                 <th></th>
-
+                                <th></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -124,7 +124,7 @@
 									                                </td>
 
 																	<td>
-									                                <a class="btn btn-primary btn-xs" onclick="callModal('<?php echo $row['name']?>')">
+									                                <a class="btn btn-primary btn-xs" onclick="callPrice('<?php echo $row['name']?>')">
 										                                <span class="fa fa-cog" aria-hidden="true"></span> Premios
 										                                </a>
 									                                </td>
