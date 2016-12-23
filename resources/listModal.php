@@ -124,8 +124,8 @@
 					  <div class="form-group" style="margin-bottom: 2vh;">
 							<label class="checkbox-inline">
 								<select name="interaccion" id="accion">
-								  <option value="0">Check-in</option>
-								  <option value="1">Like y Check-in</option>
+								  <option value="0">Like y Check-in</option>
+								  <option value="1">Check-in</option>
 								  <option value="2">Encuesta</option>
 								</select>
                             </label>
